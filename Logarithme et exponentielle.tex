@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{array}
+
+\title{Logarithme et exponentielle}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Logarithme}
+	\begin{itemize}
+	\item $ x,y>0, \ln (xy) = \ln x + \ln y $
+	\item $ \ln 1 = 0 $
+	\item $ \ln x = -\ln \frac{1}{x} $
+	\item $ \ln x^n = n\ln x $
+	\newline
+
+	\item $ \lim_{x\to 1} \frac{\ln x}{x-1} = 1 $
+	\item $ \lim_{x\to 0} \frac{\ln (x+1)}{x} = 1 $
+	\item $ \lim_{x\to\infty} \frac{\ln x}{x} = 0 $
+	\item $ \lim_{x\to 0^+} x\ln x = 0 $
+	\end{itemize}
+
+\section{exponentielle}
+\emph{exp} est l'application réciproque de \emph{Log}
+	\begin{itemize}
+	\item $ e^{x+y} = e^xe^y $
+	\item $ e^0 = 1 $
+	\item $ e^{-x} = \frac{1}{e^x} $
+	\newline
+
+	\item $ \lim_{x\to\infty} \frac{x}{e^x} = 0 $
+	\item $ \lim_{x\to-\infty} xe^x = 0 $
+	\item $ \lim_{x\to 0} \frac{e^x-1}{x} = 1 $
+	\end{itemize}
+
+\subsection{Propri\'{e}t\'{e}es du $e$}
+\begin{itemize}
+	\item Th\'{e}or\`{e}me: pour tout $x \in \mathbb{R}$,
+	$$ e^x = \lim_{n\to\infty} \sum_{k=0}^{n} (\frac{x^k}{k!}) $$
+
+	\item Pour $x = 1$,
+	$$ e = \lim_{n\to\infty} \sum_{k=0}^{n} (\frac{1}{k!}) $$
+	$$ e = \sum_{k=0}^{n} (\frac{1}{k!}) + \int_{0}^{1} \frac{(1-t)^n}{n!}e^tdt $$
+
+	\item $e$ est irrationnel
+\end{itemize}
+
+
+\end{document}
