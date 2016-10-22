@@ -19,8 +19,8 @@
 	\(\binom{n}{1} = n = \binom{n}{n-1}\) \\
 	\(\binom{n}{k} = \binom{n}{n-k}\) (sym\'{e}trie) \\
 	\item pour \(n \in \mathbb{N}\ et\ k \in [\![0,n]\!]\): \\
-	\[\binom{n}{k+1} = \binom{n}{k} \frac{n-k}{k+1}\] \\
-	\[\binom{n+1}{k+1} = \binom{n}{k} \frac{n-1}{k+1}\] \\
+	\[\binom{n}{k+1} = \frac{n-k}{k+1} \binom{n}{k} \] \\
+	\[\binom{n+1}{k+1} = \frac{n+1}{k+1} \binom{n}{k} \] \\
 	\item Pascal (\(n \in \mathbb{N}, k \in \mathbb{N}\)): \\
 	\[\binom{n+1}{k+1} = \binom{n}{k} + \binom{n}{k+1}\]
 	\item Th\'{e}or\`{e}me: pour tout \(k,n \in \mathbb{N}, \binom{n}{k} \in \mathbb{N}\) \\
@@ -40,7 +40,7 @@
 	\end{itemize}
 \end{itemize}
 
-\section{Sommes g\'{e}om\'{e}triques} 
+\section{Sommes g\'{e}om\'{e}triques}
 \begin{itemize}
 	\item Principe de t\'{e}lescopage (\(n \in \mathbb{N}\) et \(a_0, \hdots, a_{n+1} \in \mathbb{C}\)): \\
 	\[\sum_{k=0}^{n} (a_{k+1} - a_k) = a_{n+1} - a_0\]
