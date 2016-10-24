@@ -1,9 +1,12 @@
-\documentclass{article}
+\documentclass[fleqn]{article}
 \usepackage{amssymb}
+\usepackage{booktabs}
 
-\title{Trigonom\'{e}trie}
+\title{Trigonom\'etrie}
 \date{}
 
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.3}
 
 \begin{document}
 \maketitle
@@ -11,71 +14,84 @@
 \section{Fonctions hyperboliques}
 \begin{itemize}
 	\item D\'{e}finition:
-	$$ \cosh t = \frac{e^t + e^{-t}}{2} $$
-	$$ \sinh t = \frac{e^t - e^{-t}}{2} $$
-	$\cosh$ est paire, $\sinh$ est impaire, $\tanh$ est impaire
+		\[ \cosh t = \frac{e^t + e^{-t}}{2} \]
+		\[ \sinh t = \frac{e^t - e^{-t}}{2} \]
+		$\cosh$ est paire, $\sinh$ est impaire, $\tanh$ est impaire
 	\item $ \cosh^2 t - \sinh^2 t = 1 $
 	\item $\cosh$ et $\sinh$ sont d\'{e}rivables sur $\mathbb{R}$: \\
-	$\cosh$' $ = \sinh$ \\
-	$\sinh$' $ = \cosh$
+		$\cosh$' $ = \sinh$ \\
+		$\sinh$' $ = \cosh$
 	\newline
 	\item Formules: \\
-	$\cosh (a+b) = \cosh a\cosh b + \sinh a\sinh b$ \\
-	$\cosh (a-b) = \cosh a\cosh b - \sinh a\sinh b$ \\
-	$\sinh (a+b) = \sinh a\cosh b + \sinh b\cosh a$ \\
-	$\sinh (a-b) = \sinh a\cosh b - \sinh b\cosh a$ \\
-	$\cosh^2 a = \frac{\cosh 2a + 1}{2}$ \\
-	$\sinh^2 a = \frac{\cosh 2a - 1}{2}$
+		$\cosh (a+b) = \cosh a\cosh b + \sinh a\sinh b$ \\
+		$\cosh (a-b) = \cosh a\cosh b - \sinh a\sinh b$ \\
+		$\sinh (a+b) = \sinh a\cosh b + \sinh b\cosh a$ \\
+		$\sinh (a-b) = \sinh a\cosh b - \sinh b\cosh a$ \\
+		$\cosh^2 a = \frac{\cosh 2a + 1}{2}$ \\
+		$\sinh^2 a = \frac{\cosh 2a - 1}{2}$
 \end{itemize}
 
 \section{Fonctions cosinus, sinus, tangente}
+\subsection{Cosinus et sinus}
 \begin{itemize}
 	\item valeurs remarquables:\\
-	\begin{tabular}{l|c|c|c|c|c|c|c|c|c}
-	t & 0 & $\frac{\Pi}{6}$ & $\frac{\Pi}{4}$ & $\frac{\Pi}{3}$ & $\frac{\Pi}{2}$ & $\frac{2\Pi}{3}$ & $\frac{3\Pi}{4}$ & $\frac{5\Pi}{6}$ & $\Pi$ \\
-	\hline
-	$\cos t$ & 1 & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{1}{2}$ & 0 & $-\frac{1}{2}$ & $-\frac{\sqrt{2}}{2}$ & $-\frac{\sqrt{3}}{2}$ & -1 \\
-	$\sin t$ & 0 & $\frac{1}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{3}}{2}$ & 1 & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{1}{2}$ & 0 \\
-	\end{tabular}
+		\begin{tabular}{@{}lrrrrrrrrr@{}}
+			\toprule
+			t & 0 & $\frac{\Pi}{6}$ & $\frac{\Pi}{4}$ & $\frac{\Pi}{3}$ & $\frac{\Pi}{2}$ & $\frac{2\Pi}{3}$ & $\frac{3\Pi}{4}$
+				& $\frac{5\Pi}{6}$ & $\Pi$ \\
+			\hline
+			$\cos t$ & 1 & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{1}{2}$ & 0 & $-\frac{1}{2}$ & $-\frac{\sqrt{2}}{2}$
+				& $-\frac{\sqrt{3}}{2}$ & -1 \\
+			$\sin t$ & 0 & $\frac{1}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{3}}{2}$ & 1 & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$
+				& $\frac{1}{2}$ & 0 \\
+			\bottomrule
+		\end{tabular}
 
 	\item Formules: \\
-	$\cos (a+b) = \cos a\cos b - \sin a\sin b$ \\
-	$\cos (a-b) = \cos a\cos b + \sin a\sin b$ \\
-	$\sin (a+b) = \sin a\cos b + \sin b\cos a$ \\
-	$\sin (a-b) = \sin a\cos b - \sin b\cos a$ \\
-	$\cos^2 a = \frac{1}{1 + \tan^2a}$ \\
-	$\cos^2 a = \frac{1 + \cos 2a}{2}$ \\
-	$\sin^2 a = \frac{1 - \cos 2a}{2}$ \\
-	\newline
-	$\cos p + \cos q = 2\cos\frac{p+q}{2}\cos\frac{p-q}{2}$ \\
-	$\cos p - \cos q = -2\sin\frac{p+q}{2}\sin\frac{p-q}{2}$ \\
-	$\sin p + \sin q = 2\sin\frac{p+q}{2}\cos\frac{p-q}{2}$ \\
-	$\sin p - \sin q = 2\sin\frac{p-q}{2}\cos\frac{p+q}{2}$ \\
+		$\cos(\arcsin x) = \sin(\arccos x) = \sqrt{1 - x^2}$ \\
+		$\cos (a+b) = \cos a\cos b - \sin a\sin b$ \\
+		$\cos (a-b) = \cos a\cos b + \sin a\sin b$ \\
+		$\sin (a+b) = \sin a\cos b + \sin b\cos a$ \\
+		$\sin (a-b) = \sin a\cos b - \sin b\cos a$ \\
+		$\cos^2 a = \frac{1}{1 + \tan^2a}$ \\
+		$\cos^2 a = \frac{1 + \cos 2a}{2}$ \\
+		$\sin^2 a = \frac{1 - \cos 2a}{2}$ \\
+		\newline
+		$\cos p + \cos q = 2\cos\frac{p+q}{2}\cos\frac{p-q}{2}$ \\
+		$\cos p - \cos q = -2\sin\frac{p+q}{2}\sin\frac{p-q}{2}$ \\
+		$\sin p + \sin q = 2\sin\frac{p+q}{2}\cos\frac{p-q}{2}$ \\
+		$\sin p - \sin q = 2\sin\frac{p-q}{2}\cos\frac{p+q}{2}$ \\
+\end{itemize}
 
-	\item Tangente: \\
-	\begin{itemize}
-		\item Valeurs remarquables: \\
-		\begin{tabular}{l|c|c|c|c}
+\subsection{Tangente}
+\begin{itemize}
+	\item Valeurs remarquables: \\
+	\begin{tabular}{lrrrr}
+		\toprule
 		t        & 0 & $\frac{\Pi}{6}$      & $\frac{\Pi}{4}$ & $\frac{\Pi}{3}$ \\
 		\hline
 		$\tan t$ & 0 & $\frac{1}{\sqrt{3}}$ & 1               & $\sqrt{3}$ \\
-		\end{tabular}
+		\bottomrule
+	\end{tabular}
 
-		\item Formules: \\
-		$\tan$'$ t = \frac{1}{\cos^2 t} = 1 + \tan^2 t$ \\
-		$\tan (a+b) = \frac{\tan a + \tan b}{1 - \tan a\tan b}$ \\
-		$\tan (a-b) = \frac{\tan a - \tan b}{1 + \tan a\tan b}$ \\
-	\end{itemize}
+	\item Formules: \\
+	$\tan (\Pi-t) = -\tan t$ \\
+	$\tan (\frac{\Pi}{2} - t) = \frac{1}{t} $ \\
+	\newline
+	$\tan$'$ t = \frac{1}{\cos^2 t} = 1 + \tan^2 t$ \\
+	$\tan (a+b) = \frac{\tan a + \tan b}{1 - \tan a\tan b}$ \\
+	$\tan (a-b) = \frac{\tan a - \tan b}{1 + \tan a\tan b}$ \\
+\end{itemize}
 
-\section{Fonctions trigonom\'{e}triques inverses}
-Th\'{e}or\`{e}me: Soit \(I\) un intervalle de \(\mathbb{R}, f: I \rightarrow \mathbb{R}\) continue et strictement monotone. \\
-Alors: \begin{enumerate}
-	\item \(J = f(I) = \{f(t)|t \in I\}\) est aussi un intervalle \\
-	\item \(f\) induit une bijection de \(I\) sur \(J\) \\
-	\item L'application r\'{e}ciproque \(g = \tilde{f}^{-1}:J \rightarrow I\) est continue, de strictement m\^{e}me monotonie que \(f\)
+\section{Fonctions trigonom\'etriques inverses}
+Th\'eor\`eme: Soit \(I\) un intervalle de \(\mathbb{R}, f: I \rightarrow \mathbb{R}\) continue et strictement monotone, alors:
+\begin{enumerate}
+	\item \(J = f(I) = \{f(t)|t \in I\}\) est aussi un intervalle
+	\item \(f\) induit une bijection de \(I\) sur \(J\)
+	\item L'application r\'eciproque \(g = \tilde{f}^{-1}:J \rightarrow I\) est continue, de strictement m\^eme monotonie que \(f\)
 \end{enumerate}
-De plus, si \(f\) d\'{e}rivable sur \(I\), \\
-soit \(x_0 \in I\ et\ y_0 = f(x_0) \in J\). Si \(f'(x_0) \neq 0 \) alors \(g\) est d\'{e}rivable en \(y_0\) et
+De plus, si \(f\) d\'erivable sur \(I\), \\
+soit \(x_0 \in I\ et\ y_0 = f(x_0) \in J\). Si \(f'(x_0) \neq 0 \) alors \(g\) est d\'erivable en \(y_0\) et
 \(g'(y_0) = \frac{1}{f'(x_0)} = \frac{1}{f'(g(y_0))}\) \\
 
 \subsection{Arcsin}
@@ -92,8 +108,5 @@ Pour \(y \in ]-1,1[, \arccos'(y) = -\frac{1}{\sqrt{1-y^2}}\) \\
 \(Arctan: [-\frac{\Pi}{2},\frac{\Pi}{2}] \rightarrow \mathbb{R}\) \\
 \(\arctan\) est impaire continue et strictement croissante \\
 Pour \(y \in \mathbb{R}, \arctan'(y) = \frac{1}{1+y^2}\) \\
-
-\end{itemize}
-
 
 \end{document}

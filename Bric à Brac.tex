@@ -1,0 +1,49 @@
+\documentclass[fleqn]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\title{Bric \`a Brac}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Un peu de logique}
+\begin{itemize}
+	\item \(NON(NON P) \equiv  P\) \\
+		\(NON(P \Rightarrow Q) \equiv P\ ET\ (NON Q)\) \\
+		\((P \Rightarrow Q) \equiv (NON Q)\Rightarrow(NON P)\)
+	\item \(NON(\forall x \in E, P(x)) \equiv \exists x \in E, NON(P(x)) \) \\
+		\(NON(\exists x \in E, P(x)) \equiv \forall x \in E, NON(P(x)) \)
+\end{itemize}
+
+\section{Ensembles}
+\begin{itemize}
+	\item \(E \cap(F \cup G) = (E \cap F) \cup (E \cap G)\) \\
+		\(E \cup (F \cap G) = (E \cup F) \cap (E \cup G)\)
+	\item si \(A, B \in \mathcal{P}(E)\): \\
+		\((A \cap B)^c = A^c \cup B^c\) \\
+		\((A \cup B)^c = A^c \cap B^c\)
+\end{itemize}
+
+\section{Applications}
+\begin{itemize}
+	\item D\'efinition: \(E, F\) deux ensembles non vides, \( f \in \mathcal{F}(E, F)\):
+		\begin{enumerate}
+			\item \(f\) est injective si \(\forall x,x' \in E, (x \neq x') \Rightarrow (f(x) \neq f(x'))\) \\
+			ou de fa\c{c}on \'equivalente, \(\forall x,x' \in E, (f(x) = f(x')) \Rightarrow (x = x')\)
+			\item \(f\) est surjective si \(\forall y \in F, \exists x \in E, f(x) = y\)
+			\item \(f\) est bijective si elle est \`a la fois injective et surjective
+		\end{enumerate}
+	\item Composition: \(f: E \rightarrow F,\ g: F \rightarrow G\)
+		\begin{enumerate}
+			\item (\(f\) et \(g\) injectives) \(\Rightarrow\) \(g \circ f\) injective
+			\item (\(f\) et \(g\) surjectives) \(\Rightarrow\) \(g \circ f\) surjectives
+			\item (\(f\) et \(g\) bijective) \(\Rightarrow\) \(g \circ f\) bijective
+		\end{enumerate}
+
+
+\end{itemize}
+
+
+\end{document}
