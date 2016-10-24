@@ -10,11 +10,11 @@
 
 \section{Un peu de logique}
 \begin{itemize}
-	\item \(NON(NON P) \equiv  P\) \\
-		\(NON(P \Rightarrow Q) \equiv P\ ET\ (NON Q)\) \\
-		\((P \Rightarrow Q) \equiv (NON Q)\Rightarrow(NON P)\)
-	\item \(NON(\forall x \in E, P(x)) \equiv \exists x \in E, NON(P(x)) \) \\
-		\(NON(\exists x \in E, P(x)) \equiv \forall x \in E, NON(P(x)) \)
+	\item NON(NON(\(P) \equiv  P\) \\
+		NON(\(P \Rightarrow Q) \equiv P \land\) NON(\(Q\)) \\
+		\((P \Rightarrow Q) \equiv\) (NON \(Q)\Rightarrow\)(NON \(P\))
+	\item NON(\(\forall x \in E, P(x)) \equiv \exists x \in E\), NON(\(P(x)\)) \\
+		NON(\(\exists x \in E, P(x)) \equiv \forall x \in E\), NON(\(P(x)\))
 \end{itemize}
 
 \section{Ensembles}
@@ -35,14 +35,67 @@
 			\item \(f\) est surjective si \(\forall y \in F, \exists x \in E, f(x) = y\)
 			\item \(f\) est bijective si elle est \`a la fois injective et surjective
 		\end{enumerate}
-	\item Composition: \(f: E \rightarrow F,\ g: F \rightarrow G\)
+	\item Composition:
+		\begin{itemize}
+			\item \(f: E \rightarrow F,\ g: F \rightarrow G\)
+				\begin{enumerate}
+					\item (\(f\) et \(g\) injectives) \(\Rightarrow\) \(g \circ f\) injective
+					\item (\(f\) et \(g\) surjectives) \(\Rightarrow\) \(g \circ f\) surjectives
+					\item (\(f\) et \(g\) bijective) \(\Rightarrow\) \(g \circ f\) bijective
+				\end{enumerate}
+			\item Soit \(f: E \rightarrow F\) bijective, alors \(f^{-1}\) est l'unique application telle que: \\
+				\(f \circ f^{-1} = I_{dF}\) \\
+				\(f^{-1} \circ f = I_{dE}\)
+			\item \(f: E \rightarrow F,\ g: F \rightarrow G\,\ h: G \rightarrow H\) (associativit\'e de \(\circ\)), \\
+				\(h \circ (g \circ f) = (h \circ g) \circ f\)
+		\end{itemize}
+	\item Image directe, image r\'eciproque
 		\begin{enumerate}
-			\item (\(f\) et \(g\) injectives) \(\Rightarrow\) \(g \circ f\) injective
-			\item (\(f\) et \(g\) surjectives) \(\Rightarrow\) \(g \circ f\) surjectives
-			\item (\(f\) et \(g\) bijective) \(\Rightarrow\) \(g \circ f\) bijective
+			%Pour \(f: E \rightarrow F\): \\
+			\item \(A, A' \in \mathcal{P}(E)\) \\
+				\(f(A \cup A') = f(A) \cup f(A')\)
+			\item \(B, B' \in \mathcal{P}(F)\) \\
+				\(f^{-1}(B \cup B') = f^{-1}(B) \cup f^{-1}(B')\) \\
+				\(f^{-1}(B \cap B') = f^{-1}(B) \cap f^{-1}(B')\) \\
+				\(f^{-1}(B^c) = (f^{-1}(B))^c\)
 		\end{enumerate}
+\end{itemize}
 
+\section{Relations Binaires}
+Soit \(R\) une relation binaire ser l'ensemble \(E\):
+\begin{enumerate}
+	\item \(R\) est r\'eflexive si \(\forall x \in E, xRx\)
+	\item \(R\) est sym\'etrique si \(\forall x,y \in E, xRy \Rightarrow yRx\)
+	\item \(R\) est antisym\'etrique si \(\forall x,y \in E, (xRy \land yRx) \Rightarrow (x=y)\)
+	\item \(R\) est transitive si \(\forall x,y,z \in E, (xRy \land yRz) \Rightarrow (xRz)\)
+\end{enumerate}
 
+\subsection{Relations d'\'equivalence}
+\begin{itemize}
+	\item D\'ef: On dit que \(R\) est une relation d'\'equivalence si \(R\) est r\'eflexive, sym\'etrique et transitive
+	\item La classe d'\'equivalence de \(x\) est: \\
+		\(Cl_R(x) = \{y \in E |xRy\}\)
+\end{itemize}
+
+\subsection{Relations d'ordre}
+\begin{itemize}
+	\item D\'ef: On dit que \(R\) est une relation d'ordre si \(R\) est r\'eflexive, antisym\'etrique et transitive \\
+		Dans ce cas, \((E,R)\) est un ordre ou un ensemble ordonn\'ee.
+	\item D\'ef: L'ordre \((E,R)\) est totale si \(\forall x,y \in E, (xRy) \lor (yRx)\)
+	\item Maximum et minimum: \\
+		Soit \((E, \preceq)\) un ordre. Soit \(A \subset E, A \neq \emptyset\). Un \'el\'ement \(a \in A\) est appel\'e:
+		\begin{itemize}
+			\item maximum de \(A\) si \(\forall x \in A, x \preceq a\)
+			\item minimum de \(A\) si \(\forall x \in A, a \preceq x\)
+		\end{itemize}
+	\item A est major\'ee s'il existe \(x \in E, \forall a \in A, a \preceq x\) \\
+		A est minor\'ee s'il existe \(x \in E, \forall a \in A, x \preceq a\)
+	\item
+		\begin{itemize}
+			\item Soit \(A \subset E\), A major\'ee. \\
+			En cas d'existence, la borne sup\'erieure de A est le minimum de l'ensemble B des majorants de A. Not\'ee \emph{sup A}
+			\item Supposons A minor\'ee, en cas d'existence, la borne inf\'erieure de A est le maximum de l'ensemble B des minorants de A. Not\'ee \emph{inf A} \\
+		\end{itemize}
 \end{itemize}
 
 
