@@ -10,16 +10,22 @@
 
 \section{Un peu de logique}
 \begin{itemize}
-	\item NON(NON(\(P) \equiv  P\) \\
-		NON(\(P \Rightarrow Q) \equiv P \land\) NON(\(Q\)) \\
+	\item N\'egation des connecteurs: \\
+		NON(NON(\(P) \equiv  P\) \\
+		NON(\(P \lor Q) \equiv \) (NON P) \(\land\) (NON Q) \\
+		NON(\(P \land Q) \equiv \) (NON P) \(\lor\) (NON Q) \\
+		NON(\(P \Rightarrow Q) \equiv P \land\) NON(\(Q\))
+	\item Contraposition: \\
 		\((P \Rightarrow Q) \equiv\) (NON \(Q)\Rightarrow\)(NON \(P\))
-	\item NON(\(\forall x \in E, P(x)) \equiv \exists x \in E\), NON(\(P(x)\)) \\
+	\item N\'egation des quantificateurs: \\
+		NON(\(\forall x \in E, P(x)) \equiv \exists x \in E\), NON(\(P(x)\)) \\
 		NON(\(\exists x \in E, P(x)) \equiv \forall x \in E\), NON(\(P(x)\))
 \end{itemize}
 
 \section{Ensembles}
 \begin{itemize}
-	\item \(E \cap(F \cup G) = (E \cap F) \cup (E \cap G)\) \\
+	\item Distributivit\'e: \\
+		\(E \cap(F \cup G) = (E \cap F) \cup (E \cap G)\) \\
 		\(E \cup (F \cap G) = (E \cup F) \cap (E \cup G)\)
 	\item si \(A, B \in \mathcal{P}(E)\): \\
 		\((A \cap B)^c = A^c \cup B^c\) \\
@@ -79,18 +85,24 @@ Soit \(R\) une relation binaire ser l'ensemble \(E\):
 
 \subsection{Relations d'ordre}
 \begin{itemize}
-	\item D\'ef: On dit que \(R\) est une relation d'ordre si \(R\) est r\'eflexive, antisym\'etrique et transitive \\
-		Dans ce cas, \((E,R)\) est un ordre ou un ensemble ordonn\'ee.
-	\item D\'ef: L'ordre \((E,R)\) est totale si \(\forall x,y \in E, (xRy) \lor (yRx)\)
-	\item Maximum et minimum: \\
+	\item
+		\begin{itemize}
+			\item D\'ef: On dit que \(R\) est une relation d'ordre si \(R\) est r\'eflexive, antisym\'etrique et transitive \\
+				Dans ce cas, \((E,R)\) est un ordre ou un ensemble ordonn\'ee.
+			\item D\'ef: L'ordre \((E,R)\) est totale si \(\forall x,y \in E, (xRy) \lor (yRx)\)
+		\end{itemize}
+	\item Maximums et minimums: \\
 		Soit \((E, \preceq)\) un ordre. Soit \(A \subset E, A \neq \emptyset\). Un \'el\'ement \(a \in A\) est appel\'e:
 		\begin{itemize}
 			\item maximum de \(A\) si \(\forall x \in A, x \preceq a\)
 			\item minimum de \(A\) si \(\forall x \in A, a \preceq x\)
 		\end{itemize}
-	\item A est major\'ee s'il existe \(x \in E, \forall a \in A, a \preceq x\) \\
-		A est minor\'ee s'il existe \(x \in E, \forall a \in A, x \preceq a\)
-	\item
+	\item Majorants et minorants:
+		\begin{itemize}
+			\item A est major\'ee s'il existe \(x \in E, \forall a \in A, a \preceq x\)
+			\item A est minor\'ee s'il existe \(x \in E, \forall a \in A, x \preceq a\)
+		\end{itemize}
+	\item Bornes sup\'erieures et inf\'erieures:
 		\begin{itemize}
 			\item Soit \(A \subset E\), A major\'ee. \\
 			En cas d'existence, la borne sup\'erieure de A est le minimum de l'ensemble B des majorants de A. Not\'ee \emph{sup A}
