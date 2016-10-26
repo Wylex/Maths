@@ -1,0 +1,48 @@
+\documentclass[fleqn]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\title{Entiers naturels}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Valeur absolue}
+\begin{itemize}
+	\item $|x| \leq x \leq a \Leftrightarrow a$ et $-x \leq a$
+	\item $|xy| = |x||y|$
+	\item In\'egalit\'es triangulaires: \\
+		$|x+y| \leq |x| + |y|$ \\
+		$|x+y| \geq ||x| - |y||$ \\
+		$|x-y| \geq ||x| - |y||$
+\end{itemize}
+
+\section{Intervalles de $\mathbb{R}$}
+Soit $A$ una partie non vide de $\mathbb{R}$. LASSE,
+\begin{enumerate}
+	\item $A$ est un intervalle
+	\item $\forall x,y \in A, x \leq y \Rightarrow [x,y] \subset A$ ($A$ est convexe)
+\end{enumerate}
+
+\section{Partie entière, propri\'et\'e d'Archim\`ede, densit\'e de $\mathbb{Q}$ dans $\mathbb{R}$}
+\begin{itemize}
+	\item $\mathbb{N}$ n'est pas major\'ee dans $\mathbb{R}$
+	\item Propri\'et\'e d'Archim\`ede: soit $x \in \mathbb{R}, \epsilon \in \mathbb{R}_+^*$, alors: \\
+		Il existe $n \in \mathbb{N}, n\epsilon>x$
+	\item Partie enti\`ere: soit $x \in \mathbb{R}$ alors, \\
+		Il existe un unique $n \in \mathbb{Z}, n \leq x < n+1$ \\
+		$n$ s'appelle la partie enti\`ere de $x$ et se note $E(x)$
+	\item Frac$(x) = x - E(x)$
+	\item Densit\'e de $\mathbb{Q}$ dans $\mathbb{R}$, LASSE:
+		D\'efinition: Soit $A \subset \mathbb{R}$,
+		\begin{enumerate}
+			\item $\forall x \in \mathbb{R}, \forall \epsilon > 0, \exists a \in A, |x-a| \leq \epsilon$
+			\item $\forall \alpha,\beta \in \mathbb{R}, (\alpha < \beta) \Rightarrow A \cap ]\alpha, \beta[ \neq \emptyset$
+		\end{enumerate}
+		Th\'eor\`eme: $\mathbb{Q}$ est dense dans $\mathbb{R}$ \\
+		Corollaire: $\mathbb{R}/\mathbb{Q}$ est dense dans $\mathbb{R}$
+\end{itemize}
+
+
+\end{document}

@@ -37,17 +37,23 @@ Il existe un ensemble non vide, not\'e $\mathbb{N}$, muni de relation d'ordre to
 
 \section{Propri\'et\'ees}
 \begin{itemize}
-	\item Th\'eor\`eme: Soit $n \in \mathbb{N}^*$, alors $n$ s'\'ecrit de fa\c{c}on unique: \\
-		$n = p_i \ldots p_r$ (avec $r \in \mathbb{N}, p_i$ premier $(1 \leq i \leq r)$)
-	\item Corollaire: Tout entier $n \in \mathbb{N}^*$ s'\'ecrit de fa\c{c}on unique sous la forme, \\
-		$n = p_1^{\alpha_1} \ldots p_r^{\alpha_r}$ avec: \\
-		$r \in \mathbb{N}$, $p_1 \ldots p_r$ premier distincts, $\alpha_1 \ldots \alpha_r \in {N}^*$
-	\item Valuation p-adique: \\
-		Pour $n \in \mathbb{N}^*$ on pose $V_p(n)$ \\
-		$n = \prod_{p \in \mathbb{P}} p^{V_p(n)}$
+	\item D\'ecomposition en nombres premiers:
+		\begin{itemize}
+			\item Th\'eor\`eme: Soit $n \in \mathbb{N}^*$, alors $n$ s'\'ecrit de fa\c{c}on unique: \\
+				$n = p_i \ldots p_r$ (avec $r \in \mathbb{N}, p_i$ premier $(1 \leq i \leq r)$)
+			\item Corollaire: Tout entier $n \in \mathbb{N}^*$ s'\'ecrit de fa\c{c}on unique: \\
+				$n = p_1^{\alpha_1} \ldots p_r^{\alpha_r}$ (avec $r \in \mathbb{N}$,
+				$p_1 \ldots p_r$ premier distincts, $\alpha_1 \ldots \alpha_r \in {N}^*$)
+		\end{itemize}
+	\item Valuation p-adique:
+		\begin{itemize}
+			\item D\'efinition: pour $n \in \mathbb{N}^*$ on pose $V_p(n)$ \\
+				\[n = \prod_{p \in \mathbb{P}} p^{V_p(n)}\]
+			\item $V_p(nm) = V_p(n) + V_p(m)$ \\
+				$n|m \Leftrightarrow \forall p \in \mathcal{P}, V_p(n) \leq V_p(m)$
+		\end{itemize}
 	\item Division euclidienne dans $\mathbb{N}$ \\
-		Soit $a \in \mathbb{N}, b \in \mathbb{N}^*$, \\
-		il existe un unique couple $(a,b) \in \mathbb{N}^2$ telle que:
+		Soit $a \in \mathbb{N}, b \in \mathbb{N}^*$, il existe un unique couple $(a,b) \in \mathbb{N}^2$ tel que:
 		\begin{enumerate}
 			\item $a = bq + r$
 			\item $r < b$
