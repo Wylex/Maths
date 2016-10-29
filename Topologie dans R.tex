@@ -1,0 +1,68 @@
+\documentclass[fleqn]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\title{Topologie dans $\mathbb{R}$}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Voisinages}
+D\'efinition: Soit $x$ un r\'eel et $A \subset \mathbb{R}$. On dit que $A$ est voisinage de $x$ s'il existe $\epsilon > 0$ tel que:
+\[[x-\epsilon, x+\epsilon] \subset A\]
+Pour $x \in \mathbb{R}$ on note $V_\mathbb{R}(x)$ l'ensemble des voisinages de $x$ dans $\mathbb{R}$
+\begin{itemize}
+	\item $A \in V_\mathbb{R}(x)$ et $A \subset B \Rightarrow B \in V_\mathbb{R}(x)$
+	\item Une r\'eunion quelconque de voisinages de $x$ est encore un voisinage de $x$
+	\item Une intersection finie de voisinages de $x$ l'est aussi
+\end{itemize}
+
+\section{Ouverts et ferm\'es}
+D\'efinition: Soit $A \subset \mathbb{R}$
+\begin{itemize}
+	\item On dit que $A$ est un ouvert si:
+		\[\forall x, x \in A \Rightarrow A \in V_\mathbb{R}(x)\]
+	\item On dit que $A$ est un ferm\'e lorsque $A^c$ est un ouvert
+\end{itemize}
+\begin{enumerate}
+	\item Une r\'eunion quelconque d'ouverts est un ouvert
+	\item Une intersection finie d'ouverts est un ouvert
+	\item Une r\'eunion finie de ferm\'es est un ferm\'e
+	\item Une intersection quelconque de ferm\'es est un ferm\'e
+\end{enumerate}
+
+\section{Adh\'erence, int\'erieur}
+D\'efinition: Soit $A \subset \mathbb{R}$
+\begin{itemize}
+	\item $x \in \mathbb{R}$ est int\'erieur \`a $A$ si $A$ est voisinage de $x$
+	\item $x \in \mathbb{R}$ est un point adh\'erent \`a $A$ si pour tout voisinage $V$ de $x$, $V \cap A \neq \emptyset$
+\end{itemize}
+\begin{itemize}
+	\item Adh, int d'intervalles
+		\begin{align*}
+			Int([a,b]) &= Int(]a,b]) \\
+					   &= Int([a,b[) \\
+					   &= Int(]a,b[) = ]a,b[
+		\end{align*}
+		\begin{align*}
+			Adh(]a,b[) &= Adh(]a,b]) \\
+					   &= Adh([a,b[) \\
+					   &= Adh([a,b]) = [a,b]
+		\end{align*}
+	\item Soit $A$ une partie major\'ee de $\mathbb{R}$, alors sup $A$ est adh\'erent \`a $A$
+	\item Caract\'erisation s\'equentielle de l'ah\'erence: \\
+		Soit $A \subset \mathbb{R} (A \neq \emptyset), x \in \mathbb{R}$
+		\[x \in Adh(A) \Leftrightarrow \text{il existe une suite} (a_n)_{n \in \mathbb{N}} \text{ de points de A qui converge vers } x\]
+	\item Caract\'erisation s\'equentielle de la fermitude: \\ 
+		Soit $A \subset \mathbb{R}$
+		\[A \text{ferm\'ee} \Leftrightarrow \text{Pour toute suite cv. d'\'el\'e de } A (a_n), \text{on a } lim_{n \to \infty} a_n \in A\]
+	\item Th\'or\`eme: Boel-Lebesque: \\
+		Soit $A \subset \mathbb{R} (A \neq \emptyset)$, LASSE:
+		\begin{enumerate}
+			\item $A$ est ferm\'ee born\'ee (compacte)
+			\item Pour toute suite $(a_n)$ d'\'el\'e. de $a$, il existe une sous-suite de $(a_n)$ qui cv. vers un \'el\'e. de $A$
+		\end{enumerate}
+\end{itemize}
+
+\end{document}
