@@ -1,9 +1,13 @@
 \documentclass[fleqn]{article}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{amsthm}
 
 \title{Bric \`a Brac}
 \date{}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{plain} \newtheorem*{theo}{Th\'eor\`eme}
 
 \begin{document}
 \maketitle
@@ -37,14 +41,16 @@
 \end{itemize}
 
 \section{Applications}
+\begin{defi}
+	\(E, F\) deux ensembles non vides, \( f \in \mathcal{F}(E, F)\):
+	\begin{enumerate}
+		\item \(f\) est injective si \(\forall x,x' \in E, (x \neq x') \Rightarrow (f(x) \neq f(x'))\) \\
+		ou de fa\c{c}on \'equivalente, \(\forall x,x' \in E, (f(x) = f(x')) \Rightarrow (x = x')\)
+		\item \(f\) est surjective si \(\forall y \in F, \exists x \in E, f(x) = y\)
+		\item \(f\) est bijective si elle est \`a la fois injective et surjective
+	\end{enumerate}
+\end{defi}
 \begin{itemize}
-	\item D\'efinition: \(E, F\) deux ensembles non vides, \( f \in \mathcal{F}(E, F)\):
-		\begin{enumerate}
-			\item \(f\) est injective si \(\forall x,x' \in E, (x \neq x') \Rightarrow (f(x) \neq f(x'))\) \\
-			ou de fa\c{c}on \'equivalente, \(\forall x,x' \in E, (f(x) = f(x')) \Rightarrow (x = x')\)
-			\item \(f\) est surjective si \(\forall y \in F, \exists x \in E, f(x) = y\)
-			\item \(f\) est bijective si elle est \`a la fois injective et surjective
-		\end{enumerate}
 	\item Composition:
 		\begin{itemize}
 			\item \(f: E \rightarrow F,\ g: F \rightarrow G\)
