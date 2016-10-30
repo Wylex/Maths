@@ -1,19 +1,23 @@
 \documentclass[fleqn]{article}
 \usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
 \usepackage{array}
 
 \title{Suites r\'eeles}
 \date{}
 
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+
 \begin{document}
 \maketitle
 
 \section{G\'en\'eralit\'es}
-\begin{itemize}
-	\item Sous-suite: \\
+\begin{defi}
 		Soit $u \in \mathbb{R}^\mathbb{N}$. Une suite $v \in \mathbb{R}^\mathbb{N}$ est une sous suite de $u$ s'il existe
-		$\varphi: \mathbb{N} \rightarrow \mathbb{N}$ strictement croissante tel que $\forall n \in \mathbb{N}, v_n = u_{\varphi(n)}$ \\
-\end{itemize}
+		$\varphi: \mathbb{N} \rightarrow \mathbb{N}$ strictement croissante tel que $\forall n \in \mathbb{N}, v_n = u_{\varphi(n)}$
+\end{defi}
 
 \subsection{Vocabulaire}
 Soit $u \in \mathbb{R}^\mathbb{N}$
@@ -25,8 +29,10 @@ Soit $u \in \mathbb{R}^\mathbb{N}$
 
 \section{Convergences}
 \subsection{Suites convergentes}
-D\'efinition: Soit $u \in \mathbb{R}^\mathbb{N}, l \in \mathbb{R}$, on dira que $u$ converge vers $l$ si:
-\[\forall \epsilon > 0, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, |u_n - l| \leq \epsilon\]
+\begin{defi}
+	Soit $u \in \mathbb{R}^\mathbb{N}, l \in \mathbb{R}$, on dira que $u$ converge vers $l$ si:
+	\[\forall \epsilon > 0, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, |u_n - l| \leq \epsilon\]
+\end{defi}
 \begin{enumerate}
 	\item Unicit\'e: soit $u$ une suite convergente, alors il existe un unique r\'eel $l$ tel que $u$ converge vers $l$
 	\item Sous-suites: soit $u \in \mathbb{R}^\mathbb{N}$ une suite convergente de limite $l \in \mathbb{R}$. Alors toute sous-suite
@@ -42,10 +48,12 @@ D\'efinition: Soit $u \in \mathbb{R}^\mathbb{N}, l \in \mathbb{R}$, on dira que 
 \end{enumerate}
 
 \subsection{Suites tendant vers $\infty$}
-D\'efinition: soit $u \in \mathbb{R}$. On dit que $u$ tend vers $\infty$ si:
-\[\forall M \in \mathbb{R}, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \geq M\]
-$u$ tend vers $-\infty$ si:
-\[\forall M \in \mathbb{R}, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \leq M\]
+\begin{defi}
+	Soit $u \in \mathbb{R}$. On dit que $u$ tend vers $\infty$ si:
+	\[\forall M \in \mathbb{R}, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \geq M\]
+	$u$ tend vers $-\infty$ si:
+	\[\forall M \in \mathbb{R}, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \leq M\]
+\end{defi}
 \begin{enumerate}
 	\item Soient $u, v \in \mathbb{R}^\mathbb{N}$. On suppose $u_n \leq v_n$ pour $n$ assez grand: \\
 		si $u$ tend vers $\infty$, $v$ aussi. \\
@@ -77,20 +85,21 @@ $u$ tend vers $-\infty$ si:
 			\item D\'efinition: deux suites r\'eelles sont adjacentes si elles sont de monotonie contraire et si $u-v$ converge vers 0.
 			\item Deux suites adjacentes convergent vers un m\^eme r\'eel
 		\end{itemize}
-	\item Th\'eor\`eme des segments embo\^it\'es: \\
-		Soit $(I_n)_{n \in \mathbb{N}}$ une suite de segments (il existe, pour $n \in \mathbb{N}, a_n, b_n \in \mathbb{R}$ tel que
-		$I_n = [a_n, b_n]$ et $a_n \leq b_n$) \\
-		On suppose $I_{n+1} \subset I_n$. Alors $\bigcup_{n \in \mathbb{N}} I_n$ est un segment non vide.
-		\begin{itemize}
-			\item Application: $\mathbb{R}$ n'est pas d\'nombrable.
-		\end{itemize}
 \end{enumerate}
+\begin{theo} Segments embo\^it\'es: soit $(I_n)_{n \in \mathbb{N}}$ une suite de segments (il existe, pour
+	$n \in \mathbb{N}, a_n, b_n \in \mathbb{R}$ tel que $I_n = [a_n, b_n]$ et $a_n \leq b_n$). On suppose $I_{n+1} \subset I_n$. Alors,
+	\[\bigcup_{n \in \mathbb{N}} I_n \text{ est un segment non vide.}\]
+\end{theo}
+	\begin{itemize}
+		\item Application: $\mathbb{R}$ n'est pas d\'nombrable.
+	\end{itemize}
 
-\section{Bolzano-Weierstrass}
-\subsection{Valeurs d'adh\'erence d'une suite r\'eelle}
+\section{Bolzano-Weierstrass (et adh\'erence)}
+\begin{defi}
+	$u \in \mathbb{R}^\mathbb{N}, x \in \mathbb{R}$. \\
+	On dit que $x$ est valeur d'adh\'erence de $u$ s'il existe une sous-suite de $u$ qui converge vers $x$
+\end{defi}
 \begin{itemize}
-	\item D\'efiniiton: $u \in \mathbb{R}^\mathbb{N}, x \in \mathbb{R}$. \\
-		On dit que $x$ est valeur d'adh\'erence de $u$ s'il existe une sous-suite de $u$ qui converge vers $x$
 	\item Soit $u$ une suite convergente de limite $l \in \mathbb{R}$. Alors $l$ est l'unique valeur d'adh\'erence de $u$
 	\item $u \in \mathbb{R}^\mathbb{N}, x \in \mathbb{R}$. LASSE
 	\begin{enumerate}
@@ -99,8 +108,9 @@ $u$ tend vers $-\infty$ si:
 	\end{enumerate}
 \end{itemize}
 
-\subsection{Th\'eor\`eme}
-Toute suite r\'elle born\'ee admet au moins une valeur d'adh\'erence
+\begin{theo}
+	Toute suite r\'elle born\'ee admet au moins une valeur d'adh\'erence
+\end{theo}
 
 \section{Suites particuli\`eres}
 \begin{itemize}

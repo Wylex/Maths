@@ -1,10 +1,13 @@
 \documentclass[fleqn]{article}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{booktabs}
 
 \title{Trigonom\'etrie}
 \date{}
 
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 \ra{1.3}
 
@@ -12,16 +15,17 @@
 \maketitle
 
 \section{Fonctions hyperboliques}
-\begin{itemize}
-	\item D\'{e}finition:
+\begin{defi} $\ $
 		\[ \cosh t = \frac{e^t + e^{-t}}{2} \]
 		\[ \sinh t = \frac{e^t - e^{-t}}{2} \]
-		$\cosh$ est paire, $\sinh$ est impaire, $\tanh$ est impaire
+\end{defi}
+
+\begin{itemize}
+	\item $\cosh$ est paire, $\sinh$ est impaire, $\tanh$ est impaire
 	\item $ \cosh^2 t - \sinh^2 t = 1 $
 	\item $\cosh$ et $\sinh$ sont d\'{e}rivables sur $\mathbb{R}$: \\
 		$\cosh'$ $ = \sinh$ \\
 		$\sinh'$ $ = \cosh$
-	\newline
 	\item Formules: \\
 		$\cosh (a+b) = \cosh a\cosh b + \sinh a\sinh b$ \\
 		$\cosh (a-b) = \cosh a\cosh b - \sinh a\sinh b$ \\
@@ -84,12 +88,14 @@
 \end{itemize}
 
 \section{Fonctions trigonom\'etriques inverses}
-Th\'eor\`eme: Soit \(I\) un intervalle de \(\mathbb{R}, f: I \rightarrow \mathbb{R}\) continue et strictement monotone, alors:
-\begin{enumerate}
-	\item \(J = f(I) = \{f(t)|t \in I\}\) est aussi un intervalle
-	\item \(f\) induit une bijection de \(I\) sur \(J\)
-	\item L'application r\'eciproque \(g = \tilde{f}^{-1}:J \rightarrow I\) est continue, de strictement m\^eme monotonie que \(f\)
-\end{enumerate}
+\begin{theo}
+	Soit \(I\) un intervalle de \(\mathbb{R}, f: I \rightarrow \mathbb{R}\) continue et strictement monotone, alors:
+	\begin{enumerate}
+		\item \(J = f(I) = \{f(t)|t \in I\}\) est aussi un intervalle
+		\item \(f\) induit une bijection de \(I\) sur \(J\)
+		\item L'application r\'eciproque \(g = \tilde{f}^{-1}:J \rightarrow I\) est continue, de strictement m\^eme monotonie que \(f\)
+	\end{enumerate}
+\end{theo}
 De plus, si \(f\) d\'erivable sur \(I\), \\
 soit \(x_0 \in I\ et\ y_0 = f(x_0) \in J\). Si \(f'(x_0) \neq 0 \) alors \(g\) est d\'erivable en \(y_0\) et
 \(g'(y_0) = \frac{1}{f'(x_0)} = \frac{1}{f'(g(y_0))}\) \\

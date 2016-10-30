@@ -1,22 +1,65 @@
 \documentclass[fleqn]{article}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{verbatim}
 
 \title{Continuit\'e}
 \date{}
 
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+
 \begin{document}
 \maketitle
 
 \section{D\'efinitions}
-Soit $D \subset \mathbb{R}, f:D \rightarrow \mathbb{R}. x_0 \in D$. LASSE:
+\begin{theo}
+	Soit $D \subset \mathbb{R}, f:D \rightarrow \mathbb{R}. x_0 \in D$. LASSE:
+	\begin{enumerate}
+		\item $\forall V \in V_\mathbb{R}(f(x_0)), \exists U \in V_\mathbb{R}(x_0), f(U \cap D) \subset V$ [def. topologique]
+		\item $\forall \epsilon>0, \exists \alpha > 0, \forall x \in D, |x-x_0| \leq \alpha \Rightarrow |f(x) - f(x_0)| \geq \epsilon$
+		\item Pour toute suite $(u_n)$ de points de $D$ qui cv. vers $x_0$, la suite $(f(u_n))_{n\in\mathbb{N}}$ cv. vers $f(x_0)$
+		[def. s\'equentielle]
+	\end{enumerate}
+	On dit que $f$ est continue sur $D$ si pour tout $x_0 \in D$, f est continue en $x_0$
+\end{theo}
 \begin{enumerate}
-	\item $\forall V \in V_\mathbb{R}(f(x_0)), \exists U \in V_\mathbb{R}(x_0), f(U \cap D) \subset V$ [def. topologique]
-	\item $\forall \epsilon>0, \exists \alpha > 0, \forall x \in D, |x-x_0| \leq \alpha \Rightarrow |f(x) - f(x_0)| \geq \epsilon$
-	\item Pour toute suite $(u_n)$ de points de $D$ qui cv. vers $x_0$, la suite $(f(u_n))_{n\in\mathbb{N}}$ cv. vers $f(x_0)$ 
-	[def. s\'equentielle]
+	\item Fonctions lipschitziennes:
+		\begin{defi}
+			$f:D \rightarrow \mathbb{R}$ est lipschitzienne s'il existe $k \in \mathbb{R}_+$ tel que:
+			\[\forall x,y \in D, |f(x) - f(y)| \leq k|x-y|\]
+		\end{defi}
+	\item Fonctions uniform\'ement continues:
+		\begin{defi}
+			$f:D \rightarrow \mathbb{R}$ est UC si:
+			\[\forall \epsilon >0, \exists \alpha>0, \forall x,y \in D, |x-y| \leq \alpha \Rightarrow |f(x) - f(y)| \leq \epsilon\]
+		\end{defi}
 \end{enumerate}
-On dit que $f$ est continue sur $D$ si pour tout $x_0 \in D$, f est continue en $x_0$
+\begin{theo} Heine: \\
+	Soit $D \subset \mathbb{R}$ tel que $D$ ferm\'e, born\'e. Si $f:f \rightarrow \mathbb{R}$ est continue, alors $f$ est UC
+\end{theo}
+
+\section{Th\'eor\`emes fondamentaux}
+\begin{theo}
+	Image d'un ferm\'e born\'e par une application continue: \\
+	Soit $D \subset \mathbb{R}$, on suppose $D$ ferm\'e et born\'e, $f:D \rightarrow \mathbb{R}$ continue. Alors $f(D)$ est ferm\'e et born\'e
+	\begin{coro}
+		$f$ est born\'ee et atteint ses bornes
+	\end{coro}
+\end{theo}
+\begin{theo}
+	Valeurs interm\'ediaires: \\
+	Soit $I$ un intervalle non vide de $\mathbb{R}$ et $f:I \rightarrow \mathbb{R}$ continue:
+	\begin{enumerate}
+		\item alors $f(I)$ est un intervalle de $\mathbb{R}$
+		\item on suppose qu'il existent $a,b \in I, f(a) \geq 0$ et $f(b) \leq 0$ alors il exsite $c \in I$ tel que: $f(c) = 0$
+		\item si $f$ prend les valeurs $\alpha \leq \beta$, alors $f$ prend toute valeur interm\'ediaire entre $\alpha$ et $\beta$
+	\end{enumerate}
+\end{theo}
+\begin{theo}
+	L'image d'un segment par une application continue est un segment
+\end{theo}
 
 \end{document}
