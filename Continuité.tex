@@ -10,21 +10,22 @@
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
 \theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
 
 \begin{document}
 \maketitle
 
 \section{D\'efinitions}
-\begin{theo}
-	Soit $D \subset \mathbb{R}, f:D \rightarrow \mathbb{R}. x_0 \in D$. LASSE:
+\begin{defi}
+	Soit $D \subset \mathbb{R}, f:D \rightarrow \mathbb{R}.\ x_0 \in D$. LASSE:
 	\begin{enumerate}
-		\item $\forall V \in V_\mathbb{R}(f(x_0)), \exists U \in V_\mathbb{R}(x_0), f(U \cap D) \subset V$ [def. topologique]
-		\item $\forall \epsilon>0, \exists \alpha > 0, \forall x \in D, |x-x_0| \leq \alpha \Rightarrow |f(x) - f(x_0)| \geq \epsilon$
+		\item $\forall\ V \in V_\mathbb{R}(f(x_0)), \exists U \in V_\mathbb{R}(x_0), f(U \cap D) \subset V$ [def. topologique]
+		\item $\forall \epsilon>0, \exists \alpha > 0, \forall x \in D, |x-x_0| \leq \alpha \Rightarrow |f(x) - f(x_0)| \leq \epsilon$
 		\item Pour toute suite $(u_n)$ de points de $D$ qui cv. vers $x_0$, la suite $(f(u_n))_{n\in\mathbb{N}}$ cv. vers $f(x_0)$
 		[def. s\'equentielle]
 	\end{enumerate}
 	On dit que $f$ est continue sur $D$ si pour tout $x_0 \in D$, f est continue en $x_0$
-\end{theo}
+\end{defi}
 \begin{enumerate}
 	\item Fonctions lipschitziennes:
 		\begin{defi}
@@ -38,8 +39,19 @@
 		\end{defi}
 \end{enumerate}
 \begin{theo} Heine: \\
-	Soit $D \subset \mathbb{R}$ tel que $D$ ferm\'e, born\'e. Si $f:f \rightarrow \mathbb{R}$ est continue, alors $f$ est UC
+	Soit $D \subset \mathbb{R}$ tel que $D$ ferm\'e, born\'e. Si $f:D \rightarrow \mathbb{R}$ est continue, alors $f$ est UC
 \end{theo}
+\begin{rqs} $ $
+	\begin{enumerate}
+		\item Soit $f: D \rightarrow \mathbb{R}$ continue en un point $x_0 \in D$. Si $a, b \in \mathbb{R}$ sont tels que $a < f(x_0) < b$
+			alors: \\
+			$ \exists \alpha > 0$ tel que $\forall x \in D \cap [x_0 - \alpha, x_0 + \alpha], a < f(x) < b$
+		\item en particulier: \\
+			Si $f(x_0) > 0$, soit $m \in ]0, f(x_0)[$ alors il existe $\alpha >0$ tel que:
+			$\forall x \in D \cap [x_0 - \alpha, x_0 + \alpha], f(x) \geq m > 0$ \\
+			$f$ est minor\'ee par une constante $m>0$ au voisinage de $x_0$ (analogue pour $f(x_0) < 0$)
+	\end{enumerate}
+\end{rqs}
 
 \section{Th\'eor\`emes fondamentaux}
 \begin{theo}
@@ -60,6 +72,9 @@
 \end{theo}
 \begin{theo}
 	L'image d'un segment par une application continue est un segment
+\end{theo}
+\begin{theo}
+	Soit $I$ un intervalle non trivial de $\mathbb{R}, f:I \rightarrow \mathbb{R}$ continue et injective, alors $f$ est strictement monotone
 \end{theo}
 
 \end{document}
