@@ -1,0 +1,52 @@
+\documentclass[fleqn]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+
+\title{D\'eveloppements limit\'es}
+\date{}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+
+\begin{document}
+\maketitle
+
+\section{D\'efinitions}
+\begin{defi}
+	Soit $I$ un intervalle de $\mathbb{R}$, $f:\rightarrow \mathbb{R},\ x_0 \in I,\ n \in \mathbb{N}$ \\
+	On dira que f admet un DL \`a l'ordre n au voisinage de $x_0$ s'il existe $a_0, \hdots, a_n \in \mathbb{R}$ tel que: \\
+	\[f(x) - (a_0 + a_1(x-x_0) + \hdots + a_n(x-x_0)^n) = o((x-x_0)^n)\]
+\end{defi}
+
+\begin{prop} unicit\'e des coefficients \\
+	Si $f$ a un $DL_n(x_0)$, il existe une unique liste $(a_0, \hdots, a_n) \in \mathbb{R}^{n+1}$ tel que au voisinage de $x_0$,
+	\[f(x) = \sum_{i=0}^{n} a_i(x-x_0)^i  + o((x-x_0)^n)\]
+\end{prop}
+
+\begin{rqs}
+	$\ $
+	\begin{enumerate}
+		\item Multiplication \'el\'ementaire: \\
+		$f: I \rightarrow \mathbb{R}$, on suppose f admet un $DL_n(0)$, soit $\lambda \in \mathbb{R}, \alpha \in \mathbb{Z}^{*}$ \\
+		$\lambda x^{\alpha} f(x) = \lambda a_0 x^{\alpha} + \hdots + \lambda a_n x^{\alpha+n} + o(x^{\alpha + n})$
+		\item Composition \'el\'ementaire: \\
+		$f: I \rightarrow \mathbb{R}$, on suppose f admet un $DL_n(0)$, soit $\lambda \in \mathbb{R}, \alpha \in \mathbb{N}^*$ \\
+		$f(\lambda x^{\alpha}) = a_0 + a_1 \lambda x^{\alpha} + \hdots + \lambda ^n a_n x^{\alpha n} + o(x^{\alpha n})$
+	\end{enumerate}
+\end{rqs}
+
+\begin{theo} Int\'egration des DL \\
+	$f: I \rightarrow \mathbb{R}$, f d\'erivable. \\
+	Supposons que $f'$ admet un $DL_n(0)$: au voisinage de $x_0$, \\
+	$f'(x) = a_0 + \hdots + a_n x^{n} + o(x^n)$ \\
+	Alors, au voisinage de $0$: 
+	\[f(x) = f(0) + a_0 x + a_1 \frac{x^2}{2} + \hdots + a_n \frac{x^{n+1}}{n+1} + o(x^{n+1})\]
+\end{theo}
+
+
+\end{document}

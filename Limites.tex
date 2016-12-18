@@ -15,7 +15,7 @@
 \begin{document}
 \maketitle
 
-\section{Topologie dans $\mathbb{R}$}
+\section{Topologie dans $\overline{\mathbb{R}}$}
 \begin{defi}
 	$\overline{\mathbb{R}} = \mathbb{R} \cup \{ +\infty, -\infty\}$
 \end{defi}
@@ -47,9 +47,9 @@
 		\item si $x \in \mathbb{R}$ alors: \\
 			$x$ adh\'erent \`a $D$ dans $\overline{\mathbb{R}} \Leftrightarrow x$ adh\'erent \`a $D$ dans $\mathbb{R}$
 		\item si $x = +\infty,$ \\
-			$+\infty$ adh\'erent \`a $D$ dans $\overline{\mathbb{R}} \Leftrightarrow D$ non major\'ee dans $\mathbb{R}$
+			$x$ adh\'erent \`a $D$ dans $\overline{\mathbb{R}} \Leftrightarrow D$ non major\'ee dans $\mathbb{R}$
 		\item si $x = -\infty,$ \\
-			$-\infty$ adh\'erent \`a $D$ dans $\overline{\mathbb{R}} \Leftrightarrow D$ non minor\'ee dans $\mathbb{R}$
+			$x$ adh\'erent \`a $D$ dans $\overline{\mathbb{R}} \Leftrightarrow D$ non minor\'ee dans $\mathbb{R}$
 	\end{enumerate}
 \end{rqs}
 \begin{adh}
@@ -59,5 +59,52 @@
 \end{adh}
 
 \section{Notion de limite}
+\begin{defi}
+	Soit $D \subset \mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a $D, l \in \overline{\mathbb{R}}, f: D \rightarrow \mathbb{R}$. LASSE
+	\begin{enumerate}
+		\item $\forall\ V \in V_{\overline{\mathbb{R}}}(l), \exists U \in V_{\overline{\mathbb{R}}}(a), f(U \cap D) \subset V$ [topologique]
+		\item Pour toute $(x_n)$ de points de $D$ telle que $x_n \rightarrow a$ on a $f(x_n) \rightarrow l $ [s\'equentielle]
+	\end{enumerate}
+\end{defi}
+$ $ \\
+\begin{enumerate}
+	\item Lien entre limite et continuit\'e: \\
+		$D \subset \mathbb{R}, x_0 \in D, f:D \rightarrow \mathbb{R}$
+		\begin{enumerate}
+			\item La seule limite possible de $f$ en $x_0$ est $f(x_0)$
+			\item $f$ admet une limite en $x_0 \Leftrightarrow f(x) \rightarrow f(x_0) \Leftrightarrow f$ est continue en $x_0$
+		\end{enumerate}
+	\item Supposons $lim_{x \to a} f(x) \rightarrow l$ avec $l \neq -\infty$, alors si $m \in \mathbb{R}, m < l$, on a $f(x) \geq m$
+		sur voisinage de $a$
+	\item Prolongement par continuit\'e: \\
+		$D \subset \mathbb{R}, x_0 \in D, f:D \backslash \{x_0\} \rightarrow \mathbb{R}$ continue \\
+		On suppose $x_0$ adh\'erent \`a $D \backslash \{x_0\}$, on suppose que $f$ admet une limite finie $l \in \mathbb{R}$ en $x_0$. \\
+		Si on pose $g: D \rightarrow \mathbb{R}$ tel que $x \mapsto l$ si $x = x_0$, $x \mapsto f(x)$ si $x \neq x_0$ \\
+		Alors g est continue sur $D$. On dit qu'on a prolong\'e f par continuit\'e en $x_0$
+	\item Limites \`a gauche et \`a droite: \\
+		$D \subset \mathbb{R}, x_0 \in \mathbb{R}, f:D \rightarrow \mathbb{R}$ \\
+		$D^+ = D \cap ]x_0, +\infty[$ \\
+		$D^- = D \cap ]-\infty, x_0[$ \\
+		On suppose que $x_0$ est adh\'erent \`a $D^+$ et $D^-$. On note: \\
+		$f^+ = f_{|D^+}$ \\
+		$f^- = f_{|D^-}$
+		\begin{defi}
+			si $f^+$ admet une limite en $x_0$, on dit que f admet une limite \`a droite en $x_0$. De m\^eme pour la gauche
+		\end{defi}
+		\begin{enumerate}
+			\item Supposons que f admet en $x_0$ une limite $l \in \overline{\mathbb{R}}$. $f$ admet alors $l$ comme limite \`a droite
+				et \`a gauche de $x_0$.
+				\begin{rqs}
+					Si $f$ n'a pas de limite \`a droite (resp. gauche) en $x_0, f$ n'a pas de limite en $x_0$. \\
+					Si $f$ admet en $x_0$ des limites \`a droite et \`a gauche diff\'erentes, $f$ n'a pas de limite en $x_0$
+				\end{rqs}
+			\item Supposons que $f$ admet en $x_0$ des limites \`a droite et \`a gauches \'egales \`a $l$. \\
+				Si $x_0 \notin D, lim_{x \to x_0} f(x) \rightarrow l$ \\
+				Si $x_0 \in D$, la seule limite possible pour $f$ en $x_0$ est $f(x_0)$ donc si $l \neq f(x_0), f$ n'admet pas de limite
+				en $x_0$
+		\end{enumerate}
+\end{enumerate}
+
+\section{Th\'eor\`emes g\'en\'eraux}
 
 \end{document}
