@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{verbatim}
+\usepackage{booktabs}
 
 \title{\'Equivalents}
 \date{}
@@ -10,6 +11,8 @@
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
 \theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.3}
 
 \begin{document}
 \maketitle
@@ -37,9 +40,21 @@ Soit $D$ une partie de $\mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a 
 \end{rqs}
 
 \begin{theo}
-	Supposons que $f(x)_{x \to a} \sim g(x)$\\
+	Supposons que $f(x)\underset{a}{\sim} g(x)$\\
 	Alors, f et g on m\^eme signe au voisinage de a et s'annulent simultan\'ement. De plus, si g admet une limite en a alors f aussi
 \end{theo}
+
+\section{\'Equivalents classiques}
+\begin{tabular}{@{}ll@{}}
+	%\toprule
+		$\sin x \underset{0}{\sim} x$ & $\arcsin x \underset{0}{\sim} x$ \\
+		$\tan x \underset{0}{\sim} x$ & $\arctan x \underset{0}{\sim} x$ \\
+		$1 - \cos x \underset{0}{\sim} \frac{x^2}{2}$ & $\ln(1+x) \underset{0}{\sim} x$ \\
+		$\ln x \underset{1}{\sim} x-1$ & $e^x -1 \underset{0}{\sim} x$ \\
+		$(a+x)^{\alpha} -1 \underset{0}{\sim} \alpha x$ & $\sqrt{1+x} - 1 \underset{0}{\sim} \frac{x}{2}$ \\
+		$\cos x \underset{0}{\sim} 1$ & $\sqrt{1+x} \underset{0}{\sim} 1$
+	%\bottomrule
+\end{tabular}
 
 \section{Faits de base}
 \begin{itemize}
@@ -51,14 +66,14 @@ Soit $D$ une partie de $\mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a 
 	\item l'\'equivalence est r\'eflexive, sym\'etrique et transitive
 	\item $f_1(x) \sim g_1(x)$\\
 		$f_2(x) \sim g_2(x)$\\
-		Alors, $f_1(x)f_2(x) \sim g_1(x)g_2(x)$ et si $f_2(x), g_2(x) \neq 0$ au voisinage de a, $\frac{f_1(x)}{f_2(x)} \sim
+		Alors, $f_1(x)f_2(x) \sim g_1(x)g_2(x)$ \\et si $f_2(x), g_2(x) \neq 0$ au voisinage de a, $\frac{f_1(x)}{f_2(x)} \sim
 		\frac{g_1(x)}{g_2(x)}$
 \end{itemize}
 
 \begin{theo} Composition(\`a droite)\\
 	$f,g: D \rightarrow \mathbb{R}, a \in Adh_{\overline{\mathbb{R}}}(D), \varphi: B \rightarrow D, b \in Adh_{\overline{\mathbb{R}}}(B)$ \\
-	On suppose $\lim_{t \to b}\varphi(t) = a$ et $f(x)_{x \to a} \sim g(x)$, alors 
-	\[f(\varphi(t))_{t \to b} \sim g(\varphi(t))\]
+	On suppose $\lim_{t \to b}\varphi(t) = a$ et $f(x)\underset{a}{\sim} g(x)$, alors
+	\[f(\varphi(t))\underset{b}{\sim} g(\varphi(t))\]
 
 \end{theo}
 
