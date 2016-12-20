@@ -18,13 +18,13 @@
 
 \section{D\'efinitions}
 \begin{defi}
-	Soit $I$ un intervalle de $\mathbb{R}$, $f:\rightarrow \mathbb{R},\ x_0 \in I,\ n \in \mathbb{N}$ \\
+	Soit $I$ un intervalle de $\mathbb{R}$, $f:I \rightarrow \mathbb{R},\ x_0 \in I,\ n \in \mathbb{N}$ \\
 	On dira que f admet un DL \`a l'ordre n au voisinage de $x_0$ s'il existe $a_0, \hdots, a_n \in \mathbb{R}$ tel que: \\
-	\[f(x) - (a_0 + a_1(x-x_0) + \hdots + a_n(x-x_0)^n) = o((x-x_0)^n)\]
+	\[f(x) - (a_0 + a_1(x-x_0) + \hdots + a_n(x-x_0)^n) \underset{x \rightarrow x_0}{=} o((x-x_0)^n)\]
 \end{defi}
 
 \begin{prop} unicit\'e des coefficients \\
-	Si $f$ a un $DL_n(x_0)$, il existe une unique liste $(a_0, \hdots, a_n) \in \mathbb{R}^{n+1}$ tel que au voisinage de $x_0$,
+	Si $f$ admet un $DL_n(x_0)$, il existe une unique liste $(a_0, \hdots, a_n) \in \mathbb{R}^{n+1}$ tel qu'au voisinage de $x_0$,
 	\[f(x) = \sum_{i=0}^{n} a_i(x-x_0)^i  + o((x-x_0)^n)\]
 \end{prop}
 
@@ -41,12 +41,64 @@
 \end{rqs}
 
 \begin{theo} Int\'egration des DL \\
-	$f: I \rightarrow \mathbb{R}$, f d\'erivable. \\
-	Supposons que $f'$ admet un $DL_n(0)$: au voisinage de $x_0$, \\
-	$f'(x) = a_0 + \hdots + a_n x^{n} + o(x^n)$ \\
-	Alors, au voisinage de $0$: 
+	$f: I \rightarrow \mathbb{R}$, f d\'erivable. Supposons que $f'$ admet un $DL_n(0)$: au V(0)\\
+	$f'(x) = a_0 + \hdots + a_n x^{n} + o(x^n)$, alors:
 	\[f(x) = f(0) + a_0 x + a_1 \frac{x^2}{2} + \hdots + a_n \frac{x^{n+1}}{n+1} + o(x^{n+1})\]
 \end{theo}
+
+\begin{theo} D\'erivation des DL \\
+	On obtient la partie r\'eguli\`ere du $DL_n(0)$ de $f'$ en d\'erivant la partie r\'eguli\`ere du $DL_{n+1}(0)$ de $f$
+\end{theo}
+
+\section{Op\'erations sur les DL}
+\begin{theo} Combinaison lin\'eaire\\
+	$f,g: I \rightarrow \mathbb{R}$ admettent des $DL_n(0)$ de parties r\'eguli\`eres respectives $P$ et $Q$. \\
+	Alors, $\lambda \in \mathbb{R},\ \lambda f + g$ admet un $DL_n(0)$ dont la partie r\'eguli\`ere est $\lambda P + Q$
+\end{theo}
+
+\begin{theo} Produit \\
+	$f,g: I \rightarrow \mathbb{R}$ admettent des $DL_n(0)$ de parties r\'eguli\`eres respectives $P$ et $Q$. \\
+	Alors $fg$ admet un $DL_n(0)$ dont la partie r\'eguli\`ere est le polyn\^ome $PQ$ tronqu\'e au degr\'e n
+\end{theo}
+
+\begin{theo} Composition \\
+	$g: J \rightarrow \mathbb{R}$ admet un $DL_n(0)$ de partie r\'eguli\`ere $Q$ \\
+	$f: I \rightarrow J$ v\'erifie que $f(0) = 0$ et admet un $DL_n(0)$ de partie r\'eguli\`ere $P$ \\
+	Alors, $g \circ f$ admet un $DL_n(0)$ dont la partie r\'eguli\`ere est le polyn\^ome $Q \circ P$ tronqu\'e au degr\'e n
+\end{theo}
+
+\begin{theo} Appliquation d'un inverse \\
+	$f: I \rightarrow \mathbb{R}$ admet un $DL_n(0)$ et $f(0) \neq 0$ \\
+	Alors $\frac{1}{f}$ admet aussi un $DL_n(0)$ obtenu en composant les DL de $u \mapsto \frac{1}{1+u}$ et $x \mapsto g(x)$
+	\[\frac{1}{f(x)} = \frac{1}{a_0} \frac{1}{1 + g(x)}\]
+\end{theo}
+
+\section{Utilisation des DL}
+\begin{enumerate}
+	\item Recherche d'\'equivalents et de limites \\
+		$f: I \rightarrow \mathbb{R}, x_0 \in I$, f admet un $DL_n(x_0)$ \\
+		$f(x) =  a_0 + a_1(x-x_0) + \hdots + a_n(x-x_0)^n + o((x-x_0)^n)$ \\
+		On suppose qu'au moins un des $a_i$ n'est pas nul. Soit $p$ le minimum de l'ensemble des $a_i$ non nuls. \\
+		Alors $f(x) \underset{x_0}{\sim} a_p(x-x_0)^p$
+	\item Recherche d'asymptotes \\
+		Pour trouver une aymptote essaie de faire un developpement asymptotique de $x \mapsto \frac{f(x)}{x}$ au $V(+\infty)$, ce qui revient
+		\`a faire un $DL(0)$ de $\varphi \mapsto h f(\frac{1}{h})$. \\
+		Ainsi on effectue une composition \'el\'ementaire par l'inverse de $\varphi$ puis on multiplie par $x$.
+\end{enumerate}
+
+\section{DL classiques}
+\begin{itemize}
+	\item $\sin x = x - \frac{x^3}{6} + \frac{x^5}{120} + \hdots + (-1)^n \frac{x^{2n+1}}{(2n+1)!} + o(x^{2n+1})$
+	\item $\cos x = 1 - \frac{x^2}{2} + \frac{x^4}{24} + \hdots + (-1)^n \frac{x^{2n}}{(2n)!} + o(x^{2n})$
+	\item $\sinh x = x + \frac{x^3}{6} + \frac{x^5}{120} + \hdots + \frac{x^{2n+1}}{(2n+1)!} + o(x^{2n+1})$
+	\item $\cosh x = 1 + \frac{x^2}{2} + \frac{x^4}{24} + \hdots + \frac{x^{2n}}{(2n)!} + o(x^{2n})$
+	\item $e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \hdots + \frac{x^n}{n!} + o(x^n)$
+	\item $\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} + \hdots + (-1)^{n-1} \frac{x^n}{n} + o(x^n)$
+	\item $(1+x)^{\alpha} = 1 + \alpha x + \frac{\alpha(\alpha -1)}{2} x^2 + \hdots + \frac{\alpha(\alpha-1)\hdots(\alpha-n+1)}{n!} x^n
+		+ o(x^n)$
+	\item $\frac{1}{1-x} = 1 + x + \hdots + x^n + o(x^n)$
+	\item $\frac{1}{1+x} = 1 - x + x^2 + \hdots + (-1)^n x^n + o(x^n)$
+\end{itemize}
 
 
 \end{document}

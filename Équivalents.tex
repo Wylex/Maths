@@ -21,19 +21,19 @@
 Soit $D$ une partie de $\mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a $D$, $f,g: D \rightarrow \mathbb{R}$
 \begin{enumerate}
 	\item f n\'egligeable devant g au voisinage de a: \\
-		$\exists\ U \in V_{\overline{\mathbb{R}}}(a), \epsilon: U \cap D \rightarrow \mathbb{R}$ tel que $\lim_{x \to a}\epsilon(x) = 0$ et
-		$\forall t \in U \cap D, f(t)=\epsilon(t)g(t)$
+		$\exists\ U \in V_{\overline{\mathbb{R}}}(a), \epsilon: U \cap D \rightarrow \mathbb{R}$ tel que
+		$\epsilon(x)\underset{a}{\rightarrow}  0$ et $\forall t \in U \cap D, f(t)=\epsilon(t)g(t)$
 	\item f domin\'ee par g au voisinage de a: \\
 		$\exists\ U \in V_{\overline{\mathbb{R}}}(a), \omega: U \cap D \rightarrow \mathbb{R}$ tel que $\omega$ born\'ee et
 		$\forall t \in U \cap D, f(t)=\omega(t)g(t)$
 	\item f \'equivalent \`a g au voisinage de a: \\
-		$\exists\ U \in V_{\overline{\mathbb{R}}}(a), \varphi: U \cap D \rightarrow \mathbb{R}$ tel que $\lim_{x \to a}\varphi(x) = 1$ et
-		$\forall t \in U \cap D, f(t)=\varphi(t)g(t)$
+		$\exists\ U \in V_{\overline{\mathbb{R}}}(a), \varphi: U \cap D \rightarrow \mathbb{R}$ tel que $\varphi(x)\underset{a}{\rightarrow} 1$
+		et $\forall t \in U \cap D, f(t)=\varphi(t)g(t)$
 \end{enumerate}
 
 \begin{rqs} $ $
 	\begin{enumerate}
-		\item Une fonction n'est \'equivalente, domin\'ee ou n\'egligeable par 0 que si elle est vraiment nulle sur le voisinage
+		\item Une fonction n'est \'equivalente, domin\'ee ou n\'egligeable par 0 que si elle est nulle sur le voisinage
 		\item $f(x) = \circ(1)$ signifie que $f(x) \rightarrow 0$
 		\item Soit $l \in \mathbb{R}^{*}, f(x) \sim l \Leftrightarrow f(x) \rightarrow l$
 	\end{enumerate}
@@ -46,19 +46,17 @@ Soit $D$ une partie de $\mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a 
 
 \section{\'Equivalents classiques}
 \begin{tabular}{@{}ll@{}}
-	%\toprule
 		$\sin x \underset{0}{\sim} x$ & $\arcsin x \underset{0}{\sim} x$ \\
 		$\tan x \underset{0}{\sim} x$ & $\arctan x \underset{0}{\sim} x$ \\
 		$1 - \cos x \underset{0}{\sim} \frac{x^2}{2}$ & $\ln(1+x) \underset{0}{\sim} x$ \\
 		$\ln x \underset{1}{\sim} x-1$ & $e^x -1 \underset{0}{\sim} x$ \\
 		$(a+x)^{\alpha} -1 \underset{0}{\sim} \alpha x$ & $\sqrt{1+x} - 1 \underset{0}{\sim} \frac{x}{2}$ \\
-		$\cos x \underset{0}{\sim} 1$ & $\sqrt{1+x} \underset{0}{\sim} 1$
-	%\bottomrule
+		$\cos x \underset{0}{\sim} 1$ & $\sqrt{1+x} \underset{0}{\sim} 1$ \\
 \end{tabular}
 
 \section{Faits de base}
 \begin{itemize}
-	\item $f_1(x) = \circ (g(x))$ \\
+	\item $f_1(x) = \circ (g(x))$\\
 		$f_2(x)	= \circ (g(x))$ \\
 		Alors $\forall \alpha \in \mathbb{R}, \alpha f_1(x) + f_2(x) = \circ (g(x))$
 	\item $f(x) \sim g(x) \Leftrightarrow f(x) - g(x) = \circ (g(x))$
@@ -70,16 +68,16 @@ Soit $D$ une partie de $\mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a 
 		\frac{g_1(x)}{g_2(x)}$
 \end{itemize}
 
-\begin{theo} Composition(\`a droite)\\
+\begin{theo} Composition (\`a droite)\\
 	$f,g: D \rightarrow \mathbb{R}, a \in Adh_{\overline{\mathbb{R}}}(D), \varphi: B \rightarrow D, b \in Adh_{\overline{\mathbb{R}}}(B)$ \\
-	On suppose $\lim_{t \to b}\varphi(t) = a$ et $f(x)\underset{a}{\sim} g(x)$, alors
+	On suppose $\varphi(x)\underset{t\rightarrow b}{\rightarrow} a$ et $f(x)\underset{a}{\sim} g(x)$, alors
 	\[f(\varphi(t))\underset{b}{\sim} g(\varphi(t))\]
 
 \end{theo}
 
 \begin{rqs}
 	La composition \`a gauche marche si on \'el\'eve les fonction \`a une puissance $\alpha \in \mathbb{R}$ ou si on compose par $\ln$ avec la
-	fonction g qui tend vers $0$ ou $\infty$
+	fonction g qui tend vers $0$ ou $+\infty$
 \end{rqs}
 
 \end{document}
