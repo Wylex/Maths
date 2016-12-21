@@ -1,0 +1,108 @@
+\documentclass[fleqn]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+
+\title{D\'eriv\'ees}
+\date{}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.3}
+
+\begin{document}
+\maketitle
+
+\section{D\'efinition}
+\begin{defi}
+	Soit I un intervalle non trivial de $\mathbb{R},\ x_0 \in I, f:I \rightarrow \mathbb{R}$. On note $\Phi_{x_0, f}$ l'application
+	\begin{align*}
+		I\backslash\{x_0\} &\rightarrow \mathbb{R} \\
+		x &\mapsto \frac{f(x) - f(x_0)}{x - x_0}
+	\end{align*}
+	On dit que f est d\'erivable au point $x_0$ si $\Phi_{x_0, f}$ admet une limite finie en $x_0$
+\end{defi}
+
+\begin{rqs}
+	$\frac{f(x) - f(x_0)}{x - x_0} \underset{x_0}{\rightarrow} l \Leftrightarrow \frac{f(x_0 + t) - f(x_0)}{t} \underset{0}{\rightarrow} l$
+\end{rqs}
+
+\begin{prop}
+	f d\'erivable en $x_0 \Rightarrow f$ continue en $x_0$
+\end{prop}
+
+\section{Th\'eor\`emes g\'en\'eraux}
+\begin{theo}
+	$f,g: I \rightarrow \mathbb{R}, x_0 \in I, \alpha \in \mathbb{R}$. On suppose f et g d\'erivables en $x_0$
+	\begin{enumerate}
+		\item $\alpha f + g$ est d\'erivable en $x_0$ et $(\alpha f + g)' = \alpha f' + g'$
+		\item $fg$ est d\'erivable en $x_0$ et $(fg)' = f'g + fg'$
+		\item On suppose que g ne s'annule pas sur I:\\
+			$\frac{1}{g}$ est d\'erivable en $x_0$ et $(\frac{1}{g})' = \frac{-g'}{g^2}$
+	\end{enumerate}
+\end{theo}
+
+\begin{theo} Composition\\
+	$I,J$ deux intervalles non triviaux de $\mathbb{R}$, $f:I\rightarrow J,\ g:J \rightarrow \mathbb{R}$ \\
+	Si $f \in D(I, \mathbb{R}),\ g \in D(J, \mathbb{R})$ alors $g\circ f \in D(I, \mathbb{R})$ et $(g\circ f)' = f' \times g'\circ f$
+\end{theo}
+
+\begin{theo} D\'eriv\'ee d'une r\'eciproque\\
+	Soit I un intervalle de $\mathbb{R}, x_0 \in I,\ f:I\rightarrow \mathbb{R}$ continue, strictement monotone. On sait que f induit une
+	bijection de I sur $J=f(I)$ dont on note g la r\'eciproque. \\
+	On suppose que f est d\'erivable sur I et $f'$ ne s'annule pas. alors, g est d\'erivable sur J et:
+	\[\forall y \in J, g'(y) = \frac{1}{f'(g(y))}\]
+\end{theo}
+
+\section{Rolle, TAF}
+\begin{theo} Rolle\\
+	Soient $a, b \in \mathbb{R}$ tels que $a < b$, $f:[a,b] \rightarrow \mathbb{R}$ continue sur $[a,b]$, d\'erivable sur $]a,b[$ et telle que $f(a) = f(b)$. Alors il existe $c \in ]a,b[$
+	tel que \[f'(c) = 0\]
+\end{theo}
+
+\begin{theo} TAF\\
+	Soient $a, b \in \mathbb{R}$ tels que $a < b$,  $f:[a,b] \rightarrow \mathbb{R}$ continue sur $[a,b]$, d\'erivable sur $]a,b[$.
+	Alors il existe $c \in ]a,b[$ tel que:
+	\[f(b) - f(a) = (b-a)f'(c)\]
+\end{theo}
+
+\subsection{Cons\'equences du TAF}
+\begin{theo} $ $\\
+	Soit I un intervalle de $\mathbb{R}, f:I \rightarrow$ d\'erivable. Alors:
+	\[\text{f constante }\Leftrightarrow f' = 0\]
+\end{theo}
+
+\begin{theo} $ $ \\
+	Soit I un intervalle de $\mathbb{R},\ f \in D(I, \mathbb{R})$
+	\begin{enumerate}
+		\item f es croissante $\Leftrightarrow f' \geq 0$
+		\item $f' > 0 \Rightarrow $ f strictement croissante
+		\item f strictement croissante $\Leftrightarrow f' \geq 0$ et $Int(\{x\in I /f'(x) = 0\}) = \emptyset$
+	\end{enumerate}
+\end{theo}
+
+\begin{theo} In\'egalit\'es des accroissements finis
+	\begin{enumerate}
+		\item $a<b, f:[a,b] \rightarrow \mathbb{R}$ continue sur $[a,b]$, d\'erivable sur $]a,b[$.\\
+			On suppose $\exists m,M \in \mathbb{R}, \forall t \in ]a,b[, m \leq f'(t) \leq M$ Alors:
+			\[m(b-a) \leq f(b) - f(a) \leq M(b-a)\]
+		\item I un intervalle de $\mathbb{R}, f:I \rightarrow \mathbb{R}$ continue sur I, d\'erivable sur $Int(I)$.\\
+			On suppose $\exists M\geq 0, \forall t \in Int(I), |f'(t)| \leq M$. Alors,
+			\[\forall x,y \in I, |f(x) - f(y)| \leq M|x-y|\]
+		\item $a,b \in \mathbb{R}, a<b. f,g:[a,b] \rightarrow \mathbb{R}$ continue sur $[a,b]$, d\'erivable sur $]a,b[$.\\
+			On suppose $\forall t \in ]a,b[, |f'(t)| \leq g'(t)$ Alors,
+			\[|f(b) - f(a)| \leq g(b) - g(a)\]
+	\end{enumerate}
+\end{theo}
+
+\begin{theo} Limite de la d\'eriv\'ee \\
+	Soit I un intervalle de $\mathbb{R}, x_0 \in I,\ f:I\rightarrow \mathbb{R}$ continue sur I, d\'erivable sur $I\backslash{x_0}$.\\
+	On suppose que $f'(x) \underset{x \rightarrow x_0}{\rightarrow} l \in \mathbb{R}$ alors, f est d\'erivable en $x_0$ et $f'(x_0) = l$
+\end{theo}
+
+\end{document}

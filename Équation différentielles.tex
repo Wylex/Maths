@@ -66,10 +66,10 @@ Soit une \'equation du type (E): $\alpha(x)y' + \beta(x)y = \gamma(x)$
 				f est solution de $(E_0) \Leftrightarrow \exists \lambda \in \mathbb{R}, \forall t \in I, f(t) = \lambda e^{-A(t)}$
 			\item Solution de (E) (solution particuli\`ere)
 				\begin{align*}
-					\text{f solution de} (E) &\Leftrightarrow \underset{f'}{(\lambda ' e^{-A} - a \lambda e^{-A})} +
-					\underset{af}{a \lambda e^{-A}} = b\\
-					&\Leftrightarrow \lambda ' e^{-A} = b \\
-					&\Leftrightarrow \lambda ' = be^A
+					\text{f solution de} (E) &\Leftrightarrow \underset{f'}{(\lambda'(x) e^{-A} - a \lambda(x) e^{-A})} +
+					\underset{af}{a \lambda(x) e^{-A}} = b\\
+					&\Leftrightarrow \lambda'(x) e^{-A} = b \\
+					&\Leftrightarrow \lambda'(x) = be^A
 				\end{align*}
 				En notant B une primitive de $be^A$ on voit que $Be^A$ est solution de E. On d\'eduit que:\\
 				\[S = Be^{-A} + S_0 = \{t\in I \mapsto (\lambda + B(t))e^{-A(t)}/ \lambda \in \mathbb{R}\}\]
@@ -85,7 +85,7 @@ Soit une \'equation du type (E): $\alpha(x)y' + \beta(x)y = \gamma(x)$
 				$J_+ = I \cap ]x_0, +\infty[$\\
 				$J_- = I \cap ]-\infty, x_0[$
 			\item $\alpha$ est continue sur $J_+$ et $J_-$ et ne s'annule pas. On sait donc trouver les solutions (E) sur ces intervalles.
-			\item Pour trouver les solutions sur I: nous avons $\beta(x_0)f(x_0) = \gamma(x_0)$ ce qui peur imposer certaines conditions. Il faut
+			\item Pour trouver les solutions sur I: nous avons $\beta(x_0)f(x_0) = \gamma(x_0)$ ce qui peut imposer certaines conditions. Il faut
 				ainsi tenter de raccorder ces solutions en $x_0$:
 				\begin{itemize}
 					\item f doit \^etre continue en $x_0$ donc $lim_{x_0^-} f = f(x_0) = lim_{x_0^+}$

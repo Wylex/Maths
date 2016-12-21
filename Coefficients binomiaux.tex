@@ -8,6 +8,7 @@
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
 
 \begin{document}
 \maketitle
@@ -18,44 +19,50 @@
 	\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} \]
 \end{defi}
 \begin{itemize}
-		\item Par convention, si \(k>n, \binom{n}{k} = 0\) \\
-		Pour tout \(n \in \mathbb{N}:\) \\
-		\(\binom{n}{0} = 1 = \binom{n}{n}\) \\
-		\(\binom{n}{1} = n = \binom{n}{n-1}\) \\
-		\(\binom{n}{k} = \binom{n}{n-k}\) (sym\'etrie)
-	\item pour \(n \in \mathbb{N}\ et\ k \in [\![0,n]\!]\): \\
-		\[\binom{n}{k+1} = \frac{n-k}{k+1} \times \binom{n}{k} \] \\
-		\[\binom{n+1}{k+1} = \frac{n+1}{k+1} \times \binom{n}{k} \]
-	\item Pascal (\(n \in \mathbb{N}, k \in \mathbb{N}\)): \\
-		\[\binom{n+1}{k+1} = \binom{n}{k} + \binom{n}{k+1}\]
-	\item Th\'{e}or\`{e}me: pour tout \(k,n \in \mathbb{N}, \binom{n}{k} \in \mathbb{N}\) \\
-	\item Bin\^{o}me de Newton (\(a,b \in \mathbb{C}, n \in \mathbb{N}\)): \\
-		\[(a+b)^n = \sum_{k=0}^{n} \binom{n}{k}a^kb^{n-k}\]
-	\item Propri\'{e}t\'{e}: \(n \in \mathbb{N}^*, k \in [\![1,n]\!]\): \\
-		\[k\binom{n}{k} = n\binom{n-1}{k-1}\] \\
-	\subsection{Applications}
-	\begin{itemize}
-		\item Soit \(p\) un nombre premier, \(k \in [\![1,p-1]\!]\) alors \(p\) divise \(\binom{p}{k}\) \\
-		\item Propri\'{e}t\'{e}: \(a,b \in \mathbb{Z}\): \\
-			\[(a+b)^p \equiv a^p + b^p \pmod{p}\]
-			De fa\c{c}on plus g\'en\'erale, pour \(n \in \mathbb{N}^*, a_1, \hdots, a_n \in \mathbb{Z}\): \\
-			\[(a_1+\hdots+a_n)^p \equiv a_1^p+\hdots+a_n^p \pmod{p}\]
-		\item petit th\'eor\`eme de Fermat (si \(p\) ne divise pas \(n\)): \\
-			\[n^{p-1} \equiv 1\pmod{p} \]
-	\end{itemize}
+	\item Par convention, si $k>n, \binom{n}{k} = 0$
+	\item Pour tout \(n \in \mathbb{N}:\) \\
+		$\binom{n}{0} = 1 = \binom{n}{n}$ \\
+		$\binom{n}{1} = n = \binom{n}{n-1}$ \\
+		$\binom{n}{k} = \binom{n}{n-k}$ (sym\'etrie)
+\end{itemize}
+\begin{prop} pour \(n \in \mathbb{N}\ et\ k \in [\![0,n]\!]\):
+	\[\binom{n}{k+1} = \frac{n-k}{k+1} \times \binom{n}{k} \]
+	\[\binom{n+1}{k+1} = \frac{n+1}{k+1} \times \binom{n}{k} \]
+\end{prop}
+\begin{theo} Pascal (\(n \in \mathbb{N}, k \in \mathbb{N}\)): \\
+	\[\binom{n+1}{k+1} = \binom{n}{k} + \binom{n}{k+1}\]
+\end{theo}
+\begin{theo}
+	Pour tout \(k,n \in \mathbb{N}, \binom{n}{k} \in \mathbb{N}\)
+\end{theo}
+\begin{theo} Bin\^{o}me de Newton (\(a,b \in \mathbb{C}, n \in \mathbb{N}\)):
+	\[(a+b)^n = \sum_{k=0}^{n} \binom{n}{k}a^kb^{n-k}\]
+\end{theo}
+\begin{prop} \(n \in \mathbb{N}^*, k \in [\![1,n]\!]\): \\
+	\[k\binom{n}{k} = n\binom{n-1}{k-1}\] \\
+\end{prop}
+
+\subsection{Applications}
+\begin{itemize}
+	\item Soit \(p\) un nombre premier, \(k \in [\![1,p-1]\!]\) alors \(p\) divise \(\binom{p}{k}\)
+	\item Propri\'{e}t\'{e}: \(a,b \in \mathbb{Z}\):
+		\[(a+b)^p \equiv a^p + b^p \pmod{p}\]
+		De fa\c{c}on plus g\'en\'erale, pour \(n \in \mathbb{N}^*, a_1, \hdots, a_n \in \mathbb{Z}\):
+		\[(a_1+\hdots+a_n)^p \equiv a_1^p+\hdots+a_n^p \pmod{p}\]
+	\item petit th\'eor\`eme de Fermat (si \(p\) ne divise pas \(n\)):
+		\[n^{p-1} \equiv 1\pmod{p} \]
 \end{itemize}
 
 \section{Sommes g\'eom\'etriques}
 \begin{itemize}
-	\item Principe de t\'elescopage (\(n \in \mathbb{N}\) et \(a_0, \hdots, a_{n+1} \in \mathbb{C}\)): \\
+	\item Principe de t\'elescopage (\(n \in \mathbb{N}\) et \(a_0, \hdots, a_{n+1} \in \mathbb{C}\)):
 		\[\sum_{k=0}^{n} (a_{k+1} - a_k) = a_{n+1} - a_0\]
 	\item Sommes g\'eom\'etriques (\(z \in \mathbb{C}, n \in \mathbb{N}\)):
-		\[(z-1)\sum_{k=0}^{n}z^k = z^{n+1} -1\] \\
-		Si \(z \neq 1\), \\
-		\[\sum_{k=0}^{n}z^k=\frac{z^{n+1}-1}{z-1}\]
-	\item Propri\'{e}t\'{e} (\(a,b \in \mathbb{C}, n \in \mathbb{N}^*\)): \\
+		\[(z-1)\sum_{k=0}^{n}z^k = z^{n+1} -1\]
+		\[\text{Si } z \neq 1, \sum_{k=0}^{n}z^k=\frac{z^{n+1}-1}{z-1}\]
+	\item Propri\'{e}t\'{e} (\(a,b \in \mathbb{C}, n \in \mathbb{N}^*\)):
 		\[a^n-b^n = (a-b)\sum_{k=0}^{n-1}a^kb^{n-k-1}\]
-	\item Calcul de \(S_{n,p} = \sum_{k=1}^{n}k^p\) \\
+	\item Calcul de \(S_{n,p} = \sum_{k=1}^{n}k^p\)
 		\begin{itemize}
 			\item \(p = 0, S_{n,0} = \sum_{k=1}^{n}k^0 = \sum_{k=1}^{n}1 = n\)
 			\item \(p = 1, S_{n,1} = \sum_{k=1}^{n}k^1 = \frac{n(n+1)}{2} \)
