@@ -25,7 +25,7 @@
 		I\backslash\{x_0\} &\rightarrow \mathbb{R} \\
 		x &\mapsto \frac{f(x) - f(x_0)}{x - x_0}
 	\end{align*}
-	On dit que f est d\'erivable au point $x_0$ si $\Phi_{x_0, f}$ admet une limite finie en $x_0$
+	On dit que $f$ est d\'erivable au point $x_0$ si $\Phi_{x_0, f}$ admet une limite finie en $x_0$
 \end{defi}
 
 \begin{rqs}
@@ -33,16 +33,16 @@
 \end{rqs}
 
 \begin{prop}
-	f d\'erivable en $x_0 \Rightarrow f$ continue en $x_0$
+	$f$ d\'erivable en $x_0 \Rightarrow f$ continue en $x_0$
 \end{prop}
 
 \section{Th\'eor\`emes g\'en\'eraux}
 \begin{theo}
-	$f,g: I \rightarrow \mathbb{R}, x_0 \in I, \alpha \in \mathbb{R}$. On suppose f et g d\'erivables en $x_0$
+	$f,g: I \rightarrow \mathbb{R}, x_0 \in I, \alpha \in \mathbb{R}$. On suppose $f$ et $g$ d\'erivables en $x_0$
 	\begin{enumerate}
 		\item $\alpha f + g$ est d\'erivable en $x_0$ et $(\alpha f + g)' = \alpha f' + g'$
 		\item $fg$ est d\'erivable en $x_0$ et $(fg)' = f'g + fg'$
-		\item On suppose que g ne s'annule pas sur I:\\
+		\item On suppose que $g$ ne s'annule pas sur I:\\
 			$\frac{1}{g}$ est d\'erivable en $x_0$ et $(\frac{1}{g})' = \frac{-g'}{g^2}$
 	\end{enumerate}
 \end{theo}
@@ -53,9 +53,9 @@
 \end{theo}
 
 \begin{theo} D\'eriv\'ee d'une r\'eciproque\\
-	Soit I un intervalle de $\mathbb{R}, x_0 \in I,\ f:I\rightarrow \mathbb{R}$ continue, strictement monotone. On sait que f induit une
-	bijection de I sur $J=f(I)$ dont on note g la r\'eciproque. \\
-	On suppose que f est d\'erivable sur I et $f'$ ne s'annule pas. alors, g est d\'erivable sur J et:
+	Soit I un intervalle de $\mathbb{R}, x_0 \in I,\ f:I\rightarrow \mathbb{R}$ continue, strictement monotone. On sait que $f$ induit une
+	bijection de I sur $J=f(I)$ dont on note $g$ la r\'eciproque. \\
+	On suppose que $f$ est d\'erivable sur I et $f'$ ne s'annule pas. alors, $g$ est d\'erivable sur J et:
 	\[\forall y \in J, g'(y) = \frac{1}{f'(g(y))}\]
 \end{theo}
 
@@ -74,15 +74,15 @@
 \subsection{Cons\'equences du TAF}
 \begin{theo} $ $\\
 	Soit I un intervalle de $\mathbb{R}, f:I \rightarrow$ d\'erivable. Alors:
-	\[\text{f constante }\Leftrightarrow f' = 0\]
+	\[f\text{ constante }\Leftrightarrow f' = 0\]
 \end{theo}
 
 \begin{theo} $ $ \\
 	Soit I un intervalle de $\mathbb{R},\ f \in D(I, \mathbb{R})$
 	\begin{enumerate}
-		\item f es croissante $\Leftrightarrow f' \geq 0$
-		\item $f' > 0 \Rightarrow $ f strictement croissante
-		\item f strictement croissante $\Leftrightarrow f' \geq 0$ et $Int(\{x\in I /f'(x) = 0\}) = \emptyset$
+		\item $f$ es croissante $\Leftrightarrow f' \geq 0$
+		\item $f' > 0 \Rightarrow $ $f$ strictement croissante
+		\item $f$ strictement croissante $\Leftrightarrow f' \geq 0$ et $Int(\{x\in I /f'(x) = 0\}) = \emptyset$
 	\end{enumerate}
 \end{theo}
 
@@ -102,7 +102,7 @@
 
 \begin{theo} Limite de la d\'eriv\'ee \\
 	Soit I un intervalle de $\mathbb{R}, x_0 \in I,\ f:I\rightarrow \mathbb{R}$ continue sur I, d\'erivable sur $I\backslash\{x_0\}$.\\
-	On suppose que $f'(x) \underset{x \rightarrow x_0}{\rightarrow} l \in \mathbb{R}$ alors, f est d\'erivable en $x_0$ et $f'(x_0) = l$
+	On suppose que $f'(x) \underset{x \rightarrow x_0}{\rightarrow} l \in \mathbb{R}$ alors, $f$ est d\'erivable en $x_0$ et $f'(x_0) = l$
 \end{theo}
 
 \section{Ordre sup\'erieur}
@@ -110,8 +110,8 @@
 	Soit I un intervalle de $\mathbb{R}, f:I \rightarrow \mathbb{R}, n \in \mathbb{N}^{*}$ \\
 	On d\'efinit $f^{(n)}$ par:
 	\begin{enumerate}
-		\item - si n = 0, $f^{(0)} = f$
-		\item - si $n \geq 1, f^{(n)}$ est d\'efinie si $f^{(n-1)}$ est bien d\'efinie et d\'erivable. Alors $f^{(n)} = (f^{(n-1)})'$
+		\item si $n = 0,\ f^{(0)} = f$
+		\item si $n \geq 1,\ f^{(n)}$ est d\'efinie si $f^{(n-1)}$ est bien d\'efinie et d\'erivable. Alors $f^{(n)} = (f^{(n-1)})'$
 	\end{enumerate}
 \end{defi}
 
@@ -122,7 +122,7 @@
 		\item Pour $\lambda \in \mathbb{R}$ \\
 			$\lambda (f + g) \in D^n$ et $(\lambda f + g)^{(n)} = \lambda f^{(n)} + g^{(n)}$
 		\item $fg \in D^n$ et $(fg)^{(n)} = \sum_{k=0}^{n} \binom{n}{k} f^{(k)} g ^{(n-k)}$
-		\item On suppose de plus g \`a valeurs non nulles. Alors: $\frac{f}{g} \in D^n$
+		\item On suppose de plus $g$ \`a valeurs non nulles. Alors: $\frac{f}{g} \in D^n$
 	\end{enumerate}
 \end{theo}
 
@@ -132,7 +132,7 @@
 \end{theo}
 
 \begin{theo} R\'ecriproque\\
-	Soit I un intervalle de $\mathbb{R}$, f une application admettant une r\'eciproque g et telle que $f \in D^n$. Alors $g \in D^n$
+	Soit I un intervalle de $\mathbb{R}$, $f$ une application admettant une r\'eciproque g et telle que $f \in D^n$. Alors $g \in D^n$
 \end{theo}
 
 \begin{theo} Prolongement des fonctions de classe $C^n$\\

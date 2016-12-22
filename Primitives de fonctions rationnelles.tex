@@ -1,0 +1,66 @@
+\documentclass[fleqn]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+
+\title{Primitives de fonctions rationnelles}
+\date{}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.3}
+
+\begin{document}
+\maketitle
+
+\section{Primitives}
+Soit la fonction $F: x \mapsto \frac{P(x)}{Q(x)}$, $P,\ Q$ polyn\^omiales. $F$ peut alors s'\'ecrire comme somme de fonctions rationnelles
+d'un des types suivants:
+\begin{enumerate}
+	\item polyn\^omes
+	\item $x \mapsto \frac{\lambda}{(x-a)^{\alpha}}$ avec $\lambda \in \mathbb{R}, \alpha \in \mathbb{N}^{*}$
+	\item $x \mapsto \frac{\lambda x + 	\mu}{(x^2 + bx + c)^{\alpha}}$ avec $\lambda, \mu \in \mathbb{R}, (b^2 -4ac) <0 , \alpha 
+		\in \mathbb{N}^{*}$
+\end{enumerate}
+
+
+On trouve facilement les primitives des fonctions de type (1) et (2)
+
+\subsection{Primitive du troisi\`eme type}
+Soient $b,c,\lambda,\mu \in \mathbb{R}$ avec $(b^2 -4ac) <0$ \\
+Cherchons une primitive de $f(x) = \frac{\lambda x + 	\mu}{x^2 + bx + c}$ \\
+On fait appara\^itre la d\'eriv\'ee du d\'enominateur au num\'erateur. Pour $x \in I,$
+\begin{align*}
+	\frac{\lambda x + 	\mu}{x^2 + bx + c} &= \frac{\lambda}{2} \frac{2x + \frac{2\mu}{\lambda}}{x^2+bx+c}\\
+	&= \frac{\lambda}{2} \frac{(2x + b) + \frac{2\mu}{\lambda} - b}{x^2+bx+c}\\
+	&= \frac{\lambda}{2} \left(\frac{2x+b}{x^2+bx+c} + \frac{\frac{2\mu}{\lambda} - b}{x^2+bx+c}\right)
+\end{align*}
+On conna\^it la primitive de $x \mapsto \frac{2x+b}{x^2+bx+c}$ reste dont \`a trouver une primitive de $x \mapsto \frac{1}{x^2 + bx + c}$\\
+Pour $x \in \mathbb{R}$ \begin{align*}
+	x^2 + bx + c &= (x+\frac{b}{2})^2 + c - \frac{b^2}{4}\\
+	&= (x + \frac{b}{2})^2 + \underset{\omega^2 \in \mathbb{R}^*}{\frac{4c - b^2}{4}}\\
+	&= \omega^2 \left(1 + (\frac{1}{\omega} (x + \frac{b}{2}))^2\right)
+\end{align*}
+Ainsi, $\frac{1}{x^2 + bx + c} = \frac{1}{\omega^2} \omega \frac{\frac{1}{\omega}}{1 + (\frac{1}{\omega}(x +\frac{b}{2}))^2}$\\
+$\Rightarrow \int^{x} \frac{dt}{t^2 + bt + c} = \frac{1}{\omega} \arctan (\frac{1}{\omega} (x+ \frac{b}{2}))$
+
+\begin{rqs} Si $\alpha \neq 1$ \\
+	On fait le m\^eme raisonnement. On cherche alors
+	\begin{align*}
+		\int^{x} \frac{dt}{(t^2 + bt + c)^{\alpha}} &= \frac{1}{\omega^{2\alpha}}\int^{x} 
+			\frac{dt}{(1 + (\frac{1}{\omega}(t + \frac{b}{2}))^2)^\alpha}\\
+		&\underset{u = \frac{1}{\omega}(t + \frac{b}{2})}{=} \frac{1}{\omega^{2\alpha}}\int^{\frac{1}{\omega}(x + \frac{b}{2})} \frac{\omega du}
+			{(1 + u^2)^\alpha} \\
+		&= \frac{1}{\omega^{2\alpha -1}}\int^{\frac{1}{\omega}(x + \frac{b}{2})} \frac{du}
+			{(1 + u^2)^\alpha}
+	\end{align*}
+$I_n(y) = \int_{0}^{y} \frac{du}{(1+u^2)^\alpha}$ \\
+On peut alors trouver une relation entre $I_n$ et $I_{n+1}$, ce qui permet le calcul de $I_n$ de proche en proche
+\end{rqs}
+
+\end{document}

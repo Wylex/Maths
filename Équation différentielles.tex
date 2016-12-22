@@ -49,14 +49,14 @@ Avec $a_0, \hdots, a_n, b$ des fonctions d\'efinies sur I et continues.\\
 \begin{theo} $ $\\
 	Supposons que $u$, solution de $(E_0)$, ne s'annule jamais. Alors, toute fonction $f: I \rightarrow \mathbb{R}$ s'\'ecrit:\\
 	$f = \lambda u$ avec $\lambda \in D^n(I, \mathbb{R})$ \\
-	$\lambda u$ solution de (E) $\Leftrightarrow \lambda '$ est solution d'une EDL d'ordre $\leq n-1$
+	$\lambda u$ solution de $(E)$ $\Leftrightarrow \lambda '$ est solution d'une EDL d'ordre $\leq n-1$
 \end{theo}
 
 \subsection{EDL d'ordre 1}
-Soit une \'equation du type (E): $\alpha(x)y' + \beta(x)y = \gamma(x)$
+Soit une \'equation du type $(E)$: $\alpha(x)y' + \beta(x)y = \gamma(x)$
 
 \begin{enumerate}
-	\item Cas sympathique: (E) est r\'esolue en y' ($\alpha$ ne s'annule pas)
+	\item Cas sympathique: $(E)$ est r\'esolue en $y'$ ($\alpha$ ne s'annule pas)
 		\[y' + \frac{\beta(x)}{\alpha(x)}y = \frac{\gamma(x)}{\alpha(x)}\]
 		Donnons nous $a, b : I \rightarrow \mathbb{R}$ continues:
 		\[y' + a(x)y = b(x)\]
@@ -64,7 +64,7 @@ Soit une \'equation du type (E): $\alpha(x)y' + \beta(x)y = \gamma(x)$
 			\item Solutions de $(E_0)$ (\'equation diff\'erentielle homog\`ene)\\
 				Soit A une primitive de a sur I, $f: I \rightarrow \mathbb{R}$ d\'erivable\\
 				f est solution de $(E_0) \Leftrightarrow \exists \lambda \in \mathbb{R}, \forall t \in I, f(t) = \lambda e^{-A(t)}$
-			\item Solution de (E) (solution particuli\`ere)
+			\item Solution de $(E)$ (solution particuli\`ere)
 				\begin{align*}
 					\text{f solution de} (E) &\Leftrightarrow \underset{f'}{(\lambda'(x) e^{-A} - a \lambda(x) e^{-A})} +
 					\underset{af}{a \lambda(x) e^{-A}} = b\\
@@ -75,16 +75,15 @@ Soit une \'equation du type (E): $\alpha(x)y' + \beta(x)y = \gamma(x)$
 				\[S = Be^{-A} + S_0 = \{t\in I \mapsto (\lambda + B(t))e^{-A(t)}/ \lambda \in \mathbb{R}\}\]
 		\end{enumerate}
 		\begin{theo} Cauchy-Lipschitz\\
-			Soit $t_0 \in I, y_0 \in \mathbb{R}$ \\
-			Alors il existe une et une seule solution f de (E) sut I telle que $f(t_0) = y_0$
+			Soit $t_0 \in I, y_0 \in \mathbb{R}$ alors il existe une et une seule solution f de $(E)$ sur I telle que $f(t_0) = y_0$
 		\end{theo}
 	\item Cas g\'en\'eral
 		\begin{itemize}
-			\item Dans ce cas on ne peut rien affirmer de g\'en\'eral sur (E)
+			\item Dans ce cas on ne peut rien affirmer de g\'en\'eral sur $(E)$
 			\item Le cas plus simple est celui o\`u $\alpha$ s'annule en un seul point $x_0 \in Int(I)$\\
 				$J_+ = I \cap ]x_0, +\infty[$\\
 				$J_- = I \cap ]-\infty, x_0[$
-			\item $\alpha$ est continue sur $J_+$ et $J_-$ et ne s'annule pas. On sait donc trouver les solutions (E) sur ces intervalles.
+			\item $\alpha$ est continue sur $J_+$ et $J_-$ et ne s'annule pas. On sait donc trouver les solutions $(E)$ sur ces intervalles.
 			\item Pour trouver les solutions sur I: nous avons $\beta(x_0)f(x_0) = \gamma(x_0)$ ce qui peut imposer certaines conditions. Il faut
 				ainsi tenter de raccorder ces solutions en $x_0$:
 				\begin{itemize}
