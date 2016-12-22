@@ -101,8 +101,65 @@
 \end{theo}
 
 \begin{theo} Limite de la d\'eriv\'ee \\
-	Soit I un intervalle de $\mathbb{R}, x_0 \in I,\ f:I\rightarrow \mathbb{R}$ continue sur I, d\'erivable sur $I\backslash{x_0}$.\\
+	Soit I un intervalle de $\mathbb{R}, x_0 \in I,\ f:I\rightarrow \mathbb{R}$ continue sur I, d\'erivable sur $I\backslash\{x_0\}$.\\
 	On suppose que $f'(x) \underset{x \rightarrow x_0}{\rightarrow} l \in \mathbb{R}$ alors, f est d\'erivable en $x_0$ et $f'(x_0) = l$
+\end{theo}
+
+\section{Ordre sup\'erieur}
+\begin{defi}
+	Soit I un intervalle de $\mathbb{R}, f:I \rightarrow \mathbb{R}, n \in \mathbb{N}^{*}$ \\
+	On d\'efinit $f^{(n)}$ par:
+	\begin{enumerate}
+		\item - si n = 0, $f^{(0)} = f$
+		\item - si $n \geq 1, f^{(n)}$ est d\'efinie si $f^{(n-1)}$ est bien d\'efinie et d\'erivable. Alors $f^{(n)} = (f^{(n-1)})'$
+	\end{enumerate}
+\end{defi}
+
+\subsection{Th\'eor\`emes}
+\begin{theo}
+	Soit I un intervalle de $\mathbb{R}, n \in \mathbb{n}, f,g \in D^n(I, \mathbb{R})$ Alors:
+	\begin{enumerate}
+		\item Pour $\lambda \in \mathbb{R}$ \\
+			$\lambda (f + g) \in D^n$ et $(\lambda f + g)^{(n)} = \lambda f^{(n)} + g^{(n)}$
+		\item $fg \in D^n$ et $(fg)^{(n)} = \sum_{k=0}^{n} \binom{n}{k} f^{(k)} g ^{(n-k)}$
+		\item On suppose de plus g \`a valeurs non nulles. Alors: $\frac{f}{g} \in D^n$
+	\end{enumerate}
+\end{theo}
+
+\begin{theo} Composition\\
+	I,J deux intervalles de $\mathbb{R}, f \in D^n(I, J),\ g \in D^n(J, \mathbb{R})$\\
+	Alors $g \circ f \in D^n(I, \mathbb{R})$
+\end{theo}
+
+\begin{theo} R\'ecriproque\\
+	Soit I un intervalle de $\mathbb{R}$, f une application admettant une r\'eciproque g et telle que $f \in D^n$. Alors $g \in D^n$
+\end{theo}
+
+\begin{theo} Prolongement des fonctions de classe $C^n$\\
+	Soit I un intervalle de $\mathbb{R}, n \in \mathbb{N}, x_0 \in I, f:I\backslash\{x_0\} \rightarrow \mathbb{R}$, de classe $C^n$ \\
+	On suppose que $\forall k \in [\![0,n]\!], f^{(k)}$ admet en $x_0$ une limite finie $l_k$. Alors:
+	\begin{align*}
+		f: I &\rightarrow \mathbb{R}\\
+		x_0 &\mapsto l_0\\
+		x \neq x_0 &\mapsto f(x)
+	\end{align*}
+	est de classe $C^n$ sur I et $\forall k \in [\![0,n]\!],\ f^{(k)}(x_0) = l_k$
+\end{theo}
+
+\section{In\'egalit\'e de Taylor-Lagrange, Formule de Taylor-Young}
+\begin{defi} Polyn\^omes de Taylor \\
+	Soit I un intervalle de $\mathbb{R},\ x_0 \in I,\ f \in D^n(I, \mathbb{R})$. Pour $x \in \mathbb{R}$ on pose:
+	\[T_{n,f,x_0}(x) = \sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k\]
+\end{defi}
+
+\begin{theo} In\'egalit\'e de Taylor-Lagrange\\
+	Soient $a,b \in \mathbb{R},\ f:[a,b] \rightarrow \mathbb{R}$ de classe $C^{n+1}$. Soit M un majorant de $|f^{(n+1)}|$ sur $[a,b]$. Alors:
+	\[|f(b) - T_{n,f,a}(b)| \leq M\frac{|b-a|^{n+1}}{(n+1)!}\]
+\end{theo}
+
+\begin{theo} Formule de Taylor-Young\\
+	Soit I un intervalle de $\mathbb{R},\ x_0 \in I, f:I\rightarrow \mathbb{R}$ de classe $C^n$. Alors:
+	\[f(x) - T_{n,f,x_0}(x) \underset{x \rightarrow x_0}{=} o((x-x_0)^n)\]
 \end{theo}
 
 \end{document}
