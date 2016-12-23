@@ -10,6 +10,7 @@
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
 \theoremstyle{remark} \newtheorem*{rqs}{Remarques}
 \theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
@@ -29,7 +30,7 @@
 	tel que $f$ est constante sur $]x_k, x_k+1[,\ (0 \leq k \leq n-1)$
 \end{defi}
 
-\begin{theo} $ $\\
+\begin{theo} Int\'egrale \\
 	Soit $f \in E([a,b], \mathbb{R})$. Soit $\Gamma = (x_0, \hdots, x_n)$ une subdivision de $[a,b]$ adapt\'ee \`a $f$ et notons $\lambda_i$
 	la valeur de $f$ sur $]x_i, x_{i+1}[$ \\
 	Le nombre $\sum_{i = 0}^{n-1} \lambda_i (x_{i+1} - x_i)$ ne d\'epend pas de $\Gamma$. On l'appelle int\'egrale de $f$ et on le note $I(f)$
@@ -40,13 +41,13 @@
 		\item lin\'earit\'e: \\
 			Soient $f,g \in E([a,b], \mathbb{R}),\ \alpha \in \mathbb{R}$ alors: $I(\alpha f + g) = \alpha I(f) + I(g)$
 		\item Positivit\'e: \\
-			Soit $f \in E([a,b], \mathbb{R})$ telle que $\forall x \in [a,b],\ f(x) \geq 0$ alors: $I(f) \geq 0$ \\
-
-			Corollaires:
-			\begin{enumerate}
-				\item $f,g \in E([a,b], \mathbb{R})$ tel que $f \leq g$ alors $I(f) \leq I(g)$
-				\item Soit $f \in E([a,b], \mathbb{R})$ alors $|I(f)| \leq I(|f|)$
-			\end{enumerate}
+			Soit $f \in E([a,b], \mathbb{R})$ telle que $\forall x \in [a,b],\ f(x) \geq 0$ alors: $I(f) \geq 0$
+			\begin{coro} $ $
+				\begin{enumerate}
+					\item $f,g \in E([a,b], \mathbb{R})$ tel que $f \leq g$ alors $I(f) \leq I(g)$
+					\item Soit $f \in E([a,b], \mathbb{R})$ alors $|I(f)| \leq I(|f|)$
+				\end{enumerate}
+			\end{coro}
 		\item Chasles: \\
 			Soit $f \in E([a,b], \mathbb{R})$ et $c \in ]a,b[$ alors $I(f) = I(f_{|[a,c]}) + I(f_{|[c,b]})$
 	\end{enumerate}
@@ -59,15 +60,17 @@
 	et $\psi_{\epsilon} - \varphi_{\epsilon} \leq \epsilon$
 \end{theo}
 
-\begin{theo} Int\'egrale d'une fonction continue sur un segment \\
-	Soit $a,b \in \mathbb{R},\ a<b$ et $f:[a,b] \rightarrow \mathbb{R}$, continue. On note $E_f^+$ l'ensemble des fonction $\psi$ en escalier
-	tels que $\psi \geq f$ (resp. $E_f^-,\ \varphi$) \\
-	$\Omega_+ = \{I(\psi) \backslash \psi \in E_f^+\} \subset \mathbb{R}$ \\
-	$\Omega_- = \{I(\varphi) \backslash \varphi \in E_f^-\} \subset \mathbb{R}$ \\
-	Alors $\Omega_+$ est minor\'ee, $\Omega_+$ est major\'ee et inf $\Omega_+ = \text{sup }\Omega_-$ \\
-	Ce nombre est par d\'efinition l'int\'egrale de $f$ et se note $\int_a^b f$. On a donc\\
-	$\forall \varphi \in E_f^-,\ I(\varphi) \leq \int_a^b f$\\
-	$\forall \psi \in E_f^+,\ I(\psi) \geq \int_a^b f$
+\begin{theo} Int\'egrale d'une fonction continue sur un segment
+	\begin{itemize}
+		\item Soit $a,b \in \mathbb{R},\ a<b$ et $f:[a,b] \rightarrow \mathbb{R}$, continue. On note $E_f^+$ l'ensemble des fonction $\psi$
+			en escalier tels que $\psi \geq f$ (resp. $E_f^-,\ \varphi$) \\
+			$\Omega_+ = \{I(\psi) \backslash \psi \in E_f^+\} \subset \mathbb{R}$ \\
+			$\Omega_- = \{I(\varphi) \backslash \varphi \in E_f^-\} \subset \mathbb{R}$ \\
+			Alors $\Omega_+$ est minor\'ee, $\Omega_+$ est major\'ee et inf $\Omega_+ = \text{sup }\Omega_-$
+		\item Ce nombre est par d\'efinition l'int\'egrale de $f$ et se note $\int_a^b f$. On a donc\\
+			$\forall \varphi \in E_f^-,\ I(\varphi) \leq \int_a^b f$\\
+			$\forall \psi \in E_f^+,\ I(\psi) \geq \int_a^b f$
+	\end{itemize}
 \end{theo}
 
 \begin{rqs} M\^eme propri\'et\'ees que pour les fonction en escalier (lin\'earit\'e, positivit\'e, chasles)
@@ -85,5 +88,76 @@
 			$\forall a,b \in I,\ \int_a^b f = F(b) - F(a) = [F(t)]_a^b$
 	\end{enumerate}
 \end{theo}
+
+\begin{theo} Int\'egration par parties \\
+	Soient $f,g: [a,b] \rightarrow \mathbb{R}$ de classe $C^1$. Alors
+	\[\int_a^b f'g = [f(t)g(t)]_a^b - \int_a^b fg'\]
+\end{theo}
+
+\begin{prop} Formule de Stirling
+	\[n! \sim (\frac{n}{e})^n \sqrt{2\pi n}\]
+\end{prop}
+
+\begin{theo} Taylor avec reste int\'egral \\
+	Soient $a,b \in \mathbb{R},\ n \in \mathbb{N}$. $f:[a,b] \rightarrow \mathbb{R}$ de classe $C^{n+1}$ alors:
+	\[f(b) = T_{n,f,a}(b) + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)} (t)dt\]
+\end{theo}
+
+\begin{theo} Changement de variable \\
+	$f:[a,b] \rightarrow \mathbb{R}$ continue. $\varphi:[\alpha, \beta]$ de classe $C^1$. Alors:
+	\[\int_\alpha^\beta \varphi '(t) f(\varphi(t)) dt = \int_{\varphi(\alpha)}^{\varphi(\beta)} f(u)du\]
+\end{theo}
+
+\subsection{Sommes de Darboux-Riemann}
+\begin{defi}
+	$a,b \in \mathbb{R},\ f:[a,b] \rightarrow \mathbb{R},\ \Gamma$ une subdivision de $[a,b]$, $\omega = (x_0, \hdots, x_n)$ un choix de
+	points associ\'ee \`a $\Gamma = (y_0, \hdots, y_n)$ \\
+	On pose $S_{f,\Gamma, \omega} = \sum_{i=0}^{n-1} (x_{i+1} - x_i) f(y_i)$
+\end{defi}
+\begin{theo}
+	Soit $\epsilon > 0,\ \exists \alpha > 0$ tel que pour toute subdivision de $[a,b]$ tel que $\delta(\Gamma) \leq \alpha$ alors
+	pour tout choix de points associ\'e \`a $\Gamma$:
+	\[|S_{f,\Gamma, \omega} - \int_a^b f| \leq \epsilon\]
+\end{theo}
+
+\begin{coro} Suites de Darboux-Riemann \\
+	$f:[a,b] \rightarrow \mathbb{R},\ C^0,\ n \in \mathbb{N}^*$ \\
+	$u_n = \frac{b-a}{n} \sum_{k= 0}^{n-1} f(a + k\frac{b-a}{n})$ \\
+	$v_n = \frac{b-a}{n} \sum_{k= 1}^{n} f(a + k\frac{b-a}{n})$ \\
+	Alors, $u_n, v_n \rightarrow \int_a^b f$
+\end{coro}
+
+\subsection{Cauchy-Schwarz}
+\begin{theo} In\'egalit\'e de Cauchy-Schwarz \\
+	Soient $a,b \in \mathbb{R}$, continues. Alors:
+	\[\left|\int_a^b fg\right| \leq \left(\int_a^b f^2\right)^\frac{1}{2} \left(\int_a^b g^2\right)^\frac{1}{2}\]
+	Si $f$ n'est pas nulle, il y \`a \'egalit\'e si et seulement si $g$ est proportinnielle \`a f
+\end{theo}
+
+\section{Fonctions continues par morceaux}
+\begin{defi}
+	$f:[a,b] \rightarrow \mathbb{R}$ est continue par morceaux s'il existe une subdivision de $[a,b]$ telle que $\forall i \in [\![0,n-1]\!]$
+	\begin{enumerate}
+		\item $f$ est continue sur $]x_i, x_{i+1}[$
+		\item $f$ admet une limite finie \`a droite en $x_i$, gauche en $x_{i+1}$
+	\end{enumerate}
+\end{defi}
+
+\begin{rqs}
+	Le th\'eor\`eme de densit\'e reste valable et par cons\'equent les propri\'et\'ees aussi
+\end{rqs}
+
+\section{Approximation des int\'egrales}
+\begin{enumerate}
+	\item M\'ethode des rectangles \\
+		$f:[a,b] \rightarrow \mathbb{R}$ au moins $C^1,\ \Gamma_n$ une subdivision r\'eguli\`ere de $[a,b]$, $M$ majorant de $f'$ \\
+		$\Delta_n = \int_\alpha^\beta f - \sum_{k=0}^{n-1} \frac{b-a}{n} f(a + k\frac{b-a}{n})$ \\
+		$|\Delta_n| \leq \frac{M(b-a)^2}{2n} \in O(\frac{1}{n})$
+	\item M\'ethode des rectangles m\'edians \\
+		$f:[a,b] \rightarrow \mathbb{R},\ C^2,\ y_k = \frac{x_k + x_{k+1}}{2}$ \\
+		$\Delta_n = \int_a^b f - \sum_{k=0}^{n-1} (x_{k+1} - x_k)f(y_k)$ \\
+		$|\Delta_n| \leq \frac{M(b-a)^3}{24n^2} \in O(\frac{1}{n^2})$
+
+\end{enumerate}
 
 \end{document}
