@@ -20,10 +20,10 @@
 \end{defi}
 \begin{itemize}
 	\item Par convention, si $k>n, \binom{n}{k} = 0$
-	\item Pour tout \(n \in \mathbb{N}:\) \\
+	\item Sym\'etrie: pour tout \(n \in \mathbb{N},\) \\
 		$\binom{n}{0} = 1 = \binom{n}{n}$ \\
 		$\binom{n}{1} = n = \binom{n}{n-1}$ \\
-		$\binom{n}{k} = \binom{n}{n-k}$ (sym\'etrie)
+		$\binom{n}{k} = \binom{n}{n-k}$
 \end{itemize}
 \begin{prop} pour \(n \in \mathbb{N}\ et\ k \in [\![0,n]\!]\):
 	\[\binom{n}{k+1} = \frac{n-k}{k+1} \times \binom{n}{k} \]
@@ -32,13 +32,8 @@
 \begin{theo} Pascal (\(n \in \mathbb{N}, k \in \mathbb{N}\)): \\
 	\[\binom{n+1}{k+1} = \binom{n}{k} + \binom{n}{k+1}\]
 \end{theo}
-\begin{prop} Changement d'indice\\
-	Soient I et J deux ensembles finis d'indices et $\varphi$ une bijection de I sur J. Alors
-	\[\underset{i \in I}{\sum} u_{\varphi(i)}\ = \underset{j \in J}{\sum} u_j\]
-
-\end{prop}
 \begin{theo}
-	Pour tout \(k,n \in \mathbb{N}, \binom{n}{k} \in \mathbb{N}\)
+	Pour tout \(k,n \in \mathbb{N},\ \binom{n}{k} \in \mathbb{N}\)
 \end{theo}
 \begin{theo} Bin\^{o}me de Newton (\(a,b \in \mathbb{C}, n \in \mathbb{N}\)):
 	\[(a+b)^n = \sum_{k=0}^{n} \binom{n}{k}a^kb^{n-k}\]
@@ -54,7 +49,7 @@
 		\[(a+b)^p \equiv a^p + b^p \pmod{p}\]
 		De fa\c{c}on plus g\'en\'erale, pour \(n \in \mathbb{N}^*, a_1, \hdots, a_n \in \mathbb{Z}\):
 		\[(a_1+\hdots+a_n)^p \equiv a_1^p+\hdots+a_n^p \pmod{p}\]
-	\item petit th\'eor\`eme de Fermat (si \(p\) ne divise pas \(n\)):
+	\item Petit th\'eor\`eme de Fermat (si \(p\) ne divise pas \(n\)):
 		\[n^{p-1} \equiv 1\pmod{p} \]
 \end{itemize}
 
@@ -74,5 +69,22 @@
 			\item \(p = 2, S_{n,2} = \sum_{k=1}^{n}k^2 = \frac{n(n+1)(2n+1)}{6} \)
 		\end{itemize}
 \end{itemize}
+
+\section{Remarques sur les sommes}
+\begin{prop} Changement d'indice\\
+	Soient I et J deux ensembles finis d'indices et $\varphi$ une bijection de I sur J. Alors
+	\[\underset{i \in I}{\sum} u_{\varphi(i)}\ = \underset{j \in J}{\sum} u_j\]
+\end{prop}
+
+\begin{prop} Sommes doubles
+	\[\underset{i,j\in \Omega}{\sum} a_{ij} = \underset{i \in E}{\sum}\left(\underset{j \in F}{\sum}a_{ij}\right)\]
+\end{prop}
+
+\begin{prop} Sommes triangulaires
+	\begin{align*}
+	\underset{1 \leq i \leq j \leq n}{\sum} a_{ij} &= \sum_{i=1}^{n}\left(\sum_{j = i}^n a_{ij}\right) \\
+	&= \sum_{j=1}^{n}\left(\sum_{i = 1}^j a_{ij}\right)
+	\end{align*}
+\end{prop}
 
 \end{document}

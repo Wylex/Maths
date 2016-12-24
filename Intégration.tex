@@ -30,46 +30,50 @@
 	tel que $f$ est constante sur $]x_k, x_k+1[,\ (0 \leq k \leq n-1)$
 \end{defi}
 
-\begin{theo} Int\'egrale \\
-	Soit $f \in E([a,b], \mathbb{R})$. Soit $\Gamma = (x_0, \hdots, x_n)$ une subdivision de $[a,b]$ adapt\'ee \`a $f$ et notons $\lambda_i$
-	la valeur de $f$ sur $]x_i, x_{i+1}[$ \\
-	Le nombre $\sum_{i = 0}^{n-1} \lambda_i (x_{i+1} - x_i)$ ne d\'epend pas de $\Gamma$. On l'appelle int\'egrale de $f$ et on le note $I(f)$
+\begin{theo} Int\'egrale des fonctions en escalier
+	\begin{itemize}
+	\item Soit $f \in \mathcal{E}([a,b], \mathbb{R})$. Soit $\Gamma = (x_0, \hdots, x_n)$ une subdivision de $[a,b]$ adapt\'ee \`a $f$ et
+		notons $\lambda_i$ la valeur de $f$ sur $]x_i, x_{i+1}[$ \\
+		Le nombre $\sum_{i = 0}^{n-1} \lambda_i (x_{i+1} - x_i)$ ne d\'epend pas de $\Gamma$.
+	\item On l'appelle int\'egrale de $f$ et on le note $I(f)$
+	\end{itemize}
 \end{theo}
 
 \begin{prop} $ $
 	\begin{enumerate}
 		\item lin\'earit\'e: \\
-			Soient $f,g \in E([a,b], \mathbb{R}),\ \alpha \in \mathbb{R}$ alors: $I(\alpha f + g) = \alpha I(f) + I(g)$
+			Soient $f,g \in \mathcal{E}([a,b], \mathbb{R}),\ \alpha \in \mathbb{R}$ alors: $I(\alpha f + g) = \alpha I(f) + I(g)$
 		\item Positivit\'e: \\
-			Soit $f \in E([a,b], \mathbb{R})$ telle que $\forall x \in [a,b],\ f(x) \geq 0$ alors: $I(f) \geq 0$
+			Soit $f \in \mathcal{E}([a,b], \mathbb{R})$ telle que $\forall x \in [a,b],\ f(x) \geq 0$ alors: $I(f) \geq 0$
 			\begin{coro} $ $
 				\begin{enumerate}
-					\item $f,g \in E([a,b], \mathbb{R})$ tel que $f \leq g$ alors $I(f) \leq I(g)$
-					\item Soit $f \in E([a,b], \mathbb{R})$ alors $|I(f)| \leq I(|f|)$
+					\item $f,g \in \mathcal{E}([a,b], \mathbb{R})$ tel que $f \leq g$ alors $I(f) \leq I(g)$
+					\item Soit $f \in \mathcal{E}([a,b], \mathbb{R})$ alors $|I(f)| \leq I(|f|)$
 				\end{enumerate}
 			\end{coro}
 		\item Chasles: \\
-			Soit $f \in E([a,b], \mathbb{R})$ et $c \in ]a,b[$ alors $I(f) = I(f_{|[a,c]}) + I(f_{|[c,b]})$
+			Soit $f \in \mathcal{E}([a,b], \mathbb{R})$ et $c \in ]a,b[$ alors $I(f) = I(f_{|[a,c]}) + I(f_{|[c,b]})$
 	\end{enumerate}
 \end{prop}
 
 \section{Int\'egrale d'une fonction continue sur un segment}
 \begin{theo} Densit\'e \\
 	Soient $a,b \in \mathbb{R},\ a < b$. Soit $f \in C([a,b], \mathbb{R})$. Soit $\epsilon > 0$. \\
-	Il existe alors $\varphi_{\epsilon}, \psi_{\epsilon} \in E([a,b], \mathbb{R})$ tels que $\varphi_{\epsilon} \leq f \leq \psi_{\epsilon}$
-	et $\psi_{\epsilon} - \varphi_{\epsilon} \leq \epsilon$
+	Il existe alors $\varphi_{\epsilon}, \psi_{\epsilon} \in \mathcal{E}([a,b], \mathbb{R})$ tels que $\varphi_{\epsilon} \leq f
+	\leq \psi_{\epsilon}$ et $\psi_{\epsilon} - \varphi_{\epsilon} \leq \epsilon$
 \end{theo}
 
 \begin{theo} Int\'egrale d'une fonction continue sur un segment
 	\begin{itemize}
-		\item Soit $a,b \in \mathbb{R},\ a<b$ et $f:[a,b] \rightarrow \mathbb{R}$, continue. On note $E_f^+$ l'ensemble des fonction $\psi$
-			en escalier tels que $\psi \geq f$ (resp. $E_f^-,\ \varphi$) \\
-			$\Omega_+ = \{I(\psi) \backslash \psi \in E_f^+\} \subset \mathbb{R}$ \\
-			$\Omega_- = \{I(\varphi) \backslash \varphi \in E_f^-\} \subset \mathbb{R}$ \\
-			Alors $\Omega_+$ est minor\'ee, $\Omega_+$ est major\'ee et inf $\Omega_+ = \text{sup }\Omega_-$
+		\item Soit $a,b \in \mathbb{R},\ a<b$ et $f:[a,b] \rightarrow \mathbb{R}$, continue. On note $\mathcal{E}_f^+$ l'ensemble des
+		fonction $\psi$
+			en escalier tels que $\psi \geq f$ (resp. $\mathcal{E}_f^-,\ \varphi$) \\
+			$\Omega_+ = \{I(\psi) \backslash \psi \in \mathcal{E}_f^+\} \subset \mathbb{R}$ \\
+			$\Omega_- = \{I(\varphi) \backslash \varphi \in \mathcal{E}_f^-\} \subset \mathbb{R}$ \\
+			Alors $\Omega_+$ est minor\'ee, $\Omega_+$ est major\'ee et $\inf \Omega_+ = \sup \Omega_-$
 		\item Ce nombre est par d\'efinition l'int\'egrale de $f$ et se note $\int_a^b f$. On a donc\\
-			$\forall \varphi \in E_f^-,\ I(\varphi) \leq \int_a^b f$\\
-			$\forall \psi \in E_f^+,\ I(\psi) \geq \int_a^b f$
+			$\forall \varphi \in \mathcal{E}_f^-,\ I(\varphi) \leq \int_a^b f$\\
+			$\forall \psi \in \mathcal{E}_f^+,\ I(\psi) \geq \int_a^b f$
 	\end{itemize}
 \end{theo}
 

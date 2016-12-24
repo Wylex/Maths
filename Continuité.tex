@@ -21,22 +21,20 @@
 	\begin{enumerate}
 		\item $\forall\ V \in V_\mathbb{R}(f(x_0)), \exists U \in V_\mathbb{R}(x_0), f(U \cap D) \subset V$ [def. topologique]
 		\item $\forall \epsilon>0, \exists \alpha > 0, \forall x \in D, |x-x_0| \leq \alpha \Rightarrow |f(x) - f(x_0)| \leq \epsilon$
-		\item Pour toute suite $(u_n)$ de points de $D$ qui cv. vers $x_0$, la suite $(f(u_n))_{n\in\mathbb{N}}$ cv. vers $f(x_0)$
+		\item Pour toute suite $(u_n)$ de points de $D$ qui converge vers $x_0$, la suite $(f(u_n))_{n\in\mathbb{N}}$ converge vers $f(x_0)$
 		[def. s\'equentielle]
 	\end{enumerate}
 	On dit que $f$ est continue sur $D$ si pour tout $x_0 \in D$, f est continue en $x_0$
 \end{defi}
 \begin{enumerate}
-	\item Fonctions lipschitziennes:
-		\begin{defi}
-			$f:D \rightarrow \mathbb{R}$ est lipschitzienne s'il existe $k \in \mathbb{R}_+$ tel que:
+	\item Fonctions lipschitziennes
+		\begin{defi} $f:D \rightarrow \mathbb{R}$ est lipschitzienne s'il existe $k \in \mathbb{R}_+$ tel que:
 			\[\forall x,y \in D, |f(x) - f(y)| \leq k|x-y|\]
 		\end{defi}
-	\item Fonctions uniform\'ement continues:
-		\begin{defi}
-			$f:D \rightarrow \mathbb{R}$ est UC si:
-			\[\forall \epsilon >0, \exists \alpha>0, \forall x,y \in D, |x-y| \leq \alpha \Rightarrow |f(x) - f(y)| \leq \epsilon\]
-		\end{defi}
+	\item Fonctions uniform\'ement continues
+		\begin{defi} $f:D \rightarrow \mathbb{R}$ est UC si:
+		\[\forall \epsilon >0, \exists \alpha>0, \forall x,y \in D, |x-y| \leq \alpha \Rightarrow |f(x) - f(y)| \leq \epsilon\]
+	\end{defi}
 \end{enumerate}
 \begin{theo} Heine: \\
 	Soit $D \subset \mathbb{R}$ tel que $D$ ferm\'e, born\'e. Si $f:D \rightarrow \mathbb{R}$ est continue, alors $f$ est UC

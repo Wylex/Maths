@@ -1,47 +1,63 @@
 \documentclass[fleqn]{article}
 \usepackage{amssymb}
-\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
 
 \title{Logarithme et exponentielle}
 \date{}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
 
 \begin{document}
 \maketitle
 
 \section{Logarithme}
-\emph{Log} est l'application d\'efinie telle que: $\mathbb{R}^*_+ \rightarrow \mathbb{R}$
-\begin{itemize}
-	\item $x,y>0, \ln (xy) = \ln x + \ln y$
-	\item $\ln 1 = 0$
-	\item $\ln x = -\ln \frac{1}{x}$
-	\item $\ln x^n = n\ln x$
-	\newline
-	\item $\lim_{x\to 1} \frac{\ln x}{x-1} = 1$
-	\item $\lim_{x\to 0} \frac{\ln (x+1)}{x} = 1$
-	\item $\lim_{x\to\infty} \frac{\ln x}{x} = 0$
-	\item $\lim_{x\to 0^+} x\ln x = 0$
-\end{itemize}
+$\ln$ est l'application d\'efinie telle que: $\mathbb{R}^*_+ \rightarrow \mathbb{R}$
+\begin{prop} $x,y > 0$
+	\begin{itemize}
+		\item $\ln (xy) = \ln x + \ln y$
+		\item $\ln 1 = 0$
+		\item $\ln x = -\ln \frac{1}{x}$
+		\item $\ln x^n = n\ln x$
+	\end{itemize}
+\end{prop}
+\begin{prop} Limites
+	\begin{itemize}
+		\item $\lim_{x\to 1} \frac{\ln x}{x-1} = 1$
+		\item $\lim_{x\to 0} \frac{\ln (x+1)}{x} = 1$
+		\item $\lim_{x\to\infty} \frac{\ln x}{x} = 0$
+		\item $\lim_{x\to 0^+} x\ln x = 0$
+	\end{itemize}
+\end{prop}
 
 \section{exponentielle}
-\emph{exp} est l'application r\'eciproque de \emph{Log} d\'efinie telle que: $\mathbb{R} \rightarrow \mathbb{R}^*_+$
-\begin{itemize}
-	\item $e^{x+y} = e^xe^y$
-	\item $e^0 = 1$
-	\item $e^{-x} = \frac{1}{e^x}$
-	\newline
-	\item $\lim_{x\to 0} \frac{e^x-1}{x} = 1$
-	\item $\lim_{x\to\infty} \frac{x}{e^x} = 0$
-	\item $\lim_{x\to-\infty} xe^x = 0$
-\end{itemize}
+$\exp$ est l'application r\'eciproque de $\ln$ d\'efinie telle que: $\mathbb{R} \rightarrow \mathbb{R}^*_+$
+\begin{prop} $ $
+	\begin{itemize}
+		\item $e^{x+y} = e^xe^y$
+		\item $e^0 = 1$
+		\item $e^{-x} = \frac{1}{e^x}$
+	\end{itemize}
+\end{prop}
+\begin{prop} Limites
+	\begin{itemize}
+		\item $\lim_{x\to 0} \frac{e^x-1}{x} = 1$
+		\item $\lim_{x\to\infty} \frac{x}{e^x} = 0$
+		\item $\lim_{x\to-\infty} xe^x = 0$
+	\end{itemize}
+\end{prop}
 
 \subsection{Propri\'et\'ees du $e$}
-\begin{itemize}
-	\item Th\'eor\`eme: pour tout $x \in \mathbb{R}$,
+\begin{theo} pour tout $x \in \mathbb{R}$, \\
 		\[e^x = \lim_{n\to\infty} \sum_{k=0}^{n} \frac{x^k}{k!} \]
-	\item Pour $x = 1$,
+\end{theo}
+Ainsi, pour $x = 1$:
 		\[e = \lim_{n\to\infty} \sum_{k=0}^{n} \frac{1}{k!}\]
 		\[e = \sum_{k=0}^{n} \frac{1}{k!} + \int_{0}^{1} \frac{(1-t)^n}{n!}e^tdt\]
-	\item Th\'eor\`eme: $e$ est irrationnel
-\end{itemize}
+\begin{theo} $e$ est irrationnel \end{theo}
 
 \end{document}
