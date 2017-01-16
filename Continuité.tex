@@ -26,16 +26,18 @@
 	\end{enumerate}
 	On dit que $f$ est continue sur $D$ si pour tout $x_0 \in D$, f est continue en $x_0$
 \end{defi}
-\begin{enumerate}
-	\item Fonctions lipschitziennes
-		\begin{defi} $f:D \rightarrow \mathbb{R}$ est lipschitzienne s'il existe $k \in \mathbb{R}_+$ tel que:
-			\[\forall x,y \in D, |f(x) - f(y)| \leq k|x-y|\]
-		\end{defi}
-	\item Fonctions uniform\'ement continues
-		\begin{defi} $f:D \rightarrow \mathbb{R}$ est UC si:
-		\[\forall \epsilon >0, \exists \alpha>0, \forall x,y \in D, |x-y| \leq \alpha \Rightarrow |f(x) - f(y)| \leq \epsilon\]
-	\end{defi}
-\end{enumerate}
+
+\begin{defi} Fonctions lipschitziennes \\
+	$f:D \rightarrow \mathbb{R}$ est lipschitzienne s'il existe $k \in \mathbb{R}_+$ tel que:
+	\[\forall x,y \in D, |f(x) - f(y)| \leq k|x-y|\]
+\end{defi}
+\begin{defi} Fonctions uniform\'ement continues \\
+	$f:D \rightarrow \mathbb{R}$ est UC si:
+	\[\forall \epsilon >0, \exists \alpha>0, \forall x,y \in D, |x-y| \leq \alpha \Rightarrow |f(x) - f(y)| \leq \epsilon\]
+\end{defi}
+
+\section{Th\'eor\`emes fondamentaux}
+
 \begin{theo} Heine: \\
 	Soit $D \subset \mathbb{R}$ tel que $D$ ferm\'e, born\'e. Si $f:D \rightarrow \mathbb{R}$ est continue, alors $f$ est UC
 \end{theo}
@@ -51,7 +53,6 @@
 	\end{enumerate}
 \end{rqs}
 
-\section{Th\'eor\`emes fondamentaux}
 \begin{theo}
 	Image d'un ferm\'e born\'e par une application continue: \\
 	Soit $D \subset \mathbb{R}$, on suppose $D$ ferm\'e et born\'e, $f:D \rightarrow \mathbb{R}$ continue. Alors $f(D)$ est ferm\'e et born\'e

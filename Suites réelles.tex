@@ -9,6 +9,9 @@
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarque}
 
 \begin{document}
 \maketitle
@@ -18,117 +21,122 @@
 		Soit $u \in \mathbb{R}^\mathbb{N}$. Une suite $v \in \mathbb{R}^\mathbb{N}$ est une sous suite de $u$ s'il existe
 		$\varphi: \mathbb{N} \rightarrow \mathbb{N}$ strictement croissante tel que $\forall n \in \mathbb{N}, v_n = u_{\varphi(n)}$
 \end{defi}
-
-\subsection{Vocabulaire}
-Soit $u \in \mathbb{R}^\mathbb{N}$
 \begin{itemize}
-	\item $u$ est major\'ee s'il existe $M \in \mathbb{R}$ tel que $\forall n \in \mathbb{N}, u_n \leq M$
-	\item $u$ est minor\'ee s'il existe $m \in \mathbb{R}$ tel que $\forall n \in \mathbb{N}, u_n \geq m$
-	\item $u$ est born\'ee lorsqu'elle est \`a la fois major\'ee et minor\'ee
+	\item [-] $u$ est major\'ee s'il existe $M \in \mathbb{R}$ tel que $\forall n \in \mathbb{N}, u_n \leq M$
+	\item [-] $u$ est minor\'ee s'il existe $m \in \mathbb{R}$ tel que $\forall n \in \mathbb{N}, u_n \geq m$
+	\item [-] $u$ est born\'ee lorsqu'elle est \`a la fois major\'ee et minor\'ee
 \end{itemize}
 
 \section{Convergences}
 \subsection{Suites convergentes}
 \begin{defi}
 	Soit $u \in \mathbb{R}^\mathbb{N}, l \in \mathbb{R}$, on dira que $u$ converge vers $l$ si:
-	\[\forall \epsilon > 0, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, |u_n - l| \leq \epsilon\]
+	\[\forall \epsilon > 0, \exists n_0 \in \mathbb{N}, \forall n \geq n_0,\ |u_n - l| \leq \epsilon\]
 \end{defi}
-\begin{enumerate}
-	\item Unicit\'e: soit $u$ une suite convergente, alors il existe un unique r\'eel $l$ tel que $u$ converge vers $l$
-	\item Sous-suites: soit $u \in \mathbb{R}^\mathbb{N}$ une suite convergente de limite $l \in \mathbb{R}$. Alors toute sous-suite
-	de $u$ converge vers $l$ \\
-	$\quad$ Rq: s'il existe une sous-suite de $u$ qui diverge, alors $u$ diverge. S'il existent 2 sous-suites de $u$ qui convergent des
-	r\'eels distincts, alors $u$ diverge
-	\item Soit $u \in \mathbb{R}^\mathbb{N}, l \in \mathbb{R}$, \\
-			$v_n = u_{2n}$ \\
-			$w_n = u_{2n+1}$ \\
-		Si $v$ et $w$ convergent vers une m\^eme limite $l \in \mathbb{R}$, alors $u$ converge vers $l$.
-		(De m\^eme, pour toutes sous-suites qui convergent vers un m\^eme r\'eel et qui d\'ecrivent $\mathbb{N}$)
-	\item Toute suite convergente  est born\'ee
-\end{enumerate}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Unicit\'e: soit $u$ une suite convergente, alors il existe un unique r\'eel $l$ tel que $u$ converge vers $l$
+		\item Sous-suites: soit $u \in \mathbb{R}^\mathbb{N}$ une suite convergente de limite $l \in \mathbb{R}$. Alors toute sous-suite
+		de $u$ converge vers $l$
+		\begin{rqs}
+			S'il existe une sous-suite de $u$ qui diverge, alors $u$ diverge. S'il existent 2 sous-suites de $u$ qui convergent des
+			r\'eels distincts, alors $u$ diverge
+		\end{rqs}
+		\item Soit $u \in \mathbb{R}^\mathbb{N}, l \in \mathbb{R}$, $v_n = u_{2n}$, $w_n = u_{2n+1}$ \\
+			Si $v$ et $w$ convergent vers une m\^eme limite $l \in \mathbb{R}$, alors $u$ converge vers $l$.
+			(De m\^eme, pour toutes sous-suites qui convergent vers un m\^eme r\'eel et qui d\'ecrivent $\mathbb{N}$)
+		\item Toute suite convergente  est born\'ee
+	\end{enumerate}
+\end{prop}
 
 \subsection{Suites tendant vers $\infty$}
 \begin{defi}
-	Soit $u \in \mathbb{R}$. On dit que $u$ tend vers $\infty$ si:
-	\[\forall M \in \mathbb{R}, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \geq M\]
-	$u$ tend vers $-\infty$ si:
-	\[\forall M \in \mathbb{R}, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \leq M\]
+	Soit $u \in \mathbb{R}$. On dit que $u$ tend vers $+\infty$ (resp. $-\infty$) si:
+	\[\forall M \in \mathbb{R}, \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \geq M \text{ (resp.} \leq)\]
 \end{defi}
-\begin{enumerate}
-	\item Soient $u, v \in \mathbb{R}^\mathbb{N}$. On suppose $u_n \leq v_n$ pour $n$ assez grand: \\
-		si $u$ tend vers $\infty$, $v$ aussi. \\
-		si $v$ tend vers $-\infty$, $u$ aussi.
-	\item On suppose $u_n \rightarrow \infty$ et $v$ minor\'ee: \\
-		Alors $u+v$ tend vers $\infty$
-\end{enumerate}
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Soient $u, v \in \mathbb{R}^\mathbb{N}$. On suppose $u_n \leq v_n$ pour $n$ assez grand: \\
+			si $u$ tend vers $+\infty$, $v$ aussi. \\
+			si $v$ tend vers $-\infty$, $u$ aussi.
+		\item On suppose $u_n \rightarrow +\infty$ et $v$ minor\'ee: \\
+			Alors $u+v$ tend vers $+\infty$
+	\end{enumerate}
+\end{prop}
 
 \section{Ordre et limites}
-\begin{enumerate}
-	\item Conservation des in\'egalit\'ees larges par passage \`a la limite: \\
-		$u, v$ 2 suites r\'eeles convergentes, $u_n \leq v_n$. Alors $lim\ u \leq lim\ v$
-	\item Th\'eor\`eme des gendarmes: \\
-		$u, v, w \in \mathbb{R}^\mathbb{N}, u_n \leq v_n \leq w_n$. Si $u$ et $v$ sont convergentes de m\^eme limite $l \in \mathbb{R}$
-		alors $v$ converge vers $l$
-	\item Suites monotones:
-		Soit $u$ une suite r\'eelle croissante:
-		\begin{enumerate}
-			\item si $u$ est major\'ee alors $u$ converge
-			\item si $u$ n'est pas major\'ee alors $u \rightarrow \infty$
-		\end{enumerate}
-		Soit $u$ une suite r\'eelle d\'ecroissante:
-		\begin{enumerate}
-			\item si $u$ est minor\'ee alors $u$ converge
-			\item si $u$ n'est pas minor\'ee alors $u \rightarrow -\infty$
-		\end{enumerate}
-	\item Suites adjacentes:
-		\begin{itemize}
-			\item D\'efinition: deux suites r\'eelles sont adjacentes si elles sont de monotonie contraire et si $u-v$ converge vers 0.
-			\item Deux suites adjacentes convergent vers un m\^eme r\'eel
-		\end{itemize}
-\end{enumerate}
-\begin{theo} Segments embo\^it\'es: soit $(I_n)_{n \in \mathbb{N}}$ une suite de segments (il existe, pour
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Conservation des in\'egalit\'ees larges par passage \`a la limite: \\
+			$u, v$ 2 suites r\'eelles convergentes, $u_n \leq v_n$. Alors $\lim u \leq \lim v$
+		\item Th\'eor\`eme des gendarmes: \\
+			$u, v, w \in \mathbb{R}^\mathbb{N}, u_n \leq v_n \leq w_n$. Si $u$ et $v$ sont convergentes de m\^eme limite $l \in \mathbb{R}$
+			alors $v$ converge vers $l$
+		\item Suites monotones:
+			Soit $u$ une suite r\'eelle croissante (analogue avec $u$ d\'ecroissante):
+			\begin{enumerate}
+				\item si $u$ est major\'ee alors $u$ converge
+				\item si $u$ n'est pas major\'ee alors $u \rightarrow +\infty$
+			\end{enumerate}
+			%Soit $u$ une suite r\'eelle d\'ecroissante:
+			%\begin{enumerate}
+				%\item si $u$ est minor\'ee alors $u$ converge
+				%\item si $u$ n'est pas minor\'ee alors $u \rightarrow -\infty$
+			%\end{enumerate}
+		\item Suites adjacentes:
+			\begin{itemize}
+				\item [-] D\'efinition: deux suites r\'eelles sont adjacentes si elles sont de monotonie contraire et si $u-v$ converge vers 0.
+				\item [-] Deux suites adjacentes convergent vers un m\^eme r\'eel
+			\end{itemize}
+	\end{enumerate}
+\end{prop}
+\begin{theo} Segments embo\^it\'es \\
+	Soit $(I_n)_{n \in \mathbb{N}}$ une suite de segments (il existe, pour
 	$n \in \mathbb{N}, a_n, b_n \in \mathbb{R}$ tel que $I_n = [a_n, b_n]$ et $a_n \leq b_n$). On suppose $I_{n+1} \subset I_n$. Alors,
 	\[\bigcup_{n \in \mathbb{N}} I_n \text{ est un segment non vide.}\]
 \end{theo}
-	\begin{itemize}
-		\item Application: $\mathbb{R}$ n'est pas d\'nombrable.
-	\end{itemize}
+\begin{coro}
+	$\mathbb{R}$ n'est pas d\'enombrable
+\end{coro}
 
 \section{Bolzano-Weierstrass (et adh\'erence)}
-\begin{defi}
-	$u \in \mathbb{R}^\mathbb{N}, x \in \mathbb{R}$. \\
-	On dit que $x$ est valeur d'adh\'erence de $u$ s'il existe une sous-suite de $u$ qui converge vers $x$
+\begin{defi} Adh\'erence \\
+	$u \in \mathbb{R}^\mathbb{N}, x \in \mathbb{R}$.  On dit que $x$ est valeur d'adh\'erence de $u$ s'il existe une sous-suite de $u$
+	qui converge vers $x$
 \end{defi}
-\begin{itemize}
-	\item Soit $u$ une suite convergente de limite $l \in \mathbb{R}$. Alors $l$ est l'unique valeur d'adh\'erence de $u$
-	\item $u \in \mathbb{R}^\mathbb{N}, x \in \mathbb{R}$. LASSE
-	\begin{enumerate}
-		\item $x$ est valeur d'adh\'erence de $u$
-		\item $\forall \epsilon > 0, \forall N \in \mathbb{N}, \exists n \geq N, |u_n - x| \leq \epsilon$
-	\end{enumerate}
-\end{itemize}
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] LASSE: soit $u \in \mathbb{R}^\mathbb{N}, x \in \mathbb{R}$
+		\begin{enumerate}
+			\item $x$ est valeur d'adh\'erence de $u$
+			\item $\forall \epsilon > 0, \forall N \in \mathbb{N}, \exists n \geq N, |u_n - x| \leq \epsilon$
+		\end{enumerate}
+		\item [-] Soit $u$ une suite convergente de limite $l \in \mathbb{R}$. Alors $l$ est l'unique valeur d'adh\'erence de $u$
+	\end{itemize}
+\end{prop}
 
 \begin{theo}
 	Toute suite r\'elle born\'ee admet au moins une valeur d'adh\'erence
 \end{theo}
 
 \section{Suites particuli\`eres}
-\begin{itemize}
+\begin{enumerate}
 	\item Suites arithm\'etiques
 	\item Suites g\'eom\'etriques
 	\item Suites arithm\'etico-g\'eom\'etriques
 	\item Suites v\'erifiant une relation de r\'ecurrence lin\'eaire d'ordre 2: \\
 		$a \in \mathbb{R}^*, (b,c) \in \mathbb{R}^2\backslash\{0,0\}$. Soit $E$ l'ensemble des suites r\'eelles $u$ telles que:
 		\[\forall n \in \mathbb{N}, au_{n+2} + bu_{n+1} + cu_n = 0\]
-		Soit $P = aX^2 + bX + X$. 3 cas se pr\'esentent:
+		Soit $P = aX^2 + bX + X$:
 		\begin{enumerate}
 			\item $P$ admet 2 racines r\'eelles distinctes $q_1, q_2$ alors:
-				\[E = \{n \in \mathbb{N} \mapsto \alpha q_1^n + \beta q_2^n | \alpha, \beta \in \mathbb{R}\}\]
+				\[E = \{n \in \mathbb{N} \mapsto \alpha q_1^n + \beta q_2^n / \alpha, \beta \in \mathbb{R}\}\]
 			\item $P$ a une racine double $q_0$ alors:
-				\[E = \{n \in \mathbb{N} \mapsto (\alpha n + \beta) q_0^n | \alpha, \beta \in \mathbb{R}\}\]
+				\[E = \{n \in \mathbb{N} \mapsto (\alpha n + \beta) q_0^n / \alpha, \beta \in \mathbb{R}\}\]
 			\item $P$ admet 2 racines complexes conjugu\'ees: $z_1 = re^{i\theta}, z_2 = re^{-i\theta}$, alors:
-				\[E = \{n \in \mathbb{N} \mapsto r^n(\alpha \cos(n\theta) + \beta \sin(n\theta) | \alpha, \beta \in \mathbb{R}\}\]
+				\[E = \{n \in \mathbb{N} \mapsto r^n(\alpha \cos(n\theta) + \beta \sin(n\theta) / \alpha, \beta \in \mathbb{R}\}\]
 		\end{enumerate}
-\end{itemize}
+\end{enumerate}
 
 \end{document}

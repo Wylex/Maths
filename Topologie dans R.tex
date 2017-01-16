@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{verbatim}
+\usepackage{booktabs}
 
 \title{Topologie dans $\mathbb{R}$}
 \date{}
@@ -10,7 +11,10 @@
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
 \theoremstyle{definition} \newtheorem*{adh}{Caract\'erisation s\'equentielle de l'adh\'erence}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
 \theoremstyle{definition} \newtheorem*{fermitude}{Caract\'erisation s\'equentielle de la fermitude}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.3}
 
 \begin{document}
 \maketitle
@@ -20,67 +24,76 @@
 	Soit $x$ un r\'eel et $A \subset \mathbb{R}$. On dit que $A$ est voisinage de $x$ s'il existe $\epsilon > 0$ tel que:
 	\[[x-\epsilon, x+\epsilon] \subset A\]
 \end{defi}
-Pour $x \in \mathbb{R}$ on note $V_\mathbb{R}(x)$ l'ensemble des voisinages de $x$ dans $\mathbb{R}$ \\
-\begin{itemize}
-	\item $A \in V_\mathbb{R}(x)$ et $A \subset B \Rightarrow B \in V_\mathbb{R}(x)$
-	\item Une r\'eunion quelconque de voisinages de $x$ est encore un voisinage de $x$
-	\item Une intersection finie de voisinages de $x$ l'est aussi
-\end{itemize}
+Pour $x \in \mathbb{R}$ on note $V_\mathbb{R}(x)$ l'ensemble des voisinages de $x$ dans $\mathbb{R}$
+
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] $A \in V_\mathbb{R}(x)$ et $A \subset B \Rightarrow B \in V_\mathbb{R}(x)$
+		\item [-] Une r\'eunion quelconque de voisinages de $x$ est encore un voisinage de $x$
+		\item [-] Une intersection finie de voisinages de $x$ l'est aussi
+	\end{itemize}
+\end{prop}
 
 \section{Ouverts et ferm\'es}
 \begin{defi}
 	Soit $A \subset \mathbb{R}$
 	\begin{itemize}
-		\item On dit que $A$ est un ouvert si:
+		\item [-] On dit que $A$ est un ouvert si:
 			\[\forall x, x \in A \Rightarrow A \in V_\mathbb{R}(x)\]
-		\item On dit que $A$ est un ferm\'e lorsque $A^c$ est un ouvert \\
+		\item [-] On dit que $A$ est un ferm\'e lorsque $A^c$ est un ouvert
 	\end{itemize}
 \end{defi}
-\begin{enumerate}
-	\item Une r\'eunion quelconque d'ouverts est un ouvert
-	\item Une intersection finie d'ouverts est un ouvert
-	\item Une r\'eunion finie de ferm\'es est un ferm\'e
-	\item Une intersection quelconque de ferm\'es est un ferm\'e
-\end{enumerate}
+
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] Une r\'eunion quelconque d'ouverts est un ouvert
+		\item [-] Une intersection finie d'ouverts est un ouvert
+		\item [-] Une r\'eunion finie de ferm\'es est un ferm\'e
+		\item [-] Une intersection quelconque de ferm\'es est un ferm\'e
+	\end{itemize}
+\end{prop}
 
 \section{Adh\'erence, int\'erieur}
 \begin{defi}
 	Soit $A \subset \mathbb{R}$
 	\begin{enumerate}
 		\item $x \in \mathbb{R}$ est int\'erieur \`a $A$ si $A$ est voisinage de $x$
-		\item $x \in \mathbb{R}$ est un point adh\'erent \`a $A$ si pour tout voisinage $V$ de $x$, $V \cap A \neq \emptyset$ \\
+		\item $x \in \mathbb{R}$ est un point adh\'erent \`a $A$ si pour tout voisinage $V$ de $x$, $V \cap A \neq \emptyset$
 	\end{enumerate}
 \end{defi}
-\begin{itemize}
-	\item Adh, int d'intervalles
-		\begin{align*}
-			Int([a,b]) &= Int(]a,b]) \\
-					   &= Int([a,b[) \\
-					   &= Int(]a,b[) = ]a,b[
-		\end{align*}
-		\begin{align*}
-			Adh(]a,b[) &= Adh(]a,b]) \\
-					   &= Adh([a,b[) \\
-					   &= Adh([a,b]) = [a,b]
-		\end{align*}
-	\item Soit $A$ une partie major\'ee de $\mathbb{R}$, alors sup $A$ est adh\'erent \`a $A$ (analogue pour $inf\ A$)
-	\item Soit $A \subset \mathbb{R}$ \\
-		$A$ est ferm\'e $\Leftrightarrow A = Adh(A)$ \\
-		$A$ est ouvert $\Leftrightarrow A = Int(A)$
-\end{itemize}
-\begin{adh}
-	Soit $A \subset \mathbb{R} (A \neq \emptyset), x \in \mathbb{R}$
-	\[x \in Adh(A) \Leftrightarrow \text{il existe une suite} (a_n)_{n \in \mathbb{N}} \text{ de points de A qui converge vers } x\]
-\end{adh}
-\begin{fermitude}
-	Soit $A \subset \mathbb{R}$
-	\[A \text{ ferm\'ee} \Leftrightarrow \text{Pour toute suite cv. d'\'el\'e de } A\ (a_n), \text{on a } lim_{n \to \infty} a_n \in A\]
-\end{fermitude}
+
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] Adh\`erence, int\'erieur d'intervalles:
+			\begin{align*}
+				Int([a,b]) &= Int(]a,b]) \\
+						   &= Int([a,b[) \\
+						   &= Int(]a,b[) = ]a,b[
+			\end{align*}
+			\begin{align*}
+				Adh(]a,b[) &= Adh(]a,b]) \\
+						   &= Adh([a,b[) \\
+						   &= Adh([a,b]) = [a,b]
+			\end{align*} \\
+		\item [-] Soit $A$ une partie major\'ee de $\mathbb{R}$, alors $\sup A$ est adh\'erent \`a $A$ (analogue pour $\inf\ A$)
+		\item [-] Soit $A \subset \mathbb{R}$ \\
+			$A$ est ferm\'e $\Leftrightarrow A = Adh(A)$ \\
+			$A$ est ouvert $\Leftrightarrow A = Int(A)$
+	\end{itemize}
+\end{prop}
+\begin{prop} Caract\'erisations s\'equentielles
+	\begin{enumerate}
+		\item Adh\'erence: soit $A \subset \mathbb{R} (A \neq \emptyset), x \in \mathbb{R}$
+			\[x \in Adh(A) \Leftrightarrow \exists\ (a_n)_{n \in \mathbb{N}} \text{ de points de A qui converge vers } x\]
+		\item Fermitude: soit $A \subset \mathbb{R}$
+			\[A \text{ ferm\'ee} \Leftrightarrow \text{Pour toute suite cv. d'\'el\'e de } A\ (a_n), \text{on a } lim_{n \to \infty} a_n \in A\]
+	\end{enumerate}
+\end{prop}
 \begin{theo}
-	Boel-Lebesque: soit $A \subset \mathbb{R} (A \neq \emptyset)$, LASSE:
+	Boel-Lebesque \\ Soit $A \subset \mathbb{R} (A \neq \emptyset)$, LASSE:
 	\begin{enumerate}
 		\item $A$ est ferm\'ee born\'ee (compacte)
-		\item Pour toute suite $(a_n)$ d'\'el\'e. de $a$, il existe une sous-suite de $(a_n)$ qui cv. vers un \'el\'e. de $A$
+		\item Pour toute suite $(a_n)$ d'\'el\'ements de $a$, il existe une sous-suite de $(a_n)$ qui converge vers un \'el\'ement de $A$
 	\end{enumerate}
 \end{theo}
 

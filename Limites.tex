@@ -9,7 +9,7 @@
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
-\theoremstyle{definition} \newtheorem*{adh}{Caract\'erisation s\'equentielle de l'adh\'erence}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
 \theoremstyle{remark} \newtheorem*{rqs}{Remarques}
 
 \begin{document}
@@ -19,28 +19,37 @@
 \begin{defi}
 	$\overline{\mathbb{R}} = \mathbb{R} \cup \{ +\infty, -\infty\}$
 \end{defi}
-\begin{itemize}
-	\item Intervalles de $\overline{\mathbb{R}}$: ce sont les parties de $\overline{\mathbb{R}}$ du type ($a,b \in \overline{\mathbb{R}}$ et
-		$a \leq b$): \\
-		$[a,b]$ ou $[a,b[$ ou $]a,b[$
-	\item Voisinage: Soit $x \in \overline{\mathbb{R}}, A \subset \overline{\mathbb{R}}$ \\
-		On dit que $A$ est voisinage de $x$ dans $\overline{\mathbb{R}}$ si:
+
+\begin{prop} Intervalles de $\overline{\mathbb{R}}$ \\
+		Ce sont les parties de $\overline{\mathbb{R}}$ du type ($a,b \in \overline{\mathbb{R}}$ et $a \leq b$): $[a,b]$ ou $[a,b[$ ou $]a,b[$
+\end{prop}
+
+\begin{prop} Voisinages en $\overline{\mathbb{R}}$ \\
+	Soit $x \in \overline{\mathbb{R}}, A \subset \overline{\mathbb{R}}$. On dit que $A$ est voisinage de $x$ dans $\overline{\mathbb{R}}$ si:
 		\begin{itemize}
-			\item[-] si $x \in \mathbb{R}, \exists \epsilon > 0$ tel que $[x - \epsilon, x + \epsilon] \subset A$
-			\item[-] si $x = +\infty, \exists M \in \mathbb{R}$ tel que $[M, +\infty] \subset A$
-			\item[-] si $x = - \infty, \exists M \in \mathbb{R}$ tel que $[-\infty, M] \subset A$
+			\item[-] si $x \in \mathbb{R},\ \exists \epsilon > 0$ tel que $[x - \epsilon, x + \epsilon] \subset A$
+			\item[-] si $x = +\infty,\ \exists M \in \mathbb{R}$ tel que $[M, +\infty] \subset A$
+			\item[-] si $x = - \infty,\ \exists M \in \mathbb{R}$ tel que $[-\infty, M] \subset A$
 		\end{itemize}
-	\item $\overline{\mathbb{R}}$ est s\'epar\'ee: \\
+\end{prop}
+
+\begin{prop} $\overline{\mathbb{R}}$ est s\'epar\'ee \\
 		Pour $x, y \in \overline{\mathbb{R}}$ avec $x \neq y$, il existe $U \in V_{\overline{\mathbb{R}}}(x), V \in V_{\overline{\mathbb{R}}}$
 		tel que: $U \cap V \neq \emptyset$
-	\item Propri\'et\'e: Soit $(u_n)$ une suite r\'eelle et $l \in \overline{\mathbb{R}}$. On a: \\
-		$u_n \rightarrow l \Leftrightarrow \forall\ V \in V_{\overline{\mathbb{R}}}(l), \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n
+\end{prop}
+
+\begin{prop} Limite d'une suite \\
+	Soit $(u_n)$ une suite r\'eelle et $l \in \overline{\mathbb{R}}$. On a: \\
+		$u_n \rightarrow l \Leftrightarrow \forall\ V \in V_{\overline{\mathbb{R}}}(l),\ \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n
 		\in V$
-	\item Point adh\'erent: \\
+\end{prop}
+
+\begin{defi} Point adh\'erent \\
 		Soit $A \subset \overline{\mathbb{R}}, x \in \overline{\mathbb{R}}$. On dit que $x$ est adh\'erent \`a $A$ dans
 		$\overline{\mathbb{R}}$ si: \\
 		$\forall\ V \in V_{\overline{\mathbb{R}}}, A \cap V \neq \emptyset$
-\end{itemize}
+\end{defi}
+
 \begin{rqs}
 	Soit $D \subset \mathbb{R}, x \in \overline{\mathbb{R}}$
 	\begin{enumerate}
@@ -52,45 +61,58 @@
 			$x$ adh\'erent \`a $D$ dans $\overline{\mathbb{R}} \Leftrightarrow D$ non minor\'ee dans $\mathbb{R}$
 	\end{enumerate}
 \end{rqs}
-\begin{adh}
+\begin{prop} Caract\'erisation s\'equentielle de l'adh\'erence \\
 	Soit $A \subset \mathbb{R}, x \in \overline{\mathbb{R}}$,
 	\[x \in Adh_{\overline{\mathbb{R}}}(A) \Leftrightarrow \text{ il existe une suite } (a_n) \text{ de points de } A \text{ telle que }
 	a_n \rightarrow x\]
-\end{adh}
+\end{prop}
 
 \section{Notion de limite}
 \begin{defi}
-	Soit $D \subset \mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a $D, l \in \overline{\mathbb{R}}, f: D \rightarrow \mathbb{R}$. LASSE
+	Soit $D \subset \mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a $D, l \in \overline{\mathbb{R}}, f: D \rightarrow \mathbb{R}$.
 	\begin{enumerate}
 		\item $\forall\ V \in V_{\overline{\mathbb{R}}}(l), \exists U \in V_{\overline{\mathbb{R}}}(a), f(U \cap D) \subset V$ [topologique]
 		\item Pour toute $(x_n)$ de points de $D$ telle que $x_n \rightarrow a$ on a $f(x_n) \rightarrow l $ [s\'equentielle]
 	\end{enumerate}
 \end{defi}
-$ $ \\
-\begin{enumerate}
-	\item Lien entre limite et continuit\'e: \\
-		$D \subset \mathbb{R}, x_0 \in D, f:D \rightarrow \mathbb{R}$
-		\begin{enumerate}
-			\item La seule limite possible de $f$ en $x_0$ est $f(x_0)$
-			\item $f$ admet une limite en $x_0 \Leftrightarrow f(x) \rightarrow f(x_0) \Leftrightarrow f$ est continue en $x_0$
-		\end{enumerate}
-	\item Supposons $lim_{x \to a} f(x) \rightarrow l$ avec $l \neq -\infty$, alors si $m \in \mathbb{R}, m < l$, on a $f(x) \geq m$
-		sur voisinage de $a$
-	\item Prolongement par continuit\'e: \\
-		$D \subset \mathbb{R}, x_0 \in D, f:D \backslash \{x_0\} \rightarrow \mathbb{R}$ continue \\
-		On suppose $x_0$ adh\'erent \`a $D \backslash \{x_0\}$, on suppose que $f$ admet une limite finie $l \in \mathbb{R}$ en $x_0$. \\
-		Si on pose $g: D \rightarrow \mathbb{R}$ tel que $x \mapsto l$ si $x = x_0$, $x \mapsto f(x)$ si $x \neq x_0$ \\
-		Alors g est continue sur $D$. On dit qu'on a prolong\'e f par continuit\'e en $x_0$
-	\item Limites \`a gauche et \`a droite: \\
-		$D \subset \mathbb{R}, x_0 \in \mathbb{R}, f:D \rightarrow \mathbb{R}$ \\
-		$D^+ = D \cap ]x_0, +\infty[$ \\
-		$D^- = D \cap ]-\infty, x_0[$ \\
-		On suppose que $x_0$ est adh\'erent \`a $D^+$ et $D^-$. On note: \\
-		$f^+ = f_{|D^+}$ \\
-		$f^- = f_{|D^-}$
-		\begin{defi}
-			si $f^+$ admet une limite en $x_0$, on dit que f admet une limite \`a droite en $x_0$. De m\^eme pour la gauche
-		\end{defi}
+
+\begin{prop} Lien entre limite et continuit\'e: \\
+	$D \subset \mathbb{R}, x_0 \in D, f:D \rightarrow \mathbb{R}$
+	\begin{enumerate}
+		\item La seule limite possible de $f$ en $x_0$ est $f(x_0)$
+		\item $f$ admet une limite en $x_0 \Leftrightarrow f(x) \rightarrow f(x_0) \Leftrightarrow f$ est continue en $x_0$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop}
+	Supposons $lim_{x \to a} f(x) \rightarrow l$ avec $l \neq -\infty$, alors si $m \in \mathbb{R}, m < l$, on a $f(x) \geq m$
+	sur voisinage de $a$
+\end{prop}
+
+\begin{prop} Prolongement par continuit\'e
+	\begin{itemize}
+		\item [-] $D \subset \mathbb{R}, x_0 \in D, f:D \backslash \{x_0\} \rightarrow \mathbb{R}$ continue
+		\item [-] On suppose $x_0$ adh\'erent \`a $D \backslash \{x_0\}$, on suppose que $f$ admet une limite finie $l \in \mathbb{R}$
+			en $x_0$.
+		\item [-] Si on pose $\tilde{f}$ telle que
+			\begin{align*}
+				\tilde{f}: D &\rightarrow \mathbb{R} \\
+				x = x_0 &\mapsto l \\
+				x \neq x_0 &\mapsto f(x)
+			\end{align*}
+		Alors $\tilde{f}$ est continue sur $D$. On dit qu'on a prolong\'e f par continuit\'e en $x_0$
+	\end{itemize}
+\end{prop}
+
+\begin{prop} Limites \`a gauche et \`a droite
+	\begin{itemize}
+		\item [-] $D \subset \mathbb{R}, x_0 \in \mathbb{R}, f:D \rightarrow \mathbb{R}$ \\
+			$D^+ = D \cap ]x_0, +\infty[$ \\
+			$D^- = D \cap ]-\infty, x_0[$
+		\item [-] On suppose que $x_0$ est adh\'erent \`a $D^+$ et $D^-$. On note: \\
+			$f^+ = f_{|D^+}$ \\
+			$f^- = f_{|D^-}$
+		\item [-] Si $f^+$ admet une limite en $x_0$, on dit que f admet une limite \`a droite en $x_0$. De m\^eme pour la gauche
 		\begin{enumerate}
 			\item Supposons que f admet en $x_0$ une limite $l \in \overline{\mathbb{R}}$. $f$ admet alors $l$ comme limite \`a droite
 				et \`a gauche de $x_0$.
@@ -103,8 +125,57 @@ $ $ \\
 				Si $x_0 \in D$, la seule limite possible pour $f$ en $x_0$ est $f(x_0)$ donc si $l \neq f(x_0), f$ n'admet pas de limite
 				en $x_0$
 		\end{enumerate}
-\end{enumerate}
+	\end{itemize}
+\end{prop}
 
 \section{Th\'eor\`emes g\'en\'eraux}
+Th\'eor\`emes g\'en\'eraux classiques valables pour les limites.
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Conservation des in\'egalit\'es larges par passage \`a la limite
+		\item Comparaison
+		\item Encadrement
+	\end{enumerate}
+\end{prop}
+
+\section{Monotonie et limites}
+
+\begin{theo} $ $ \\
+	Soient $a \in \mathbb{R},\ b \in \overline{\mathbb{R}},\ f:[a,b[ \rightarrow \mathbb{R}$ croissante alors:
+	\begin{enumerate}
+		\item si $f$ est major\'ee, $f$ admet en $b$ une limite finie: $f(x) \underset{b}{\rightarrow} l = \sup f$
+		\item si $f$ n'est pas major\'ee alors $f(x) \underset{b}{\rightarrow} +\infty$
+	\end{enumerate}
+	\begin{rqs}
+		Propri\'et\'e avec ses correspondants corollaires
+	\end{rqs}
+\end{theo}
+
+\begin{theo} $ $ \\
+	Soit I un intervalle non trivial de $\mathbb{R},\ f:I \rightarrow \mathbb{R}$, croissante (par exemple). \\
+	Soit $x_0 \in Int(I)$ alors $f$ admet en $x_0$ des limites telles que:
+	\[\lim_{x_0^- f} \leq f(x_0) \leq \lim_{x_0^+}\]
+\end{theo}
+
+\begin{theo} $ $ \\
+	Soit I un intervalle non trivial de $\mathbb{R},\ f:I\rightarrow \mathbb{R}$ monotone. Alors:
+	\[f \text{ est continue} \Leftrightarrow f(I) \text{ est un intervalle}\]
+\end{theo}
+
+\begin{theo} Bijection \\
+	I intervalle non trivial de $\mathbb{R},\ f:I\rightarrow \mathbb{R}$ continue, strictement monotone,$J = f(I)$
+	\begin{enumerate}
+		\item Alors J est un intervalle non trivial de $\mathbb{R}$
+		\item $\tilde{f}$ d\'efinie par:
+			\begin{align*}
+				\tilde{f}: I &\rightarrow J \\
+				t &\mapsto f(t)
+			\end{align*}
+			est bijective. $\tilde{f}^{-1}$ est strictement monotone de m\^eme monotonie que $f$ et continue
+	\end{enumerate}
+	\begin{rqs}
+		On peut lorsque la fonction est strictement monotone et continue pr\'evoir la forme de l'intervalle des images
+	\end{rqs}
+\end{theo}
 
 \end{document}

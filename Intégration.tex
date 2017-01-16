@@ -4,6 +4,7 @@
 \usepackage{amsthm}
 \usepackage{verbatim}
 \usepackage{booktabs}
+\usepackage{mathrsfs}
 
 \title{Int\'egration}
 \date{}
@@ -58,7 +59,7 @@
 
 \section{Int\'egrale d'une fonction continue sur un segment}
 \begin{theo} Densit\'e \\
-	Soient $a,b \in \mathbb{R},\ a < b$. Soit $f \in C([a,b], \mathbb{R})$. Soit $\epsilon > 0$. \\
+	Soient $a,b \in \mathbb{R},\ a < b$. Soit $f \in \mathscr{C}([a,b], \mathbb{R})$. Soit $\epsilon > 0$. \\
 	Il existe alors $\varphi_{\epsilon}, \psi_{\epsilon} \in \mathcal{E}([a,b], \mathbb{R})$ tels que $\varphi_{\epsilon} \leq f
 	\leq \psi_{\epsilon}$ et $\psi_{\epsilon} - \varphi_{\epsilon} \leq \epsilon$
 \end{theo}
@@ -68,8 +69,8 @@
 		\item Soit $a,b \in \mathbb{R},\ a<b$ et $f:[a,b] \rightarrow \mathbb{R}$, continue. On note $\mathcal{E}_f^+$ l'ensemble des
 		fonction $\psi$
 			en escalier tels que $\psi \geq f$ (resp. $\mathcal{E}_f^-,\ \varphi$) \\
-			$\Omega_+ = \{I(\psi) \backslash \psi \in \mathcal{E}_f^+\} \subset \mathbb{R}$ \\
-			$\Omega_- = \{I(\varphi) \backslash \varphi \in \mathcal{E}_f^-\} \subset \mathbb{R}$ \\
+			$\Omega_+ = \{I(\psi) / \psi \in \mathcal{E}_f^+\} \subset \mathbb{R}$ \\
+			$\Omega_- = \{I(\varphi) / \varphi \in \mathcal{E}_f^-\} \subset \mathbb{R}$ \\
 			Alors $\Omega_+$ est minor\'ee, $\Omega_+$ est major\'ee et $\inf \Omega_+ = \sup \Omega_-$
 		\item Ce nombre est par d\'efinition l'int\'egrale de $f$ et se note $\int_a^b f$. On a donc\\
 			$\forall \varphi \in \mathcal{E}_f^-,\ I(\varphi) \leq \int_a^b f$\\
@@ -80,7 +81,7 @@
 \begin{rqs} M\^eme propri\'et\'ees que pour les fonction en escalier (lin\'earit\'e, positivit\'e, chasles)
 \end{rqs}
 
-\begin{prop} $f \in C([a,b], \mathbb{R}_+)$, $f \geq 0$ et $\int_a^b f = 0 \Leftrightarrow \forall t \in [a,b],\ f(t) = 0$
+\begin{prop} $f \in \mathscr{C}([a,b], \mathbb{R}_+)$, $f \geq 0$ et $\int_a^b f = 0 \Leftrightarrow \forall t \in [a,b],\ f(t) = 0$
 \end{prop}
 
 \begin{theo} Fondamental \\
@@ -114,7 +115,7 @@
 
 \subsection{Sommes de Darboux-Riemann}
 \begin{defi}
-	$a,b \in \mathbb{R},\ f:[a,b] \rightarrow \mathbb{R},\ \Gamma$ une subdivision de $[a,b]$, $\omega = (x_0, \hdots, x_n)$ un choix de
+	$a,b \in \mathbb{R},\ f:[a,b] \rightarrow \mathbb{R}\ C^0,\ \Gamma$ une subdivision de $[a,b]$, $\omega = (x_0, \hdots, x_n)$ un choix de
 	points associ\'ee \`a $\Gamma = (y_0, \hdots, y_n)$ \\
 	On pose $S_{f,\Gamma, \omega} = \sum_{i=0}^{n-1} (x_{i+1} - x_i) f(y_i)$
 \end{defi}
@@ -158,7 +159,7 @@
 		$\Delta_n = \int_\alpha^\beta f - \sum_{k=0}^{n-1} \frac{b-a}{n} f(a + k\frac{b-a}{n})$ \\
 		$|\Delta_n| \leq \frac{M(b-a)^2}{2n} \in O(\frac{1}{n})$
 	\item M\'ethode des rectangles m\'edians \\
-		$f:[a,b] \rightarrow \mathbb{R},\ C^2,\ y_k = \frac{x_k + x_{k+1}}{2}$ \\
+		$f:[a,b] \rightarrow \mathbb{R},\ C^2,\ y_k = \frac{x_k + x_{k+1}}{2},$ $M$ majorant de $f''$\\
 		$\Delta_n = \int_a^b f - \sum_{k=0}^{n-1} (x_{k+1} - x_k)f(y_k)$ \\
 		$|\Delta_n| \leq \frac{M(b-a)^3}{24n^2} \in O(\frac{1}{n^2})$
 
