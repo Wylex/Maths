@@ -28,49 +28,58 @@
 
 \begin{prop} Soit $E$ un ensemble fini, $F \subset E$
 	\begin{enumerate}
-		\item $F$ est fini et card $F$ $\leq$ card $E$
-		\item si card $F$ $=$ card $E$ alors $F$ = $E$
+		\item $F$ est fini et $|F|$ $\leq$ $|E|$
+		\item si $|F|$ $=$ $|E|$ alors $F$ = $E$
 	\end{enumerate}
 \end{prop}
 
 \section{Op\'erations sur les enmbles finis}
-\subsection{R\'eunion}
-\begin{itemize}
-	\item [-] Soient $E, F$ deux ensembles finis tels que $E \cap F = \emptyset$ \\
-		Alors $E \cup F$ est fini et $|E \cup F| = |E| + |F|$
-	\item [-] Pour toute partie $A$ de $E$, $|A| = |E| - |\overline{A}|$
-\end{itemize}
-Soient $E, F$ deux ensembles finis \\
-Alors $E\cup F$ est fini et $|E \cup F| = |E| + |F| - |E \cap F|$
-
-\subsection{Ensemble des parties d'un ensemble fini}
-Soit E un ensemble fini, alors $P(E)$ est fini et $|P(E)| = 2^{|E|}$ \\
-$\gamma_k^n = \binom{n}{k}$ c'est le nombre de parties \`a $k$ \`el\`ements d'un ensemble fini \`a n \`el\`ements
-
-\subsection{Produit cart\'esien}
-Soient $E,F$ deux ensembles finis, alors $E\times F$ est fini et $|E\times F| = |E||F|$
-
-\subsection{Applications}
-$E,F$ deux ensembles finis, alors $\mathcal{F}(E,F)$ est fini et $|\mathcal{F}(E,F)| = |F|^{|E|}$
+\begin{prop} Soient $E$ et $F$ deux ensembles finis
+	\begin{enumerate}
+		\item R\'eunion de deux ensembles
+			\begin{enumerate}
+				\item On suppose que $E \cap F = \emptyset$ \\
+					Alors $E \cup F$ est fini et $|E \cup F| = |E| + |F|$
+				\item Pour toute partie $A$ de $E$, $|A| = |E| - |\overline{A}|$
+				\item Soient $E, F$ deux ensembles finis \\
+					Alors $E\cup F$ est fini et $|E \cup F| = |E| + |F| - |E \cap F|$
+			\end{enumerate}
+		\item Ensemble des parties d'un ensemble fini
+			\begin{enumerate}
+			\item $P(E)$ est fini et $|P(E)| = 2^{|E|}$
+			\item $\gamma_k^n = \binom{n}{k}$ c'est le nombre de parties \`a $k$ \`el\`ements d'un ensemble fini \`a n \`el\`ements
+			\end{enumerate}
+		\item Produit cart\'esien \\
+			$E\times F$ est fini et $|E\times F| = |E||F|$
+		\item Applications \\
+			$\mathcal{F}(E,F)$ est fini et $|\mathcal{F}(E,F)| = |F|^{|E|}$
+	\end{enumerate}
+\end{prop}
 
 \section{Applications entre ensembles finis}
-Soit $E$ un ensemble fini, $F$ quelconque et $f: E \rightarrow F$
-\begin{enumerate}
-	\item $f(E)$ est fini et $|f(E)| \leq |E|$
-	\item $|f(E)| = |E| \Leftrightarrow f$ est injective
-\end{enumerate}
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Soit $E$ un ensemble fini, $F$ quelconque et $f: E \rightarrow F$
+			\begin{enumerate}
+				\item $f(E)$ est fini et $|f(E)| \leq |E|$
+				\item $|f(E)| = |E| \Leftrightarrow f$ est injective
+			\end{enumerate}
 
-Supposons que $F$ est fini
-\begin{enumerate}
-	\item $f(E) \leq |F|$
-	\item $|f(E)| = |F| \Leftrightarrow f$ est surjective
-\end{enumerate}
+		\item Supposons que $F$ est fini
+			\begin{enumerate}
+				\item $|f(E)| \leq |F|$
+				\item $|f(E)| = |F| \Leftrightarrow f$ est surjective
+			\end{enumerate}
+	\end{enumerate}
+\end{prop}
 
-\begin{itemize}
-	\item [-] Si $|E| > |F|$ alors $f$ ne peut pas \^etre injective
-	\item [-] Si $|E| < |F|$ alors $f$ ne peut pas \^etre surjective
-	\item [-] $E$ et $F$ sont en bijection $\Leftrightarrow |E| = |F|$
-\end{itemize}
+\begin{coro} $ $
+	\begin{itemize}
+		\item [-] Si $|E| > |F|$ alors $f$ ne peut pas \^etre injective
+		\item [-] Si $|E| < |F|$ alors $f$ ne peut pas \^etre surjective
+		\item [-] $E$ et $F$ sont en bijection $\Leftrightarrow |E| = |F|$
+	\end{itemize}
+\end{coro}
 
 \begin{prop} $f: E \rightarrow F$ avec $|E| = |F|$, LASSE
 	\begin{enumerate}
@@ -81,11 +90,17 @@ Supposons que $F$ est fini
 \end{prop}
 
 \subsection{Nombre d'injections, de permutations}
-\begin{prop} $ $
-	\begin{enumerate}
-		\item $A_p^n = \frac{p!}{(p-n)!}$
-		\item $|S(E)| = n!$
-	\end{enumerate}
-\end{prop}
+\begin{enumerate}
+	\item Nombre d'injections de $[\![1,n]\!]$ dans $[\![1,p]\!]$:
+		\[A_p^n = \frac{p!}{(p-n)!}\]
+	\item Nombre de permutations (bijections) ($p=n$):
+		\[|S(E)| = n!\]
+\end{enumerate}
+
+\section{Astuces}
+\begin{itemize}
+	\item [-] Utiliser des ensembles compl\'ementaires
+	\item [-] D\'ecomposer en ensembles \`a $k$ \'el\'ements avec $\binom{n}{k}$ puis faire une somme pour revenir au premier ensemble
+\end{itemize}
 
 \end{document}
