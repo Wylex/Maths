@@ -29,9 +29,9 @@ Une solution est par d\'efinition une application continue $f:J\rightarrow \math
 
 \begin{rqs} $ $
 	\begin{itemize}
-		\item Il n'y a pas toujours de solution
-		\item S'il y-en a, elle ne sont pas forcement d\'efinies sur tout l'intervalle
-		\item S'il y-en a, en g\'eneral on ne peut pas les exprimer au moyen des fonctions usuelles.
+		\item [-] Il n'y a pas toujours de solution
+		\item [-] S'il y-en a, elle ne sont pas forcement d\'efinies sur tout l'intervalle
+		\item [-] S'il y-en a, en g\'eneral on ne peut pas les exprimer au moyen des fonctions usuelles.
 	\end{itemize}
 \end{rqs}
 
@@ -75,20 +75,20 @@ Soit une \'equation du type $(E)$: $\alpha(x)y' + \beta(x)y = \gamma(x)$
 				\[S = Be^{-A} + S_0 = \{t\in I \mapsto (\lambda + B(t))e^{-A(t)}/ \lambda \in \mathbb{R}\}\]
 		\end{enumerate}
 	\item Cas g\'en\'eral
-		\begin{itemize}
+		\begin{enumerate}
 			\item Dans ce cas on ne peut rien affirmer de g\'en\'eral sur $(E)$
 			\item Le cas plus simple est celui o\`u $\alpha$ s'annule en un seul point $x_0 \in Int(I)$\\
 				$J_+ = I \cap ]x_0, +\infty[$\\
 				$J_- = I \cap ]-\infty, x_0[$
 			\item $\alpha$ est continue sur $J_+$ et $J_-$ et ne s'annule pas. On sait donc trouver les solutions $(E)$ sur ces intervalles.
-			\item Pour trouver les solutions sur I: nous avons $\beta(x_0)f(x_0) = \gamma(x_0)$ ce qui peut imposer certaines conditions. Il faut
-				ainsi tenter de raccorder ces solutions en $x_0$:
+			\item Pour trouver les solutions sur I: nous avons $\beta(x_0)f(x_0) = \gamma(x_0)$ ce qui peut imposer certaines conditions.
+				Il faut ainsi tenter de raccorder ces solutions en $x_0$:
 				\begin{itemize}
-					\item f doit \^etre continue en $x_0$ donc $lim_{x_0^-} f = f(x_0) = lim_{x_0^+}$
-					\item f doit \^etre d\'erivable en $x_0$ donc $lim_{x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = lim_{x_0^+} \frac{f(x) -
+					\item [-] f doit \^etre continue en $x_0$: $lim_{x_0^-} f = f(x_0) = lim_{x_0^+}$
+					\item [-] f doit \^etre d\'erivable en $x_0$: $lim_{x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = lim_{x_0^+} \frac{f(x) -
 						f(x_0)}{x - x_0} = l \in \mathbb{R}$
 				\end{itemize}
-		\end{itemize}
+		\end{enumerate}
 \end{enumerate}
 
 \begin{theo} Cauchy-Lipschitz\\

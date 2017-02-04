@@ -7,118 +7,130 @@
 \date{}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
-\theoremstyle{plain} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.3}
 
 \begin{document}
 \maketitle
 
-\section{Un peu de logique}
-\begin{itemize}
-	\item N\'egation des connecteurs: \\
-		NON(NON(\(P) \equiv  P\) \\
-		NON(\(P \lor Q) \equiv \) (NON P) \(\land\) (NON Q) \\
-		NON(\(P \land Q) \equiv \) (NON P) \(\lor\) (NON Q) \\
-		NON(\(P \Rightarrow Q) \equiv P \land\) NON(\(Q\))
-	\item N\'egation des quantificateurs: \\
-		NON(\(\forall x \in E, P(x)) \equiv \exists x \in E\), NON(\(P(x)\)) \\
-		NON(\(\exists x \in E, P(x)) \equiv \forall x \in E\), NON(\(P(x)\))
+\section{Logique}
+\begin{enumerate}
+	\item N\'egation des connecteurs:
+		\begin{enumerate}
+			\item  $\overline{\overline{P}} \equiv  P$
+			\item  $\overline{P \lor Q} \equiv \overline{P} \land \overline{Q}$
+			\item  $\overline{P \land Q} \equiv \overline{P} \lor \overline{Q}$
+			\item  $\overline{P \Rightarrow Q} \equiv P \land \overline{Q}$
+		\end{enumerate}
+	\item N\'egation des quantificateurs:
+		\begin{enumerate}
+			\item $\overline{\forall x \in E, P(x)} \equiv \exists x \in E,\ \overline{P(x)}$
+			\item $\overline{\exists x \in E, P(x)} \equiv \forall x \in E,\ \overline{P(x)}$
+		\end{enumerate}
 	\item Contraposition: \\
-		\((P \Rightarrow Q) \equiv\) (NON \(Q)\Rightarrow\)(NON \(P\))
-\end{itemize}
+		$P \Rightarrow Q \equiv \overline{Q} \Rightarrow \overline{P}$
+\end{enumerate}
 
 \section{Ensembles}
-\begin{itemize}
-	\item $(E \cap F) \subset E \subset (E \cup F)$ \\
-		$(E \cap F) \subset F \subset (E \cup F)$ \\
-		$E \cap \emptyset = \emptyset$ \\
-		$E \cup \emptyset = E$
+Soient $E$ et $F$ deux ensembles:
+\begin{enumerate}
 	\item Distributivit\'e: \\
 		\(E \cap(F \cup G) = (E \cap F) \cup (E \cap G)\) \\
 		\(E \cup (F \cap G) = (E \cup F) \cap (E \cup G)\)
-	\item si \(A, B \in \mathcal{P}(E)\): \\
+	\item Compl\'ementaires: soient \(A, B \in \mathcal{P}(E)\): \\
 		\((A \cap B)^c = A^c \cup B^c\) \\
 		\((A \cup B)^c = A^c \cap B^c\)
-\end{itemize}
+\end{enumerate}
 
 \section{Applications}
 \begin{defi}
 	\(E, F\) deux ensembles non vides, \( f \in \mathcal{F}(E, F)\):
 	\begin{enumerate}
-		\item \(f\) est injective si \(\forall x,x' \in E, (x \neq x') \Rightarrow (f(x) \neq f(x'))\) \\
-		ou de fa\c{c}on \'equivalente, \(\forall x,x' \in E, (f(x) = f(x')) \Rightarrow (x = x')\)
+		\item \(f\) est injective si \(\forall x,x' \in E,\ x \neq x' \Rightarrow f(x) \neq f(x')\) \\
+		ou de fa\c{c}on \'equivalente, \(\forall x,x' \in E,\ f(x) = f(x') \Rightarrow x = x'\)
 		\item \(f\) est surjective si \(\forall y \in F, \exists x \in E, f(x) = y\)
 		\item \(f\) est bijective si elle est \`a la fois injective et surjective
 	\end{enumerate}
 \end{defi}
-\begin{itemize}
-	\item Composition:
-		\begin{itemize}
-			\item \(f: E \rightarrow F,\ g: F \rightarrow G\)
-				\begin{enumerate}
-					\item (\(f\) et \(g\) injectives) \(\Rightarrow\) \(g \circ f\) injective
-					\item (\(f\) et \(g\) surjectives) \(\Rightarrow\) \(g \circ f\) surjectives
-					\item (\(f\) et \(g\) bijective) \(\Rightarrow\) \(g \circ f\) bijective
-				\end{enumerate}
-			\item Soit \(f: E \rightarrow F\) bijective, alors \(f^{-1}\) est l'unique application telle que: \\
-				\(f \circ f^{-1} = I_{dF}\) \\
-				\(f^{-1} \circ f = I_{dE}\)
-			\item \(f: E \rightarrow F,\ g: F \rightarrow G\,\ h: G \rightarrow H\) (associativit\'e de \(\circ\)), \\
-				\(h \circ (g \circ f) = (h \circ g) \circ f\)
-		\end{itemize}
-	\item Image directe, image r\'eciproque
-		\begin{enumerate}
-			%Pour \(f: E \rightarrow F\): \\
-			\item \(A, A' \in \mathcal{P}(E)\) \\
-				\(f(A \cup A') = f(A) \cup f(A')\)
-			\item \(B, B' \in \mathcal{P}(F)\) \\
-				\(f^{-1}(B \cup B') = f^{-1}(B) \cup f^{-1}(B')\) \\
-				\(f^{-1}(B \cap B') = f^{-1}(B) \cap f^{-1}(B')\) \\
-				\(f^{-1}(B^c) = (f^{-1}(B))^c\)
-		\end{enumerate}
-\end{itemize}
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Composition:
+			\begin{enumerate}
+				\item \(f: E \rightarrow F,\ g: F \rightarrow G\) \\
+					\(f\) et \(g\) injectives \(\Rightarrow\) \(g \circ f\) injective \\
+					\(f\) et \(g\) surjectives \(\Rightarrow\) \(g \circ f\) surjectives \\
+					\(f\) et \(g\) bijective \(\Rightarrow\) \(g \circ f\) bijective
+				\item \(f: E \rightarrow F\) bijective, alors \(g = f^{-1}\) est l'unique application telle que: \\
+					\(f \circ g = I_{dF}\) \\
+					\(g \circ f = I_{dE}\) \\
+					(S'il existe une telle $g$ alors $f$ est bijective)
+				\item Associativit\'e de la composition: \(f: E \rightarrow F,\ g: F \rightarrow G\,\ h: G \rightarrow H\), \\
+					\(h \circ (g \circ f) = (h \circ g) \circ f\)
+			\end{enumerate}
+		\item Image directe, image r\'eciproque:
+			\begin{enumerate}
+				\item \(A, A' \in \mathcal{P}(E)\) \\
+					\(f(A \cup A') = f(A) \cup f(A')\)
+				\item \(B, B' \in \mathcal{P}(F)\) \\
+					\(f^{-1}(B \cup B') = f^{-1}(B) \cup f^{-1}(B')\) \\
+					\(f^{-1}(B \cap B') = f^{-1}(B) \cap f^{-1}(B')\) \\
+					\(f^{-1}(B^c) = (f^{-1}(B))^c\)
+			\end{enumerate}
+	\end{enumerate}
+\end{prop}
 
 \section{Relations Binaires}
 Soit \(R\) une relation binaire ser l'ensemble \(E\):
 \begin{enumerate}
 	\item \(R\) est r\'eflexive si \(\forall x \in E, xRx\)
 	\item \(R\) est sym\'etrique si \(\forall x,y \in E, xRy \Rightarrow yRx\)
-	\item \(R\) est antisym\'etrique si \(\forall x,y \in E, (xRy \land yRx) \Rightarrow (x=y)\)
-	\item \(R\) est transitive si \(\forall x,y,z \in E, (xRy \land yRz) \Rightarrow (xRz)\)
+	\item \(R\) est antisym\'etrique si \(\forall x,y \in E, (xRy \land yRx) \Rightarrow x=y\)
+	\item \(R\) est transitive si \(\forall x,y,z \in E, (xRy \land yRz) \Rightarrow xRz\)
 \end{enumerate}
 
 \subsection{Relations d'\'equivalence}
-\begin{itemize}
-	\item D\'ef: On dit que \(R\) est une relation d'\'equivalence si \(R\) est r\'eflexive, sym\'etrique et transitive
-	\item La classe d'\'equivalence de \(x\) est: \\
-		\(Cl_R(x) = \{y \in E |xRy\}\)
-\end{itemize}
+\begin{defi}
+	On dit que \(R\) est une relation d'\'equivalence si \(R\) est r\'eflexive, sym\'etrique et transitive
+\end{defi}
+\begin{prop} La classe d'\'equivalence
+	\[Cl_R(x) = \{y \in E ,xRy\}\]
+\end{prop}
 
 \subsection{Relations d'ordre}
-\begin{itemize}
-	\item
-		\begin{itemize}
-			\item D\'ef: On dit que \(R\) est une relation d'ordre si \(R\) est r\'eflexive, antisym\'etrique et transitive \\
-				Dans ce cas, \((E,R)\) est un ordre ou un ensemble ordonn\'ee.
-			\item D\'ef: L'ordre \((E,R)\) est totale si \(\forall x,y \in E, (xRy) \lor (yRx)\)
-		\end{itemize}
-	\item Maximums et minimums: \\
-		Soit \((E, \preceq)\) un ordre. Soit \(A \subset E, A \neq \emptyset\). Un \'el\'ement \(a \in A\) est appel\'e:
-		\begin{itemize}
-			\item maximum de \(A\) si \(\forall x \in A, x \preceq a\)
-			\item minimum de \(A\) si \(\forall x \in A, a \preceq x\)
-		\end{itemize}
-	\item Majorants et minorants:
-		\begin{itemize}
-			\item A est major\'ee s'il existe \(x \in E, \forall a \in A, a \preceq x\)
-			\item A est minor\'ee s'il existe \(x \in E, \forall a \in A, x \preceq a\)
-		\end{itemize}
-	\item Bornes sup\'erieures et inf\'erieures:
-		\begin{itemize}
-			\item Soit \(A \subset E\), A major\'ee. \\
-			En cas d'existence, la borne sup\'erieure de A est le minimum de l'ensemble B des majorants de A. Not\'ee \emph{sup A}
-			\item Supposons A minor\'ee, en cas d'existence, la borne inf\'erieure de A est le maximum de l'ensemble B des minorants de A. Not\'ee \emph{inf A} \\
-		\end{itemize}
-\end{itemize}
+\begin{defi} $ $
+	\begin{enumerate}
+		\item \(R\) est une relation d'ordre si \(R\) est r\'eflexive, antisym\'etrique et transitive \\
+			Dans ce cas, \((E,R)\) est un ordre ou un ensemble ordonn\'ee.
+		\item L'ordre \((E,R)\) est totale si \(\forall x,y \in E,\ xRy \lor yRx\)
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Maximums et minimums: \\
+			Soit \((E, \preceq)\) un ordre. Soit \(A \subset E, A \neq \emptyset\). Un \'el\'ement \(a \in A\) est appel\'e:
+			\begin{itemize}
+				\item [-] maximum de \(A\) si \(\forall x \in A, x \preceq a\)
+				\item [-] minimum de \(A\) si \(\forall x \in A, a \preceq x\)
+			\end{itemize}
+		\item Majorants et minorants:
+			\begin{itemize}
+				\item [-] A est major\'ee s'il existe \(x \in E, \forall a \in A, a \preceq x\)
+				\item [-] A est minor\'ee s'il existe \(x \in E, \forall a \in A, x \preceq a\)
+			\end{itemize}
+		\item Bornes sup\'erieures et inf\'erieures:
+			\begin{itemize}
+				\item [-] Soit \(A \subset E\), A major\'ee. \\
+					En cas d'existence, la borne sup\'erieure de A est le minimum de l'ensemble B des majorants de A. Not\'ee $\sup A$
+				\item [-] Supposons A minor\'ee, en cas d'existence, la borne inf\'erieure de A est le maximum de l'ensemble B des minorants de A.
+					Not\'ee $\inf A$ \\
+			\end{itemize}
+	\end{enumerate}
+\end{prop}
 
 
 \end{document}

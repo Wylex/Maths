@@ -19,8 +19,8 @@
 	\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} \]
 \end{defi}
 \begin{itemize}
-	\item Par convention, si $k>n, \binom{n}{k} = 0$
-	\item Sym\'etrie: pour tout \(n \in \mathbb{N},\) \\
+	\item [-] Par convention, si $k>n, \binom{n}{k} = 0$
+	\item [-] Sym\'etrie: pour tout \(n \in \mathbb{N},\) \\
 		$\binom{n}{0} = 1 = \binom{n}{n}$ \\
 		$\binom{n}{1} = n = \binom{n}{n-1}$ \\
 		$\binom{n}{k} = \binom{n}{n-k}$
@@ -44,25 +44,25 @@
 
 \subsection{Applications}
 \begin{itemize}
-	\item Soit \(p\) un nombre premier, \(k \in [\![1,p-1]\!]\) alors \(p\) divise \(\binom{p}{k}\)
-	\item Propri\'{e}t\'{e}: \(a,b \in \mathbb{Z}\):
+	\item [-] Soit \(p\) un nombre premier, \(k \in [\![1,p-1]\!]\) alors \(p\) divise \(\binom{p}{k}\)
+	\item [-] Propri\'{e}t\'{e}: \(a,b \in \mathbb{Z}\):
 		\[(a+b)^p \equiv a^p + b^p \pmod{p}\]
 		De fa\c{c}on plus g\'en\'erale, pour \(n \in \mathbb{N}^*, a_1, \hdots, a_n \in \mathbb{Z}\):
 		\[(a_1+\hdots+a_n)^p \equiv a_1^p+\hdots+a_n^p \pmod{p}\]
-	\item Petit th\'eor\`eme de Fermat (si \(p\) ne divise pas \(n\)):
+	\item [-] Petit th\'eor\`eme de Fermat (si \(p\) ne divise pas \(n\)):
 		\[n^{p-1} \equiv 1\pmod{p} \]
 \end{itemize}
 
 \section{Sommes g\'eom\'etriques}
 \begin{itemize}
-	\item Principe de t\'elescopage (\(n \in \mathbb{N}\) et \(a_0, \hdots, a_{n+1} \in \mathbb{C}\)):
+	\item [-] Principe de t\'elescopage (\(n \in \mathbb{N}\) et \(a_0, \hdots, a_{n+1} \in \mathbb{C}\)):
 		\[\sum_{k=0}^{n} (a_{k+1} - a_k) = a_{n+1} - a_0\]
-	\item Sommes g\'eom\'etriques (\(z \in \mathbb{C}, n \in \mathbb{N}\)):
+	\item [-] Sommes g\'eom\'etriques (\(z \in \mathbb{C}, n \in \mathbb{N}\)):
 		\[(z-1)\sum_{k=0}^{n}z^k = z^{n+1} -1\]
 		\[\text{Si } z \neq 1, \sum_{k=0}^{n}z^k=\frac{z^{n+1}-1}{z-1}\]
-	\item Propri\'{e}t\'{e} (\(a,b \in \mathbb{C}, n \in \mathbb{N}^*\)):
+	\item [-] Propri\'{e}t\'{e} (\(a,b \in \mathbb{C}, n \in \mathbb{N}^*\)):
 		\[a^n-b^n = (a-b)\sum_{k=0}^{n-1}a^kb^{n-k-1}\]
-	\item Calcul de \(S_{n,p} = \sum_{k=1}^{n}k^p\)
+	\item [-] Calcul de \(S_{n,p} = \sum_{k=1}^{n}k^p\)
 		\begin{itemize}
 			\item \(p = 0, S_{n,0} = \sum_{k=1}^{n}k^0 = \sum_{k=1}^{n}1 = n\)
 			\item \(p = 1, S_{n,1} = \sum_{k=1}^{n}k^1 = \frac{n(n+1)}{2} \)
@@ -70,14 +70,14 @@
 		\end{itemize}
 \end{itemize}
 
-\section{Remarques sur les sommes}
+\section{Remarques}
 \begin{prop} Changement d'indice\\
 	Soient I et J deux ensembles finis d'indices et $\varphi$ une bijection de I sur J. Alors
 	\[\underset{i \in I}{\sum} u_{\varphi(i)}\ = \underset{j \in J}{\sum} u_j\]
 \end{prop}
 
 \begin{prop} Sommes doubles
-	\[\underset{i,j\in \Omega}{\sum} a_{ij} = \underset{i \in E}{\sum}\left(\underset{j \in F}{\sum}a_{ij}\right) = 
+	\[\underset{i,j\in \Omega}{\sum} a_{ij} = \underset{i \in E}{\sum}\left(\underset{j \in F}{\sum}a_{ij}\right) =
 	\underset{j \in F}{\sum}\left(\underset{i \in E}{\sum}a_{ij}\right)\]
 \end{prop}
 
