@@ -1,10 +1,9 @@
+%Préamble {{{1
 \documentclass[fleqn]{article}
+
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{booktabs}
-
-\title{Trigonom\'etrie}
-\date{}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
@@ -12,9 +11,13 @@
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 \ra{1.3}
 
+\title{Trigonom\'etrie}
+\date{}
+
 \begin{document}
 \maketitle
 
+%Fonctions hyperboliques {{{1
 \section{Fonctions hyperboliques}
 \begin{defi} $\ $
 		\[\cosh t = \frac{e^t + e^{-t}}{2},\ \mathbb{R} \rightarrow [1,+\infty]\]
@@ -42,6 +45,7 @@
 	\end{itemize}
 \end{prop}
 
+%Fonctions cosinus, sinus, tangente {{{1
 \section{Fonctions cosinus, sinus, tangente}
 \subsection{Cosinus et sinus}
 \begin{prop} valeurs remarquables\\
@@ -103,6 +107,7 @@
 	\end{itemize}
 \end{prop}
 
+%Fonctions trigonométriques inverses {{{1
 \section{Fonctions trigonom\'etriques inverses}
 \begin{theo}
 	Soit \(I\) un intervalle de \(\mathbb{R}, f: I \rightarrow \mathbb{R}\) continue et strictement monotone, alors:
@@ -131,6 +136,7 @@ Pour \(y \in ]-1,1[, \arccos'(y) = -\frac{1}{\sqrt{1-y^2}}\) \\
 \(\arctan\) est impaire continue et strictement croissante \\
 Pour \(y \in \mathbb{R}, \arctan'(y) = \frac{1}{1+y^2}\) \\
 
+%Remarques {{{1
 \section{Remarques}
 \begin{enumerate}
 	\item Soient $a,b \in \mathbb{R}$ tels que $a^2 + b^2 = 1$\\

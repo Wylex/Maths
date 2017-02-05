@@ -1,20 +1,23 @@
+%Préamble {{{1
 \documentclass[fleqn]{article}
+
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{verbatim}
-
-\title{Limites}
-\date{}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
 \theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
 \theoremstyle{remark} \newtheorem*{rqs}{Remarques}
 
+\title{Limites}
+\date{}
+
 \begin{document}
 \maketitle
 
+%Topologie dans R {{{1
 \section{Topologie dans $\overline{\mathbb{R}}$}
 \begin{defi}
 	$\overline{\mathbb{R}} = \mathbb{R} \cup \{ +\infty, -\infty\}$
@@ -33,19 +36,21 @@
 					\item[-] si $x = - \infty,\ \exists M \in \mathbb{R}$ tel que $[-\infty, M] \subset A$
 				\end{itemize}
 		\item [-]  $\overline{\mathbb{R}}$ est s\'epar\'ee \\
-			Pour $x, y \in \overline{\mathbb{R}}$ avec $x \neq y$, il existe $U \in V_{\overline{\mathbb{R}}}(x), V \in V_{\overline{\mathbb{R}}}$
-			tel que: $U \cap V \neq \emptyset$
+			Pour $x, y \in \overline{\mathbb{R}}$ avec $x \neq y$, il existe $U \in V_{\overline{\mathbb{R}}%
+			}(x), V \in V_{\overline{\mathbb{R}}%
+			}$ tel que: $U \cap V \neq \emptyset$
 		\item [-] Limite d'une suite \\
 			Soit $(u_n)$ une suite r\'eelle et $l \in \overline{\mathbb{R}}$. On a: \\
-			$u_n \rightarrow l \Leftrightarrow \forall\ V \in V_{\overline{\mathbb{R}}}(l),\ \exists n_0 \in \mathbb{N}, \forall n
-			\geq n_0, u_n \in V$
+			$u_n \rightarrow l \Leftrightarrow \forall\ V \in V_{\overline{\mathbb{R}}%
+			}(l),\ \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \in V$
 	\end{itemize}
 \end{prop}
 
 \begin{defi} Point adh\'erent \\
 		Soit $A \subset \overline{\mathbb{R}}, x \in \overline{\mathbb{R}}$. On dit que $x$ est adh\'erent \`a $A$ dans
 		$\overline{\mathbb{R}}$ si: \\
-		$\forall\ V \in V_{\overline{\mathbb{R}}}, A \cap V \neq \emptyset$
+		$\forall\ V \in V_{\overline{\mathbb{R}}%
+		}, A \cap V \neq \emptyset$
 \end{defi}
 
 \begin{rqs}
@@ -61,15 +66,18 @@
 \end{rqs}
 \begin{prop} Caract\'erisation s\'equentielle de l'adh\'erence \\
 	Soit $A \subset \mathbb{R}, x \in \overline{\mathbb{R}}$,
-	\[x \in Adh_{\overline{\mathbb{R}}}(A) \Leftrightarrow \text{ il existe une suite } (a_n) \text{ de points de } A \text{ telle que }
-	a_n \rightarrow x\]
+	\[x \in Adh_{\overline{\mathbb{R}}%
+	}(A) \Leftrightarrow \text{ il existe une suite } (a_n) \text{ de points de } A \text{ telle que } a_n \rightarrow x\]
 \end{prop}
 
+%Notion de limite {{{1
 \section{Notion de limite}
 \begin{defi}
 	Soit $D \subset \mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a $D, l \in \overline{\mathbb{R}}, f: D \rightarrow \mathbb{R}$.
 	\begin{enumerate}
-		\item $\forall\ V \in V_{\overline{\mathbb{R}}}(l), \exists U \in V_{\overline{\mathbb{R}}}(a), f(U \cap D) \subset V$ [topologique]
+		\item $\forall\ V \in V_{\overline{\mathbb{R}}%
+		}(l), \exists U \in V_{\overline{\mathbb{R}}%
+		}(a), f(U \cap D) \subset V$ [topologique]
 		\item Pour toute $(x_n)$ de points de $D$ telle que $x_n \rightarrow a$ on a $f(x_n) \rightarrow l $ [s\'equentielle]
 	\end{enumerate}
 \end{defi}
@@ -126,6 +134,7 @@
 	\end{itemize}
 \end{prop}
 
+%Théorèmes généraux {{{1
 \section{Th\'eor\`emes g\'en\'eraux}
 Th\'eor\`emes g\'en\'eraux classiques valables pour les limites.
 \begin{prop} $ $
@@ -136,8 +145,8 @@ Th\'eor\`emes g\'en\'eraux classiques valables pour les limites.
 	\end{enumerate}
 \end{prop}
 
+%Monotonie et limites {{{1
 \section{Monotonie et limites}
-
 \begin{theo} $ $ \\
 	Soient $a \in \mathbb{R},\ b \in \overline{\mathbb{R}},\ f:[a,b[ \rightarrow \mathbb{R}$ croissante alors:
 	\begin{enumerate}

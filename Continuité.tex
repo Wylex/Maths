@@ -1,20 +1,23 @@
+%Préamble {{{1
 \documentclass[fleqn]{article}
+
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{verbatim}
-
-\title{Continuit\'e}
-\date{}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
 \theoremstyle{definition} \newtheorem*{coro}{Corollaire}
 \theoremstyle{remark} \newtheorem*{rqs}{Remarques}
 
+\title{Continuit\'e}
+\date{}
+
 \begin{document}
 \maketitle
 
+%Définitions {{{1
 \section{D\'efinitions}
 \begin{defi}
 	Soit $D \subset \mathbb{R}, f:D \rightarrow \mathbb{R}.\ x_0 \in D$. LASSE:
@@ -36,6 +39,7 @@
 	\[\forall \epsilon >0, \exists \alpha>0, \forall x,y \in D, |x-y| \leq \alpha \Rightarrow |f(x) - f(y)| \leq \epsilon\]
 \end{defi}
 
+%Théorèmes fondamentaux {{{1
 \section{Th\'eor\`emes fondamentaux}
 
 \begin{theo} Heine: \\
@@ -76,6 +80,7 @@
 	Soit $I$ un intervalle non trivial de $\mathbb{R}, f:I \rightarrow \mathbb{R}$ continue et injective, alors $f$ est strictement monotone
 \end{theo}
 
+%Remarques {{{1
 \section{Remarques}
 \begin{enumerate}
 	\item En g\'en\'eral, les ferm\'es born\'es sont toujours des segments

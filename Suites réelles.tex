@@ -1,11 +1,10 @@
+%Préamble {{{1
 \documentclass[fleqn]{article}
+
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{array}
-
-\title{Suites r\'eeles}
-\date{}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
@@ -13,39 +12,48 @@
 \theoremstyle{definition} \newtheorem*{coro}{Corollaire}
 \theoremstyle{remark} \newtheorem*{rqs}{Remarque}
 
+\title{Suites r\'eeles}
+\date{}
+
 \begin{document}
 \maketitle
 
+%Généralités {{{1
 \section{G\'en\'eralit\'es}
-\begin{defi}
+\begin{defi} Sous-suite \\
 		Soit $u \in \mathbb{R}^\mathbb{N}$. Une suite $v \in \mathbb{R}^\mathbb{N}$ est une sous suite de $u$ s'il existe
 		$\varphi: \mathbb{N} \rightarrow \mathbb{N}$ strictement croissante tel que $\forall n \in \mathbb{N}, v_n = u_{\varphi(n)}$
 \end{defi}
-\begin{itemize}
-	\item [-] $u$ est major\'ee s'il existe $M \in \mathbb{R}$ tel que $\forall n \in \mathbb{N}, u_n \leq M$
-	\item [-] $u$ est minor\'ee s'il existe $m \in \mathbb{R}$ tel que $\forall n \in \mathbb{N}, u_n \geq m$
-	\item [-] $u$ est born\'ee lorsqu'elle est \`a la fois major\'ee et minor\'ee
-\end{itemize}
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] $u$ est major\'ee s'il existe $M \in \mathbb{R}$ tel que $\forall n \in \mathbb{N}, u_n \leq M$
+		\item [-] $u$ est minor\'ee s'il existe $m \in \mathbb{R}$ tel que $\forall n \in \mathbb{N}, u_n \geq m$
+		\item [-] $u$ est born\'ee lorsqu'elle est \`a la fois major\'ee et minor\'ee
+	\end{itemize}
+\end{prop}
 
-\section{Convergences}
+%Étude de suites {{{1
+\section{\'Etude de suites}
 \subsection{Suites convergentes}
 \begin{defi}
 	Soit $u \in \mathbb{R}^\mathbb{N}, l \in \mathbb{R}$, on dira que $u$ converge vers $l$ si:
-	\[\forall \epsilon > 0, \exists n_0 \in \mathbb{N}, \forall n \geq n_0,\ |u_n - l| \leq \epsilon\]
+	\[\forall \epsilon > 0, \exists{} n_0 \in \mathbb{N}, \forall n \geq n_0,\ |u_n - l| \leq \epsilon\]
 \end{defi}
 
 \begin{prop} $ $
 	\begin{enumerate}
 		\item Unicit\'e: soit $u$ une suite convergente, alors il existe un unique r\'eel $l$ tel que $u$ converge vers $l$
 		\item Sous-suites: soit $u \in \mathbb{R}^\mathbb{N}$ une suite convergente de limite $l \in \mathbb{R}$. Alors toute sous-suite
-		de $u$ converge vers $l$
-		\begin{rqs}
-			S'il existe une sous-suite de $u$ qui diverge, alors $u$ diverge. S'il existent 2 sous-suites de $u$ qui convergent des
-			r\'eels distincts, alors $u$ diverge
-		\end{rqs}
+			de $u$ converge vers $l$
+			\begin{rqs}
+				S'il existe une sous-suite de $u$ qui diverge, alors $u$ diverge. S'il existent 2 sous-suites de $u$ qui convergent des
+				r\'eels distincts, alors $u$ diverge
+			\end{rqs}
 		\item Soit $u \in \mathbb{R}^\mathbb{N}, l \in \mathbb{R}$, $v_n = u_{2n}$, $w_n = u_{2n+1}$ \\
 			Si $v$ et $w$ convergent vers une m\^eme limite $l \in \mathbb{R}$, alors $u$ converge vers $l$.
-			(De m\^eme, pour toutes sous-suites qui convergent vers un m\^eme r\'eel et qui d\'ecrivent $\mathbb{N}$)
+			\begin{rqs}
+				De m\^eme, pour toutes sous-suites qui convergent vers un m\^eme r\'eel et qui d\'ecrivent $\mathbb{N}$
+			\end{rqs}
 		\item Toute suite convergente  est born\'ee
 	\end{enumerate}
 \end{prop}
@@ -65,6 +73,7 @@
 	\end{enumerate}
 \end{prop}
 
+%Ordre et limites {{{1
 \section{Ordre et limites}
 \begin{prop} $ $
 	\begin{enumerate}
@@ -100,6 +109,7 @@
 	$\mathbb{R}$ n'est pas d\'enombrable
 \end{coro}
 
+%Bolzano-Weierstrass (et adhérence) {{{1
 \section{Bolzano-Weierstrass (et adh\'erence)}
 \begin{defi} Adh\'erence \\
 	$u \in \mathbb{R}^\mathbb{N}, x \in \mathbb{R}$.  On dit que $x$ est valeur d'adh\'erence de $u$ s'il existe une sous-suite de $u$
@@ -120,6 +130,7 @@
 	Toute suite r\'elle born\'ee admet au moins une valeur d'adh\'erence
 \end{theo}
 
+%Suites particuliéres {{{1
 \section{Suites particuli\`eres}
 \begin{enumerate}
 	\item Suites arithm\'etiques
@@ -137,6 +148,11 @@
 			\item $P$ admet 2 racines complexes conjugu\'ees: $z_1 = re^{i\theta}, z_2 = re^{-i\theta}$, alors:
 				\[E = \{n \in \mathbb{N} \mapsto r^n(\alpha \cos(n\theta) + \beta \sin(n\theta) / \alpha, \beta \in \mathbb{R}\}\]
 		\end{enumerate}
+		\begin{rqs}
+			On peut proc\'eder par analyse-synth\`ese: on suppose $u$ solution de la relation, on d\'etermine les ensembles possibles de
+			solutions puis avec les conditions initiales ($u_0, u_1$) on v\'erifie si toutes ces suites sont bien solution ou si seulement
+			quelques unes
+		\end{rqs}
 \end{enumerate}
 
 \end{document}

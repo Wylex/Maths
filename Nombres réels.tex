@@ -1,12 +1,11 @@
+%Préamble {{{1
 \documentclass[fleqn]{article}
+
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{verbatim}
 \usepackage{booktabs}
-
-\title{Nombres r\'eels}
-\date{}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
@@ -14,9 +13,13 @@
 \theoremstyle{remark} \newtheorem*{rqs}{Remarques}
 \theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
 
+\title{Nombres r\'eels}
+\date{}
+
 \begin{document}
 \maketitle
 
+%Valeur absolue {{{1
 \section{Valeur absolue}
 \begin{prop} $x,a \in \mathbb{R}$
 	\begin{itemize}
@@ -32,6 +35,7 @@
 	\end{itemize}
 \end{prop}
 
+%Intervalles de R {{{1
 \section{Intervalles de $\mathbb{R}$}
 \begin{defi} Intervalle \\
 	Soit $A$ una partie non vide de $\mathbb{R}$. LASSE,
@@ -46,6 +50,7 @@
 	\[|x-a| < \epsilon \Leftrightarrow x \in ]a - \epsilon, a + \epsilon[\]
 \end{prop}
 
+%Partie entière, propriété d'Archiméde, densité de Q dans R {{{1
 \section{Partie entière, propri\'et\'e d'Archim\`ede, densit\'e de $\mathbb{Q}$ dans $\mathbb{R}$}
 \begin{prop}
 	$\mathbb{N}$ n'est pas major\'ee dans $\mathbb{R}$
@@ -64,7 +69,7 @@
 	Soit $A \subset \mathbb{R}$, $A$ est dense dans $\mathbb{R}$ si:
 	\begin{enumerate}
 		\item $\forall x \in \mathbb{R}, \forall \epsilon > 0, \exists\ a \in A,\ |x-a| \leq \epsilon$
-		\item $\forall\ \alpha,\beta \in \mathbb{R}, (\alpha < \beta) \Rightarrow A \cap ]\alpha, \beta[ \neq \emptyset$
+		\item $\forall\ \alpha,\beta \in \mathbb{R},\ \alpha < \beta \Rightarrow A \cap ]\alpha, \beta[ \neq \emptyset$
 	\end{enumerate}
 	\begin{theo} $\mathbb{Q}$ est dense dans $\mathbb{R}$ \end{theo}
 	\begin{coro} $\mathbb{R}/\mathbb{Q}$ est dense dans $\mathbb{R}$ \end{coro}

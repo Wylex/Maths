@@ -1,10 +1,10 @@
+%Préamble {{{1
 \documentclass[fleqn]{article}
+
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
-
-\title{Bric \`a Brac}
-\date{}
+\usepackage[francais]{babel}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
@@ -14,9 +14,13 @@
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 \ra{1.3}
 
+\title{Bric \`a Brac}
+\date{}
+
 \begin{document}
 \maketitle
 
+%Logique {{{1
 \section{Logique}
 \begin{enumerate}
 	\item N\'egation des connecteurs:
@@ -35,7 +39,18 @@
 		$P \Rightarrow Q \equiv \overline{Q} \Rightarrow \overline{P}$
 \end{enumerate}
 
+%Ensembles {{{1
 \section{Ensembles}
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Inclusion: \\
+			$E \subset F \Leftrightarrow \forall x,\ (x \in E \Rightarrow x \in F)$
+		\item Intersection: \\
+			$E \cap F = \{ x, x\in E \land x \in F\}$
+		\item R\'eunion: \\
+			$E \cup F = \{x, x\in E \lor x \in F\}$
+	\end{enumerate}
+\end{prop}
 Soient $E$ et $F$ deux ensembles:
 \begin{enumerate}
 	\item Distributivit\'e: \\
@@ -46,6 +61,7 @@ Soient $E$ et $F$ deux ensembles:
 		\((A \cup B)^c = A^c \cap B^c\)
 \end{enumerate}
 
+%Applications {{{1
 \section{Applications}
 \begin{defi}
 	\(E, F\) deux ensembles non vides, \( f \in \mathcal{F}(E, F)\):
@@ -64,12 +80,14 @@ Soient $E$ et $F$ deux ensembles:
 					\(f\) et \(g\) injectives \(\Rightarrow\) \(g \circ f\) injective \\
 					\(f\) et \(g\) surjectives \(\Rightarrow\) \(g \circ f\) surjectives \\
 					\(f\) et \(g\) bijective \(\Rightarrow\) \(g \circ f\) bijective
+				\item $g \circ f$ bijective $\Rightarrow g$ surjective et $f$ injective
 				\item \(f: E \rightarrow F\) bijective, alors \(g = f^{-1}\) est l'unique application telle que: \\
 					\(f \circ g = I_{dF}\) \\
 					\(g \circ f = I_{dE}\) \\
 					(S'il existe une telle $g$ alors $f$ est bijective)
 				\item Associativit\'e de la composition: \(f: E \rightarrow F,\ g: F \rightarrow G\,\ h: G \rightarrow H\), \\
 					\(h \circ (g \circ f) = (h \circ g) \circ f\)
+				\item Soient $f$ et $g$ bijectives. Alors $(g\circ f)^{-1}  = f^{-1} \circ g^{-1}$
 			\end{enumerate}
 		\item Image directe, image r\'eciproque:
 			\begin{enumerate}
@@ -83,6 +101,7 @@ Soient $E$ et $F$ deux ensembles:
 	\end{enumerate}
 \end{prop}
 
+%Relations Binaires {{{1
 \section{Relations Binaires}
 Soit \(R\) une relation binaire ser l'ensemble \(E\):
 \begin{enumerate}
@@ -94,7 +113,8 @@ Soit \(R\) une relation binaire ser l'ensemble \(E\):
 
 \subsection{Relations d'\'equivalence}
 \begin{defi}
-	On dit que \(R\) est une relation d'\'equivalence si \(R\) est r\'eflexive, sym\'etrique et transitive
+	On dit que \(R\) est une relation d'\'equivalence si \(R\) est r\'eflexive, sym\'etrique et transitive \\
+	L'ensemble des classes d'\'equivalences de $E$, $\frac{E}{R}$, forme une partition de $E$
 \end{defi}
 \begin{prop} La classe d'\'equivalence
 	\[Cl_R(x) = \{y \in E ,xRy\}\]
@@ -109,28 +129,36 @@ Soit \(R\) une relation binaire ser l'ensemble \(E\):
 	\end{enumerate}
 \end{defi}
 
-\begin{prop} $ $
+\begin{prop} $ $ \\ Soit \((E, \preceq)\) un ordre. Soit \(A \subset E, A \neq \emptyset\). Un \'el\'ement \(a \in A\) est appel\'e:
 	\begin{enumerate}
-		\item Maximums et minimums: \\
-			Soit \((E, \preceq)\) un ordre. Soit \(A \subset E, A \neq \emptyset\). Un \'el\'ement \(a \in A\) est appel\'e:
+		\item Maximums et minimums:
 			\begin{itemize}
 				\item [-] maximum de \(A\) si \(\forall x \in A, x \preceq a\)
 				\item [-] minimum de \(A\) si \(\forall x \in A, a \preceq x\)
 			\end{itemize}
 		\item Majorants et minorants:
 			\begin{itemize}
-				\item [-] A est major\'ee s'il existe \(x \in E, \forall a \in A, a \preceq x\)
-				\item [-] A est minor\'ee s'il existe \(x \in E, \forall a \in A, x \preceq a\)
+				\item [-] A est major\'e s'il existe \(x \in E, \forall a \in A, a \preceq x\)
+				\item [-] A est minor\'e s'il existe \(x \in E, \forall a \in A, x \preceq a\)
 			\end{itemize}
 		\item Bornes sup\'erieures et inf\'erieures:
 			\begin{itemize}
-				\item [-] Soit \(A \subset E\), A major\'ee. \\
-					En cas d'existence, la borne sup\'erieure de A est le minimum de l'ensemble B des majorants de A. Not\'ee $\sup A$
-				\item [-] Supposons A minor\'ee, en cas d'existence, la borne inf\'erieure de A est le maximum de l'ensemble B des minorants de A.
-					Not\'ee $\inf A$ \\
+				\item [-] Soit \(A \subset E\), A major\'e. \\
+					En cas d'existence, la borne sup\'erieure de A est le minimum de l'ensemble B des majorants de A. Not\'e $\sup A$
+				\item [-] Supposons A minor\'e, en cas d'existence, la borne inf\'erieure de A est le maximum de l'ensemble B des minorants de A.
+					Not\'e $\inf A$ \\
 			\end{itemize}
 	\end{enumerate}
 \end{prop}
 
+\subsubsection{Le cas de $\mathbb{R}$}
+\begin{theo} Borne sup\'erieure \\
+	L'ensemble ordon\'e $(\mathbb{R}, \leq)$ v\'erifie la propri\'et\'e de la borne sup\'erieure: toute partie non vide de $\mathbb{R}$
+	admet une borne sup\'erieure
+\end{theo}
+
+\begin{coro}
+	Toute partie non vide minor\'ee de $\mathbb{R}$ admet une borne inf\'erieure
+\end{coro}
 
 \end{document}
