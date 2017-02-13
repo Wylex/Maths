@@ -1,0 +1,172 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\ra{1.3}
+
+\title{Arithm\'etique dans $\mathbb{Z}$}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Divisibilité dans Z {{{1
+\section{Divisibilit\'e dans $\mathbb{Z}$}
+On dit que $a$ divise $b$ s'il existe $c \in \mathbb{Z}$ tel que $b=ac$
+\begin{prop} $\forall a \in \mathbb{Z}$
+	\begin{enumerate}
+		\item [-] $\bfrac{+}{-} 1 | a$ et $\bfrac{+}{-} a | a$
+		\item [-] $a | b$ dans $\mathbb{Z} \Leftrightarrow |a|$ divise $|b|$ dans $\mathbb{N}$
+		\item [-] $a | b$ et $b | a \Leftrightarrow b \in \{\bfrac{+}{-} a\}$
+		\item [-] $a|b$ et $b|c \Rightarrow a | c$
+		\item [-] $a|b$ et $a|c \Rightarrow a| bu + cv$
+		\item [-] $ab |ac \Rightarrow b|c$
+	\end{enumerate}
+\end{prop}
+
+\begin{theo} Division euclidienne dans $\mathbb{Z}$ \\
+Soit $a \in \mathbb{Z},\ b \in \mathbb{Z}^*$. Alors il existe un unique $(q,r)$ tel que:
+\begin{enumerate}
+	\item $a = bq + r$
+	\item $0 \leq r \leq |b|$
+\end{enumerate}
+\end{theo}
+
+\begin{theo} Petit th\'eor\`eme de Fermat
+	\begin{enumerate}
+		\item $p \in \mathcal{P}$ alors $\forall m \in \mathbb{N},\ m^p \equiv m \pmod{p}$
+		\item Si $m$ n'est pas divisible par $p$, $m^{p-1} \equiv 1 \pmod{p}$
+	\end{enumerate}
+\end{theo}
+
+%PGCD {{{1
+\section{PGCD}
+\begin{defi}
+	Soit $n \in \mathbb{N}^*,\ a_1, \hdots, a_n \in \mathbb{Z}$. Il existe un unique $ d \in \mathbb{N}$ tel que:
+	\begin{enumerate}
+		\item $d | a_i\ (1 \leq i \leq n)$
+		\item pour $k \in \mathbb{Z},\ k | a_i\ (1 \leq i \leq n) \Rightarrow k | d$
+	\end{enumerate}
+\end{defi}
+
+\pagebreak
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item [-] B\'ezout V1:\\
+			$\exists u_1, \hdots, u_n \in \mathbb{Z},\ d = \sum_{i = 1}^{n} a_iu_i$
+		\item [-] $\land_{i = 1}^{n}a_i = \land_{i = 1}^n |a_i|$
+		\item [-] $d = 0 \Leftrightarrow a_i = 0\ (1 \leq i \leq n)$
+		\item [-] $a | b \Leftrightarrow a \land b = a$
+		\item [-] $\forall a \in \mathbb{N}, a \land 0 = a$
+		\item [-] Soit $p$ un nombre premier et $a \in \mathbb{Z}$. Alors $p|a$ ou $p \land a = 1$
+		\item [-] Soit $k \in \mathbb{N}$. Alors $\land_{i = 1}^n (ka_i) = k(\land_{i = 1}^n a_i)$
+	\end{enumerate}
+\end{prop}
+
+\subsection{Calcul de PGCD}
+\begin{enumerate}
+	\item Valuation p-adique \\
+		$a, b \in \mathbb{N}^*$ et $d = a \land b$. On a alors $\forall p \in \mathcal{P},\ V_p(d) = \min(V_p(a), V_p(b))$
+		\[d = \prod_{p \in \mathcal{P}} p^{\min(V_p(a), V_p(b))}\]
+	\item Algorithme d'Euclide
+\end{enumerate}
+
+%PPCM {{{1
+\section{PPCM}
+\begin{defi} $a_1, \hdots, a_n \in \mathbb{Z}$. Il existe un unique $m \in \mathbb{N}$ tel que:
+	\begin{enumerate}
+		\item $a_i |m\ (1 \leq i \leq n)$
+		\item $\forall k \in \mathbb{Z},\ a_i | k\ (1 \leq i \leq n) \Rightarrow m | k$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item [-] $V_p(m) = \max (V_p(a_i))$
+		\item [-] $\lor a_i = \lor |a_i|$
+		\item [-] S'il existe $i$ telle que $a_i = 0$, $\lor a_i = 0$
+		\item [-] $(\lor a_i) | a_1 \hdots a_n$
+		\item [-] Si $\forall i \neq j,\ a_i \land a_j = 1,\ a_1 \hdots a_n | m \Rightarrow m = M$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop} Lien PGCD, PPCM \\
+	$a, b \in \mathbb{N}^*\ d = a \land b,\ m = a \lor b$ \\
+	Alors $md = ab$
+\end{prop}
+
+%Entiers premiers entre eux {{{1
+\section{Entiers premiers entre eux}
+\begin{defi}
+	$n \in \mathbb{N}^*\ a_1, \hdots, a_n \in \mathbb{Z}$ \\
+	On dit que $a_1, \hdots, a_n$ sont premiers entre eux si $\land_{i=1}^n a_i = 1$
+
+	\begin{rqs}
+		$a_1, \hdots, a_n$ premiers entre eux $\Leftrightarrow$ 1 est le seul entier qui divise tous les $a_i \Leftrightarrow$ il n'existe aucun
+		nombre premier qui divise tous les $a_i$
+	\end{rqs}
+\end{defi}
+
+\begin{theo} B\'ezout V2 \\
+	$a_1, \hdots, a_n \in \mathbb{Z}$ premiers entre eux $\Leftrightarrow$ il existe $u_1, \hdots, u_n \in \mathbb{Z}$ tels que
+	$\sum a_i u_i = 1$
+\end{theo}
+
+\begin{theo} Gauss \\
+	$a,b,c \in \mathbb{Z}$ \\
+	$\left. \begin{array}{l}
+		a \land b = 1 \\
+		a | bc
+	\end{array}\right\} \Rightarrow a | c$
+
+	\begin{rqs}
+		Soit $p$ un nombre premier, $a,b \in \mathbb{Z}$ \\
+		$p | ab \Rightarrow p|a$ ou $p|b$
+	\end{rqs}
+\end{theo}
+
+\begin{prop} Variantes Gauss
+	\begin{enumerate}
+		\item
+			$\left. \begin{array}{l}
+				a \land b = 1 \\
+				a | c \\
+				b | c
+			\end{array}\right\} \Rightarrow ab | c$
+		\item
+			$\left. \begin{array}{l}
+				a \land c = 1 \\
+				b \land c = 1
+			\end{array}\right\} \Leftrightarrow ab \land c = 1$
+			\begin{rqs}
+				$a\land b = 1 \Rightarrow a^{\alpha} \land b^{\beta} = 1$
+			\end{rqs}
+	\end{enumerate}
+\end{prop}
+
+%Équation diophantienne {{{1
+\section{\'Equation diophantienne}
+
+%Remarques {{{1
+\section{Remarques}
+\begin{enumerate}
+	\item Regarder si un nombre est pair, impair (ou autres diviseurs)
+	\item D\'ecomposer en nombre premiers
+	\item Prendre $p \in \mathcal{P},\ p | \land$
+\end{enumerate}
+
+\end{document}

@@ -6,11 +6,13 @@
 \usepackage{amsthm}
 \usepackage{verbatim}
 \usepackage{booktabs}
+\usepackage{mathrsfs}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
 \theoremstyle{remark} \newtheorem*{rqs}{Remarques}
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
 \ra{1.3}
 
 \title{\'Equations diff\'erentielles}
@@ -76,7 +78,7 @@ Soit une \'equation du type $(E)$: $\alpha(x)y' + \beta(x)y = \gamma(x)$
 					&\Leftrightarrow \lambda'(x) = be^A
 				\end{align*}
 				En notant B une primitive de $be^A$ on voit que $Be^A$ est solution de E. On d\'eduit que:\\
-				\[S = Be^{-A} + S_0 = \{t\in I \mapsto (\lambda + B(t))e^{-A(t)}/ \lambda \in \mathbb{R}\}\]
+				\[\mathscr{S} = Be^{-A} + \mathscr{S}_0 = \{t\in I \mapsto (\lambda + B(t))e^{-A(t)}/ \lambda \in \mathbb{R}\}\]
 		\end{enumerate}
 	\item Cas g\'en\'eral
 		\begin{enumerate}
@@ -98,5 +100,43 @@ Soit une \'equation du type $(E)$: $\alpha(x)y' + \beta(x)y = \gamma(x)$
 \begin{theo} Cauchy-Lipschitz\\
 	Soit $t_0 \in I, y_0 \in \mathbb{R}$ alors il existe une et une seule solution f de $(E)$ sur I telle que $f(t_0) = y_0$
 \end{theo}
+
+\subsection{EDL d'ordre 2 \`a coefficients constants}
+\subsubsection{\'Equation homog\`ene}
+Ici, $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$. Soit $(E): ay'' + by' + cy = 0$ avec $a,b,c \in \mathbb{K}$\\
+$\mathscr{S}_E = \{f \in D^2(\mathbb{R},\ \mathbb{K}), af''(x) + bf'(x) + cf(x) = 0\}$\\
+Soit $P: aX^2 + bX + c$, trois cas se pr\'esentent:
+\begin{enumerate}
+	\item $P$ admet deux racines distinctes $r,s \in \mathbb{K}$ \\
+		Alors $\mathscr{S}_E = \{x \in \mathbb{R} \mapsto \alpha \exp(rx) + \beta \exp(sx),\ \alpha, \beta \in \mathbb{K}\}$
+	\item $P$ admet une racine double $r$\\
+		Alors $\mathscr{S}_E = \{x \in \mathbb{R} \mapsto (\alpha x + \beta) \exp(rx),\ \alpha, \beta \in \mathbb{K}\}$
+	\item $K = \mathbb{R},\ (a,b,c \in \mathbb{R})$ et $P$ n'a pas de racine r\'eelle. $P$ admet alors deux racines complexes
+		$\sigma \bfrac{+}{-} i\tau$ \\
+		Alors $\mathscr{S}_E = \{x \in \mathbb{R} \mapsto e^{\sigma x}(\alpha \cos(\tau x) + \beta \sin(\tau x)),\ \alpha, \beta \in \mathbb{R}\}$
+\end{enumerate}
+
+\subsubsection{Second membre de type exponentielle-polyn\^ome}
+Soit $Q: \mathbb{R} \rightarrow \mathbb{K}$ polyn\^omiale, $\alpha \in \mathbb{K}$. Soit $(E): ay'' + ay' + cy = Q(x)\exp(\alpha x)$ \\
+$P: aX^2 + bX + c$ le poly\^ome caract\'eristique de $(E_0): ay'' + by' + cy = 0$. Soit $T: \mathbb{R} \rightarrow \mathbb{K}$ polyn\^omiale
+et $\psi: x \in \mathbb{R} \mapsto T(x) \exp(\alpha x)$
+\[\psi$ solution $\Leftrightarrow aT'' + P'(\alpha)T' + P(\alpha)T = Q\]
+\begin{enumerate}
+	\item $P(\alpha) \neq 0$. \\
+		On cherche $T$ sous la forme $x \mapsto \lambda_0 + \lambda_1 x + \hdots + \lambda_d x^d$
+	\item $P$ a deux racines distinctes et $\alpha$ est l'une d'entre elles.\\
+		On cherche $T$ sous la forme $x \mapsto \lambda_1 x + \hdots + \lambda_{d+1} x^{d+1}$
+	\item $\alpha$ est la racine double de $P$.\\
+		On cherche $T$ sous la forme $x \mapsto \lambda_2 x^2 + \hdots + \lambda_{d+2} x^{d+2}$
+\end{enumerate}
+
+%Remarques {{{1
+\section{Remarques}
+\begin{enumerate}
+	\item On raisonne souvent par analyse-synth\`ese il est donc important de v\'erifier les r\'ecriproques
+	\item Pour les $EDL_2$, on peut parfois se ramener \`a une \'equation \`a coefficients constants en composant par $e^t$
+	\item Dans $EDL_2$, s'il y a des $\cos$, on peut passer en exponnentielle complexe. Dans ce cas: \\
+		Si $\psi: \mathbb{R} \rightarrow \mathbb{C}$ est solution de $E_\mathbb{C}$, alors $Re(\psi)$ est solution de $(E)$
+\end{enumerate}
 
 \end{document}

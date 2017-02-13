@@ -5,6 +5,7 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{array}
+\usepackage{mathrsfs}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
@@ -137,16 +138,16 @@
 	\item Suites g\'eom\'etriques
 	\item Suites arithm\'etico-g\'eom\'etriques
 	\item Suites v\'erifiant une relation de r\'ecurrence lin\'eaire d'ordre 2: \\
-		$a \in \mathbb{R}^*, (b,c) \in \mathbb{R}^2\backslash\{0,0\}$. Soit $E$ l'ensemble des suites r\'eelles $u$ telles que:
+		$a \in \mathbb{R}^*, (b,c) \in \mathbb{R}^2\backslash\{0,0\}$. Soit $\mathscr{E}$ l'ensemble des suites r\'eelles $u$ telles que:
 		\[\forall n \in \mathbb{N}, au_{n+2} + bu_{n+1} + cu_n = 0\]
 		Soit $P = aX^2 + bX + X$:
 		\begin{enumerate}
 			\item $P$ admet 2 racines r\'eelles distinctes $q_1, q_2$ alors:
-				\[E = \{n \in \mathbb{N} \mapsto \alpha q_1^n + \beta q_2^n / \alpha, \beta \in \mathbb{R}\}\]
+				\[\mathscr{E} = \{n \in \mathbb{N} \mapsto \alpha q_1^n + \beta q_2^n / \alpha, \beta \in \mathbb{R}\}\]
 			\item $P$ a une racine double $q_0$ alors:
-				\[E = \{n \in \mathbb{N} \mapsto (\alpha n + \beta) q_0^n / \alpha, \beta \in \mathbb{R}\}\]
+				\[\mathscr{E} = \{n \in \mathbb{N} \mapsto (\alpha n + \beta) q_0^n / \alpha, \beta \in \mathbb{R}\}\]
 			\item $P$ admet 2 racines complexes conjugu\'ees: $z_1 = re^{i\theta}, z_2 = re^{-i\theta}$, alors:
-				\[E = \{n \in \mathbb{N} \mapsto r^n(\alpha \cos(n\theta) + \beta \sin(n\theta) / \alpha, \beta \in \mathbb{R}\}\]
+				\[\mathscr{E} = \{n \in \mathbb{N} \mapsto r^n(\alpha \cos(n\theta) + \beta \sin(n\theta) / \alpha, \beta \in \mathbb{R}\}\]
 		\end{enumerate}
 		\begin{rqs}
 			On peut proc\'eder par analyse-synth\`ese: on suppose $u$ solution de la relation, on d\'etermine les ensembles possibles de

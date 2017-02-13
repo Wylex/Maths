@@ -24,26 +24,24 @@
 
 %Ensemble C {{{1
 \section{Ensemble $\mathbb{C}$}
-\begin{prop} Pour $z \in \mathbb{C}$,
-	\begin{itemize}
-		\item $z + \overline{z} = 2Re(z)$
-		\item $z - \overline{z} = 2iIm(z)$
-	\end{itemize}
-\end{prop}
+Pour $z \in \mathbb{C}$,
+\begin{enumerate}
+	\item $z + \overline{z} = 2Re(z)$
+	\item $z - \overline{z} = 2iIm(z)$
+\end{enumerate}
 
 \begin{prop}
 	$z,z' \in \mathbb{C},\ zz' = 0 \Leftrightarrow z = 0$ ou $z' = 0$
 \end{prop}
 
 \subsection{Conjugaison}
-\begin{prop} $z,z' \in \mathbb{C}$
-	\begin{itemize}
-		\item $\overline{\overline{z}} = z$
-		\item $\overline{z + z'} = \overline{z} + \overline{z'}$\\
-			$\overline{zz'} = \overline{z} \overline{z'}$
-		\item Pour tout $n \in \mathbb{Z}$, $\overline{z^n} = \overline{z}^n$
-	\end{itemize}
-\end{prop}
+$z,z' \in \mathbb{C}$
+\begin{enumerate}
+	\item $\overline{\overline{z}} = z$
+	\item $\overline{z + z'} = \overline{z} + \overline{z'}$\\
+		$\overline{zz'} = \overline{z} \overline{z'}$
+	\item Pour tout $n \in \mathbb{Z}$, $\overline{z^n} = \overline{z}^n$
+\end{enumerate}
 
 \subsection{Module}
 \begin{defi}
@@ -54,36 +52,58 @@
 	\end{rqs}
 \end{defi}
 
-
 \begin{prop} $z,z' \in \mathbb{C}$
-	\begin{itemize}
+	\begin{enumerate}
 		\item $|z| = 0 \Leftrightarrow z = 0$
 		\item $|z| = |\overline{z}|$
 		\item $|zz'| = |z||z'|$
 		\item $n \in \mathbb{Z},\ |z^n| = |z|^n$
+		\item $|z| = 1 \Leftrightarrow \frac{1}{z} = \overline{z}$ (tr\`es utile pour $\mathbb{U}_n$)
+	\end{enumerate}
+\end{prop}
+
+\begin{prop} Soit $\omega \in \mathbb{C}$
+	\[|Re(\omega)| \leq |\omega| \leq |Re(\omega)| + |Im(\omega)| \text{ et } |Im(\omega)| \leq |\omega| \leq |Re(\omega)| + |Im(\omega)|\]
+\end{prop}
+
+\begin{prop} Lemme magique \\
+	$A \in \mathbb{R}, z \in \mathbb{C}$:
+	\[|z| \leq A \Leftrightarrow \forall \omega \in \mathbb{C},\ Re(\omega z) \leq |\omega|A\]
+\end{prop}
+
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] Identit\'e de Lagrange \\
+			$a,b,c,d \in \mathbb{R}$, $(ac - bd)^2 + (ad + bc)^2 = (a^2 + b^2)(c^2 + d^2)$
+		\item [-] Cauchy-Schwarz \\
+			$a,b,c,d \in \mathbb{R}$, $|ac + bd| \leq \sqrt{a^2 + b^2} \sqrt{c^2 + d^2}$
 	\end{itemize}
 \end{prop}
 
-\begin{prop} Identit\'e de Lagrange \\
-	$a,b,c,d \in \mathbb{R}$, $(ac - bd)^2 + (ad + bc)^2 = (a^2 + b^2)(c^2 + d^2)$
-\end{prop}
-
-\begin{prop} Cauchy-Schwarz \\
-	$a,b,c,d \in \mathbb{R}$, $|ac + bd| \leq \sqrt{a^2 + b^2} \sqrt{c^2 + d^2}$
-\end{prop}
-
-\begin{prop} In\'egalit\'e triangulaire \\
-	$z_1, z_2 \in \mathbb{C},\ \big||z_1| - |z_2|\big| \leq |z_1 \bfrac{+}{-} z_2| \leq |z_1| + |z_2|$
+\begin{prop} In\'egalit\'e triangulaire
+	\begin{itemize}
+		\item [-] $z_1, z_2 \in \mathbb{C},\ \big||z_1| - |z_2|\big| \leq |z_1 \bfrac{+}{-} z_2| \leq |z_1| + |z_2|$ \\
+			Cas \'egalit\'e: $\overline{z_1}z_2 \in \mathbb{R}_+$
+		\item [-] G\'en\'eralisation: $|\sum z_k| \leq \sum |z_k|$ \\
+			Cas \'egalit\'e: $\exists u \in \mathbb{C}^*, (t_1, \hdots, t_n) \in \mathbb{R}_+^n$ tels que $z_k = t_ku$
+	\end{itemize}
 \end{prop}
 
 \subsection{Argument d'un complexe non nul}
-\begin{defi}
-	Soit $z \in \mathbb{C}^*$. On appelle argument de $z$ et on note $\arg(z)$ l'ensemble des r\'eels $\theta$ tels que:
-	\[z = |z|(\cos \theta + i \sin \theta)\]
-	\begin{rqs}
-		Si on conna\^it un argument de $z$ on les conna\^it tous (modulo $2\pi$)
-	\end{rqs}
-\end{defi}
+Soit $z \in \mathbb{C}^*$. On appelle argument de $z$ et on note $\arg(z)$ l'ensemble des r\'eels $\theta$ tels que:
+\[z = |z|(\cos \theta + i \sin \theta)\]
+\begin{rqs}
+	Si on conna\^it un argument de $z$ on les conna\^it tous (modulo $2\pi$)
+\end{rqs}
+
+\subsection{Exponentielle complexe}
+Pour $z \in \mathbb{C}$ on pose $\exp z = e^{Re(z)} e^{iIm(z)}$
+\begin{itemize}
+	\item [-] $\exp (z + z') = \exp z \exp z'$
+	\item [-] $\exp 0 = 1$
+	\item [-] $|\exp z| = e^{Re(z)}$
+	\item [-] $\exp z = 1 \Leftrightarrow z \in 2i\pi\mathbb{Z}$
+\end{itemize}
 
 \subsection{La notation $e^{i \theta}$}
 \begin{defi}
@@ -91,12 +111,51 @@
 	On \'ecrit alors: $z = re^{i\theta}$ avec $r \in \mathbb{R},\ \theta \in \mathbb{R}$. C'est une \'ecriture tr\`es bien adapt\'ee aux produits
 	et aux quotients
 	\begin{rqs}
-		$\overline{e^{i\theta}} = \cos \theta - i \sin \theta$
+		$\overline{e^{i\theta}} = \cos \theta - i \sin \theta = e^{-i\theta}$
 	\end{rqs}
 \end{defi}
 \begin{prop} $ $ \\
 	$\arg (zz') = \arg z + \arg z'$\\
 	$\arg \frac{z}{z'}  = \arg z  - \arg z'$
 \end{prop}
+
+%Équations algébriques dans C {{{1
+\section{\'Equations alg\`ebriques dans $\mathbb{C}$}
+
+\subsection{Racines n-i\`emes d'un complexe}
+\begin{defi} Soit $z \in \mathbb{C}, n \in \mathbb{N}^*, \omega \in \mathbb{C}$ \\
+	On dit que $\omega$ est une racine $n^e$ de $z$ si $\omega^n = z$
+\end{defi}
+
+\begin{theo} Soit $z \in \mathbb{C}^*, n \in \mathbb{N}^*,\ \theta \in arg(z)$. Alors $z$ admet $n$ racines distinctes:
+	\[R_n(z) = \{\sqrt[n]{|z|}e^{i \frac{\theta + 2k\pi}{n}},\ k \in [\![0,n-1]\!] \}\]
+\end{theo}
+
+\begin{prop} Ensemble des racines $n^e$ de 1 \\
+	Pour $n \in \mathbb{N}^*, R_n(1)$ se note $\mathbb{U}_n$:
+	\[\mathbb{U}_n = \{z \in \mathbb{C},\ z^n = 1\}\]
+\end{prop}
+
+\begin{rqs}
+	Soit $z \in \mathbb{C}^*,\ n \in \mathbb{N}$ tel que $n \geq 2$. Soit $a \in \mathbb{C}^*$ telle que $a^n = z$ \\
+	Alors $R_n(z) = \{ua,\ u \in \mathbb{U}_n\}$
+\end{rqs}
+
+\begin{defi} Racines primitives $n^e$ de 1 \\
+	$u \in \mathbb{U}_n$. On dit que $u$ est racine $n^e$ primitive de 1 si $\mathbb{R}_n = \{1, u, u^2, \hdots, u^{n-1}\}$
+\end{defi}
+
+\subsection{R\'esolution dans $\mathbb{C}$ d'\'equations de degr\'e 2}
+Soit $a \in \mathbb{C}^*,b,c \in \mathbb{C}$ et $P: z \in \mathbb{C} \rightarrow az^2 + bz + c$ \\
+$\Delta = b^2 -4ac$. Soit $\delta$ une racine car\'ee de $\Delta$. Alors $P$ admet dans $\mathbb{C}$ deux racines qui sont: $r_1 =
+\frac{-b+\delta}{2a}$ et $r_2 = \frac{-b-\delta}{2a}$
+
+\subsubsection{Racines carr\'ees}
+\begin{enumerate}
+	\item Cas o\`u $z \in \mathbb{R}$: Si $z > 0$ alors $\sqrt{z}$ est racine carr\'ee. Si $z < 0$ alors $i\sqrt{-z}$
+	\item Cas o\`u l'on conna\^it une \'ecriture trigo int\'eressante: $z = re^{i\theta}$ alors $\sqrt{r}e^{i\frac{\theta}{2}}$
+	\item Cas g\'en\'eral: $z = a + ib$ \\
+		$\omega$ est racine carr\'ee de $z \Leftrightarrow \omega^2 = z \Leftrightarrow \omega^2 = z$ et $|\omega|^2 = |z|$
+\end{enumerate}
 
 \end{document}

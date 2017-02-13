@@ -39,10 +39,6 @@
 			Pour $x, y \in \overline{\mathbb{R}}$ avec $x \neq y$, il existe $U \in V_{\overline{\mathbb{R}}%
 			}(x), V \in V_{\overline{\mathbb{R}}%
 			}$ tel que: $U \cap V \neq \emptyset$
-		\item [-] Limite d'une suite \\
-			Soit $(u_n)$ une suite r\'eelle et $l \in \overline{\mathbb{R}}$. On a: \\
-			$u_n \rightarrow l \Leftrightarrow \forall\ V \in V_{\overline{\mathbb{R}}%
-			}(l),\ \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \in V$
 	\end{itemize}
 \end{prop}
 
@@ -70,6 +66,12 @@
 	}(A) \Leftrightarrow \text{ il existe une suite } (a_n) \text{ de points de } A \text{ telle que } a_n \rightarrow x\]
 \end{prop}
 
+\begin{prop} Limite d'une suite \\
+	Soit $(u_n)$ une suite r\'eelle et $l \in \overline{\mathbb{R}}$. On a: \\
+	$u_n \rightarrow l \Leftrightarrow \forall\ V \in V_{\overline{\mathbb{R}}%
+	}(l),\ \exists n_0 \in \mathbb{N}, \forall n \geq n_0, u_n \in V$
+\end{prop}
+
 %Notion de limite {{{1
 \section{Notion de limite}
 \begin{defi}
@@ -80,7 +82,24 @@
 		}(a), f(U \cap D) \subset V$ [topologique]
 		\item Pour toute $(x_n)$ de points de $D$ telle que $x_n \rightarrow a$ on a $f(x_n) \rightarrow l $ [s\'equentielle]
 	\end{enumerate}
+
+	\begin{rqs} Unicit\'e de la limite \\
+		S'il existe $l_1, l_2$ tels que $f(x) \rightarrow l_1,\ f(x) \rightarrow l_2$ alors $l_1 = l_2$
+	\end{rqs}
+
 \end{defi}
+
+\begin{prop} Traductions, utiles en pratique
+	\begin{enumerate}
+		\item Cas o\`u $a,l \in \mathbb{R}$
+			\[f(x) \rightarrow l \Leftrightarrow \forall \epsilon > 0,\ \exists \alpha > 0,\ \forall x \in D, |x-a| \leq \alpha \Rightarrow
+			|f(x) - l| \leq \epsilon\]
+		\item Cas o\`u $a \in \mathbb{R},\ l = +\infty$
+			\[f(x) \rightarrow +\infty \Leftrightarrow \forall M \in \mathbb{R},\ \exists \alpha > 0,\ \forall x \in D, |x-a| \leq
+			\alpha \Rightarrow f(x) \geq M\]
+		\item $\hdots$
+	\end{enumerate}
+\end{prop}
 
 \begin{prop} Lien entre limite et continuit\'e: \\
 	$D \subset \mathbb{R}, x_0 \in D, f:D \rightarrow \mathbb{R}$

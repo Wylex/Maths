@@ -33,8 +33,8 @@ Soit $E$ un ensemble muni d'une LCI $*$:
 	\item $*$ associative si: $a*(b*c) = (a*b)*c$
 	\item $*$ est commutative si: $a*b = b*a$
 	\item Un \'el\'ement $e \in E$ est neutre pour $*$ si: $x*e = e*x = x$
-	\item $(E,*)$ est un mono\"ide si: $*$ est associative et admet un neutre
 	\item On dit que $x$ est sym\'etrique (ou inversible) s'il existe $y \in E$ tel que: $x*y = y*x = e$
+	\item $(E,*)$ est un mono\"ide si: $*$ est associative et admet un neutre
 \end{enumerate}
 
 \begin{prop}
@@ -61,7 +61,7 @@ Soit $(E, *)$ un mono\"ide. On d\'efinit $x^n,\ n \in \mathbb{N}$ en posant:
 		\item [-] $\forall m,n \in \mathbb{N}, (x^n)^m = x^{nm}$
 		\item [-] Soient $x,y \in E$ tels que $x*y = y*x$ alors:
 			\begin{enumerate}
-				\item $\forall m,n \in \mathbb{N} x^n * y^m = y^m + x^n$
+				\item $\forall m,n \in \mathbb{N}, x^n * y^m = y^m * x^n$
 				\item $\forall n \in \mathbb{N}, (x*y)^n = x^n * y^n$
 			\end{enumerate}
 		\item [-] Soit $x \in E$ inversible. Soit $n \in \mathbb{Z}_-^*$, alors $x^n = (x^{-1})^n$\\
@@ -69,11 +69,25 @@ Soit $(E, *)$ un mono\"ide. On d\'efinit $x^n,\ n \in \mathbb{N}$ en posant:
 	\end{itemize}
 \end{prop}
 
-\begin{theo} $(\frac{\mathbb{Z}}{n\mathbb{Z}}, \times)$ inversibles
-\[\overline{a} \text{ est inversible dans } (\frac{\mathbb{Z}}{n\mathbb{Z}}, \times) \Leftrightarrow a \text{ et } n
+\begin{theo} $(\frac{\mathbb{Z}}{n\mathbb{Z}}, \dot\times)$ inversibles
+\[\overline{a} \text{ est inversible dans } (\frac{\mathbb{Z}}{n\mathbb{Z}}, \dot\times) \Leftrightarrow a \text{ et } n
 	\text{ sont premiers entre eux}\]
 
 \end{theo}
+
+%Groupes {{{1
+\section{Groupes}
+\begin{defi}
+	Un groupe est un mono\^ide dans lequel tout \'el\'ement est inversible. Si de plus la LCI est commutative, on parle de groupe commutatif
+	ou ab\'elien.
+\end{defi}
+
+\begin{prop} Soit $(G, *)$ un groupe
+	\begin{enumerate}
+		\item $a \in G$ alors $x \in G \mapsto ax$ est bijective de $G$ dans $G$
+		\item Si $G$ est commutatif fini de cardinal $n$, alors $\forall x \in G, x^n = e$
+	\end{enumerate}
+\end{prop}
 
 %Sous Groupes {{{1
 \section{Sous groupes}
@@ -86,27 +100,34 @@ Soit $(E, *)$ un mono\"ide. On d\'efinit $x^n,\ n \in \mathbb{N}$ en posant:
 	\end{enumerate}
 \end{defi}
 
+\begin{prop}
+	Soit $(G, *)$ un groupe, $x \in G$, alors $<x> = \{x^n,\ n \in \mathbb{Z}\}$ est un sous groupe de $G$
+\end{prop}
+
 \begin{theo}
 Soit $H$ un sous groupe de $(\mathbb{Z}, +)$ \\
 Il existe un et un seul $n \in \mathbb{N}$ tel que $H = n\mathbb{Z}$
 \end{theo}
 
 \begin{prop} $(G, *)$ un groupe, $H,K$ deux sous groupes de $G$.\\
-Alors $H \cup K$ est un sous groupe de $G$
+Alors $H \cap K$ est un sous groupe de $G$
 \end{prop}
 
 \subsection{Sous groupes engengr\'e par une partie}
 \begin{defi} $(G, *)$ un groupe. Soit $S \subset G$
 	\begin{itemize}
 		\item [-] $gr(S)$ est l'intersection de tous les sous groupes $H$ de $G$ tels que $S \subset H$
-		\item [-] On dit que $gr(S)$ est le sous groupe engendr\'e par G et si $gr(S) = G$ alors on dit que $S$ engendre $G$
+		\item [-] $gr(S)$ est le sous groupe engendr\'e par G\\
+			Si $gr(S) = G$ alors on dit que $S$ engendre $G$
 	\end{itemize}
 \end{defi}
 
+\begin{prop} $gr(x) = <x>$ \end{prop}
 
 \begin{defi} Soit $(G, *)$ un groupe:
 	\begin{itemize}
-		\item [-] On dit que $G$ est monog\`ene s'il existe $x \in G$ tel que $G = gr(x)$
+		\item [-] On dit que $G$ est monog\`ene s'il existe $x \in G$ tel que $G = gr(x)$ \\
+			$G$ monog\`ene $\Rightarrow G$ commutatif
 		\item [-] $G$ est cyclique si $G$ est monog\`ene fini
 	\end{itemize}
 \end{defi}
@@ -131,6 +152,11 @@ On d\'efinit alors l'ordre par:
 	\end{enumerate}
 \end{prop}
 
+\begin{theo} Lagrange \\
+	Soit $(G, *)$ un groupe fini, $H$ un sous groupe de $G$ alors $|H|$ divise $|G|$ \\
+	Par cons\'equent, si $G$ est un groupe fini, $x\in G$ est \'el\'ement de torsion et $o(x)$ divise  $|G|$
+\end{theo}
+
 %Morphismes de groupes {{{1
 \section{Morphismes de groupes}
 \begin{defi}
@@ -147,7 +173,8 @@ $f$ est un isomorphisme si $f$ est bijective
 		\item Soit $G_1$ un sous groupe de $G$. Alors $f(G_1)$ est un sous groupe de $H$.\\ En particulier, $f(G)$ appel\'e image de $f$
 			et se note $Im\ f$
 		\item Soit $H_1$ un sous groupe de $H$. Alors $f^{-1}(H_1)$ est un sous groupe de $G$. \\ En particulier, $f^{-1}(\{e_H\})$ est
-			appel\'e le noya de $f$ et se note $Ker\ f$
+			appel\'e le noyau de $f$ et se note $Ker\ f$
+		\begin{rqs} $|G| = |Ker f| |Im f|$ \end{rqs}
 		\item La compos\'e de deux morphismes est un morphisme.\\
 			La r\'eciproque d'un isomorphisme est un isomorphisme.
 	\end{enumerate}

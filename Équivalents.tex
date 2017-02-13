@@ -23,18 +23,18 @@
 \section{D\'efinitions}
 Soit $D$ une partie de $\mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a $D$, $f,g: D \rightarrow \mathbb{R}$. Au voisinage de A:
 \begin{enumerate}
-	\item f n\'egligeable devant g: \\
-		$\exists\ U \in V_{\overline{\mathbb{R}}%
-		}(a), \epsilon: U \cap D \rightarrow \mathbb{R}$ tel que
-		$\epsilon(x)\underset{a}{\rightarrow}  0$ et $\forall t \in U \cap D, f(t)=\epsilon(t)g(t)$
-	\item f domin\'ee par g: \\
-		$\exists\ U \in V_{\overline{\mathbb{R}}%
-		}(a), \omega: U \cap D \rightarrow \mathbb{R}$ tel que $\omega$ born\'ee et
-		$\forall t \in U \cap D, f(t)=\omega(t)g(t)$
-	\item f \'equivalent \`a g: \\
-		$\exists\ U \in V_{\overline{\mathbb{R}}%
-		}(a), \varphi: U \cap D \rightarrow \mathbb{R}$ tel que
-		$\varphi(x)\underset{a}{\rightarrow} 1$ et $\forall t \in U \cap D, f(t)=\varphi(t)g(t)$
+	\item f n\'egligeable devant g:
+		\[\exists\ U \in V_{\overline{\mathbb{R}}%
+		}(a), \epsilon: U \cap D \rightarrow \mathbb{R}$ \text{ tel que }
+		$\epsilon(x)\underset{a}{\rightarrow}  0$ et $\forall t \in U \cap D, f(t)=\epsilon(t)g(t)\]
+	\item f domin\'ee par g:
+		\[\exists\ U \in V_{\overline{\mathbb{R}}%
+		}(a), \omega: U \cap D \rightarrow \mathbb{R}$ \text{ tel que } $\omega$ \text{ born\'ee et }
+		$\forall t \in U \cap D, f(t)=\omega(t)g(t)\]
+	\item f \'equivalent \`a g:
+		\[\exists\ U \in V_{\overline{\mathbb{R}}%
+		}(a), \varphi: U \cap D \rightarrow \mathbb{R}$ \text{ tel que }
+		$\varphi(x)\underset{a}{\rightarrow} 1$ et $\forall t \in U \cap D, f(t)=\varphi(t)g(t)\]
 \end{enumerate}
 
 \begin{rqs} $ $
@@ -63,18 +63,18 @@ Soit $D$ une partie de $\mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a 
 
 %Faits de base {{{1
 \section{Faits de base}
-\begin{itemize}
-	\item [-] $f_1(x) = o(g(x))$\\
+\begin{enumerate}
+	\item $f_1(x) = o(g(x))$\\
 		$f_2(x)	= o(g(x))$ \\
 		Alors $\forall \alpha \in \mathbb{R}, \alpha f_1(x) + f_2(x) =  o(g(x))$
-	\item [-] $f(x) \sim g(x) \Leftrightarrow f(x) - g(x) = o(g(x))$
-	\item [-] $f(x) = o(g(x)) \Rightarrow f(x) + g(x) \sim g(x)$
-	\item [-] l'\'equivalence est r\'eflexive, sym\'etrique et transitive
-	\item [-] $f_1(x) \sim g_1(x)$\\
+	\item $f(x) \sim g(x) \Leftrightarrow f(x) - g(x) = o(g(x))$
+	\item $f(x) = o(g(x)) \Rightarrow f(x) + g(x) \sim g(x)$
+	\item L'\'equivalence est r\'eflexive, sym\'etrique et transitive
+	\item $f_1(x) \sim g_1(x)$\\
 		$f_2(x) \sim g_2(x)$\\
 		Alors, $f_1(x)f_2(x) \sim g_1(x)g_2(x)$ \\et si $f_2(x), g_2(x) \neq 0$ au voisinage de a, $\frac{f_1(x)}{f_2(x)} \sim
 		\frac{g_1(x)}{g_2(x)}$
-\end{itemize}
+\end{enumerate}
 
 \begin{theo} Composition (\`a droite)\\
 	$f,g: D \rightarrow \mathbb{R}, a \in Adh_{\overline{\mathbb{R}}%
@@ -82,7 +82,6 @@ Soit $D$ une partie de $\mathbb{R}, a \in \overline{\mathbb{R}}$ adh\'erent \`a 
 	}(B)$ \\
 	On suppose $\varphi(x)\underset{t\rightarrow b}{\rightarrow} a$ et $f(x)\underset{a}{\sim} g(x)$, alors
 	\[f(\varphi(t))\underset{b}{\sim} g(\varphi(t))\]
-
 \end{theo}
 
 \begin{rqs}
