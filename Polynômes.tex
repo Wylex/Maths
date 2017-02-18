@@ -1,0 +1,156 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{definition} \newtheorem*{nota}{Notation}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\ra{1.3}
+
+\title{Polyn\^omes}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Construction {{{1
+\section{Construction}
+Dans la suite, $K$ est un corps et $(K[X], + , \times)$ un anneau commutatif, int\'egre
+\subsection{Degr\'e}
+Pour $P =  \sum_{m \in \mathbb{N}} a_m X^m \in K[X]\backslash \{0\}$ \\
+$\deg P = \max \{m \in \mathbb{N},\ a_m \neq 0\}$
+
+\begin{itemize}
+	\item [-] $\deg (P+Q) \leq \max (\deg P, \deg Q)$
+	\item [-] $\deg (PQ) = \deg P + \deg Q$
+\end{itemize}
+
+\begin{rqs}
+	$PQ = \sum_k C_k X^k$ avec $C_k = \sum_{l=0}^k a_l b_{k-l}$
+\end{rqs}
+
+\subsection{Inversibles}
+$P$ est inversible si et seulement si $P = \lambda \in K^*$
+
+\subsection{Divilibilit\'e}
+$A, B \in K[X]$. On dit que $A$ divise $B$ s'il existe $C \in K[X]$ tel que $B = AC$
+
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] $A | 0$
+		\item [-] $\forall \lambda \in K^*, \lambda | A \land \lambda A | A$
+		\item [-] $A | B$ et $B|C \Rightarrow A | C$
+		\item [-]
+			$\left. \begin{array}{l}
+				A | B \\
+				A | C
+			\end{array}\right. \Rightarrow \forall U, V \in K[X],\ A |  BU + VC$
+		\item [-] $A,B \in K[X],\ A|B$ et $B|A \Leftrightarrow \exists \lambda \in K^*,\ B = \lambda A$
+		\item [-] $B$ est associ\'e \`a $A$ si $B$ s'\'ecrit $B = \lambda A,\ \lambda \in K^*$
+		\item [-] $A | B \Rightarrow \deg A \leq \deg B$
+		\item [-] $A|B$ et $\deg A = \deg B \Leftrightarrow B$ associ\'e \`a $A$
+	\end{itemize}
+\end{prop}
+
+\begin{defi} Polyn\^omes irr\'eductibles \\
+	$P \in K[X]$, on dit que $P$ est irr\'eductible si:
+	\begin{enumerate}
+		\item $P$ n'est pas constant ($\deg P \geq 1$)
+		\item les seuls diviseurs de $P$ sont les \'el\'ements de $K^*$ et les associ\'es de $P$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] Soit $P \in K[X]$ tel que $\deg P = 1$. Alors $P$ est irr\'eductible dans $K[X]$
+		\item [-] Soit $P \in K[X]$ non constant:
+			\begin{align*} P \text{ pas irr\'eductible } &\Leftrightarrow \text{ il existe un diviseur } S \text{ de } P \text{ tel que }
+			 1 \leq \deg S < \deg P \\
+			&\Leftrightarrow P \text{ s'\'ecrit } P = ST \text{ avec } \deg S \geq 1,\ \deg T \geq 1 \end{align*}
+		\item [-] tout $P \in K[X]$ non constant est produit d'irr\'eductibles
+	\end{itemize}
+\end{prop}
+
+\subsection{Division euclidienne}
+\begin{theo} Soit $A \in K[X],\ B \in K[X]\backslash \{0\}$
+	Alors il existe un unique couple $(Q,R) \in K[X]^2$, appel\'e division euclidienne de $A$ par $B$ tel que:
+	\begin{enumerate}
+		\item $A = BQ + R$
+		\item $\deg R < \deg B$
+	\end{enumerate}
+\end{theo}
+
+\begin{prop} Invariance de la divison euclidienne par extension de corps \\
+	Soit $K$ un sous corps de $L$ \\
+	$B | A$ dans $K[X] \Leftrightarrow B | A$ dans $L[X]$
+\end{prop}
+
+%Racines {{{1
+\section{Racines}
+\begin{defi} Soit $P = \sum_k a_k X^k \in K[X]$ \\
+	On appelle fonction polynomiale associ\'e \`a $P$ et on note $\tilde{P}$ l'application: \begin{align*} \tilde{P}: K &\rightarrow K\\
+	t &\mapsto \sum_k a_kt^k \end{align*}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] $\tilde{P+Q}(t) = \tilde{P}(t) + \tilde{Q}(t)$
+		\item [-] $\tilde{PQ}(t) = \tilde{P}(t) \tilde{Q}(t)$
+		\item [-] $\sim$ est un morphisme d'anneaux
+	\end{itemize}
+\end{prop}
+
+\begin{defi} Racines \\
+	On dit que $x$ est racine de $P$ si $\tilde{P}(x) = 0_K$
+	\begin{rqs} $ $
+		\begin{itemize}
+			\item [-] Si $P$ est constant non nul, $P$ n'a pas de racines
+			\item [-] Si $P$ est de degr\'e 1, $P$ a une unique racine
+			\item [-] Si $P$ est de degr\'e 2, $P$ n'admet de racines que si $\Delta$ est un carr\'e dans $K$
+		\end{itemize}
+	\end{rqs}
+\end{defi}
+
+\begin{theo} $ $
+	\begin{enumerate}
+		\item $x$ racine de $P \Leftrightarrow X - x$ divise $P$ dans $K[X]$
+		\item $x_i (1 \leq i \leq r)$ racine de $P \Leftrightarrow \prod (X - x_i)$ divise $P$ dans $K[X]$
+		\item Soit $P \in K[X]$ de degr\'e $n$. Alors $P$ admet au plus $n$ racines distinctes
+		\item Soit $n$ tel que $\deg P \leq n$. Si $P$ admet $n+1$ racines distinctes dans $K$ alors $P = 0$ \\
+			Si $P$ admet une infinit\'e de racines dans $K$ alors $P = 0$
+		\item $P,Q \in K[X]$. Soit $n$ tel que $\deg P \leq n$ et $\deg Q \leq n$ \\
+			Si $\tilde{P}$ et $\tilde{Q}$ co\"incident en $n+1$ points distincts, alors $P=Q$
+		\item On suppose $K$ infini, alors $P \in K[X] \mapsto \tilde{P} \in \mathcal{F}(K,K)$ est injective
+		\item Soit $P \in K[X]$ de degr\'e $n \geq 1$. Supposons que $P$ admette $n$ racines distinctes $x_1, \hdots, x_n$ alors: \\
+			$P = c\prod_{i=1}^n(X-x_i)$ avec $c = $ coeffdom($P$)
+	\end{enumerate}
+\end{theo}
+
+\begin{theo} Polyn\^omes interpolateurs de Lagrange \\
+	Soit $n\in \mathbb{N}$, $x_0, \hdots, x_n$ distincts dans $K$, $y_0, \hdots, y_n$ quelconques. Alors il existe un unique $P \in K[X]$
+	de degr\'e $\leq n$, tel que $\tilde{P}(x_i) = y_i$
+\end{theo}
+
+%Polynômes scindés, relations entre coeff et racines {{{1
+\section{Polyn\^omes scind\'es, relations entre coeff et racines}
+\begin{defi} Polyn\^omes scind\'es \\
+	$P \in K[X]$ non constant est scind\'e sur $K$ si $P$ est produit de polyn\^omes de \mbox{degr\'e 1.}
+	ie si $P$ s'\`ecrit $P = c(X-x_1)\hdots(X-x_n)$
+\end{defi}
+
+\begin{prop}
+	Le coefficient de $X^{n-k}$ dans $P = (X+x_1) \hdots (X + x_n)$ est $\sum_{I \in P_k(n)} \prod_{j \in I} x_j$
+\end{prop}
+
+\end{document}

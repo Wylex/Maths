@@ -45,7 +45,7 @@ Soit $E$ un ensemble muni d'une LCI $*$:
 	\begin{itemize}
 		\item [-] Si $x$ est inversible il existe un unique $y \in E$ tel que $x*y = y*x = e$
 		\item [-] $x^{-1}$ est inversible et $(x^{-1})^{-1} = x$
-		\item [-] $x, x'$ inversibles $\Rightarrow$ $x*x'$ inversibles et $(x*x')^{-1} = x'^{-1}*x^{-1}$
+		\item [-] $x, x'$ inversibles $\Rightarrow$ $x*x'$ inversible et $(x*x')^{-1} = x'^{-1}*x^{-1}$
 	\end{itemize}
 \end{prop}
 
@@ -64,7 +64,7 @@ Soit $(E, *)$ un mono\"ide. On d\'efinit $x^n,\ n \in \mathbb{N}$ en posant:
 				\item $\forall m,n \in \mathbb{N}, x^n * y^m = y^m * x^n$
 				\item $\forall n \in \mathbb{N}, (x*y)^n = x^n * y^n$
 			\end{enumerate}
-		\item [-] Soit $x \in E$ inversible. Soit $n \in \mathbb{Z}_-^*$, alors $x^n = (x^{-1})^n$\\
+		\item [-] Soit $x \in E$ inversible. Soit $n \in \mathbb{Z}_-^*$, alors $x^n = (x^{-1})^{-n}$\\
 			$\forall n \in \mathbb{Z}, x^n$ est inversible d'inverse $x^{-n}$
 	\end{itemize}
 \end{prop}
@@ -174,7 +174,7 @@ $f$ est un isomorphisme si $f$ est bijective
 			et se note $Im\ f$
 		\item Soit $H_1$ un sous groupe de $H$. Alors $f^{-1}(H_1)$ est un sous groupe de $G$. \\ En particulier, $f^{-1}(\{e_H\})$ est
 			appel\'e le noyau de $f$ et se note $Ker\ f$
-		\begin{rqs} $|G| = |Ker f| |Im f|$ \end{rqs}
+		\begin{rqs} $f$ injective $\Leftrightarrow Ker\ f = \{e_G\}$ \\ $|G| = |Ker f| |Im f|$ \end{rqs}
 		\item La compos\'e de deux morphismes est un morphisme.\\
 			La r\'eciproque d'un isomorphisme est un isomorphisme.
 	\end{enumerate}
