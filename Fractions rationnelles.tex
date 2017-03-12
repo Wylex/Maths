@@ -1,0 +1,99 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{definition} \newtheorem*{nota}{Notation}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\ra{1.3}
+
+\title{Fractions Rationnelles}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Généralités {{{1
+\section{G\'en\'eralit\'es}
+Pour $F = \frac{A}{B}, G = \frac{C}{D} \in K(X)$:
+\begin{enumerate}
+	\item $F+G = \frac{AD+BC}{BD}$
+	\item $FG = \frac{AC}{BD}$
+\end{enumerate}
+\begin{prop} Soit $F = \frac{A}{B} \in K(X)$:
+	\begin{enumerate}
+		\item Repr\'esentants: On appelle repr\'esentant irr\'eductible de $F$ tout repr\'esentant $(P,Q)$ de $F$ tel que $P \land Q=1$
+		\item Degr\'e: $\deg F = \deg A - \deg B$
+			\begin{enumerate}
+				\item $\deg FG = \deg F + \deg G$
+				\item $\deg (F+G) \leq \max(\deg F, \deg G)$
+			\end{enumerate}
+		\item Valuation p-adique: $V_P(F) = V_P(A) - V_P(B)$
+			\begin{enumerate}
+				\item $V_P(FG) = V_P(F) + V_P(G)$
+				\item $V_P(F+G) \geq \min(V_P(F), V_P(G))$
+			\end{enumerate}
+		\item Composition: Soit $P = \sum_k a_kX^k \in K[X]$, alors $P \circ F = \sum_k a_k F^k$
+			\begin{enumerate}
+				\item $(\alpha P + Q)(F) = \alpha P(F) + Q(F)$
+				\item $(PQ)(F) = P(F)Q(F)$
+			\end{enumerate}
+		\item D\'erivation: On pose $F' = \frac{A'B - AB'}{B^2}$
+			\begin{enumerate}
+				\item $(\alpha F + G)' = \alpha F' + G'$
+				\item $(FG)' = F'G + FG'$
+				\item $(P(F))' = F'P'(F)$
+			\end{enumerate}
+	\end{enumerate}
+\end{prop}
+
+%Décomposition en éléments simples {{{1
+\section{D\'ecomposition en \'el\'ements simples}
+\begin{defi}
+	On appelle \'el\'ement simple de $K(X)$ tout \'el\'ement de $K(X)$ d'une des formes suivantes:
+	\begin{enumerate}
+		\item Polyn\^omes
+		\item Fractions rationnelles du type $\frac{A}{P^\alpha}$ avec $P$ irr\'eductible, $\alpha \in \mathbb{N}^*$ et $A$ un polyn\^ome tel que
+			$\deg A < \deg P$
+	\end{enumerate}
+\end{defi}
+
+\begin{theo}
+	Soit $F \in K(X)$. Alors il existe un unique $E \in K[X]$ et une unique famille $(R_{P,l})_{(P,l) \in \mathcal{J} \times \mathbb{N}^*}$
+	\`a support fini de polyn\^omes tels que \mbox{$\forall l \in \mathbb{N}^*, \forall P \in \mathcal{J}$}, $\deg R_{P,l} < \deg P$ et
+	\[F = E + \sum_{P \in \mathcal{J}} \left(\sum_{l \in \mathbb{N}^*} \frac{R_{P,l}}{P^l}\right)\]
+	$E$ est le quotient de la division euclidienne de $A$ par $B$.
+\end{theo}
+
+\subsection{D\'ecomposition dans $\mathbb{C}$}
+\begin{enumerate}
+	\item $z$ p\^ole simple de $F=\frac{A}{B}$:
+		\[F = \frac{\lambda}{X -z} + H\]
+		Alors, $\lambda = \frac{A(z)}{B'(Z)}$
+	\item $z$ p\^ole multiple de $F= \frac{A}{(X-z)^\alpha T}$:
+		\[F = \frac{\lambda_1}{X-z} + \hdots + \frac{\lambda_\alpha}{(X-z)^\alpha} + H\]
+		On effectue alors un DL \`a l'ordre $\alpha -1$ en $0$ de $\varphi: t\in \mathbb{R} \mapsto \frac{A(z+t)}{T(z+t)}$
+		\[\varphi(t) = \lambda_1 t^{\alpha -1} + \hdots + \lambda_\alpha + o(t^{\alpha -1})\]
+		\[\varphi(t) = a_0 + a_1 t + \hdots + a_{\alpha -1} t^{\alpha -1} + o(t^{\alpha -1})\]
+		Par unicit\'e, $a_0 = \lambda_\alpha,\ \hdots\ , a_{\alpha-1} = \lambda_1$
+\end{enumerate}
+
+%Remarques {{{1
+\section{Remarques}
+\begin{enumerate}
+	\item Regarder parit\'e des fonctions
+	\item Si $F \in R(X),\ z \in \mathbb{C} \backslash \mathbb{R}$ un p\^ole alors $\bar{z}$ est aussi p\^ole de $F$ de m\^eme ordre
+\end{enumerate}
+
+\end{document}

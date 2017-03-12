@@ -24,8 +24,8 @@
 \begin{document}
 \maketitle
 
-%Définitions {{{1
-\section{D\'efinitions}
+%Anneaux {{{1
+\section{Anneaux}
 \begin{defi}
 	Un anneau est un triplet $(A, +, \times)$ o\`u $A$ est un ensemble non vide, $+$ et $\times$ des LCI sur $A$ telles que:
 	\begin{enumerate}
@@ -39,11 +39,25 @@ L'anneau est dit commutatif lorsque $\times$ est commutatif
 \begin{nota} $ $
 	\begin{itemize}
 		\item [-] Pour $x \in A$ on notera $-x$ l'oppos\'e de $x$.\\
-			Le neutre de $+$ est "le z\'ero" de $A$, not\'e $0_A$
+			Le neutre de $+$ est 'le z\'ero' de $A$, not\'e $0_A$
 		\item [-] Le neutre de $\times$ est l'\'el\'ement unit\'e, not\'e $1_A$\\
 			On note $\mathcal{U}(A)$ le groupe des inversibles de $(A, \times)$. On note l'inverse $x^{-1}$
 	\end{itemize}
 \end{nota}
+
+\begin{defi}
+	Un anneau $(A, + , \times)$ est int\'egre si:
+	\[\forall x,y \in A, x\times y = 0_A \Rightarrow (x = 0_A \lor y = 0_A)\]
+	\begin{rqs} Dans programme officiel, $(A, \times)$ doit \^etre de plus commutatif \end{rqs}
+\end{defi}
+
+\begin{prop} $ $
+	Si $(A,+,\times)$ est int\'egre et si $a \in A\backslash \{0\}$:
+		\begin{align*}
+			\forall x,y \in A,\ & a \times x = a \times y \Rightarrow x = y \\
+								& x \times a = y \times a \Rightarrow x = y
+		\end{align*}
+\end{prop}
 
 %Règles de calcul {{{1
 \section{R\`egles de calcul}
@@ -63,32 +77,6 @@ Soient $x, y \in A$ tels que $x \times y = y \times x$
 	\item $x^n - y^n = (x-y)\sum_{k=0}^{n-1}x^ky^{n-1-k}$
 \end{enumerate}
 
-%Anneaux intégres-corps {{{1
-\section{Anneaux int\'egres-corps}
-\begin{defi}
-	Un anneau $(A, + , \times)$ est int\'egre si:
-	\[\forall x,y \in A, x\times y = 0_A \Rightarrow (x = 0_A \lor y = 0_A)\]
-	\begin{rqs} Dans programme officiel, $(A, \times)$ doit \^etre de plus commutatif \end{rqs}
-\end{defi}
-
-\begin{prop} $ $
-	Si $(A,+,\times)$ est int\'egre et si $a \in A\backslash \{0\}$:
-		\begin{align*}
-			\forall x,y \in A,\ & a \times x = a \times y \Rightarrow x = y \\
-								& x \times a = y \times a \Rightarrow x = y
-		\end{align*}
-\end{prop}
-
-\begin{defi} Corps \\
-	Un corps est un anneau $(A,+,\times)$ commutatif (non nul) dans lequel tout \'el\'elent non nul est inversible
-	($\mathcal{U}(A) = A\backslash\{0_A\}$)
-\end{defi}
-
-\begin{prop}
-	Un corps est un anneau int\`egre
-\end{prop}
-
-%Sous-anneaux, morphismes d'anneaux {{{1
 \section{Sous-anneaux, morphismes d'anneaux}
 \begin{defi} Sous-anneau \\
 	$(A,+,\times)$ un anneau, $B \subset A$. $B$ est un sous-anneau de $A$ si:
@@ -103,20 +91,31 @@ Soient $x, y \in A$ tels que $x \times y = y \times x$
 	\end{rqs}
 \end{defi}
 
-\begin{defi} Sous-corps \\
-	Soit $(K,+,\times)$ un corps. On dira que $B \subset K$ est un sous corps de $K$ si:
-	\begin{enumerate}
-		\item $B$ est un sous anneau de K
-		\item $\forall x \in B\backslash\{0\},\ x^{-1} \in B$
-	\end{enumerate}
-\end{defi}
-
 \begin{defi} Morphismes d'anneaux \\
 	$A, B$ deux anneaux, $f:A \rightarrow B$ est un morsphisme d'anneaux si:
 	\begin{enumerate}
 		\item $\forall x,y \in A, f(x+y) = f(x) + f(y)$
 		\item $\forall x,y \in A, f(xy) = f(x)f(y)$
 		\item $f(1_A) = 1_B$
+	\end{enumerate}
+\end{defi}
+
+%Corps {{{1
+\section{Corps}
+\begin{defi} Corps \\
+	Un corps est un anneau $(A,+,\times)$ commutatif (non nul) dans lequel tout \'el\'elent non nul est inversible
+	($\mathcal{U}(A) = A\backslash\{0_A\}$)
+\end{defi}
+
+\begin{prop}
+	Un corps est un anneau int\`egre
+\end{prop}
+
+\begin{defi} Sous-corps \\
+	Soit $(K,+,\times)$ un corps. On dira que $B \subset K$ est un sous corps de $K$ si:
+	\begin{enumerate}
+		\item $B$ est un sous anneau de K
+		\item $\forall x \in B\backslash\{0\},\ x^{-1} \in B$
 	\end{enumerate}
 \end{defi}
 
