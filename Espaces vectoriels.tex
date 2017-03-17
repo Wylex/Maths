@@ -1,0 +1,270 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{definition} \newtheorem*{nota}{Notation}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\ra{1.3}
+
+\title{Espaces vectoriels}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Espace vectoriel {{{1
+\section{Espaces vectoriels}
+\begin{defi}
+	Soit $K$ un corps. Un K-espace vectoriel est un triplet $(E, + ,.)$ o\`u $E$ est un ensemble non vide tel que:
+	\begin{enumerate}
+		\item $(E,+)$ est un groupe commutatif
+		\item $.$ est une application $K \times E \rightarrow E$ telle que:
+		\begin{enumerate}
+			\item $\forall \lambda, \mu \in K, \forall x \in E,\ (\lambda + \mu).x = \lambda . x + \mu . x$
+			\item $\forall \lambda \in K, \forall x,y \in E, \lambda . (x+y) = \lambda . x + \lambda . y$
+			\item $\forall \lambda, \mu \in K, \forall x \in E, \lambda . (\mu . x) = (\lambda \mu). x$
+			\item $\forall x \in E, 1_K . x = x$
+		\end{enumerate}
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} Soit $E$ un espace vectoriel
+	\begin{enumerate}
+		\item $\forall x \in E,\ 0_K x = 0_E$\\
+			$\forall \lambda \in K,\ \lambda 0_E = 0_E$
+		\item Pour $\lambda \in K,\ x \in E,\ \lambda x 0_E \Leftrightarrow \lambda = 0_K \lor x = 0_E$
+		\item $\left( \sum_i \lambda_i \right) x = \sum_i \left(\lambda_i x \right)$\\
+			$\lambda \left( \sum_i x_i \right) = \sum_i \left(\lambda x_i \right)$
+	\end{enumerate}
+\end{prop}
+
+%Notions essentielles {{{1
+\section{Notions essentielles}
+Dans la suite $E$ est un Kev
+\subsection{Familles de vecteurs}
+\begin{defi} Combinaison lin\'eaire \\
+	$n \in \mathbb{N}^*,\ x_1, \hdots, x_n$ des vecteurs de $E$. On appelle combinaison lin\'eaire des vecteurs toute \'ecriture du type
+	$\lambda_1 x_1 + \hdots + \lambda_n x_n $ avec $\lambda_i \in K$
+\end{defi}
+
+\begin{defi} Familles libres, li\'ees \\
+	$n \in \mathbb{N}^*, x_1, \hdots, x_n \in E$. On dit que les vecteurs sont libres si: $\forall \lambda_1, \hdots, \lambda_n \in K$:
+	\[\sum_i \lambda_i x_i = O_E \Rightarrow \lambda_i = 0\ (1 \leq i \leq n)\]
+	On dit que la famille $(x_1, \hdots, x_n)$ est li\'ee si elle n'est pas libre.
+
+	\begin{rqs}
+		$(x_1, \hdots, x_n)$ libre $\Leftrightarrow \forall j \in [1,n],\ x_j$ n'est pas CL de $(x_i)_{1 \leq i \leq n,\ i \neq j}$
+	\end{rqs}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item [-] Cas de 2 vecteurs:\\
+		$x,y \in E\backslash \{0\}$. $y$ et $x$ sont colin\'eaires s'il existe $\lambda \in K$ tel que $y = \lambda x$\\
+		Ainsi: $(x,y)$ li\'es $\Leftrightarrow x$ et $y$ sont colin\'eaires
+		\item [-] Familles infinies libres: \\
+		Soit $I$ un ensemble quelconque et $(x_i)_{i \in I}$ une famille de vecteurs de $E$. On dit que cette famille
+		est libre ssi $\forall J \subset I, J$ fini non vide, la famille $(x_i)_{i \in I}$ est libre.
+	\end{enumerate}
+\end{prop}
+
+\begin{defi} Familles g\'en\'eratrices, bases:\\
+	Soit $(x_i)_{i \in I}$ une famille qcq de vecteurs de $E$.
+	\begin{enumerate}
+		\item La famille $(x_i)_{i \in I}$ est g\'en\'eratrice (ou engendre $E$) si tout vecteurs de $E$ s'\'ecrit comme CL de vecteurs de
+			la famille.
+		\item Elle est une base de $E$ si elle est \`a la fois libre et g\'en\'eratrice.
+	\end{enumerate}
+
+	\begin{rqs} Supposons $B= (e_1, \hdots, e_n)$ une base finie de $E$. Soit $x \in E$, alors il existe un unique
+		$(\lambda_1, \hdots, \lambda_n) \in K^n$ tel que $x = \sum_i^n \lambda_i e_i$\\
+	\end{rqs}
+\end{defi}
+
+\subsection{Sous espaces vectoriels}
+\begin{defi} Sous espaces vectoriels \\Soit $E$ un Kev, $F \subset E$. On dit que $F$ est un sev de $E$ si:
+	\begin{enumerate}
+		\item $F$ est un sous groupe de $(E, +)$
+		\item $\forall x \in F,\forall \lambda \in K, \lambda x \in F$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} Soit $E$ un Kev
+	\begin{enumerate}
+		\item [-] Soit $F$ un sev de $E$, $F$ est stable par CL
+		\item [-] Soit $F \subset E$:
+			$F \text{ sev de } E \Leftrightarrow F \neq \emptyset \text{ et } \forall x,y \in F, \forall \lambda \in K, \lambda x + y \in F$
+		\item [-] Une intersection qcq de sev de $E$ est un sev de $E$
+	\end{enumerate}
+\end{prop}
+
+\subsubsection{Sous espaces engendr\'es par une partie}
+\begin{defi} sev de $E$ engendr\'e par $S$, not\'e $Vect(S)$
+	\begin{enumerate}
+		\item $Vect(S)$ est un sev de $E$
+		\item $S \subset Vect(E)$
+		\item $\forall F$ sev de $E, S \subset F \Rightarrow Vect(S) \subset F$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item [-] Si $S$ est une partie non vide de $E$, $Vect(S)$ est l'ensemble des CL des vecteurs de $S$
+		\item [-] $Vect(x_1, \hdots, x_n) = \{\sum_i^n \lambda_i x_i / (\lambda_i, \hdots, \lambda_n) \in K^n\}$ \\
+				$Vect(x_1, \hdots, x_n) = \sum_i^n K x_i$
+		\item [-] $F+G$  est un sev de $E$ appel\'e somme de $F$ et de $G$, c'est le plus petit sev de $E$ qui contient $F\cup G$
+	\end{enumerate}
+\end{prop}
+
+\subsubsection{Sommes directes, sev suppl\'ementaires}
+\begin{defi} Somme directe \\
+	Soit $E$ un Kev, $F,G$ deux sev de $E$. On dira que $F$ et $G$ sont en somme directe si $F \cup G = \{0_E\}$
+	\begin{rqs}
+		Tout vecteur $u$ de $F+G$ en somme directe s'\'ecrit de façon unique $u = x + y$ avec $x \in F, y \in G$
+	\end{rqs}
+\end{defi}
+
+\begin{defi} Suppl\'ementaires \\
+	$F,G$ des sev du Kev $E$. $F$ et $G$ sont suppl\'ementaires si (ie $E = F \oplus G$):
+	\begin{enumerate}
+		\item $F \cup G = \{0\}$
+		\item $E = F + G$
+	\end{enumerate}
+
+	\begin{rqs}
+		$E = F \oplus G \Leftrightarrow $ tout $x \in E$ s'\'ecrit de façon unique $x=y+z$ avec $(y,z) \in F \times G$
+	\end{rqs}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item [-] LASSE:
+			\begin{enumerate}
+				\item $F+G$ est directe
+				\item $\forall (y,z) \in F \times G, y + z = 0_E \Rightarrow y = z = 0_E$
+			\end{enumerate}
+		\item [-] Th\'eor\`eme de recollement: \\
+			Soient $F,G$ deux sev de $E$ tels que $F \cup G = \{0\}$. \\Soit $(x_1, \hdots, x_m) = \Omega$ une famille finie de vecteurs de $F$\\
+			Soit $(y_1, \hdots, y_n) = \Delta$ de vecteurs de $G$:
+			\begin{enumerate}
+				\item Si $\Omega$ et $\Delta$ sont libres alors $\Omega \Delta$ est une famille libre
+				\item Si $\Omega$ engendre $F$ et $\Delta$ engendre $G$, alors $\Omega \Delta$ engendre $F+G$
+				\item On suppose que $E = F \oplus G$. Alors si $\Omega$ est une base de $F$ et $\Delta$ de $G$, $\Omega \Delta$ est une base
+					de $E$
+			\end{enumerate}
+	\end{enumerate}
+\end{prop}
+
+\subsection{Applications lin\'eaires}
+\begin{defi} Soient $E,F$ deux Kev et $f: E \rightarrow F$. On dira que $f$ est lin\'eaire si:
+	\begin{enumerate}
+		\item $\forall x,y \in E, f(x+y) = f(x) + f(y)$ (morphisme de gpe de (E,+) dans (E,+))
+		\item $\forall \lambda \in K, \forall x \in E, f(\lambda x) = \lambda f(x)$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} $E,F$ deux Kev, $f \in \mathscr{L}(E,F)$
+	\begin{itemize}
+		\item [-] $f$ lin\'eaire $\Leftrightarrow \forall \lambda \in K,\ \forall x,y \in E, f(\lambda x + y) = \lambda f(x) + f(y)$
+		\item [-] $F$ une famille de vecteurs de $E, f(Vect(F)) = Vect(f(F))$
+		\item [-] Si $X$ est un sev de $E$, $f(X)$ est un sev de $F$ \\
+			En particulier, $f(E) = Im f$ et $Im f = F \Leftrightarrow f$ surjective
+		\item [-] Si $Y$ est un sev de F, alors $f^{-1}(Y)$ est un sev de $E$\\
+			En particulier, le noyau de $f$ se note $Ker f$ et $Ker f = \{0_E\} \Leftrightarrow f$ injective
+		\item [-] Si $f$ est injective et si $(x_1, \hdots x_n)$ est une famille libre de $E$, $(f(x_1), \hdots, f(x_n))$ est une famille libre
+			de $F$
+		\item [-] Soit $G$ une famille g\'en\'eratrice de $E$. $f$ surjective $\Leftrightarrow f(G)$ engendre $F$
+		\item [-] La composition de deux applications li\'eaires est lin\'eaire, la r\'eciproque d'un isomorphisme est lin\'eaire
+	\end{itemize}
+\end{prop}
+
+\begin{defi} Alg\`ebre\\
+	Une K-alg\`ebre est un quadruplet $(A,+,\times, .)$ o\`u $A$ est un ensemble non vide, $+$ et $\times$ deux LCI sur $A$ et $.$ une
+	multiplication par scalaire tels que:
+	\begin{enumerate}
+		\item $(A, + , .)$ est un Kev
+		\item $(A, +, \times)$ est un anneau
+		\item $\forall a, b \in A, \forall \alpha \in K:$ \\
+			$\alpha . (a\times b) = (\alpha . a) \times b = a \times (\alpha . b)$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} Le Kev $\mathscr{L}(E,F)$, la K-alg\`ebre $\mathscr{L}(E)$
+	\begin{itemize}
+		\item [-] $E,F$ deux Kev. Alors $\mathscr{L}(E,F)$ est un sev de $\mathscr{F}(E,F)$
+		\item [-] pseudo distributivit\'e:
+			\begin{enumerate}
+				\item $g \circ (f_1 + f_2) = g \circ f_1 + g \circ f_2$
+				\item $(g_1 + g_2) \circ f = g_1 \circ f + g_2 \circ f$
+				\item $\alpha (g \circ f) = (\alpha g) \circ f = g \circ (\alpha f)$
+			\end{enumerate}
+		\item [-] $(\mathscr{L}(E), +, \circ, .)$ est une K-alg\`ebre
+		\item [-] Soit $E$ un Kev, on suppose $B=(e_1, \hdots, e_n)$ une base finie. Soit $F$ un Kev, $y_1, \hdots, y_n \in F$.\\ Alors il existe
+			une unique application lin\'eaire de $E$ dans $F$ tel que: $f(e_i) = y_i\ (1 \leq i \leq n)$. Ainsi, deux AL qui co\"incident sur
+			une base sont \'egales.
+	\end{itemize}
+\end{prop}
+
+%Projecteurs et symétriques {{{1
+\section{Projecteurs et sym\'etriques}
+Soit $E$ un Kev. $F$ et $G$ deux sev de $E$ tels que: $E = F \oplus G$. Tout $x \in E$ s'\'ecrit alors de façon unique $x = x_F + x_G$. On pose:
+\begin{align*} p: &E \rightarrow E  &q: E \rightarrow E\\
+			      &x \mapsto x_F &x \mapsto x_G
+\end{align*}
+\begin{defi} Projecteur \\
+	$p$ et $q$ sont lin\'eaires et $p$ s'appelle le projecteur sur $F$, parallelement \`a $G$
+
+	\begin{rqs} $ $
+		\begin{enumerate}
+			\item $F = Im\ p = Ker\ (p - Id_E)$
+			\item $G = Ker\ p$
+		\end{enumerate}
+	\end{rqs}
+\end{defi}
+
+\begin{defi} Sym\'etrie \\
+	$x \in E \mapsto x_F - x_G$ est la sym\'etrie s par rapport \`a $F$ parall\`element \`a $G$. \\Pour $x = x_F + x_G,\ s(x) = x_F  - x_G$.
+
+	\begin{rqs}
+		$F = Ker (s - Id_E)$
+	\end{rqs}
+\end{defi}
+
+\begin{defi} Autres d\'efinitions
+	\begin{enumerate}
+		\item On dit que $f$ est un projecteur si $f \circ f = f$
+		\item On dira que $f$ est une sym\'etrie si $f \circ f = Id_E$
+	\end{enumerate}
+\end{defi}
+
+%Hyperplans {{{1
+\section{Hyperplans}
+\begin{defi} Hyperplan \\
+	Soit $E$ un Kev, $H$ un sev. On dit que $H$ est un hyperplan s'il existe une forme lin\'eaire non nulle $\varphi \in \mathscr{L}(E,K)$ telle
+	que $H = Ker\ \varphi$ \\
+	Une telle $\varphi$ s'appelle une \'equation de $H$
+\end{defi}
+
+\begin{prop} Soit $H$ un hyperplan de $E$, $\varphi$ une \'equation de $H$:
+	\begin{enumerate}
+		\item $H \neq \emptyset$
+		\item $\forall a \in E \backslash H, E = H \oplus Vect(a)$ \\
+			Tout suppl\'ementaire de $H$ est une doite
+		\item les équations de $H$ sont les $\lambda \varphi$ avec $\lambda \in K^*$ \\
+			$Ker\ \varphi = Ker\ \psi \Leftrightarrow \exists \lambda \in K^*, \psi = \lambda \varphi$
+	\end{enumerate}
+\end{prop}
+
+\end{document}
