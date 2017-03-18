@@ -72,7 +72,7 @@ Dans la suite $E$ est un Kev
 \begin{prop} $ $
 	\begin{enumerate}
 		\item [-] Cas de 2 vecteurs:\\
-		$x,y \in E\backslash \{0\}$. $y$ et $x$ sont colin\'eaires s'il existe $\lambda \in K$ tel que $y = \lambda x$\\
+		$x,y \in E\backslash \{0\}$, $y$ et $x$ sont colin\'eaires s'il existe $\lambda \in K$ tel que $y = \lambda x$\\
 		Ainsi: $(x,y)$ li\'es $\Leftrightarrow x$ et $y$ sont colin\'eaires
 		\item [-] Familles infinies libres: \\
 		Soit $I$ un ensemble quelconque et $(x_i)_{i \in I}$ une famille de vecteurs de $E$. On dit que cette famille
@@ -89,7 +89,7 @@ Dans la suite $E$ est un Kev
 	\end{enumerate}
 
 	\begin{rqs} Supposons $B= (e_1, \hdots, e_n)$ une base finie de $E$. Soit $x \in E$, alors il existe un unique
-		$(\lambda_1, \hdots, \lambda_n) \in K^n$ tel que $x = \sum_i^n \lambda_i e_i$\\
+		$(\lambda_1, \hdots, \lambda_n) \in K^n$ tel que $x = \sum_i^n \lambda_i e_i$ appel\'e coordonn\'ees de $x$ dans $B$\\
 	\end{rqs}
 \end{defi}
 
@@ -115,14 +115,14 @@ Dans la suite $E$ est un Kev
 	\begin{enumerate}
 		\item $Vect(S)$ est un sev de $E$
 		\item $S \subset Vect(E)$
-		\item $\forall F$ sev de $E, S \subset F \Rightarrow Vect(S) \subset F$
+		\item $\forall\ F$ sev de $E, S \subset F \Rightarrow Vect(S) \subset F$
 	\end{enumerate}
 \end{defi}
 
 \begin{prop} $ $
 	\begin{enumerate}
 		\item [-] Si $S$ est une partie non vide de $E$, $Vect(S)$ est l'ensemble des CL des vecteurs de $S$
-		\item [-] $Vect(x_1, \hdots, x_n) = \{\sum_i^n \lambda_i x_i / (\lambda_i, \hdots, \lambda_n) \in K^n\}$ \\
+		\item [-]  $Vect(x_1, \hdots, x_n) = {\sum_i^n \lambda_i x_i / (\lambda_i, \hdots, \lambda_n) \in K^n}$ \\
 				$Vect(x_1, \hdots, x_n) = \sum_i^n K x_i$
 		\item [-] $F+G$  est un sev de $E$ appel\'e somme de $F$ et de $G$, c'est le plus petit sev de $E$ qui contient $F\cup G$
 	\end{enumerate}
@@ -132,7 +132,7 @@ Dans la suite $E$ est un Kev
 \begin{defi} Somme directe \\
 	Soit $E$ un Kev, $F,G$ deux sev de $E$. On dira que $F$ et $G$ sont en somme directe si $F \cup G = \{0_E\}$
 	\begin{rqs}
-		Tout vecteur $u$ de $F+G$ en somme directe s'\'ecrit de façon unique $u = x + y$ avec $x \in F, y \in G$
+		Tout vecteur $u$ de $F+G$ en somme directe s'\'ecrit de fa\c{c}on unique $u = x + y$ avec $x \in F, y \in G$
 	\end{rqs}
 \end{defi}
 
@@ -144,20 +144,16 @@ Dans la suite $E$ est un Kev
 	\end{enumerate}
 
 	\begin{rqs}
-		$E = F \oplus G \Leftrightarrow $ tout $x \in E$ s'\'ecrit de façon unique $x=y+z$ avec $(y,z) \in F \times G$
+		$E = F \oplus G \Leftrightarrow $ tout $x \in E$ s'\'ecrit de fa\c{c}on unique $x=y+z$ avec $(y,z) \in F \times G$
 	\end{rqs}
 \end{defi}
 
 \begin{prop} $ $
 	\begin{enumerate}
-		\item [-] LASSE:
-			\begin{enumerate}
-				\item $F+G$ est directe
-				\item $\forall (y,z) \in F \times G, y + z = 0_E \Rightarrow y = z = 0_E$
-			\end{enumerate}
-		\item [-] Th\'eor\`eme de recollement: \\
-			Soient $F,G$ deux sev de $E$ tels que $F \cup G = \{0\}$. \\Soit $(x_1, \hdots, x_m) = \Omega$ une famille finie de vecteurs de $F$\\
-			Soit $(y_1, \hdots, y_n) = \Delta$ de vecteurs de $G$:
+		\item [-] $F+G$ est directe $\Leftrightarrow \forall (y,z) \in F \times G, y + z = 0_E \Rightarrow y = z = 0_E$
+		\item [-] Th\'eor\`eme de recollement:
+			Soient $F,G$ deux sev de $E$ en somme directe. Soient $\Omega = (x_1, \hdots, x_m),\ \Delta = (y_1, \hdots, y_n)$ des familles
+			(finies) de vecteurs de $F$ et $G$ respectivement:
 			\begin{enumerate}
 				\item Si $\Omega$ et $\Delta$ sont libres alors $\Omega \Delta$ est une famille libre
 				\item Si $\Omega$ engendre $F$ et $\Delta$ engendre $G$, alors $\Omega \Delta$ engendre $F+G$
@@ -201,7 +197,7 @@ Dans la suite $E$ est un Kev
 	\end{enumerate}
 \end{defi}
 
-\begin{prop} Le Kev $\mathscr{L}(E,F)$, la K-alg\`ebre $\mathscr{L}(E)$
+\begin{prop} $ $
 	\begin{itemize}
 		\item [-] $E,F$ deux Kev. Alors $\mathscr{L}(E,F)$ est un sev de $\mathscr{F}(E,F)$
 		\item [-] pseudo distributivit\'e:
@@ -211,15 +207,24 @@ Dans la suite $E$ est un Kev
 				\item $\alpha (g \circ f) = (\alpha g) \circ f = g \circ (\alpha f)$
 			\end{enumerate}
 		\item [-] $(\mathscr{L}(E), +, \circ, .)$ est une K-alg\`ebre
-		\item [-] Soit $E$ un Kev, on suppose $B=(e_1, \hdots, e_n)$ une base finie. Soit $F$ un Kev, $y_1, \hdots, y_n \in F$.\\ Alors il existe
-			une unique application lin\'eaire de $E$ dans $F$ tel que: $f(e_i) = y_i\ (1 \leq i \leq n)$. Ainsi, deux AL qui co\"incident sur
-			une base sont \'egales.
+	\end{itemize}
+\end{prop}
+
+\pagebreak
+\begin{prop} Cas o\`u l'espace de d\'epart $E$ \`a une base finie $B=(e_1, \hdots, e_n)$
+	\begin{itemize}
+		\item [-] Soit $F$ un Kev, $y_1, \hdots, y_n \in F$. Alors il existe
+			une unique application lin\'eaire de $E$ dans $F$ telle que: $f(e_i) = y_i\ (1 \leq i \leq n)$.
+		\item [-] $f \in \mathscr{L}(E,F)$,
+			$f$ surjective $\Leftrightarrow f(B)$ g\'en\'eratrice de $F$\\
+			$f$ injective $\Leftrightarrow f(B)$ est libre\\
+			$f$ est un isomorphisme $\Leftrightarrow f(B)$ est une base de $F$
 	\end{itemize}
 \end{prop}
 
 %Projecteurs et symétriques {{{1
 \section{Projecteurs et sym\'etriques}
-Soit $E$ un Kev. $F$ et $G$ deux sev de $E$ tels que: $E = F \oplus G$. Tout $x \in E$ s'\'ecrit alors de façon unique $x = x_F + x_G$. On pose:
+Soit $E$ un Kev. $F$ et $G$ deux sev de $E$ tels que: $E = F \oplus G$. Tout $x \in E$ s'\'ecrit alors de fa\c{c}on unique $x = x_F + x_G$. On pose:
 \begin{align*} p: &E \rightarrow E  &q: E \rightarrow E\\
 			      &x \mapsto x_F &x \mapsto x_G
 \end{align*}
@@ -238,7 +243,7 @@ Soit $E$ un Kev. $F$ et $G$ deux sev de $E$ tels que: $E = F \oplus G$. Tout $x 
 	$x \in E \mapsto x_F - x_G$ est la sym\'etrie s par rapport \`a $F$ parall\`element \`a $G$. \\Pour $x = x_F + x_G,\ s(x) = x_F  - x_G$.
 
 	\begin{rqs}
-		$F = Ker (s - Id_E)$
+			$F = Ker (s - Id_E)$, $G = Ker (s + Id_E)$
 	\end{rqs}
 \end{defi}
 
@@ -262,7 +267,7 @@ Soit $E$ un Kev. $F$ et $G$ deux sev de $E$ tels que: $E = F \oplus G$. Tout $x 
 		\item $H \neq \emptyset$
 		\item $\forall a \in E \backslash H, E = H \oplus Vect(a)$ \\
 			Tout suppl\'ementaire de $H$ est une doite
-		\item les équations de $H$ sont les $\lambda \varphi$ avec $\lambda \in K^*$ \\
+		\item les \'equations de $H$ sont les $\lambda \varphi$ avec $\lambda \in K^*$ \\
 			$Ker\ \varphi = Ker\ \psi \Leftrightarrow \exists \lambda \in K^*, \psi = \lambda \varphi$
 	\end{enumerate}
 \end{prop}

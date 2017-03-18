@@ -1,0 +1,159 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{definition} \newtheorem*{nota}{Notation}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\ra{1.3}
+
+\title{Th\'eorie de la dimension}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Espaces vectoriels de type fini {{{1
+\section{Espaces vectoriels de type fini}
+\begin{defi}
+	Un Kev est de type fini s'il existe $n \in \mathbb{N}^*$ et $(x_1, \hdots,  x_n) \in E^n$ tels que: $E = Vect(x_1, \hdots, x_n)$
+\end{defi}
+
+\begin{rqs}
+	Une famille de vecteurs de $E$ est une application d'un ensemble $I$ dans $E$. La famille est finie lorsque $I$ est un ensemble fini
+\end{rqs}
+
+\begin{prop} Soit $E$ un Kev de type fini, $E \neq \{0\}$
+	\begin{enumerate}
+		\item $E$ admet des bases finies.
+		\item TBI: soit $L$ une famille libre (finie) de vecteurs de $E$, $G$ une famille g\'en\'eratrice finie de vecteurs de $E$.\\
+			Alors il existe une base $B$ de $E$ telle que: $L \subset B \subset LG$
+		\item Soit $E$ un Kev, $n \in \mathbb{N}^*,\ x_1, \hdots, x_n \in E$, alors: \\
+			$\forall\ y_1, \hdots, y_n, y_{n+1} \in Vect(x_1, \hdots, x_n)$, la famille $(y_1, \hdots, y_{n+1})$ est li\'ee
+		\item Soit $G$ une famille g\'en\'eratrice finie de $E$:
+			\begin{enumerate}
+				\item Si $L$ est une famille libre de vecteurs de $E$, alors $L$ est finie et $|L| \leq |G|$
+				\item Toutes les bases de $E$ sont de m\^eme cardinal et ce cardinal s'appelle la dimension de $E$
+			\end{enumerate}
+	\end{enumerate}
+\end{prop}
+
+\begin{prop} Principes de f\'eneantise: soit $E$ un Kev de dimension finie $n \in \mathbb{N}^*$
+	\begin{enumerate}
+		\item soit $(x_1, \hdots, x_p)$ une famille libre de vecteurs de $E$, alors $p \leq n$.\\ Si $p = n$ alors $(x_1, \hdots, x_p)$ est une
+		base.
+		\item Soit $(x_1, \hdots, x_p)$ une famille g\'en\'eratrice de $E$, alors $p \geq n$.\\ Si $p = n$ alors $(x_1, \hdots, x_p)$ est une
+		base.
+		\item Si $(x_1, \hdots, x_n)$ est une famille de vecteurs de $E\ (dim\ E = n)$, LASSE:
+			\begin{enumerate}
+				\item la famille est libre
+				\item la famille est g\'en\'eratrice
+				\item la famille est une base
+			\end{enumerate}
+	\end{enumerate}
+\end{prop}
+
+\begin{rqs}
+	Soit $E$ un Kev. Si $E$ n'es pas de type fini, alors $\forall N \in \mathbb{N}^*$ il existe une famille libre de vecteurs de $E$ de cardinal N
+\end{rqs}
+
+\begin{defi} Rang d'une famille finie\\
+	$rg\ (x_1, \hdots, x_n) = dim\ Vect(x_1, \hdots, x_n)$
+\end{defi}
+
+%Dimensions classiques {{{1
+\section{Dimensions classiques}
+
+\begin{prop} Soit $E$ un Kev de dimension finie:
+	\begin{enumerate}
+		\item Soit $F$ un sev de $E$ alors:
+			\begin{enumerate}
+				\item $F$ est de dimension finie et $\dim F \leq \dim E$
+				\item Si $\dim F = \dim E$ alors $F=E$
+			\end{enumerate}
+		\item Soit $r \in \mathbb{N}^*, F_1, \hdots, F_r$ des sev de $E$ tels que $E = \oplus_{i=1}^r F_i$\\
+			Alors $\dim E = \sum_{i=1}^r \dim F_i$
+		\item Soit $F$ un sev de $E$, alors $F$ admet (au moins 1, en g\'en\'eral une infinit\'e) un suppl\'ementaire
+		\item Soient $F,G$ deux sev de $E$, alors $\dim F+G = \dim F + \dim G - \dim F \cap G$
+		\item Soient $E,F$ deux Kev de dimension finie, alors $E\times F$ est de dimension finie et $\dim (E\times F) = \dim E + \dim F$
+		\item Soient $E,F$ deux Kev de dimension finie, alors $\mathscr{L}(E,F)$ est de dimension finie et $\dim \mathscr{L}(E,F) = \dim E
+			\times \dim F$
+	\end{enumerate}
+\end{prop}
+
+\begin{defi} $ $
+	\begin{enumerate}
+		\item Espace dual: $\mathscr{L}(E,K)$ s'appelle l'espace dual de $E$ et se note $E^*$. Si $E$ est de dimension finie, $E^*$
+			aussi et $\dim E^* = \dim E$
+		\item Base duale: Soit $E$ un Kev de dim finie, $p \in \mathbb{N}^*, B = (e_1, \hdots, e_n)$ une base de $E$. La base duale de $B$
+			est $B^* = (e_1^*, \hdots, e_p^*)$ o\`u pour $1 \leq j \leq p,\ e_j^*$ est l'unique AL de $E$ dans $K$ definie par:
+			$e_j^*(e_k) = \delta_{jk} 1_K = \delta_{jk}\ (1 \leq k \leq p)$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Si $E$ est un Kev de dimension finie, les hyperplans de $E$ sont les sev de $E$ de dimension $n-1$
+	\end{enumerate}
+\end{prop}
+
+%Applications linéaires en dimension finie {{{1
+\section{Applications lin\'eaires en dimension finie}
+Soit $E$ un Kev de dimension finie, $F$ un Kev qcq
+\begin{defi} Rang d'une application lin\'eaire \\
+	Soit $f \in \mathscr{L}(E,F)$. Le rang de $f$ est par d\'efinition la dimension de $Im\ f$
+
+	\begin{rqs}
+		Ainsi, $rg\ f$ est le rang de la famille de vecteurs $(f(e_1), \hdots, f(e_n))$:\\
+			$rg\ f \leq \dim E$ et $rg\ f = n \Leftrightarrow (f(e_1), \hdots, f(e_n))$ libre $\Leftrightarrow f$ injective
+	\end{rqs}
+\end{defi}
+
+\begin{theo} Th\'eor\`eme du rang\\
+	Soit $f \in \mathscr{L}(E,F)$ alors: $rg\ f + \dim Ker\ f = \dim E$
+\end{theo}
+
+\pagebreak
+\begin{prop} Supposons de plus $F$ de dimension finie:
+	\begin{enumerate}
+		\item $rg\ f \leq \min(\dim E, \dim F)$
+		\item $rg\ f = \dim E \Leftrightarrow f$ injective
+		\item $rg\ f = \dim F \Leftrightarrow f$ surjective
+		\item Si $\dim E > \dim F$, $f$ ne peut pas \^etre injective, si $\dim E < \dim F, f$ ne peut pas \^etre surjective
+		\item $E,F$ deux Kev de dimension finie: \\ $E$ et $F$ sont isomorphes $\Leftrightarrow \dim E = \dim F$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop} Supposons de plus $\dim F = \dim E = n\in \mathbb{N}^*$\\
+	Soit $B = (e_1, \hdots, e_n)$ une base de $E$, $f \in \mathscr{L}(E,F)$, LASSE:
+	\begin{enumerate}
+		\item \begin{enumerate}
+			\item $f$ est injective
+			\item $f(B) = (f(e_1), \hdots, f(e_n))$ est libre
+			\item $Ker\ f = \{0\}$
+		\end{enumerate}
+		\item \begin{enumerate}
+			\item $f$ est surjective
+			\item $f(B)$ est g\'en\'eratrice de $F$
+			\item $Im\ f = F$
+		\end{enumerate}
+		\item \begin{enumerate}
+			\item $f$ est un isomorphisme
+			\item $f(B)$ est une base de $F$
+		\end{enumerate}
+		\item $rg\ f = n$
+	\end{enumerate}
+\end{prop}
+
+\end{document}
