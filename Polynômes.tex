@@ -98,6 +98,7 @@ $A, B \in K[X]$. On dit que $A$ divise $B$ s'il existe $C \in K[X]$ tel que $B =
 
 %Racines {{{1
 \section{Racines}
+\subsection{Racines simples}
 \begin{defi} Soit $P = \sum_k a_k X^k \in K[X]$ \\
 	On appelle fonction polynomiale associ\'e \`a $P$ et on note $\tilde{P}$ l'application: \begin{align*} \tilde{P}: K &\rightarrow K\\
 	t &\mapsto \sum_k a_kt^k \end{align*}
@@ -142,6 +143,18 @@ $A, B \in K[X]$. On dit que $A$ divise $B$ s'il existe $C \in K[X]$ tel que $B =
 	de degr\'e $\leq n$, tel que $\tilde{P}(x_i) = y_i$
 \end{theo}
 
+\subsection{Racines multiples}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Soit $P \in K[X]$ non constante, $r \in \mathbb{R}^*,\ x_1, \hdots, x_r$ distincts dans $K$ et $\alpha_1, \hdots, \alpha_r \in
+		\mathbb{N}^*$\\
+		Si pour tout $i$, $(X-x_i)^{\alpha_i} | P$ alors $\prod_{i=1}^r (X - x_i)^{\alpha_i} | P$
+		\item Soit $P\in K[X]$ de degr\'e $n$. Alors $P$ admet au plus $n$ racines (chaque racine \'etant compt\'ee autant de fois que son ordre
+		de multiplicit\'e)
+	\end{enumerate}
+\end{prop}
+
 %Polynômes scindés, relations entre coeff et racines {{{1
 \section{Polyn\^omes scind\'es, relations entre coeff et racines}
 \begin{defi} Polyn\^omes scind\'es \\
@@ -151,6 +164,23 @@ $A, B \in K[X]$. On dit que $A$ divise $B$ s'il existe $C \in K[X]$ tel que $B =
 
 \begin{prop}
 	Le coefficient de $X^{n-k}$ dans $P = (X+x_1) \hdots (X + x_n)$ est $\sum_{I \in P_k(n)} \prod_{j \in I} x_j$
+\end{prop}
+
+%Arithmétique {{{1
+\section{Arithm\'etique dans $K[X]$}
+\begin{defi} PGCD\\
+	Soient $A,B \in K[X]$. Il existe un et un seul $D \in K[X]$, nul ou unitaire tel que:
+	\begin{enumerate}
+		\item $D | A$ et $D | B$
+		\item $\forall P \in K[X],\ P|A$ et $P|B \Rightarrow P|D$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item B\'ezout
+		\item Gauss et variantes
+	\end{enumerate}
 \end{prop}
 
 %Dérivation {{{1
@@ -175,7 +205,7 @@ $A, B \in K[X]$. On dit que $A$ divise $B$ s'il existe $C \in K[X]$ tel que $B =
 		\item $(\alpha P + Q) \circ S = \alpha P \circ S + Q \circ S$ \\
 				$(PQ) \circ S = (P \circ S)(Q \circ S)$
 		\item $(P\circ Q) \circ S = P \circ (Q \circ S)$
-		\item $D(P \circ Q) = D(Q) (D(P) \circ Q)$
+		\item $(P \circ Q)' = Q' (P' \circ Q)$
 	\end{enumerate}
 \end{prop}
 

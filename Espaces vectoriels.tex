@@ -40,11 +40,11 @@
 	\end{enumerate}
 \end{defi}
 
-\begin{prop} Soit $E$ un espace vectoriel
+\begin{prop} R\`egles de calcul: soit $E$ un K espace vectoriel
 	\begin{enumerate}
-		\item $\forall x \in E,\ 0_K x = 0_E$\\
-			$\forall \lambda \in K,\ \lambda 0_E = 0_E$
-		\item Pour $\lambda \in K,\ x \in E,\ \lambda x 0_E \Leftrightarrow \lambda = 0_K \lor x = 0_E$
+		\item $\forall x \in E,\ 0_K . x = 0_E$\\
+			$\forall \lambda \in K,\ \lambda . 0_E = 0_E$
+		\item Pour $\lambda \in K,\ x \in E,\ \lambda . x = 0_E \Leftrightarrow \lambda = 0_K \lor x = 0_E$
 		\item $\left( \sum_i \lambda_i \right) x = \sum_i \left(\lambda_i x \right)$\\
 			$\lambda \left( \sum_i x_i \right) = \sum_i \left(\lambda x_i \right)$
 	\end{enumerate}
@@ -61,29 +61,29 @@ Dans la suite $E$ est un Kev
 
 \begin{defi} Familles libres, li\'ees \\
 	$n \in \mathbb{N}^*, x_1, \hdots, x_n \in E$. On dit que les vecteurs sont libres si: $\forall \lambda_1, \hdots, \lambda_n \in K$:
-	\[\sum_i \lambda_i x_i = O_E \Rightarrow \lambda_i = 0\ (1 \leq i \leq n)\]
+	\[\sum_i \lambda_i x_i = 0_E \Rightarrow \lambda_i = 0\ (1 \leq i \leq n)\]
 	On dit que la famille $(x_1, \hdots, x_n)$ est li\'ee si elle n'est pas libre.
 
 	\begin{rqs}
-		$(x_1, \hdots, x_n)$ libre $\Leftrightarrow \forall j \in [1,n],\ x_j$ n'est pas CL de $(x_i)_{1 \leq i \leq n,\ i \neq j}$
+		$(x_1, \hdots, x_n)$ libre $\Leftrightarrow \forall j \in [\![1,n]\!],\ x_j$ n'est pas CL de $(x_i)_{1 \leq i \leq n,\ i \neq j}$
 	\end{rqs}
 \end{defi}
 
-\begin{prop} $ $
+\begin{rqs} $ $
 	\begin{enumerate}
-		\item [-] Cas de 2 vecteurs:\\
-		$x,y \in E\backslash \{0\}$, $y$ et $x$ sont colin\'eaires s'il existe $\lambda \in K$ tel que $y = \lambda x$\\
-		Ainsi: $(x,y)$ li\'es $\Leftrightarrow x$ et $y$ sont colin\'eaires
-		\item [-] Familles infinies libres: \\
+		\item [-] Cas de 2 vecteurs:
+		$x,y \in E\backslash \{0\}$, $y$ et $x$ sont colin\'eaires s'il existe $\lambda \in K$ tel que $y = \lambda x$
+		ainsi: $(x,y)$ li\'es $\Leftrightarrow x$ et $y$ sont colin\'eaires
+		\item [-] Familles infinies libres:
 		Soit $I$ un ensemble quelconque et $(x_i)_{i \in I}$ une famille de vecteurs de $E$. On dit que cette famille
-		est libre ssi $\forall J \subset I, J$ fini non vide, la famille $(x_i)_{i \in I}$ est libre.
+		est libre ssi $\forall J \subset I, J$ fini non vide, la famille $(x_i)_{i \in J}$ est libre.
 	\end{enumerate}
-\end{prop}
+\end{rqs}
 
-\begin{defi} Familles g\'en\'eratrices, bases:\\
-	Soit $(x_i)_{i \in I}$ une famille qcq de vecteurs de $E$.
+\begin{defi} Familles g\'en\'eratrices, bases\\
+	Soit $(x_i)_{i \in I}$ une famille qcq de vecteurs de $E$:
 	\begin{enumerate}
-		\item La famille $(x_i)_{i \in I}$ est g\'en\'eratrice (ou engendre $E$) si tout vecteurs de $E$ s'\'ecrit comme CL de vecteurs de
+		\item La famille $(x_i)_{i \in I}$ est g\'en\'eratrice (ou engendre $E$) si tout vecteur de $E$ s'\'ecrit comme CL de vecteurs de
 			la famille.
 		\item Elle est une base de $E$ si elle est \`a la fois libre et g\'en\'eratrice.
 	\end{enumerate}
@@ -114,7 +114,7 @@ Dans la suite $E$ est un Kev
 \begin{defi} sev de $E$ engendr\'e par $S$, not\'e $Vect(S)$
 	\begin{enumerate}
 		\item $Vect(S)$ est un sev de $E$
-		\item $S \subset Vect(E)$
+		\item $S \subset Vect(S)$
 		\item $\forall\ F$ sev de $E, S \subset F \Rightarrow Vect(S) \subset F$
 	\end{enumerate}
 \end{defi}
@@ -122,24 +122,24 @@ Dans la suite $E$ est un Kev
 \begin{prop} $ $
 	\begin{enumerate}
 		\item [-] Si $S$ est une partie non vide de $E$, $Vect(S)$ est l'ensemble des CL des vecteurs de $S$
-		\item [-]  $Vect(x_1, \hdots, x_n) = {\sum_i^n \lambda_i x_i / (\lambda_i, \hdots, \lambda_n) \in K^n}$ \\
-				$Vect(x_1, \hdots, x_n) = \sum_i^n K x_i$
+		%\item [-]  $Vect(x_1, \hdots, x_n) = \{\sum_i^n \lambda_i x_i / (\lambda_1, \hdots, \lambda_n) \in K^n\}$ \\
+				%$Vect(x_1, \hdots, x_n) = \sum_i^n K x_i$
 		\item [-] $F+G$  est un sev de $E$ appel\'e somme de $F$ et de $G$, c'est le plus petit sev de $E$ qui contient $F\cup G$
 	\end{enumerate}
 \end{prop}
 
 \subsubsection{Sommes directes, sev suppl\'ementaires}
 \begin{defi} Somme directe \\
-	Soit $E$ un Kev, $F,G$ deux sev de $E$. On dira que $F$ et $G$ sont en somme directe si $F \cup G = \{0_E\}$
+	Soit $E$ un Kev, $F,G$ deux sev de $E$. On dira que $F$ et $G$ sont en somme directe si $F \cap G = \{0_E\}$
 	\begin{rqs}
 		Tout vecteur $u$ de $F+G$ en somme directe s'\'ecrit de fa\c{c}on unique $u = x + y$ avec $x \in F, y \in G$
 	\end{rqs}
 \end{defi}
 
 \begin{defi} Suppl\'ementaires \\
-	$F,G$ des sev du Kev $E$. $F$ et $G$ sont suppl\'ementaires si (ie $E = F \oplus G$):
+	$F,G$ des sev du Kev $E$, $F$ et $G$ sont suppl\'ementaires ($E = F \oplus G$) si:
 	\begin{enumerate}
-		\item $F \cup G = \{0\}$
+		\item $F \cap G = \{0\}$
 		\item $E = F + G$
 	\end{enumerate}
 
@@ -149,8 +149,8 @@ Dans la suite $E$ est un Kev
 \end{defi}
 
 \begin{prop} $ $
-	\begin{enumerate}
-		\item [-] $F+G$ est directe $\Leftrightarrow \forall (y,z) \in F \times G, y + z = 0_E \Rightarrow y = z = 0_E$
+	\begin{itemize}
+		\item [-] $F+G$ est directe $\Leftrightarrow \forall (y,z) \in F \times G,\ y + z = 0_E \Rightarrow y = z = 0_E$
 		\item [-] Th\'eor\`eme de recollement:
 			Soient $F,G$ deux sev de $E$ en somme directe. Soient $\Omega = (x_1, \hdots, x_m),\ \Delta = (y_1, \hdots, y_n)$ des familles
 			(finies) de vecteurs de $F$ et $G$ respectivement:
@@ -160,7 +160,7 @@ Dans la suite $E$ est un Kev
 				\item On suppose que $E = F \oplus G$. Alors si $\Omega$ est une base de $F$ et $\Delta$ de $G$, $\Omega \Delta$ est une base
 					de $E$
 			\end{enumerate}
-	\end{enumerate}
+	\end{itemize}
 \end{prop}
 
 \subsection{Applications lin\'eaires}
@@ -192,8 +192,7 @@ Dans la suite $E$ est un Kev
 	\begin{enumerate}
 		\item $(A, + , .)$ est un Kev
 		\item $(A, +, \times)$ est un anneau
-		\item $\forall a, b \in A, \forall \alpha \in K:$ \\
-			$\alpha . (a\times b) = (\alpha . a) \times b = a \times (\alpha . b)$
+		\item $\forall a, b \in A, \forall \alpha \in K:$ $\alpha . (a\times b) = (\alpha . a) \times b = a \times (\alpha . b)$
 	\end{enumerate}
 \end{defi}
 
@@ -215,7 +214,7 @@ Dans la suite $E$ est un Kev
 	\begin{itemize}
 		\item [-] Soit $F$ un Kev, $y_1, \hdots, y_n \in F$. Alors il existe
 			une unique application lin\'eaire de $E$ dans $F$ telle que: $f(e_i) = y_i\ (1 \leq i \leq n)$.
-		\item [-] $f \in \mathscr{L}(E,F)$,
+		\item [-] Soit $f \in \mathscr{L}(E,F)$,
 			$f$ surjective $\Leftrightarrow f(B)$ g\'en\'eratrice de $F$\\
 			$f$ injective $\Leftrightarrow f(B)$ est libre\\
 			$f$ est un isomorphisme $\Leftrightarrow f(B)$ est une base de $F$
@@ -264,10 +263,10 @@ Soit $E$ un Kev. $F$ et $G$ deux sev de $E$ tels que: $E = F \oplus G$. Tout $x 
 
 \begin{prop} Soit $H$ un hyperplan de $E$, $\varphi$ une \'equation de $H$:
 	\begin{enumerate}
-		\item $H \neq \emptyset$
-		\item $\forall a \in E \backslash H, E = H \oplus Vect(a)$ \\
-			Tout suppl\'ementaire de $H$ est une doite
-		\item les \'equations de $H$ sont les $\lambda \varphi$ avec $\lambda \in K^*$ \\
+		\item $H \neq \emptyset\ (0 \in Ker\ \varphi)$
+		\item $\forall a \in E \backslash H,\ E = H \oplus Vect(a)$ \\
+			Tout suppl\'ementaire de $H$ est une droite. R\'eciproque vraie (s'il $\exists$ supp)
+		\item les \'equations de $H$ sont les $\lambda \varphi$ avec $\lambda \in K^*$: \\
 			$Ker\ \varphi = Ker\ \psi \Leftrightarrow \exists \lambda \in K^*, \psi = \lambda \varphi$
 	\end{enumerate}
 \end{prop}
