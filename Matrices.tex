@@ -38,30 +38,31 @@
 \begin{vocab} $ $
 	\begin{enumerate}
 		\item On note $t_M \in M_{p,n}(K)$ la transpos\'ee de $M \in M_{n,p}(K)$ d\'efinie par: $\forall (i,j) \in
-		[\![0,n]\!]\times[\![0,p]\!]\ t_M[i,j] = M[j,i]$
+		[\![0,n]\!]\times[\![0,p]\!],\ t_M[i,j] = M[j,i]$
 		\item $M \in M_n(K)$ est sym\'etrique lorsque $t_M = M$
 		\item $M \in M_n(K)$ est antysym\'etrique lorsque $t_M = -M$
 	\end{enumerate}
 \end{vocab}
 
 %Matrice d'une A.L relativement à un couple de bases {{{1
-\section{Matrice d'une A.L relativement à un couple de bases}
-$E\ (\dim = p),\ F\ (\dim = n)$ deux Kev.\\ $B = (e_1, \hdots, e_p),\ C = (u_1, \hdots, u_n)$ bases de $E$ et de $F$ respectivement
+\subsection{Matrice d'une A.L relativement à un couple de bases}
+$E\ (\dim = p),\ F\ (\dim = n)$ deux Kev.\\ $\mathscr{B} = (e_1, \hdots, e_p),\ \mathscr{C} = (u_1, \hdots, u_n)$ bases de $E$ et
+de $F$ respectivement
 \begin{defi} Pour $f \in \mathscr{L}(E,F)$\\
-	On appelle matrice de $f$ relativement au couple $(B,C)$ et on note $Mat_{B,C}(f)$ la matrice $M \in M_{n,p}(K)$ d\'efinie par:\\
-	Pour $1 \leq i \leq n$ et $1 \leq j \leq p$, $M[i,j]$ i-\`eme coordon\'ee du vecteur $f(e_j)$ dans $C$: \\
+	On appelle matrice de $f$ relativement au couple $(\mathscr{B},\mathscr{C})$ et on note $Mat_{\mathscr{B},\mathscr{C}}(f)$ la matrice
+	$M \in M_{n,p}(K)$ d\'efinie par:\\ Pour $1 \leq i \leq n$ et $1 \leq j \leq p$, $M[i,j]$ i-\`eme coordon\'ee du vecteur $f(e_j)$ dans $C$: \\
 	\[f(e_j) = \sum_{i=1}^n M_{ij} u_i\ (1\leq j \leq p)\]
 
-\begin{rqs} $\psi_{B,C}$ est un isomorphisme de Kev:
+\begin{rqs} $\psi_{\mathscr{B},\mathscr{C}}$ est un isomorphisme de Kev:
 	\begin{align*}
-		\psi_{B,C}: \mathscr{L}(E,F) &\rightarrow M_{n,p}(K)\\
-		f & \mapsto Mat_{B,C}(f)
+		\psi_{\mathscr{B},\mathscr{C}}: \mathscr{L}(E,F) &\rightarrow M_{n,p}(K)\\
+		f & \mapsto Mat_{\mathscr{B},\mathscr{C}}(f)
 	\end{align*}
 \end{rqs}
 \end{defi}
 
 %"Produit" matriciel {{{1
-\section{"Produit" matriciel}
+\subsection{"Produit" matriciel}
 \begin{defi} Soient $p,q,r \in \mathbb{N}^*,\ A \in M_{p,q}(K),\ B \in M_{q,r}(K)$ \\
 	On d\'efinit le produit $AB$, \'el\'ement de $M_{p,r}(K)$ par: \\
 	$\left. \begin{array}{l}
@@ -73,16 +74,74 @@ $E\ (\dim = p),\ F\ (\dim = n)$ deux Kev.\\ $B = (e_1, \hdots, e_p),\ C = (u_1, 
 
 \begin{prop} $ $
 	\begin{enumerate}
-		\item $\underset{B}{E} \overset{f}{\rightarrow} \underset{C}{F} \overset{g}{\rightarrow} \underset{D}{G}$ \\
-			Alors, $Mat_{B,D}(g\circ f) = Mat_{C,D}(g) Mat_{B,C}(f)$
-		\item
+		\item [-] Soient $\underset{\mathscr{B}}{E} \overset{f}{\rightarrow} \underset{\mathscr{C}}{F} \overset{g}{\rightarrow}
+			\underset{\mathscr{D}}{G}$: \\
+			Alors, $Mat_{\mathscr{B},\mathscr{D}}(g\circ f) = Mat_{\mathscr{C},\mathscr{D}}(g) Mat_{\mathscr{B},\mathscr{C}}(f)$
+		\item [-]
 			\begin{enumerate}
-				\item $A_1, A_2 \in M_{p,q}(K),\ B \in M_{q,r}(K),\ \alpha \in K$ Alors:\\ $(\alpha A_1 + A_2)B = \alpha_1 A_1 B + A_2 B$
+				\item $A_1, A_2 \in M_{p,q}(K),\ B \in M_{q,r}(K),\ \alpha \in K$ Alors:\\ $(\alpha A_1 + A_2)B = \alpha A_1 B + A_2 B$
 				\item $B_1, B_2 \in M_{q,r}(K),\ A \in M_{p,q}(K),\ \alpha \in K$ Alors:\\ $A(\alpha B_1 + B_2) = \alpha A B_1 + A B_2$
 			\end{enumerate}
-		\item $A \in M_{p,q}(K),\ B \in M_{q,r}(K),\ C \in M_{r,s}(K)$ Alors $(AB)C = A(BC)$
-		\item $A \in M_{p,q}(K),\ B \in M_{q,r}(K),\ \alpha \in K$ Alors $\alpha (AB) = (\alpha A)B = A (\alpha B)$
-		\item $t(AB) = t_B t_A$
+		\item [-] $A \in M_{p,q}(K),\ B \in M_{q,r}(K),\ C \in M_{r,s}(K)$: Alors $(AB)C = A(BC)$
+		\item [-] $A \in M_{p,q}(K),\ B \in M_{q,r}(K),\ \alpha \in K$: Alors $\alpha (AB) = (\alpha A)B = A (\alpha B)$
+		\item [-] $t(AB) = t_B t_A$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop} Produits particuliers
+	\begin{enumerate}
+		\item Par une matrice \'el\'ementaire:
+			\begin{enumerate}
+				\item $E_{ij} A$: pour $k \neq i,\ l_k(E_{ij}A) = 0$ et $l_i (E_{ij}A) = l_j(A)$
+				\item $A E_{ij}$: pour $k \neq j,\ c_k(A E_{ij}) = 0$ et $c_j(A E_{ij}) = c_i(A)$
+			\end{enumerate}
+		\item Par une matrice diagonale:
+			\begin{enumerate}
+				\item $l_i(DA) = \alpha_i l_i(A)$
+				\item $c_j(AD) = \alpha_j c_j(A)$
+			\end{enumerate}
+	\end{enumerate}
+\end{prop}
+
+%La K-algèbre Mn(K) {{{1
+\section{La K-alg\`ebre $M_n(K)$}
+$(M_n(K), +, \times, .)$ est une $K$ alg\`ebre de neutre l'identit\'e
+
+\subsection{Matrices inversibles}
+On note $GL_n(K)$ le groupe des inversibles de l'anneau $(M_n(K), +, \times)$
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item $A \in GL_n(K)$ on a $t_A \in GL_n(K)$ et $(t_A)^{-1} = t_{A^{-1}}$
+		\item Soit $E$ un Kev de dimension $n$, $\mathscr{B}$ une base de $E$, $F \in \mathscr{L}(E)$:\\
+			$f \in GL(E) \Leftrightarrow Mat_{\mathscr{B}}(f^{-1}) \in GL_n(K)$ et $Mat_{\mathscr{B}}(f^{-1}) = Mat_{\mathscr{B}}(f)^{-1}$
+		\item Soit $M \in M_n(K)$, LASSE:
+			\begin{enumerate}
+				\item $M \in GL_n(K)$
+				\item $(c_1, \hdots, c_n)$ est libre
+				\item $(l_1, \hdots, l_n)$ est libre
+			\end{enumerate}
+		\item Soit $A \in M_n(K)$, s'il existe $B \in M_n(K)$ tel que $AB = I_n$ (ou $BA = I_n$) alors $A \in GL_n(K)$ et $B = A^{-1}$
+	\end{enumerate}
+\end{prop}
+
+\subsection{Sous alg\`ebres remarquables de $M_n(K)$}
+\begin{defi} Sous alg\`ebre \\
+	Soit $A$ une K-alg\`ebre. $B \subset A$ est une sous alg\`ebre si:
+	\begin{enumerate}
+		\item $B$ est un sev de $(A, +, .)$
+		\item $B$ est un sous anneau de $(A,+,\times)$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item $D_n(K)$ est une sous alg\`ebre de $M_n(K)$\\
+			Soit $A \in D_n(K),\ A \in GL_n(K) \Leftrightarrow \forall i \in [\![1,n]\!], \alpha_i \neq 0$\\
+			Si c'est le cas, $Diag(\alpha_1, \hdots, \alpha_n)^{-1} = Diag(1/\alpha_1, \hdots, 1/\alpha_n)$
+			\begin{rqs} $A,B \in D_n(K) \Rightarrow AB = BA$ \end{rqs}
+		\item $TS_n(K)$ est une sous alg\`ebre de $M_n(K)$ \\
+			Soit $A \in TS_n(K)$, $A \in GL_n(K) \Rightarrow \forall i \in [\![1,n]\!],\ A[i,i] \neq 0$
 	\end{enumerate}
 \end{prop}
 
