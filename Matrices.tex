@@ -44,27 +44,26 @@
 	\end{enumerate}
 \end{vocab}
 
-%Matrice d'une A.L relativement à un couple de bases {{{1
 \subsection{Matrice d'une A.L relativement à un couple de bases}
 $E\ (\dim = p),\ F\ (\dim = n)$ deux Kev.\\ $\mathscr{B} = (e_1, \hdots, e_p),\ \mathscr{C} = (u_1, \hdots, u_n)$ bases de $E$ et
 de $F$ respectivement
 \begin{defi} Pour $f \in \mathscr{L}(E,F)$\\
 	On appelle matrice de $f$ relativement au couple $(\mathscr{B},\mathscr{C})$ et on note $Mat_{\mathscr{B},\mathscr{C}}(f)$ la matrice
-	$M \in M_{n,p}(K)$ d\'efinie par:\\ Pour $1 \leq i \leq n$ et $1 \leq j \leq p$, $M[i,j]$ i-\`eme coordon\'ee du vecteur $f(e_j)$ dans $C$: \\
+	$M \in M_{n,p}(K)$ d\'efinie par:\\ Pour $1 \leq i \leq n$ et $1 \leq j \leq p$, $M[i,j]$ i-\`eme coordon\'ee du vecteur $f(e_j)$ dans
+	$\mathscr{C}$: \\
 	\[f(e_j) = \sum_{i=1}^n M_{ij} u_i\ (1\leq j \leq p)\]
 
-\begin{rqs} $\psi_{\mathscr{B},\mathscr{C}}$ est un isomorphisme de Kev:
+\begin{theo} $\psi_{\mathscr{B},\mathscr{C}}$ est un isomorphisme de Kev:
 	\begin{align*}
 		\psi_{\mathscr{B},\mathscr{C}}: \mathscr{L}(E,F) &\rightarrow M_{n,p}(K)\\
 		f & \mapsto Mat_{\mathscr{B},\mathscr{C}}(f)
 	\end{align*}
-\end{rqs}
+\end{theo}
 \end{defi}
 
-%"Produit" matriciel {{{1
 \subsection{"Produit" matriciel}
 \begin{defi} Soient $p,q,r \in \mathbb{N}^*,\ A \in M_{p,q}(K),\ B \in M_{q,r}(K)$ \\
-	On d\'efinit le produit $AB$, \'el\'ement de $M_{p,r}(K)$ par: \\
+	On d\'efinit le produit $AB \in M_{p,r}(K)$ par: \\
 	$\left. \begin{array}{l}
 		\forall i \in [\![0,p]\!] \\
 		\forall j \in [\![0,r]\!]
@@ -80,11 +79,13 @@ de $F$ respectivement
 		\item [-]
 			\begin{enumerate}
 				\item $A_1, A_2 \in M_{p,q}(K),\ B \in M_{q,r}(K),\ \alpha \in K$ Alors:\\ $(\alpha A_1 + A_2)B = \alpha A_1 B + A_2 B$
-				\item $B_1, B_2 \in M_{q,r}(K),\ A \in M_{p,q}(K),\ \alpha \in K$ Alors:\\ $A(\alpha B_1 + B_2) = \alpha A B_1 + A B_2$
+				\item $A \in M_{p,q}(K),\ B_1, B_2 \in M_{q,r}(K),\ \alpha \in K$ Alors:\\ $A(\alpha B_1 + B_2) = \alpha A B_1 + A B_2$
 			\end{enumerate}
 		\item [-] $A \in M_{p,q}(K),\ B \in M_{q,r}(K),\ C \in M_{r,s}(K)$: Alors $(AB)C = A(BC)$
 		\item [-] $A \in M_{p,q}(K),\ B \in M_{q,r}(K),\ \alpha \in K$: Alors $\alpha (AB) = (\alpha A)B = A (\alpha B)$
 		\item [-] $t(AB) = t_B t_A$
+		\item [-] Si $x \in E$ et si $X \in M_{q,1}(K)$ est la colonne des composantes de $x$ dans $\mathscr{B}$ alors $MX$ est la colonne des
+			composantes de $f(x)$ dans $\mathscr{C}$
 	\end{enumerate}
 \end{prop}
 
@@ -105,16 +106,16 @@ de $F$ respectivement
 
 %La K-algèbre Mn(K) {{{1
 \section{La K-alg\`ebre $M_n(K)$}
-$(M_n(K), +, \times, .)$ est une $K$ alg\`ebre de neutre l'identit\'e
+$(M_n(K), +, \times, .)$ est une $K$ alg\`ebre de neutre l'identit\'e $I_n$
 
-\subsection{Matrices inversibles}
+\subsection{Groupe des matrices inversibles}
 On note $GL_n(K)$ le groupe des inversibles de l'anneau $(M_n(K), +, \times)$
 
 \begin{prop} $ $
 	\begin{enumerate}
 		\item $A \in GL_n(K)$ on a $t_A \in GL_n(K)$ et $(t_A)^{-1} = t_{A^{-1}}$
-		\item Soit $E$ un Kev de dimension $n$, $\mathscr{B}$ une base de $E$, $F \in \mathscr{L}(E)$:\\
-			$f \in GL(E) \Leftrightarrow Mat_{\mathscr{B}}(f^{-1}) \in GL_n(K)$ et $Mat_{\mathscr{B}}(f^{-1}) = Mat_{\mathscr{B}}(f)^{-1}$
+		\item Soit $E$ un Kev de dimension $n$, $\mathscr{B}$ une base de $E$, $f \in \mathscr{L}(E)$:\\
+			$f \in GL(E) \Leftrightarrow Mat_{\mathscr{B}}(f) \in GL_n(K)$ et $Mat_{\mathscr{B}}(f^{-1}) = Mat_{\mathscr{B}}(f)^{-1}$
 		\item Soit $M \in M_n(K)$, LASSE:
 			\begin{enumerate}
 				\item $M \in GL_n(K)$
@@ -141,8 +142,100 @@ On note $GL_n(K)$ le groupe des inversibles de l'anneau $(M_n(K), +, \times)$
 			Si c'est le cas, $Diag(\alpha_1, \hdots, \alpha_n)^{-1} = Diag(1/\alpha_1, \hdots, 1/\alpha_n)$
 			\begin{rqs} $A,B \in D_n(K) \Rightarrow AB = BA$ \end{rqs}
 		\item $TS_n(K)$ est une sous alg\`ebre de $M_n(K)$ \\
-			Soit $A \in TS_n(K)$, $A \in GL_n(K) \Rightarrow \forall i \in [\![1,n]\!],\ A[i,i] \neq 0$
+			Soit $A \in TS_n(K)$, $A \in GL_n(K) \Leftrightarrow \forall i \in [\![1,n]\!],\ A[i,i] \neq 0$
 	\end{enumerate}
 \end{prop}
+
+%Formules de changement de base {{{1
+\section{Formules de changement de base}
+Soit $E$ un Kev de dimension finie $n \in \mathbb{N}^*$. $\mathscr{B} = (e_1, \hdots, e_n),\ \mathscr{B}' = (e_1', \hdots, e_n')$ \\
+On appellera matrice de passage de $\mathscr{B}$ vers $\mathscr{B}'$, la matrice $M \in M_n(K)$ d\'efinie par: $\forall (i,j) \in [\![1,n]\!]^2,
+M_{ij}$ est la i\`eme coordonn\'e de $e_j'$ dans $\mathscr{B}$
+\[e'_j = \sum_{i=1}^n M_{ij}e_i\]
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Soient $\mathscr{B},\ \mathscr{B}'$ deux bases du Kev $E$. Soit $P$ la matrice de passage
+		de $\mathscr{B}$ vers $\mathscr{B}'$ et $Q$ de $\mathscr{B}'$ vers $\mathscr{B}$. Alors $P$ et $Q$ sont inversibles et inverses l'une de
+		l'autre.
+		\item Soient $\mathscr{B},\ \mathscr{B}'$ deux bases du Kev $E$, $x_1, \hdots, x_p \in E$. Soient $M = Mat_\mathscr{B}(x_1, \hdots, x_p),
+		M' = Mat_{\mathscr{B}'}(x_1, \hdots, x_p),\ P$ la matrice de passage de $\mathscr{B}$ vers $\mathscr{B}'$: $M = PM'$
+		\item Soient $E,F$ deux Kev, $\mathscr{B}, \mathscr{B}'$ bases de $E$, $\mathscr{C}, \mathscr{C}'$ bases de $F$, $f \in \mathscr{L}(E,F)$.
+		$P$ la matrice de passage de $\mathscr{B}$ vers $\mathscr{B}'$ (resp $Q$ avec $\mathscr{C}$, $\mathscr{C}'$), $M =
+		Mat_{\mathscr{C}, \mathscr{B}}(f)$ et $M' = Mat_{\mathscr{B}', \mathscr{C}'}(f)$: $M' = Q^{-1}MP$
+	\end{enumerate}
+\end{prop}
+
+\begin{defi} Similitude et \'equivalence
+	\begin{enumerate}
+		\item Soient $A,B \in M_n(K)$. On dit que $B$ est semblable \`a $A$ s'il existe $P \in GL_n(K)$ tel que $B=P^{-1}AP$
+		\item Soient $A,B \in M_{n,p}(K)$On dit que $A$ et $B$ sont \'equivalentes s'il existe $P \in GL_p(K),\ Q \in GL_n(K)$ tels que $B = QAP$
+	\end{enumerate}
+\end{defi}
+
+%Rang d'une matrice {{{1
+\section{Rang d'une matrice}
+\begin{defi} Rang \\
+	Le rang d'une matrice $M \in M_{n,p}(K)$ est le rang de l'AL de $K^p$ dans $K^n$ canoniquement associ\'e \`a $M$
+\begin{rqs}
+	$rg\ M = rg\ (c_1(M), \hdots, c_p(M))$
+\end{rqs}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Soit $E$ un Kev de dimension finie, $n \in \mathbb{N}^*, \mathscr{B} = (e_1, \hdots, e_n)$ une base de $E$, $p \in \mathbb{N}^*,
+			x_1, \hdots, x_p \in E$ alors $rg\ (x_1, \hdots, x_p) = rg\ Mat_{\mathscr{B}}(x_1, \hdots, x_p)$
+		\item Soit $E,F$ deux Kev de dimension $p,n \in \mathbb{N}^*$ et $\mathscr{B},\mathscr{C}$ deux bases, $f \in \mathscr{L}(E,F)$. Alors
+			$rg\ f = rg\ Mat_{\mathscr{B},\mathscr{C}}(f)$
+		\item  Soit $A \in M_{n,p}(K), B \in M_{p,q}(K)$, alors:
+			\begin{enumerate}
+				\item $rg\ (AB) \leq \min (rg\ A, rg\ B)$
+				\item si $p=n$ et $A \in GL_p(K)$, $rg\ (AB) = rg\ B$
+				\item Si $p=q$ et $B \in GL_q(K)$, $rg\ (AB) = rg\ A$
+			\end{enumerate}
+	\end{enumerate}
+\end{prop}
+
+\begin{theo}
+	Soit $A \in M_{n,p}(K)$ et $r = rg\ A\ (r \leq \min (n,p))$. Alors $A \sim J_{n,p,r}$ \\
+	Corollaire: $A,B \in M_{n,p}(K)$, alors $A \sim B \Leftrightarrow rg\ A = rg\ B$
+\end{theo}
+
+\begin{prop} Autre caract\'erisation du rang
+	\begin{itemize}
+		\item [-] S'il existe une sous matrice carr\'ee de $M$ inversible de taille $r$, $rg\ M \geq r$
+		\item [-] Si de plus toute sous matrice carr\'ee de taille $r+1$ n'est pas inversible alors $rg\ M = r$
+	\end{itemize}
+\end{prop}
+
+%Trace d'une matrice carrée {{{1
+\section{Trace d'une matrice carr\'ee}
+\begin{defi} Trace \\
+	Pour $A = a_{ij} \in M_n(K)$, la trace de $A$ est le scalaire $Tr(A) = \sum_{i=1}^n a_{ii}$
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item $Tr$ est lin\'eaire
+		\item Pour $A \in M_n(K)$, $Tr(t_A) = Tr(A)$
+		\item $\forall A,B \in M_n(K), Tr(AB) = Tr(BA)$ \\
+			Ainsi, si $A$ et $B$ sont semblables, $Tr(A) = Tr(B)$
+	\end{enumerate}
+\end{prop}
+
+\begin{theo}
+	Soit $E$ un Kev de dimension finie, $n \in \mathbb{N}^*, f \in \mathscr{L}(E)$. Si $\mathscr{B}$ et $\mathscr{B}'$ sont deux bases de $E$,
+	alors $Tr\ Mat_{\mathscr{B}}(f) = Tr\ Mat_{\mathscr{B}'}(f)$ \\
+	Ainsi, la trace de $f$ est alors la trace de $Mat_{\mathscr{B}}(f)$ o\`u $\mathscr{B}$ est une base qlq de $E$
+\end{theo}
+
+%Remaques {{{1
+\section{Remarques}
+
+\begin{enumerate}
+	\item Lorsqu'on demande de trouver des matrices particuli\`eres, on peut essayer en multipliant par la base canonique pour r\'eduire leur
+		nombre.
+\end{enumerate}
 
 \end{document}

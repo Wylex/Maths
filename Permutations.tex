@@ -1,0 +1,91 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{definition} \newtheorem*{nota}{Notation}
+\theoremstyle{definition} \newtheorem*{vocab}{Vocabulaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\ra{1.3}
+
+\title{Permutations}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Généralitées {{{1
+\section{G\'en\'eralit\'ees}
+On note $S_n$ l'ensemble des permutations de $[\![1,n]\!]$. $(S_n, \circ)$ est un groupe.
+
+\begin{theo}
+	Tout groupe fini $G$ est isomorphe \`a un sous groupe de $S_n$.
+\end{theo}
+
+\begin{defi} Transposition\\
+	Soit $n \geq 2,\ \sigma \in S_n$ est une transposition s'il existe $a,b \in [\![1,n]\!], a \neq b$ tel que $\sigma(a) = b,\ \sigma(b) = a$ et
+	$\sigma(x) = x$ pour $x \neq \{a,b\}$. \\
+	On note $\tau_{ab}$ la transpos\'e qui \'echange $a$ et $b$.
+\end{defi}
+
+\begin{theo}
+	Soit $\sigma \in S_n$, alors $\sigma$ est produit de transpositions.
+\end{theo}
+
+%cycles dans Sn {{{1
+\section{Cycles dans $S_n$}
+
+\begin{defi} Cycle\\
+	Soit $\sigma \in S_n$: on dit que $\sigma$ est un cycle s'il existe $p \in [\![2,n]\!],\ x_1, \hdots, x_p \in [\![1,n]\!]$ distincts avec
+	$\sigma(x_1) = x_2,\ \sigma(x_2) = x_3, \hdots, \sigma(x_p) = x_1$ et $\sigma(x) = x$ pour \mbox{$x \notin \{x_1, \hdots, x_p\}$}
+	\begin{rqs}
+		Il y a $\sum_{p=2}^n \binom{n}{p}(p-1)!$ cycles dans $S_n$
+	\end{rqs}
+\end{defi}
+
+\begin{prop}
+	soit $p \in [\![2,n]\!], \sigma$ un p-cycle. Alors $\sigma$ est un \'el\'ement d'ordre $p$.
+\end{prop}
+
+\begin{prop}
+	Soient $\sigma, \sigma'$ deux cycles de support $A$ et $B$ tels que $A \cap B = \emptyset$, alors $\sigma \circ \sigma' = \sigma'
+	\circ \sigma$
+\end{prop}
+
+\begin{theo}
+	Soit $\sigma \in S_n$, alors $\sigma$ s'\'ecrit comme produit commutatif de cycles dont les supports sont deux \`a deux disjoints
+\end{theo}
+
+\begin{prop} Ordre d'une permutation\\
+	Soit $\sigma \in S_n,\ \sigma = \gamma_1 \circ \hdots \circ \gamma_r$, avec $\gamma_i$ cycle de longueur $p_i$ et de support $A_i$. Alors,
+	l'ordre de $\sigma$ est $ppcm(p_1, \hdots, p_r)$
+\end{prop}
+
+%Signature d'une permutation {{{1
+\section{Signature d'une permutation}
+\begin{defi}
+	Soit $\sigma \in S_n$ et $(i,j) \in [\![1,n]\!]^2$ tels que $i < j$. On dit que $\sigma$ pr\'esente une inversion en $(i,j)$ si $\sigma(i)
+	> \sigma(j)$. On note $N(\sigma)$ \mbox{le nombre d'inversions de $\sigma$.}\\
+	La signature de $\sigma$ est $\epsilon(\sigma) = (-1)^{N(\sigma)}$
+\end{defi}
+
+\begin{prop}
+	La signature d'une transposition vaut $-1$, la signature d'un cycle de longueur $p$ vaut $(-1)^{p-1}$
+\end{prop}
+
+\begin{theo}
+	Pour $\sigma, \tau \in S_n,\ \epsilon(\sigma \circ \tau) = \epsilon(\sigma) \epsilon(\tau)$
+\end{theo}
+
+\end{document}
