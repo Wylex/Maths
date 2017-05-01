@@ -73,4 +73,51 @@
 	\end{enumerate}
 \end{theo}
 
+%Déterminant d'une matrice carrée {{{1
+\section{D\'eterminant d'une matrice carr\'ee}
+\begin{defi} Soit $n \in \mathbb{N}^*$\\
+	$M \in M_n(K)$, par d\'efinition: $\det M = \det_{bcn} (C_1(M), \hdots, C_n(M))$
+\end{defi}
+
+\begin{prop} Soit $M \in M_n(K)$
+	\begin{enumerate}
+		\item [-] On suppose que M est une matrice triangulaire, alors $\det M = \prod_i M_{ii}$
+		\item [-] $M \in GL_n(K) \Leftrightarrow \det M \neq 0$
+		\item [-] $\det (t_M) = \det M$
+		\item [-] Soit $M = Mat_B(x_1, \hdots, x_n)$ alors $\det_B (x_1, \hdots, x_n) = \det M$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop} Op\'erations
+	\begin{enumerate}
+		\item [-] Si $M'$ se d\'eduit de $M$ par $oe_1$ ($c_j \leftarrow c_j + \lambda c_i\ i \neq j$) alors $\det M' = \det M$
+		\item [-] Si $M'$ se d\'eduit de $M$ par $oe_2$ ($c_i \leftrightarrow c_j$) alors $\det M' = -\det M$
+		\item [-] Si $M'$ se d\'eduit de $M$ par $oe_3$ ($c_i \leftarrow \alpha c_i$) alors $\det M' = \alpha \det M$
+	\end{enumerate}
+\end{prop}
+
+%Déterminant d'un endomorphisme {{{1
+\section{D\'eterminant d'un endomorphisme}
+\begin{defi}
+	Soit $E$ un Kev de dimension finie, $f \in \mathscr{L}(E)$, alors il existe un et un seul $\lambda \in K$ tel que pour toute base $B$ de $E$,
+	pour tout $(x_1, \hdots, x_n) \in E^n,\ \det_B(f(x_1), \hdots, f(x_n)) = \lambda \det_B(x_1, \hdots, x_n)$. $\lambda$ s'appelle le
+	d\'eterminant de $f$ et se note $\det f$
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item [-] Soit $f \in \mathscr{L}(E)$, si $B = (e_1, \hdots, e_n)$ est une base de $E$, alors $\det f = \det_B (f(e_1), \hdots, f(e_n))$
+		\item [-] $f \in GL(E) \Leftrightarrow \det f \neq 0$
+		\item [-] $\det (\alpha f) = \alpha^n \det f$
+		\item [-] $\det (g \circ f) = \det g \det f$
+		\item [-] $\det (AB) = (\det A) (\det B)$
+	\end{enumerate}
+\end{prop}
+
+%Développement suivant une rangée {{{1
+\section{D\'eveloppement suivant une rang\'ee}
+\begin{theo}
+	Soit $i \in [\![1,n]\!],\ M = (a_{ij})$ alors $\det M = \sum_{j=1}^n a_{ij}(-1)^{i+j} \det M_{ij}$
+\end{theo}
+
 \end{document}
