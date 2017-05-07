@@ -120,4 +120,20 @@
 	Soit $i \in [\![1,n]\!],\ M = (a_{ij})$ alors $\det M = \sum_{j=1}^n a_{ij}(-1)^{i+j} \det M_{ij}$
 \end{theo}
 
+\begin{defi} Comatrice \\
+	Soit $M = (a_{ij}) \in M_n(K)$. On note $A_{ij}$ le cofacteur d'indice $(i,j)$ de $M$. \\
+	On appelle comatrice de $M$ et on note $com(M)$ la matrice de $M_n(K)$ d\'efinie par: $com(M)_{ij} = A_{ij}$
+\end{defi}
+
+\begin{theo} Pour $M \in M_n(K),\ t_{com(M)} M = M t_{com(M)} = (\det M) I_n$
+
+\end{theo}
+
+%Formules de Cramer {{{1
+\section{Formules de Cramer}
+On consid\`ere un syst\`eme lin\'eaire de $n$ \'equations \`a $n$ inconnues qui s\'ecrit sous forme matriciel: $(S)\ MX = B$. On dit que $(S)$ est
+de Cramer lorsque $M \in GL_n(K)$. Dans ce cas, $(S)$ admet comme unique solution $X = M^{-1}B$. \\
+Si on note $X = (x_1 \hdots x_n )$ cette unique solution alors: $x_i = \frac{\Delta_i}{\Delta}$ o\`u $\Delta = \det M$ et $\Delta_i = \det M_i$
+o\`u $M_i$ se d\'eduit de $M$ en rempla\c{c}ant $C_i(M)$ par $(b_1 \hdots b_n) = B$
+
 \end{document}

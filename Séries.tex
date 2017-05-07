@@ -1,0 +1,97 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.3}
+
+\title{S\'eries}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Définitions, premières propriétées {{{1
+\section{D\'efinitions, premi\`eres propri\'et\'ees}
+
+\begin{defi} Une s\'erie d'\'el\'ements de $K$ est un couple $(u,S)$ o\`u $u = (u_n)_{n \in \mathbb{N}}$ est une suite d'\'el\'ements de $K$ et
+$S$ la suite d\'efinie par: $S_n = \sum_{k=0}^n u_k$\\
+On dit que $S$ est la suite des sommes partielles de la s\'erie et $u$ le terme g\'en\'eral de la s\'erie. On note $\sum_{n \in \mathbb{N}} u_n$
+cette s\'erie.
+\end{defi}
+
+\begin{defi} Convergence \\
+Soit $u \in K^{\mathbb{N}}$. On dit que la s\'erie de terme g\'en\'eral $u$ converge lorsque la suite $S$ des sommes partielles de la s\'erie
+est une suite convergente. En cas de convergence, la limite $L$ de la s\'erie $S$ s'appelle la somme de la s\'erie et se note
+$\sum_{n=0}^{+\infty} u_n$
+\end{defi}
+
+\begin{defi} Suite des restes \\
+	Soit $\sum_{n \in \mathbb{N}} u_n$ une s\'erie convergente de somme $L$. On note $(R_n)_{n \in \mathbb{N}}$ tel que $R_n = L - S_n$ la suite
+	des restes de la s\'erie.\\
+	On observe que $(R_n)$ v\'erifie toujours $R_n \rightarrow 0$
+
+	\begin{rqs}
+		$R_n = \sum_{k = n+1}^{+\infty} u_k$
+	\end{rqs}
+\end{defi}
+
+\begin{prop} On consid\`ere une s\'erie $\sum_{n \in \mathbb{N}} u_n$
+	\begin{enumerate}
+		\item [-] $u_n = S_n - S_{n-1}$
+		\item [-] $u_n = R_{n-1} - R_n$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop} Faits de base
+	\begin{enumerate}
+		\item [-] Soient $u,v \in K^{\mathbb{N}},\ \alpha, \in K$. On suppose $\sum u_n$ et $\sum v_n$ convergentes:\\
+			alors $\sum(\alpha u_n + v_n)$ converge et $\sum_{n=0}^{+\infty} (\alpha u_n + v_n) = \alpha \sum_{n=0}^{+\infty} u_n +
+			\sum_{n=0}^{+\infty} v_n$
+		\item [-] Soit $u \in K^\mathbb{N}$. On suppose que $\sum u_n$ converge, alors $u$ converge vers $0$. Si $u$ ne converge pas vers $0$,
+			on dit qu'il y a divergence grossi\`ere
+		\item [-] $u \in K^\mathbb{N}$ est convergente $\Leftrightarrow \sum_{n \in \mathbb{N}} (u_{n+1} - u_n)$ est convergente
+	\end{enumerate}
+\end{prop}
+
+%Séries à termes positifs {{{1
+\section{S\'eries \`a termes positifs}
+\begin{defi}
+Une s\'erie \`a termes positifs (SATP) est une s\'erie $\sum u_n$ o\`u $u$ est une suite r\'eelle positive.
+\end{defi}
+
+\begin{prop} Soit $u \in \mathbb{R}_{+}^{\mathbb{N}}$
+	\begin{enumerate}
+		\item [-] $\sum u_n$ convergente $\Leftrightarrow S$ major\'ee
+		\item [-] $\sum u_n$ divergente $\Leftrightarrow S_n \rightarrow \infty$
+	\end{enumerate}
+\end{prop}
+
+\subsection{Principe de comparaison}
+\begin{theo} Soient $u,b \in \mathbb{R}_+^{\mathbb{N}}$. On suppose $u_n \leq v_n$ APCR, alors:
+\begin{enumerate}
+	\item Si $\sum_{n \in \mathbb{N}} v_n < +\infty$ alors $\sum_{n \in \mathbb{N}} u_n < +\infty$
+	\item Si $\sum_{n \in \mathbb{N}} u_n = +\infty$ alors $\sum_{n \in \mathbb{N}} v_n = +\infty$
+\end{enumerate}
+\end{theo}
+
+\begin{coro} Soient $u,v \in \mathbb{R}_+^\mathbb{N}$
+\begin{enumerate}
+	\item [-] On suppose $u_n \underset{n \rightarrow +\infty}{=} O(v_n)$ alors:  $\sum_{n \in \mathbb{N}} v_n < +\infty \Rightarrow$
+	$\sum_{n \in \mathbb{N}} u_n < +\infty$
+	\item [-] Si $u_n \sim v_n$ alors $\sum_{n \in \mathbb{N}} u_n$ et $\sum_{n \in \mathbb{N}} v_n$ sont de m\^eme nature
+\end{enumerate}
+\end{coro}
+
+\end{document}
