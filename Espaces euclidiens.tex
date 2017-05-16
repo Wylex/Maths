@@ -1,0 +1,103 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.3}
+
+\title{Espaces euclidiens}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Produit scalaire, norme euclidienne {{{1
+\section{Produit scalaire, norme euclidienne}
+\subsection{Produit scalaire}
+\begin{defi} Soit $E$ un Rev, un produit scalaire sur $E$ est une application $\varphi : E \times E \rightarrow \mathbb{R}$ telle que:
+\begin{enumerate}
+	\item $\varphi$ est bilin\'eaire
+	\item $\varphi$ est sym\'etrique: $\varphi(x,y) = \varphi(y,x)$
+	\item $\varphi$ est d\'efinie positive: $\forall x \in E \backslash \{0\},\ \varphi(x,x) > 0$
+\end{enumerate}
+\end{defi}
+
+\begin{rqs} Soit $\varphi$ bilin\'eaire, alors $\varphi$ est d\'efinie positive $\Leftrightarrow$ \begin{enumerate}
+	\item $\forall x \in E, \varphi(x,x) \geq 0$
+	\item $\varphi(x,x) = 0 \Rightarrow x = 0$
+	\end{enumerate}
+\end{rqs}
+
+\subsection{Norme euclidienne}
+\begin{defi} Soit $E$ un Rev. Une norme sur $E$ est une application $N:E \rightarrow \mathbb{R}_+$ telle que:
+	\begin{enumerate}
+		\item Pour $x \in E, N(x) = 0 \Leftrightarrow x = 0$
+		\item Pour $x \in E, \alpha \in \mathbb{R}, N(\alpha x) = |\alpha| N(x)$
+		\item Pour $x,y \in E,\ N(x+y) \leq N(x) + N(y)$
+	\end{enumerate}
+\end{defi}
+
+\begin{theo} Soit $E$ un Rev et $<,>$ un ps sur $E$, pour $x \in E$, posons $\|x\| = \sqrt{<x,x>}$. Alors $x \in E \mapsto \|x\|$ est
+une norme sur $E$ appel\'ee norme euclidienne (associ\'e au ps $<,>$)
+\end{theo}
+
+\begin{rqs} In\'egalit\'e de Cauchy-Schwarz\\
+	$\forall x,y \in E,\ |<x,y>| \leq \|x\| \|y\|$
+\end{rqs}
+
+\begin{prop} Quelques relations
+	\begin{enumerate}
+		\item $\|\sum_{i=1}^n x_i \| ^2 = \sum_{i=1}^n \|x_i\|^2 + 2\sum_{1 \leq i < j \leq n} <x_i,x_j>$
+		\item En particulier, (identit\'e du parall\'elogramme):\\
+			$\|x+y\|^2 + \|x-y\|^2 = 2(\|x\|^2 + \|y\|^2)$
+		\item $4<x,y> = \|x+y\|^2 - \|x-y\|^2$
+	\end{enumerate}
+\end{prop}
+
+\begin{defi} Vecteurs orthogonaux \\
+	Soit $<,>$ un ps sur le Rev $E$, $x,y \in E$.
+	On dit que $x$ est orthogonal \`a $y$ si $<x,y> = 0$
+
+	\begin{rqs}
+		Si $x_i \perp x_j,\ i \neq j$ alors $\|\sum_{i=1}^n x_i \|^2 = \sum_{i=1}^n \|x_i\|^2$
+	\end{rqs}
+\end{defi}
+
+\begin{defi} Angle g\'eom\'etrique \\
+Soient $x,y \in E\backslash \{0\}$. Par d\'efinition, l'angle g\'eom\'etrique de $x$ et $y$ est $\theta = \arccos
+\frac{<x,y>}{\|x\| \|y\|} \in [0, \pi].$\\
+Ainsi, $<x,y> = \|x\| \|y\| \cos \theta$
+\end{defi}
+
+\subsection{Familles orthogonales}
+\begin{defi} Soit $E$ un Rev muni d'un ps $<>$, $(x_i)_{i\in I}$ une famille de vecteurs de $E$. On dit que la famille est orthogonale si
+$x_i \perp x_j$ pour $i\neq j$. Elle est orthonorm\'ee si de plus $\|x_i\| = 1$
+\end{defi}
+
+\begin{theo} Soit $(x_i)_{i\in I}$ une famille orthogonale de vecteurs non nuls de $E$, alors la famille est libre. En particulier, toute famille
+orthonorm\'ee de vecteurs de $E$ est libre
+\end{theo}
+
+\begin{theo} Orthonormalisation de Gram-Schmidt \\
+Soit $E$ un Rev muni d'un ps $<>. (x_1, \hdots, x_n)$ une famille libre de vecteurs de $E$. Alors il existe une unique famille orthonormale
+$(e_1, \hdots, e_n)$ de vecteurs de $E$ telle que:
+\begin{enumerate}
+	\item $Vect(e_1, \hdots, e_i) = Vect(x_1, \hdots, x_i)\ (1 \leq i \leq n)$
+	\item $<e_i,x_i> >0\ (1 \leq i \leq n)$
+\end{enumerate}
+
+\end{theo}
+
+
+\end{document}
