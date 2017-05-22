@@ -122,8 +122,8 @@ convergente.
 
 \begin{prop} Convergence
 	\begin{enumerate}
-		\item [-] Crit\`ere $n^\alpha u_n$: Soit $u \in \mathbb{C}^\mathbb{N}$. On suppose qu'il existe $\alpha > 1,\ n^\alpha u_n \rightarrow 0$
-			Alors $\sum u_n $ converge absolument
+		\item [-] Crit\`ere $n^\alpha u_n$: Soit $u \in \mathbb{C}^\mathbb{N}$. On suppose qu'il existe $\alpha \in \mathbb{R}$ tq
+			$\alpha > 1$, $\ n^\alpha u_n \rightarrow 0$ Alors $\sum u_n $ converge absolument
 		\item [-] Soit $u \in \mathbb{C}^\mathbb{N}$. On suppose $|\frac{u_{n+1}}{u_n}| \rightarrow l \in [0,1[$ alors $\sum u_n$ converge
 			absolument
 	\end{enumerate}
@@ -133,7 +133,7 @@ convergente.
 
 
 %Séries alternées {{{1
-\section{Séries altern\'ees}
+\section{S\'eries altern\'ees}
 \begin{theo}
 	Soit $u$ une suite r\'eelle positive qui d\'ecroit vers $0$, alors $\sum (-1)^n u_n$ converge et de plus, $\forall n \in \mathbb{N},
 	|\sum_{k=n+1}^{+\infty} (-1)^k u_k| \leq u_{n+1}$
@@ -145,16 +145,21 @@ convergente.
 \begin{enumerate}
 	\item S\'erie g\'eom\'etrique: $\sum q^n$ converge $\Leftrightarrow |q| < 1$
 	\item S\'eries de Riemann: soit $\alpha \in \mathbb{R}$ alors,\\
-		$\sum_{n \in \mathbb{N}^*} \frac{1}{n^\alpha} < +\infty \Leftrightarrow \alpha > 1$
+		$\sum_{n \in \mathbb{N}^*} \frac{1}{n^\alpha} < +\infty \Leftrightarrow \alpha > 1$ \\
+		De plus, $R_n \sim \frac{1}{\alpha -1} \frac{1}{n^{\alpha -1}}$
+	\item S\'eries de Bertrand: $\sum \frac{1}{n (\ln n)^\beta} < +\infty \Leftrightarrow \beta > 1$
 	\item $H_n = \sum \frac{1}{k} \sim \ln n + \gamma + \frac{1}{2n}$
 \end{enumerate}
 
 %Remarques {{{1
 \section{Remarques}
 \begin{enumerate}
-	\item Pour des sommes de la forme $\sum_k \frac{1}{\alpha k + \hdots}$ on peut essayer de se ramener \`a l'\'etude de $H_n$
-	\item Pour d\'eterminer qu'une suite $u$ converge vers en certain r\'eel, on peut consid\'erer $u_{n+1} - u_n$
+	\item Pour des sommes de la forme $\sum_k \frac{1}{\alpha k + \hdots}$ on peut essayer de se ramener \`a l'\'etude de $H_n$ (cf ex 7,22)
+	\item Pour d\'eterminer qu'une suite $u$ converge vers en certain r\'eel, on peut consid\'erer $u_{n+1} - u_n$ (cf ex 23)
 	\item Pour faire un developpement asymptotique, on peut utiliser $u_{n+1} - u_n$ puis l'\'equivalence des sommes
+	\item Lorsqu'on a un facteur $n$ devant les termes d'une suite, on peut prendre une somme de telle fa\c{c}on qu'il y ait $n$ termes dans cette
+		somme (ou le facteur) et que les bornes correspondent \`a des valeures particuli\`eres (cf ex 19,15)
+	\item Si on cherche un \'equivalent, on peut encadrer puis int\'egrer si on connait l'int\'egrale de la suite
 \end{enumerate}
 
 
