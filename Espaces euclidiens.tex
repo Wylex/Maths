@@ -65,6 +65,7 @@
 		\item [-] En particulier, (identit\'e du parall\'elogramme):\\
 			$\|x+y\|^2 + \|x-y\|^2 = 2(\|x\|^2 + \|y\|^2)$
 		\item [-] $\|x+y\|^2 - \|x-y\|^2= 4\langle x,y \rangle$
+		\item [-] $\langle u+v, u-v \rangle = \|u\|^2 - \|v\|^2$
 	\end{enumerate}
 \end{prop}
 
@@ -95,7 +96,7 @@
 		\item [-] Soit $(x_i)_{i\in I}$ une famille orthogonale de vecteurs non nuls de $E$, alors la famille est libre. En particulier, toute
 			famille orthonorm\'ee de vecteurs de $E$ est libre
 		\item [-] Soit $E$ un Rev de dimension finie  $\langle\ \rangle$ un ps sur $E$, alors $E$ admet une base orthonorm\'ee
-			\begin{rqs} Travailler ser des bases orthonorm\'ees permet de simplifier les calculs sur les ps \end{rqs}
+			\begin{rqs} $\langle x,y \rangle = t_X Y$ avec $X,Y$ coord de $x,y$ dans la base orthonorm\'ee \end{rqs}
 	\end{enumerate}
 \end{prop}
 
@@ -230,35 +231,37 @@ Soit $F$ un sev de $E$ tel que $E = F \oplus F^\perp$. Soit $x \in E$, $x = y + 
 				\item $\forall x,y \in E,\ \langle x,y \rangle = 0 \Leftrightarrow \langle f(x), f(y) \rangle = 0$
 				\item $f$ conserve les angles g\'eom\'etriques
 			\end{enumerate}
-		\item [-] Soit $f \in O(E)$ et $F$ un sev de $E$. On suppose $F$ stable par $f$ alors, $F^\perp$ est stable par $f$
+		\item [-] Soit $f \in O(E)$ et $F$ un sev de $E$. On suppose $F$ stable par $f$ alors $F^\perp$ est stable par $f$
 		\item [-] Soit $B = (e_1, \hdots, e_n)$ une BON de $E$, $f \in \mathscr{L}(E)$. On a alors:\\
 			$f \in O(E) \Leftrightarrow (f(e_1), \hdots, f(e_n))$ est une BON de $F$
 	\end{enumerate}
 \end{prop}
 
 \subsection{Matrices orthogonales}
-\begin{defi} Soit $M \in M_n(\mathbb{R})$. On dit que $M$ est une matrice orthogonale ssi l'endomorphisme de $\mathbb{R}^n$ canoniquement
-associ\'e \`a $M$ est une isom\'etrie de l'espace euclidien $(\mathbb{R}^n,$ (ps canonique)). On note $O_n(\mathbb{R})$ l'ensemble des matrices
-orthogonales
+
+\begin{defi}
+	Soit $M \in M_n(\mathbb{R})$. On dit que $M$ est une matrice orthogonale ssi l'endomorphisme de $\mathbb{R}^n$ canoniquement
+	associ\'e \`a $M$ est une isom\'etrie de l'espace euclidien $(\mathbb{R}^n,$ (ps canonique)). On note $O_n(\mathbb{R})$ l'ensemble des
+	matrices orthogonales
 \end{defi}
 
 \begin{prop} $ $
 	\begin{enumerate}
-		\item $O_n(\mathbb{R})$ est un ss gpe de $(GL_n(\mathbb{R}), \times)$
-		\item $M \in O_n(\mathbb{R}) \Leftrightarrow (C_1(M), \hdots, C_n(M))$ est une BON de $(\mathbb{R}^n, .)$
-		\item Soit $M \in M_n(\mathbb{R})$, LASSE:
+		\item [-] $O_n(\mathbb{R})$ est un ss gpe de $(GL_n(\mathbb{R}), \times)$
+		\item [-] $M \in O_n(\mathbb{R}) \Leftrightarrow (C_1(M), \hdots, C_n(M))$ est une BON de $(\mathbb{R}^n, .)$
+		\item [-] Soit $M \in M_n(\mathbb{R})$, LASSE:
 			\begin{enumerate}
 				\item $M \in O_n(\mathbb{R})$
 				\item $t_M \times M = I_n$
 				\item $M \times t_M = I_n$
 				\item $M$ est inversible et $M^{-1} = t_M$
 			\end{enumerate}
-		\item $M \in O_n(\mathbb{R}) \Rightarrow |\det| = 1$.  Il existe des matrices orthogonales de determinant 1 et -1. On note
+		\item [-] $M \in O_n(\mathbb{R}) \Rightarrow |\det M| = 1$.  Il existe des matrices orthogonales de determinant 1 et -1. On note
 			$SO_n(\mathbb{R})$ l'ensemble des matrices orthogonales de d\'eterminant 1.
-		\item Soit $(E, \langle  \rangle)$ un espace euclidien, $B$ une BON de $E$, $f \in \mathscr{L}(E)$, alors $f \in O(E) \Leftrightarrow Mat_B(f)
-			\in O_n(\mathbb{R})$
-		\item $f \in O(E) \Rightarrow |\det f| = 1$
-		\item Soit $P$ la matrice de passage d'une BON vers une autre BON alors $P \in O_n(\mathbb{R})$
+		\item [-] Soit $(E, \langle\  \rangle)$ un espace euclidien, $B$ une BON de $E$, $f \in \mathscr{L}(E)$, alors $f \in O(E)
+			\Leftrightarrow Mat_B(f) \in O_n(\mathbb{R})$
+		\item [-] $f \in O(E) \Rightarrow |\det f| = 1$
+		\item [-] Soit $P$ la matrice de passage d'une BON vers une autre BON alors $P \in O_n(\mathbb{R})$
 	\end{enumerate}
 \end{prop}
 
@@ -281,8 +284,8 @@ orthogonales
 \subsection{Produit vectoriel en dimension 3}
 
 \begin{defi}
-	Soit $E$ euclidien orient\'e de dimension trois. Pour tout $(x,y) \in E^2$, il existe un et un seul $w \in E$ appell\'e produit vectoriel de
-	$x$ et $y$ tel que $\forall x \in E,\ [x,y,z] = \langle w,z \rangle$
+	Soit $E$ euclidien orient\'e de dimension 3. Pour tout $(x,y) \in E^2$, il existe un et un seul $w \in E$ appell\'e produit vectoriel de
+	$x$ et $y$ tel que $\forall z \in E,\ [x,y,z] = \langle w,z \rangle$
 \end{defi}
 
 \begin{prop} $ $
@@ -307,4 +310,61 @@ orthogonales
 	\end{enumerate}
 \end{prop}
 
+\section{\'Etude de la dimension 2}
+
+On a $O_2(\mathbb{R}) = \{R_{\theta} / \theta \in \mathbb{R}\} \cup \{S_\theta / \theta \in \mathbb{R}\}$ o\`u: \\
+$R_\theta =
+\begin{pmatrix}
+	\cos \theta & -\sin \theta\\
+	\sin \theta & \cos \theta
+\end{pmatrix}
+S_\theta =
+\begin{pmatrix}
+	\cos \theta & \sin \theta\\
+	\sin \theta & -\cos \theta
+\end{pmatrix}$
+
+\begin{prop}
+	$(SO_2(\mathbb{R}),\times)$ est un groupe commutatif
+\end{prop}
+
+\begin{prop} $ $
+	Soit $B = (e_1, e_2)$ une BOND de $E$. L'ensemble des BOND de $E$ est alors $(u_\theta, v_\theta)$ o\`u pour $\theta \in \mathbb{R},
+	u_\theta = \cos \theta e_1 + \sin \theta e_2$ et $v_\theta = -\sin \theta e_1 + \cos \theta e_2$
+\end{prop}
+
+\begin{theo} Rotation \\
+	Soit $r \in SO(E)$, alors il existe un r\'eel $\theta$ tel que pour toute BOND $\mathscr{C}$ de $E$, $Mat_\mathscr{C}(r) = R_\theta$. Pour
+	toute BONR $\mathscr{B}$ on a alors, $Mat_\mathscr{B}(r) = R_{-\theta}$. \\
+	L'ensemble de ces r\'eels $\theta$ s'appelle l'angle de la rotation $r$
+\end{theo}
+
+\begin{theo}
+	Si $f \in O(E) \backslash SO(E)$ alors $f$ est une sym\'etrie orthogonale par rapport \`a une droite
+\end{theo}
+
+\subsection{Angle orient\'e}
+
+\begin{defi}
+	Soient $x,y \in E\backslash \{0\}$. On appelle angle orient\'e des vecteurs $x$ et $y$ l'angle de l'unique rotation qui envoie
+	$\frac{x}{\|x\|}$ sur $\frac{y}{\|y\|}$
+\end{defi}
+
+\begin{prop} Angles
+	\begin{enumerate}
+		\item $x \in E \backslash \{0\},\ \hat{(x,x)} = 2\pi\mathbb{Z}$
+		\item $\hat{(x,y)} = -\hat{(y,x)}$
+		\item $\hat{(u,w)} = \hat{(u,v)} + \hat{(v,w)}$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop} Fonctions
+	\begin{enumerate}
+		\item Si $f \in SO(E)$ alors $\hat{(f(x), f(y))} = \hat{(x,y)}$
+		\item Si $g \in O(E) \backslash SO(E)$ alors $\hat{(g(x),g(y))} = -\hat{(x,y)}$
+	\end{enumerate}
+\end{prop}
+
+
 \end{document}
+

@@ -24,8 +24,8 @@
 %Voisinages {{{1
 \section{Voisinages}
 \begin{defi} Voisinage \\
-	Soit $x$ un r\'eel et $A \subset \mathbb{R}$. $A$ est voisinage de $x$ s'il existe $\epsilon > 0$ tel que:
-	\[[x-\epsilon, x+\epsilon] \subset A\]
+	Soit $x$ un r\'eel et $A \subset \mathbb{R}$. On dit que $A$ est voisinage de $x$ si:
+	\[\exists \epsilon > 0,\ [x-\epsilon, x+\epsilon] \subset A\]
 \end{defi}
 Pour $x \in \mathbb{R}$ on note $V_\mathbb{R}(x)$ l'ensemble des voisinages de $x$ dans $\mathbb{R}$
 
@@ -68,24 +68,28 @@ Pour $x \in \mathbb{R}$ on note $V_\mathbb{R}(x)$ l'ensemble des voisinages de $
 \end{defi}
 
 \begin{prop} $ $
-	\begin{itemize}
-		\item [-] Adh\`erence, int\'erieur d'intervalles: \\
-		\begin{tabular}{@{}ll@{}}
-				$\quad Int([a,b])$ & $\quad \quad Adh(]a,b[)$ \\
-				$\quad = Int(]a,b])$ & $\quad \quad = Adh(]a,b])$ \\
-				$\quad = Int([a,b[)$ & $\quad \quad = Adh([a,b[)$ \\
-				$\quad = Int(]a,b[) = ]a,b[$ & $\quad \quad = Adh([a,b]) = [a,b]$ \\
-		\end{tabular}
+	\begin{enumerate}
+		\item [-] Adh\`erence, int\'erieur d'intervalles:
+			\begin{enumerate}
+				\item $Int([a,b]) = Int(]a,b])= Int([a,b[)= Int(]a,b[) = ]a,b[$
+				\item $Adh(]a,b[)= Adh(]a,b])= Adh([a,b[)= Adh([a,b]) = [a,b]$
+			\end{enumerate}
+		%\begin{tabular}{@{}ll@{}}
+				%$\quad Int([a,b])$ & $\quad \quad Adh(]a,b[)$ \\
+				%$\quad = Int(]a,b])$ & $\quad \quad = Adh(]a,b])$ \\
+				%$\quad = Int([a,b[)$ & $\quad \quad = Adh([a,b[)$ \\
+				%$\quad = Int(]a,b[) = ]a,b[$ & $\quad \quad = Adh([a,b]) = [a,b]$ \\
+		%\end{tabular}
 		\item [-] Soit $A$ une partie major\'ee de $\mathbb{R}$, alors $\sup A$ est adh\'erent \`a $A$ (analogue pour $\inf\ A$)
 		\item [-] Soit $A \subset \mathbb{R}$ \\
 			$A$ est ferm\'e $\Leftrightarrow A = Adh(A)$ \\
 			$A$ est ouvert $\Leftrightarrow A = Int(A)$
-	\end{itemize}
+	\end{enumerate}
 \end{prop}
 \begin{prop} Caract\'erisations s\'equentielles
 	\begin{enumerate}
 		\item Adh\'erence: soit $A \subset \mathbb{R} (A \neq \emptyset), x \in \mathbb{R}$
-			\[x \in Adh(A) \Leftrightarrow \exists\ (a_n)_{n \in \mathbb{N}} \text{ de points de A qui converge vers } x\]
+			\[x \in Adh(A) \Leftrightarrow \exists\ (a_n)_{n \in \mathbb{N}} \in \mathbb{N}^A \text{ qui converge vers } x\]
 		\item Fermitude: soit $A \subset \mathbb{R}$
 			\[A \text{ ferm\'ee} \Leftrightarrow \text{Pour toute suite cv. d'\'el\'e de } A\ (a_n), \text{on a } lim_{n \to \infty} a_n \in A\]
 	\end{enumerate}

@@ -47,7 +47,7 @@
 		\item Sous-suites: soit $u \in \mathbb{R}^\mathbb{N}$ une suite convergente de limite $l \in \mathbb{R}$. Alors toute sous-suite
 			de $u$ converge vers $l$
 			\begin{rqs}
-				S'il existe une sous-suite de $u$ qui diverge, alors $u$ diverge. S'il existent 2 sous-suites de $u$ qui convergent des
+				S'il existe une sous-suite de $u$ qui diverge, alors $u$ diverge. S'il existent 2 sous-suites de $u$ qui convergent vers des
 				r\'eels distincts, alors $u$ diverge
 			\end{rqs}
 		\item Soit $u \in \mathbb{R}^\mathbb{N}, l \in \mathbb{R}$, $v_n = u_{2n}$, $w_n = u_{2n+1}$ \\
@@ -79,9 +79,9 @@
 \begin{prop} $ $
 	\begin{enumerate}
 		\item Conservation des in\'egalit\'ees larges par passage \`a la limite: \\
-			$u, v$ 2 suites r\'eelles convergentes, $u_n \leq v_n$. Alors $\lim u \leq \lim v$
+			Soient $u, v$ 2 suites r\'eelles convergentes $u_n \leq v_n$ alors, $\lim u \leq \lim v$
 		\item Th\'eor\`eme des gendarmes: \\
-			$u, v, w \in \mathbb{R}^\mathbb{N}, u_n \leq v_n \leq w_n$. Si $u$ et $v$ sont convergentes de m\^eme limite $l \in \mathbb{R}$
+			$u, v, w \in \mathbb{R}^\mathbb{N}, u_n \leq v_n \leq w_n$. Si $u$ et $w$ sont convergentes de m\^eme limite $l \in \mathbb{R}$
 			alors $v$ converge vers $l$
 		\item Suites monotones:
 			Soit $u$ une suite r\'eelle croissante (analogue avec $u$ d\'ecroissante):
@@ -104,10 +104,10 @@
 \begin{theo} Segments embo\^it\'es \\
 	Soit $(I_n)_{n \in \mathbb{N}}$ une suite de segments (il existe, pour
 	$n \in \mathbb{N}, a_n, b_n \in \mathbb{R}$ tel que $I_n = [a_n, b_n]$ et $a_n \leq b_n$). On suppose $I_{n+1} \subset I_n$. Alors,
-	\[\bigcup_{n \in \mathbb{N}} I_n \text{ est un segment non vide.}\]
+	\[\bigcap_{n \in \mathbb{N}} I_n \text{ est un segment non vide.}\]
 \end{theo}
 \begin{coro}
-	$\mathbb{R}$ n'est pas d\'enombrable
+	$\mathbb{R}$ n'est pas d\'enombrable (il n'existe pas de bijection de $\mathbb{N}$ dans $\mathbb{R}$)
 \end{coro}
 
 %Bolzano-Weierstrass (et adhérence) {{{1
@@ -136,7 +136,9 @@
 \begin{enumerate}
 	\item Suites arithm\'etiques
 	\item Suites g\'eom\'etriques
-	\item Suites arithm\'etico-g\'eom\'etriques
+	\item Suites arithm\'etico-g\'eom\'etriques: \\
+		On peut trouver la formule exiplicite d'une suite de type $u_{n+1} = au_n +b$ si on sait qu'elle converge. Dans ce cas, $l = al + b$
+		puis en posant $v_n = u_n - l$, on mq $(v_n)$ est une suite g\'eom\'etrique puis on conclut
 	\item Suites v\'erifiant une relation de r\'ecurrence lin\'eaire d'ordre 2: \\
 		$a \in \mathbb{R}^*, (b,c) \in \mathbb{R}^2\backslash\{0,0\}$. Soit $\mathscr{E}$ l'ensemble des suites r\'eelles $u$ telles que:
 		\[\forall n \in \mathbb{N}, au_{n+2} + bu_{n+1} + cu_n = 0\]

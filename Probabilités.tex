@@ -1,0 +1,199 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.3}
+
+\title{Probabilit\'es}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Axiomes des probabilités {{{1
+\section{Axiomes des probabilit\'es}
+Soit $\Omega$ un ensemble fini.
+\begin{defi}
+	Une probabilit\'e sur $\Omega$ est une application $P: \mathcal{P}(\Omega) \rightarrow [0,1]$ tq:
+	\begin{enumerate}
+		\item $P(\Omega) = 1$
+		\item $\forall A,B \in \mathcal{P}(\Omega),\ A \cap B = \emptyset \Rightarrow P(A \cup B) = P(A) + P(B)$
+	\end{enumerate}
+On dit ainsi que $(\Omega,P)$ est un espace probabilis\'e. Les \'el\'ements de $\mathcal{P}(\Omega)$ s'appellent les \'ev\'enements.
+	\begin{enumerate}
+		\item Pour $\omega \in \Omega,\ \{\omega\}$ est un \'ev\'enement \'el\'ementaire
+		\item $\emptyset$ est l'\'ev\'enement impossible, $\Omega$ est l'\'ev\'enement certain
+		\item $A \in \mathcal{P}(\Omega),\ \bar{A}$ est l'\'ev\'enement contraire
+		\item $A$ est quasi-certain si $P(A) = 1$, quasi-impossible si $P(A) = 0$
+		\item Deux \'ev\'enements sont incompatibles si $A \cap B = \emptyset$
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} Soit $(\Omega, P)$ un espace probabilis\'e
+	\begin{itemize}
+		\item [-] $P(\emptyset) = 0$
+		\item [-] Si $A_1, \hdots, A_n$ sont imcompatibles deux \`a deux, $P(\bigcup A_i) = \sum P(A_i)$
+		\item [-] $P(\bar{A}) = 1 - P(A)$
+		\item [-] Si $\{B_1, \hdots, B_n\}$ est un syst\`eme complet d'\'ev\'enements (si $\bigcup B_i = \Omega$ et $B_i \cap B_j = \emptyset$)
+			alors pour tout $A \in \mathcal{P}(\Omega)$, $P(A) = \sum P(A \cap B_i)$
+		\item [-] $A,B \in \mathcal{P}(\Omega),\ A \subset B \Rightarrow P(A) \leq P(B)$
+		\item [-] Soient $A_1, \hdots, A_n$ des ev on a $P(\bigcup A_i) \leq \sum P(A_i)$
+		\item [-] Identit\'e de Poincar\'e:\\
+			Soient $A_1, \hdots, A_n \in \mathcal{P}(\Omega)$ alors $P(\bigcup A_i) = \sum_{k=1}^n (-1)^{k-1} \sum_{I \in \mathcal{P}_k(n)}
+			P(\bigcap_{j \in I} A_j)$
+	\end{itemize}
+\end{prop}
+
+\begin{theo}
+	Soit $\Omega$ un ensemble fini. Se donner une probabilit\'e sur $\Omega$ revient \`a se donner une famille $(p_\omega)_{\omega \in \Omega}$
+	de r\'eels positifs de somme 1
+\end{theo}
+
+%Probabilités conditionnelles - indépendance {{{1
+\section{Probabilit\'es conditionnelles - Ind\'ependance}
+\begin{defi} Soit $(\Omega, P)$ un espace probabilis\'e
+	\begin{enumerate}
+		\item Pour $A,B \in \mathcal{P}(\Omega)$ on dit que $A$ et $B$ sont ind\'ependants lorsque \\$P(A \cap B) = P(A)P(B)$\\
+			Plus g\'en\'eralement, $A_1, \hdots, A_n \in \mathcal{P}(\Omega)$ sont ind\'ependants si: \[\forall I \subset \{1,
+			\hdots, n\},\ |I| \geq 2 \Rightarrow P(\bigcap_{i \in I} A_i) = \prod_{i \in I} P(A_i)\]
+		\item Soit $B \in \mathcal{P}(\Omega),\ P(B) > 0$, pour $A \in \mathcal{P}(\Omega)$, la probabilit\'e conditionnelle de $A$ sachant $B$
+			est: \[P_B(A) = P(A|B) = \frac{P(A\cap B)}{P(B)}\]
+	\end{enumerate}
+\end{defi}
+
+\begin{prop} $ $
+	\begin{itemize}
+		\item [-] Si $A_1, \hdots, A_n$ sont ind\'ependants alors $\forall I \subset [\![1,n]\!],\ (A_i)_{i \in I}$ sont ind\'ependants
+		\item [-] Soient $A,B$ ind\'ependants alors $(\bar{A},B), (A, \bar{B}),(\bar{A}, \bar{B})$ sont ind\'ependants
+		\item [-] Soient $A_1, \hdots, A_n$ indep, $B_i \in \{A_i, \bar{A_i}\}$ alors $B_1, \hdots, B_n$ sont indep
+	\end{itemize}
+\end{prop}
+
+\begin{theo} $ $
+	\begin{enumerate}
+		\item Formule des probabilit\'es totales\\
+			$(\Omega, P)$ un syst\`eme, $\{E_1, \hdots, E_n\}$ un syst\`eme complet tel que $P(E_i) > 0$ alors $\forall A \in
+			\mathcal{P}(\Omega):$ \[P(A) = \sum P_{E_i}(A)P(E_i)\]
+		\item Formule de Bayes\\
+			Soit $\{E_1, \hdots, E_n\}$ un SCE tel que $P(E_i) > 0$, $A \in \mathcal{P}(\Omega)$ tel que $P(A) > 0$ alors pour $(1 \leq i
+			\leq n)$, \[P_A(E_i) = \frac{P_{E_i}(A) P(E_i)}{\sum P_{E_j}(A) P(E_j)}\]
+		\item Formule des probabilit\'es compos\'ees\\
+			$A_1, \hdots, A_n$ des ev. tels que $P(A_1 \cap \hdots \cap A_{n-1}) \neq 0$, alors:
+			\[P(A_1 \cap \hdots, A_n) = P(A_1) \times P_{A_1}(A_2) \times P_{A_1 \cap A_2}(A_3) \times \hdots \times
+			P_{A_1 \cap \hdots \cap A_{n-1}}(A_n)\]
+	\end{enumerate}
+\end{theo}
+
+%Succésion d'expériences {{{1
+\section{Succ\'esion d'exp\'eriences al\'eatoires}
+Soient $(\Omega_1, P_1),\ (\Omega_2, P_2)$ deux exp\'eriences al\'eatoires\\ On pose pour $\omega = (\omega_1, \omega_2) \in \Omega_1 \times
+\Omega_2$: \[p_\omega = P_1(\{\omega_1\})P_2(\{\omega_2\})\]
+
+\begin{enumerate}
+	\item $\forall \omega \in \Omega_1 \times \Omega_2$, on a $p_\omega \geq 0$
+	\item $\sum_{(\omega_1, \omega_2) \in \Omega_1 \times \Omega_2} p_\omega = 1$
+\end{enumerate}
+La famille $(p_\omega)_{(\omega_1, \omega_2) \in \Omega_1 \times \Omega_2}$ d\'efinie donc bien une probabilit\'e sur $\Omega_1 \times \Omega_2$\\
+On a alors pour $A \subset \Omega_1,\ B \subset \Omega_2,\ P(A \times B) = \sum_{\omega_1 \in A} P_1(\{\omega_1\}) \sum_{\omega_2 \in B}
+P_2(\{\omega_2\})$
+
+%Variables aléatoires {{{1
+\section{Variables al\'eatoires}
+\subsection{G\'en\'eralit\'es}
+\begin{defi} Variable al\'eatoire
+	\begin{itemize}
+		\item [-] Soit $(\Omega, P)$ un espace probabilis\'e fini. Une variable al\'eatoire sur $\Omega$ est une application $X$ d\'efinie sur
+			$\Omega$
+		\item [-] Soit $(\Omega, P)$ un espace probabilis\'e, $X: \Omega \rightarrow E$ une va\\
+			Si $B \subset E,\ X^{-1}(B) = \{\omega \in \Omega ,\ X(\omega) \in B\}$ se note $\{X \in B\}$\\
+			On pose $Q(B) = P(\{X \in B\})$. Ceci d\'efinit une probabilit\'e sur $(E, \mathcal{P}(E))$. $Q$ s'appelle la loi de $X$.
+	\end{itemize}
+\end{defi}
+
+\begin{defi} Lois
+	\begin{enumerate}
+		\item Loi de Bernouilli\\
+			Une va $Y$ d\'efinie sur un espace probabilis\'e $(\Omega, P)$ suit une loi de Bernouilli de param\'etre $p \in [0,1]$ lorsque
+			$\{0,1\} \subset Y(\Omega)$ et $P(Y = 0) = 1-p,\ P(Y = 1) = p$ \\
+			On \'ecrit $Y \hookrightarrow B(p)$
+		\item Loi binomiale \\
+			Une va $Y$ suit la loi binomiale de param\`etre $n$ et $p$ lorsque $Y(\Omega) = [\![0,n]\!]$ et $\forall k \in [\![0,n]\!],\
+			P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$\\
+			On \'ecrit $Y \hookrightarrow B(n,p)$
+		\item Loi uniforme \\
+			$X: \Omega \rightarrow E$ suit une loi uniforme sur $E$ si $\forall x \in E,\ P(X = x) = \frac{1}{|E|}$
+	\end{enumerate}
+\end{defi}
+
+D\'eterminer la loi de $X$ revient \`a:
+\begin{enumerate}
+	\item D\'eterminer $X(\Omega)$
+	\item Pour chaque $x \in X(\Omega)$ trouver $P(X=x)$
+\end{enumerate}
+
+\subsection{Variables al\'eatoires ind\'ependantes}
+\begin{defi} Soit $(\Omega, P)$ un espace probabilis\'e
+	\begin{enumerate}
+		\item $X: \Omega \rightarrow E,\ Y: \Omega \rightarrow F$ des va. On dit que $X$ et $Y$ sont ind\'ependantes si:\\ $\forall A \subset E,\
+		B \subset F$ les \'ev $\{X \in A\}$ et $\{Y \in B\}$ sont ind\'ependants \\(ie $P(\{X\in A\} \cap \{Y \in B\}) = P(\{X\in A\})
+		P(\{Y \in B\})$
+		\item G\'en\'eralisation avec plusieurs variables: $(\{X_i \in A_i\})_{1 \leq i \leq n}$ sont indep
+	\end{enumerate}
+	\begin{rqs}
+			On \'ecrit $P(X \in A,\ X \in B)$ au lieu de $P(\{X \in A\} \cap \{Y \in B\})$
+	\end{rqs}
+\end{defi}
+
+\begin{theo}
+	Soient $E_1, \hdots, E_n$ des ensembles, $X_i: \Omega \rightarrow E_i$ alors:\\
+	$(X_1, \hdots, X_n)$ sont indep $\Leftrightarrow \forall (A_1, \hdots, A_n) \in \mathcal{P}(E_1) \times \hdots \times \mathcal{P}(E_n),\
+	P(X_1 \in A_1, \hdots, X_n \in A_n) = \prod_1^n P(X_i \in A_i)$
+\end{theo}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item $X$ et $Y$ indep $\Leftrightarrow \forall x,y \in X(\Omega),Y(\Omega),\\ P(X=x, Y=y) = P(X=x)\times P(Y=y)$
+		\item $X_1, \hdots, X_n$ indep $\Leftrightarrow \forall (x_1, \hdots, x_n) \in X_1(\Omega), \hdots, X_n(\Omega),\\ P(X_1=x_1, \hdots,
+			X_n = x_n) = \prod P(X_i = x_i)$
+		\item Soient $X_i: \Omega \rightarrow E_i$ indep, soit $k \in [\![0,n-1]\!],\\ Z=(X_1, \hdots, X_k): \omega \in \Omega \mapsto
+			(X_1(\omega), \hdots, X_k(\omega))$\\
+			$T= (X_{k+1}, \hdots, X_n): \omega \in \Omega \mapsto (X_{k+1}(\omega), \hdots, X_n(\omega))$\\
+			Alors $Z$ et $T$ sont ind\'ependantes
+		\item $X_i: \Omega \rightarrow E_i$ et $f_i : E_i \rightarrow F_i$. On suppose $(X_i)$ indep $Y_i = f_i(X_i)$ alors $(Y_i)$ sont indep
+	\end{enumerate}
+\end{prop}
+
+\subsection{Esp\'erance et Variance}
+\begin{defi}
+	Soit $X$ une va r\'eelle sur l'espace probabilis\'e fini $(\Omega, P)$. On appelle esp\'erance de $X$ le r\'eel $E(X) =
+	\sum_{x \in X(\Omega)} xP(X=x)$
+\end{defi}
+
+\begin{prop} Esp\'erance
+	\begin{itemize}
+		\item [-] $E(X) = \sum_{\omega \in \Omega} X(\omega) P(\{\omega\})$
+		\item [-] Si $X$ est une va certaine ($\exists a \in \mathbb{R}, P(X=a) = 1$) alors $E(X) = a$
+		\item [-] Si $X$ est positive alors $E(X) \geq 0$
+		\item [-] $E(\alpha X + Y) = \alpha E(X) + E(Y)$
+		\item [-] Formule de transfert: $\Omega \overset{X}{\rightarrow} E \overset{f}{\rightarrow}\mathbb{R}$ \\
+			$E(f(X)) = \sum_{x \in X(\Omega)} f(x) P(X=x)$
+	\end{itemize}
+\end{prop}
+
+\begin{defi}
+	On pose $V(X) = E((X - E(X))^2)$ la variance et $\sigma(X) = \sqrt{V(X)}$ l'\'ecart type de $X$
+\end{defi}
+
+\end{document}
