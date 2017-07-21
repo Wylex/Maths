@@ -99,7 +99,7 @@
 		\item I un intervalle de $\mathbb{R}, f:I \rightarrow \mathbb{R}$ continue sur I, d\'erivable sur $Int(I)$.\\
 			On suppose $\exists M\geq 0, \forall t \in Int(I), |f'(t)| \leq M$. Alors,
 			\[\forall x,y \in I, |f(x) - f(y)| \leq M|x-y|\]
-		\item $a,b \in \mathbb{R}, a<b. f,g:[a,b] \rightarrow \mathbb{R}$ continue sur $[a,b]$, d\'erivable sur $]a,b[$.\\
+		\item $a,b \in \mathbb{R},\ a<b.\ f,g:[a,b] \rightarrow \mathbb{R}$ continue sur $[a,b]$, d\'erivable sur $]a,b[$.\\
 			On suppose $\forall t \in ]a,b[, |f'(t)| \leq g'(t)$ Alors,
 			\[|f(b) - f(a)| \leq g(b) - g(a)\]
 	\end{enumerate}
@@ -125,8 +125,8 @@
 \begin{theo}
 	Soit I un intervalle de $\mathbb{R}, n \in \mathbb{N}, f,g \in D^n(I, \mathbb{R})$ Alors:
 	\begin{enumerate}
-		\item Pour $\lambda \in \mathbb{R}$ \\
-			$\lambda (f + g) \in D^n$ et $(\lambda f + g)^{(n)} = \lambda f^{(n)} + g^{(n)}$
+		\item Pour $\lambda \in \mathbb{R}$: \\
+			$\lambda f + g \in D^n$ et $(\lambda f + g)^{(n)} = \lambda f^{(n)} + g^{(n)}$
 		\item $fg \in D^n$ et $(fg)^{(n)} = \sum_{k=0}^{n} \binom{n}{k} f^{(k)} g ^{(n-k)}$
 		\item On suppose de plus $g$ \`a valeurs non nulles. Alors: $\frac{f}{g} \in D^n$
 	\end{enumerate}
@@ -162,6 +162,9 @@
 \begin{theo} In\'egalit\'e de Taylor-Lagrange\\
 	Soient $a,b \in \mathbb{R},\ f:[a,b] \rightarrow \mathbb{R}$ de classe $C^{n+1}$. Soit M un majorant de $|f^{(n+1)}|$ sur $[a,b]$. Alors:
 	\[|f(b) - T_{n,f,a}(b)| \leq M\frac{|b-a|^{n+1}}{(n+1)!}\]
+	Qu'on peut reformuler:
+	\[f(b) = T_{n,f,a}(b) + R_{n+1}\]
+	Avec $|R_{n+1}| \leq M \frac{|b-a|^{n+1}}{(n+1)!}$
 \end{theo}
 
 \begin{theo} Formule de Taylor-Young\\

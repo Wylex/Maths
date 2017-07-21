@@ -9,6 +9,7 @@
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
 \theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
 \theoremstyle{remark} \newtheorem*{rqs}{Remarques}
 
 \title{Continuit\'e}
@@ -20,7 +21,7 @@
 %Définitions {{{1
 \section{D\'efinitions}
 \begin{defi}
-	Soit $D \subset \mathbb{R}, f:D \rightarrow \mathbb{R}.\ x_0 \in D$. LASSE:
+	Soit $D \subset \mathbb{R}, f:D \rightarrow \mathbb{R},\ x_0 \in D$. On dit que $f$ \mbox{est continue en $x_0$ si:}
 	\begin{enumerate}
 		\item $\forall\ V \in V_\mathbb{R}(f(x_0)), \exists U \in V_\mathbb{R}(x_0), f(U \cap D) \subset V$ [def. topologique]
 		\item $\forall \epsilon>0, \exists \alpha > 0, \forall x \in D, |x-x_0| \leq \alpha \Rightarrow |f(x) - f(x_0)| \leq \epsilon$
@@ -39,23 +40,27 @@
 	\[\forall \epsilon >0, \exists \alpha>0, \forall x,y \in D, |x-y| \leq \alpha \Rightarrow |f(x) - f(y)| \leq \epsilon\]
 \end{defi}
 
+\begin{rqs}
+	$f$ lipschitzienne $\Rightarrow$ $f$ uniform\'ement continue $\Rightarrow$ $f$ continue
+\end{rqs}
+
 %Théorèmes fondamentaux {{{1
 \section{Th\'eor\`emes fondamentaux}
 
 \begin{theo} Heine: \\
 	Soit $D \subset \mathbb{R}$ tel que $D$ ferm\'e, born\'e. Si $f:D \rightarrow \mathbb{R}$ est continue, alors $f$ est UC
 \end{theo}
-\begin{rqs} $ $
+\begin{prop} $ $
 	\begin{enumerate}
 		\item Soit $f: D \rightarrow \mathbb{R}$ continue en un point $x_0 \in D$. Si $a, b \in \mathbb{R}$ sont tels que $a < f(x_0) < b$
 			alors: \\
 			$ \exists \alpha > 0$ tel que $\forall x \in D \cap [x_0 - \alpha, x_0 + \alpha], a < f(x) < b$
-		\item en particulier: \\
+		\item En particulier: \\
 			Si $f(x_0) > 0$, soit $m \in ]0, f(x_0)[$ alors il existe $\alpha >0$ tel que:
 			$\forall x \in D \cap [x_0 - \alpha, x_0 + \alpha], f(x) \geq m > 0$ \\
 			$f$ est minor\'ee par une constante $m>0$ au voisinage de $x_0$ (analogue pour $f(x_0) < 0$)
 	\end{enumerate}
-\end{rqs}
+\end{prop}
 
 \begin{theo}
 	Image d'un ferm\'e born\'e par une application continue: \\
@@ -68,9 +73,9 @@
 	Valeurs interm\'ediaires: \\
 	Soit $I$ un intervalle non vide de $\mathbb{R}$ et $f:I \rightarrow \mathbb{R}$ continue:
 	\begin{enumerate}
-		\item alors $f(I)$ est un intervalle de $\mathbb{R}$
-		\item on suppose qu'il existent $a,b \in I, f(a) \geq 0$ et $f(b) \leq 0$ alors il exsite $c \in I$ tel que: $f(c) = 0$
-		\item si $f$ prend les valeurs $\alpha \leq \beta$, alors $f$ prend toute valeur interm\'ediaire entre $\alpha$ et $\beta$
+		\item Alors $f(I)$ est un intervalle de $\mathbb{R}$
+		\item On suppose qu'il existent $a,b \in I, f(a) \geq 0$ et $f(b) \leq 0$ alors il exsite $c \in I$ tel que: $f(c) = 0$
+		\item Si $f$ prend les valeurs $\alpha \leq \beta$, alors $f$ prend toute valeur interm\'ediaire entre $\alpha$ et $\beta$
 	\end{enumerate}
 \end{theo}
 \begin{theo}
