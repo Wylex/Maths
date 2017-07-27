@@ -22,8 +22,8 @@
 \begin{document}
 \maketitle
 
-%Intégrales des fonctions en escalier {{{1
-\section{Int\'egrales des fonctions en escalier}
+%Intégrales de fonctions en escalier {{{1
+\section{Int\'egrales de fonctions en escalier}
 \begin{defi} $ $
 \begin{enumerate}
 	\item Subdivision d'un segment \\
@@ -90,6 +90,7 @@
 \begin{theo} Fondamental \\
 	Soit I un intervalle de $\mathbb{R},\ f:I\rightarrow \mathbb{R}$ continue:
 	\begin{enumerate}
+		\item Une primitive est une application $F: I \rightarrow \mathbb{R}$ d\'erivable telle que $F' = f$
 		\item $f$ admet des primitives sur I: \\
 			Si $a \in I,\ x \in I \mapsto \int_a^x f(t)dt$ est une primitive de $f$
 		\item Pour toute primitive $F$ de $f$ on a: \\
@@ -100,6 +101,9 @@
 \begin{theo} Taylor avec reste int\'egral \\
 	Soient $a,b \in \mathbb{R},\ n \in \mathbb{N}$. $f:[a,b] \rightarrow \mathbb{R}$ de classe $C^{n+1}$ alors:
 	\[f(b) = T_{n,f,a}(b) + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)} (t)dt\]
+	\begin{rqs}
+		$TRI \Rightarrow ITL$
+	\end{rqs}
 \end{theo}
 
 \begin{theo} Int\'egration par parties \\
@@ -122,8 +126,8 @@
 
 \subsection{Sommes de Darboux-Riemann}
 \begin{defi}
-	$a,b \in \mathbb{R},\ f:[a,b] \rightarrow \mathbb{R}\ C^0,\ \Gamma$ une subdivision de $[a,b]$, $\omega = (x_0, \hdots, x_n)$ un choix de
-	points associ\'ee \`a $\Gamma = (y_0, \hdots, y_n)$ \\
+	$a,b \in \mathbb{R},\ f:[a,b] \rightarrow \mathbb{R}\ C^0,\ \Gamma = (x_0 ,\hdots, x_n)$ une subdivision de $[a,b]$, $\omega = (y_0, \hdots, y_{n-1})$ un choix de
+	points associ\'ee \`a $\Gamma$ \\
 	On pose $S_{f,\Gamma, \omega} = \sum_{i=0}^{n-1} (x_{i+1} - x_i) f(y_i)$
 \end{defi}
 \begin{theo}
