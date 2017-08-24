@@ -32,7 +32,7 @@ Soit $E$ un ensemble muni d'une LCI $*$:
 \begin{enumerate}
 	\item $*$ associative si: $a*(b*c) = (a*b)*c$
 	\item $*$ est commutative si: $a*b = b*a$
-	\item Un \'el\'ement $e \in E$ est neutre pour $*$ si: $x*e = e*x = x$
+	\item Un \'el\'ement $e \in E$ est neutre pour $*$ si: $\forall x \in E,\ x*e = e*x = x$
 	\item On dit que $x$ est sym\'etrique (ou inversible) s'il existe $y \in E$ tel que: $x*y = y*x = e$
 	\item $(E,*)$ est un mono\"ide si: $*$ est associative et admet un neutre
 \end{enumerate}
@@ -101,12 +101,21 @@ Soit $(E, *)$ un mono\"ide. On d\'efinit $x^n,\ n \in \mathbb{N}$ en posant:
 \end{defi}
 
 \begin{prop}
-	Soit $(G, *)$ un groupe, $x \in G$, alors $<x> = \{x^n,\ n \in \mathbb{Z}\}$ est un sous groupe de $G$
+	Soit $(G, *)$ un groupe, $x \in G$, alors $\langle x\rangle = \{x^n,\ n \in \mathbb{Z}\}$ est un sous groupe de $G$
 \end{prop}
 
 \begin{theo}
 Soit $H$ un sous groupe de $(\mathbb{Z}, +)$ \\
 Il existe un et un seul $n \in \mathbb{N}$ tel que $H = n\mathbb{Z}$
+\end{theo}
+
+\begin{theo}
+	Si $H$ est un sous groupe de $(\mathbb{R}, +)$ alors:
+	\begin{enumerate}
+		\item $\exists\ \alpha > 0$ tel que $H = \alpha \mathbb{Z}$
+		\item $H$ est dense dans $\mathbb{R}$
+	\end{enumerate}
+	(1) et (2) s'excluent mutuellement
 \end{theo}
 
 \begin{prop} $(G, *)$ un groupe, $H,K$ deux sous groupes de $G$.\\
@@ -122,11 +131,11 @@ Alors $H \cap K$ est un sous groupe de $G$
 	\end{itemize}
 \end{defi}
 
-\begin{prop} $gr(x) = <x>$ \end{prop}
+\begin{prop} $gr(x) = \langle x \rangle$ \end{prop}
 
 \begin{defi} Soit $(G, *)$ un groupe:
 	\begin{itemize}
-		\item [-] On dit que $G$ est monog\`ene s'il existe $x \in G$ tel que $G = gr(x)$ \\
+		\item [-] On dit que $G$ est monog\`ene s'il existe $x \in G$ tel que $G = gr(x) = \langle x \rangle$ \\
 			$G$ monog\`ene $\Rightarrow G$ commutatif
 		\item [-] $G$ est cyclique si $G$ est monog\`ene fini
 	\end{itemize}

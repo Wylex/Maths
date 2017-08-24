@@ -96,15 +96,6 @@ Soit $z \in \mathbb{C}^*$. On appelle argument de $z$ et on note $\arg(z)$ l'ens
 	Si on conna\^it un argument de $z$ on les conna\^it tous (modulo $2\pi$)
 \end{rqs}
 
-\subsection{Exponentielle complexe}
-Pour $z \in \mathbb{C}$ on pose $\exp z = e^{Re(z)} e^{iIm(z)}$
-\begin{itemize}
-	\item [-] $\exp (z + z') = \exp z \exp z'$
-	\item [-] $\exp 0 = 1$
-	\item [-] $|\exp z| = e^{Re(z)}$
-	\item [-] $\exp z = 1 \Leftrightarrow z \in 2i\pi\mathbb{Z}$
-\end{itemize}
-
 \subsection{La notation $e^{i \theta}$}
 \begin{defi}
 	Pour tout r\'eel $\theta$, on note $e^{i\theta}$ le complexe $\cos \theta + i \sin \theta$\\
@@ -118,6 +109,15 @@ Pour $z \in \mathbb{C}$ on pose $\exp z = e^{Re(z)} e^{iIm(z)}$
 	$\arg (zz') = \arg z + \arg z'$\\
 	$\arg \frac{z}{z'}  = \arg z  - \arg z'$
 \end{prop}
+
+\subsection{Exponentielle complexe}
+Pour $z \in \mathbb{C}$ on pose $\exp z = e^{Re(z)}(\cos(Im(z)) + i\sin(Im(z)) =  e^{Re(z)} e^{iIm(z)}$
+\begin{itemize}
+	\item [-] $\exp (z + z') = \exp z \exp z'$
+	\item [-] $\exp 0 = 1$
+	\item [-] $|\exp z| = e^{Re(z)}$
+	\item [-] $\exp z = 1 \Leftrightarrow z \in 2i\pi\mathbb{Z}$
+\end{itemize}
 
 %Équations algébriques dans C {{{1
 \section{\'Equations alg\`ebriques dans $\mathbb{C}$}
@@ -133,7 +133,7 @@ Pour $z \in \mathbb{C}$ on pose $\exp z = e^{Re(z)} e^{iIm(z)}$
 
 \begin{prop} Ensemble des racines $n^e$ de 1 \\
 	Pour $n \in \mathbb{N}^*, R_n(1)$ se note $\mathbb{U}_n$:
-	\[\mathbb{U}_n = \{z \in \mathbb{C},\ z^n = 1\}\]
+	\[\mathbb{U}_n = \{z \in \mathbb{C},\ z^n = 1\} = \{e^{\frac{2ik\pi}{n}}, k \in [\![0,n-1]\!] \}\]
 \end{prop}
 
 \begin{rqs}

@@ -32,16 +32,16 @@ On dit que $a$ divise $b$ s'il existe $c \in \mathbb{Z}$ tel que $b=ac$
 		\item [-] $a | b$ dans $\mathbb{Z} \Leftrightarrow |a|$ divise $|b|$ dans $\mathbb{N}$
 		\item [-] $a | b$ et $b | a \Leftrightarrow b \in \{\bfrac{+}{-} a\}$
 		\item [-] $a|b$ et $b|c \Rightarrow a | c$
-		\item [-] $a|b$ et $a|c \Rightarrow a| bu + cv$
+		\item [-] $a|b$ et $a|c \Rightarrow a| ub + vc$
 		\item [-] $ab |ac \Rightarrow b|c$
 	\end{enumerate}
 \end{prop}
 
 \begin{theo} Division euclidienne dans $\mathbb{Z}$ \\
-Soit $a \in \mathbb{Z},\ b \in \mathbb{Z}^*$. Alors il existe un unique $(q,r)$ tel que:
+Soit $a \in \mathbb{Z},\ b \in \mathbb{Z}^*$. Alors il existe un unique couple $(q,r)$ tel que:
 \begin{enumerate}
 	\item $a = bq + r$
-	\item $0 \leq r \leq |b|$
+	\item $0 \leq r < |b|$
 \end{enumerate}
 \end{theo}
 
@@ -160,6 +160,29 @@ Soit $a \in \mathbb{Z},\ b \in \mathbb{Z}^*$. Alors il existe un unique $(q,r)$ 
 
 %Équation diophantienne {{{1
 \section{\'Equation diophantienne}
+
+\subsection{Solution particuli\`ere}
+Soient $a,b,c \in \mathbb{Z}$. On cherche les couples $(x,y)$ tels que $ax + by = c$ \\
+Soit $d = a \land b$ donc $d |a$ et $d|b \Rightarrow d|ua + vb$ \\
+Ainsi l'\'equation admet une solution si $d|c$
+
+\begin{align*}
+	ax + by = c &\Leftrightarrow d(a'x + b'y) = dc' \\
+				&\Leftrightarrow a'x + b'y = c'
+\end{align*}
+Puisque $a' \land b' = 1$ on peut d\'eterminer $u$ et $v$ tels que $a'u + b'v = 1$\\
+On d\'etermine donc $(x_0, y_0)$ = $(u c', v c')$
+
+\subsection{Solution g\'en\'erale}
+
+\begin{align*}
+	a'x + b'y = c' &= a'x_0 + b'y_0\\
+	a'(x - x_0) &= b'(y_0 - y)
+\end{align*}
+Ainsi $b'$ divise $a'(x-x_0)$ donc $b'$ divise $x-x_0 \Rightarrow \exists t \in \mathbb{Z},\ x = x_0 + tb'$\\
+$a'tb' = b'(y_0 -y) \Rightarrow (b' \neq 0)\ a't = y_0 - y$\\
+Finalement $\mathscr{S} = \{(x_0 + tb', y_0 - tb'), t \in \mathbb{Z}\}$
+
 
 %Remarques {{{1
 \section{Remarques}

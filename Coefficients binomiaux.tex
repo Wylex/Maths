@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{stmaryrd}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
@@ -18,7 +19,7 @@
 %Coefficient binomial {{{1
 \section{Coefficient binomial}
 \begin{defi}
-	Pour \(n \in \mathbb{N}\ et\ k \in [\![0,n]\!]\): \\
+	Pour \(n \in \mathbb{N}\ et\ k \in \llbracket 0,n \rrbracket \): \\
 	\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} \]
 \end{defi}
 \begin{itemize}
@@ -28,7 +29,7 @@
 		$\binom{n}{1} = n = \binom{n}{n-1}$ \\
 		$\binom{n}{k} = \binom{n}{n-k}$
 \end{itemize}
-\begin{prop} pour \(n \in \mathbb{N}\ et\ k \in [\![0,n]\!]\):
+\begin{prop} pour \(n \in \mathbb{N}\ et\ k \in \llbracket 0,n\rrbracket \):
 	\[\binom{n}{k+1} = \frac{n-k}{k+1} \times \binom{n}{k} \]
 	\[\binom{n+1}{k+1} = \frac{n+1}{k+1} \times \binom{n}{k} \]
 \end{prop}
@@ -41,13 +42,13 @@
 \begin{theo} Bin\^{o}me de Newton (\(a,b \in \mathbb{C}, n \in \mathbb{N}\)):
 	\[(a+b)^n = \sum_{k=0}^{n} \binom{n}{k}a^kb^{n-k}\]
 \end{theo}
-\begin{prop} \(n \in \mathbb{N}^*, k \in [\![1,n]\!]\): \\
+\begin{prop} \(n \in \mathbb{N}^*, k \in \llbracket 1,n \rrbracket \): \\
 	\[k\binom{n}{k} = n\binom{n-1}{k-1}\] \\
 \end{prop}
 
 \subsection{Applications}
 \begin{itemize}
-	\item [-] Soit \(p\) un nombre premier, \(k \in [\![1,p-1]\!]\) alors \(p\) divise \(\binom{p}{k}\)
+	\item [-] Soit \(p\) un nombre premier, \(k \in \llbracket 1,p-1 \rrbracket \) alors \(p\) divise \(\binom{p}{k}\)
 	\item [-] Propri\'{e}t\'{e}: \(a,b \in \mathbb{Z}\):
 		\[(a+b)^p \equiv a^p + b^p \pmod{p}\]
 		De fa\c{c}on plus g\'en\'erale, pour \(n \in \mathbb{N}^*, a_1, \hdots, a_n \in \mathbb{Z}\):
