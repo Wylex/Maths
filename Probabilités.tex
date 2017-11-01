@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{stmaryrd}
 \usepackage{verbatim}
 \usepackage{booktabs}
 \usepackage{mathrsfs}
@@ -126,7 +127,7 @@ P_2(\{\omega_2\})$
 	\begin{enumerate}
 		\item Loi de Bernouilli\\
 			Une va $Y$ d\'efinie sur un espace probabilis\'e $(\Omega, P)$ suit une loi de Bernouilli de param\'etre $p \in [0,1]$ lorsque
-			$\{0,1\} \subset Y(\Omega)$ et $P(Y = 0) = 1-p,\ P(Y = 1) = p$ \\
+			$\{0,1\} \subset Y(\Omega)$ (en g\'en\'eral $=$) et $P(Y = 0) = 1-p,\ P(Y = 1) = p$ \\
 			On \'ecrit $Y \hookrightarrow B(p)$
 		\item Loi binomiale \\
 			Une va $Y$ suit la loi binomiale de param\`etre $n$ et $p$ lorsque $Y(\Omega) = [\![0,n]\!]$ et $\forall k \in [\![0,n]\!],\
@@ -137,11 +138,12 @@ P_2(\{\omega_2\})$
 	\end{enumerate}
 \end{defi}
 
-D\'eterminer la loi de $X$ revient \`a:
-\begin{enumerate}
-	\item D\'eterminer $X(\Omega)$
-	\item Pour chaque $x \in X(\Omega)$ trouver $P(X=x)$
-\end{enumerate}
+\begin{prop} D\'eterminer la loi de $X$ revient \`a:
+	\begin{enumerate}
+		\item D\'eterminer $X(\Omega)$
+		\item Pour chaque $x \in X(\Omega)$ trouver $P(X=x)$
+	\end{enumerate}
+\end{prop}
 
 \subsection{Variables al\'eatoires ind\'ependantes}
 \begin{defi} Soit $(\Omega, P)$ un espace probabilis\'e
@@ -149,7 +151,7 @@ D\'eterminer la loi de $X$ revient \`a:
 		\item $X: \Omega \rightarrow E,\ Y: \Omega \rightarrow F$ des va. On dit que $X$ et $Y$ sont ind\'ependantes si:\\ $\forall A \subset E,\
 		B \subset F$ les \'ev $\{X \in A\}$ et $\{Y \in B\}$ sont ind\'ependants \\(ie $P(\{X\in A\} \cap \{Y \in B\}) = P(\{X\in A\})
 		P(\{Y \in B\})$
-		\item G\'en\'eralisation avec plusieurs variables: $(\{X_i \in A_i\})_{1 \leq i \leq n}$ sont indep
+		\item On peut g\'en\'eraliser pour $n$ va (il faut que les ev $(\{X_i \in A_i\})_{1\leq i \leq n}$ soient indep)
 	\end{enumerate}
 	\begin{rqs}
 			On \'ecrit $P(X \in A,\ X \in B)$ au lieu de $P(\{X \in A\} \cap \{Y \in B\})$
@@ -158,7 +160,7 @@ D\'eterminer la loi de $X$ revient \`a:
 
 \begin{theo}
 	Soient $E_1, \hdots, E_n$ des ensembles, $X_i: \Omega \rightarrow E_i$ alors:\\
-	$(X_1, \hdots, X_n)$ sont indep $\Leftrightarrow \forall (A_1, \hdots, A_n) \in \mathcal{P}(E_1) \times \hdots \times \mathcal{P}(E_n),\
+	$(X_1, \hdots, X_n)$ sont indep $\Leftrightarrow \forall (A_1, \hdots, A_n) \in \mathcal{P}(E_1) \times \hdots \times \mathcal{P}(E_n),\\
 	P(X_1 \in A_1, \hdots, X_n \in A_n) = \prod_1^n P(X_i \in A_i)$
 \end{theo}
 
@@ -172,13 +174,18 @@ D\'eterminer la loi de $X$ revient \`a:
 			$T= (X_{k+1}, \hdots, X_n): \omega \in \Omega \mapsto (X_{k+1}(\omega), \hdots, X_n(\omega))$\\
 			Alors $Z$ et $T$ sont ind\'ependantes
 		\item $X_i: \Omega \rightarrow E_i$ et $f_i : E_i \rightarrow F_i$. On suppose $(X_i)$ indep $Y_i = f_i(X_i)$ alors $(Y_i)$ sont indep
+		\item $X_i: \Omega \rightarrow E_i$ indep. \\Soit $k \in \llbracket 1,n-1 \rrbracket\  f: E_1 \times \hdots \times E_k \rightarrow F $ et
+			$g: E_{k+1} \times \hdots, \times E_n \rightarrow G$ \\
+			Alors, $f(X_1, \hdots, X_k)$ et $g(X_{k+1}, \hdots, X_n)$ sont indep
 	\end{enumerate}
 \end{prop}
 
 \subsection{Esp\'erance et Variance}
+\subsubsection{Esp\'erance}
+
 \begin{defi}
-	Soit $X$ une va r\'eelle sur l'espace probabilis\'e fini $(\Omega, P)$. On appelle esp\'erance de $X$ le r\'eel $E(X) =
-	\sum_{x \in X(\Omega)} xP(X=x)$
+	Soit $X$ une va r\'eelle (\`a valeurs dans $\mathbb{R}$) sur l'espace probabilis\'e fini $(\Omega, P)$. On appelle esp\'erance de $X$
+	le r\'eel $E(X) = \sum_{x \in X(\Omega)} xP(X=x)$
 \end{defi}
 
 \begin{prop} Esp\'erance
@@ -187,13 +194,53 @@ D\'eterminer la loi de $X$ revient \`a:
 		\item [-] Si $X$ est une va certaine ($\exists a \in \mathbb{R}, P(X=a) = 1$) alors $E(X) = a$
 		\item [-] Si $X$ est positive alors $E(X) \geq 0$
 		\item [-] $E(\alpha X + Y) = \alpha E(X) + E(Y)$
+		\item [-] $|E(X)| \leq E(|X|)$
 		\item [-] Formule de transfert: $\Omega \overset{X}{\rightarrow} E \overset{f}{\rightarrow}\mathbb{R}$ \\
 			$E(f(X)) = \sum_{x \in X(\Omega)} f(x) P(X=x)$
+		\item [-] In\'egalit\'e de Markov:\\
+			$X:\Omega \rightarrow \mathbb{R}_+$ une va positive alors: $\forall \epsilon > 0, P(\{X \geq \epsilon\}) \leq \frac{E(X)}{\epsilon}$
 	\end{itemize}
 \end{prop}
 
+\subsubsection{Variance}
 \begin{defi}
 	On pose $V(X) = E((X - E(X))^2)$ la variance et $\sigma(X) = \sqrt{V(X)}$ l'\'ecart type de $X$
 \end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item [-] $V(X) = E(X^2) - (E(X))^2$ (On d\'eduit que la variance ne d\'epend que de la loi de $X$)
+		\item [-] $E(|X-E(X)|) \leq \sqrt{V(X)}$
+		\item [-] $V(X+Y) = V(X) + V(Y) + 2E((X-E(X))(Y-E(Y)))$ \\
+			$E((X-E(X))(Y-E(Y)))$ s'appelle la covariance de $X$ et $Y$
+		\item [-] $(X,Y) \mapsto cov(X,Y)$ est une forme bilin\'eaire, sym\'etrique et positive
+		\item [-] $V(X) = cov(X,X)$
+	\end{enumerate}
+\end{prop}
+
+\begin{theo}
+	Soient $X,Y$ deux va indep r\'eelles alors $E(XY) = E(X)E(Y)$ (dans ce cas $cov(X,Y) = 0$) \\
+	Plus g\'en\'eralement, si $X_1, \hdots, X_n$ sont indep, $E(X_1 \hdots X_n) = E(X_1) \hdots E(X_n)$
+\end{theo}
+
+\begin{prop}
+	Si $X_1, \hdots, X_n$ sont des va indep alors $V(\sum X_i) = \sum V(X_i)$
+\end{prop}
+
+\begin{prop}
+	$X:\Omega \rightarrow \mathbb{R},\ \alpha, \beta \in \mathbb{R}$, alors $V(\alpha X + Y) = \alpha^2 V(X)$
+\end{prop}
+
+\begin{defi} Soit $X$ une va r\'eelle:
+	\begin{enumerate}
+		\item $X$ est dite centr\'ee si $E(X) = 0$
+		\item $X$ est dite r\'ediute si $V(X) = 1$
+	\end{enumerate}
+\end{defi}
+
+\begin{theo} In\'egalit\'e de Bienaym\'e - Tch\'ebychev\\
+	Soit $X: \Omega \rightarrow \mathbb{R},\ \epsilon > 0$ \\
+	Alors $P(|X-E(X)|\geq \epsilon) \leq \frac{V(X)}{\epsilon^2}$
+\end{theo}
 
 \end{document}

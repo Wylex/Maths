@@ -7,6 +7,7 @@
 \usepackage{verbatim}
 \usepackage{booktabs}
 \usepackage{mathrsfs}
+\usepackage{stmaryrd}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
@@ -28,8 +29,8 @@
 %Faits de base {{{1
 \section{Faits de base}
 \begin{defi} Soit $K$ un corps, $n,p \in \mathbb{N}^*$\\
-	Une matrice \`a $n$ lignes et \`a $p$ colonnes \`a coefficients dans $K$ est une application de $X = [\![0,n]\!]\times[\![0,p]\!]$ dans
-	$K$. On note $M_{n,p}(K)$ l'ensemble de ces matrices.
+	Une matrice \`a $n$ lignes et \`a $p$ colonnes \`a coefficients dans $K$ est une application de $X = \llbracket 0,n \rrbracket \times
+	\llbracket 0,p \rrbracket $ dans $K$. On note $M_{n,p}(K)$ l'ensemble de ces matrices.
 
 	\begin{rqs} $M_{n,p}(K)$ est muni d'une structure de Kev et $\dim M_{n,p} = np$
 	\end{rqs}
@@ -38,7 +39,7 @@
 \begin{vocab} $ $
 	\begin{enumerate}
 		\item On note $t_M \in M_{p,n}(K)$ la transpos\'ee de $M \in M_{n,p}(K)$ d\'efinie par: $\forall (i,j) \in
-		[\![0,n]\!]\times[\![0,p]\!],\ t_M[i,j] = M[j,i]$
+			\llbracket 0,n \rrbracket \times \llbracket 0,p \rrbracket ,\ t_M[i,j] = M[j,i]$
 		\item $M \in M_n(K)$ est sym\'etrique lorsque $t_M = M$
 		\item $M \in M_n(K)$ est antysym\'etrique lorsque $t_M = -M$
 	\end{enumerate}
@@ -65,10 +66,9 @@ de $F$ respectivement
 \begin{defi} Soient $p,q,r \in \mathbb{N}^*,\ A \in M_{p,q}(K),\ B \in M_{q,r}(K)$ \\
 	On d\'efinit le produit $AB \in M_{p,r}(K)$ par: \\
 	$\left. \begin{array}{l}
-		\forall i \in [\![0,p]\!] \\
-		\forall j \in [\![0,r]\!]
+		\forall i \in  \llbracket 0,p \rrbracket  \\
+		\forall j \in  \llbracket 0,r \rrbracket
 	\end{array}\right. (AB)[i,j] = \sum_{k=1}^q A[i,k]B[k,j]$
-
 \end{defi}
 
 \begin{prop} $ $
@@ -138,20 +138,24 @@ On note $GL_n(K)$ le groupe des inversibles de l'anneau $(M_n(K), +, \times)$
 \begin{prop} $ $
 	\begin{enumerate}
 		\item $D_n(K)$ est une sous alg\`ebre de $M_n(K)$\\
-			Soit $A \in D_n(K),\ A \in GL_n(K) \Leftrightarrow \forall i \in [\![1,n]\!], \alpha_i \neq 0$\\
+			Soit $A \in D_n(K),\ A \in GL_n(K) \Leftrightarrow \forall i \in  \llbracket 1,n \rrbracket , \alpha_i \neq 0$\\
 			Si c'est le cas, $Diag(\alpha_1, \hdots, \alpha_n)^{-1} = Diag(1/\alpha_1, \hdots, 1/\alpha_n)$
 			\begin{rqs} $A,B \in D_n(K) \Rightarrow AB = BA$ \end{rqs}
 		\item $TS_n(K)$ est une sous alg\`ebre de $M_n(K)$ \\
-			Soit $A \in TS_n(K)$, $A \in GL_n(K) \Leftrightarrow \forall i \in [\![1,n]\!],\ A[i,i] \neq 0$
+			Soit $A \in TS_n(K)$, $A \in GL_n(K) \Leftrightarrow \forall i \in  \llbracket 1,n \rrbracket ,\ A[i,i] \neq 0$
 	\end{enumerate}
 \end{prop}
 
 %Formules de changement de base {{{1
 \section{Formules de changement de base}
 Soit $E$ un Kev de dimension finie $n \in \mathbb{N}^*$. $\mathscr{B} = (e_1, \hdots, e_n),\ \mathscr{B}' = (e_1', \hdots, e_n')$ \\
-On appellera matrice de passage de $\mathscr{B}$ vers $\mathscr{B}'$, la matrice $M \in M_n(K)$ d\'efinie par: $\forall (i,j) \in [\![1,n]\!]^2,
+On appellera matrice de passage de $\mathscr{B}$ vers $\mathscr{B}'$, la matrice $M \in M_n(K)$ d\'efinie par: $\forall (i,j) \in  \llbracket 1,n \rrbracket ^2,
 M_{ij}$ est la i\`eme coordonn\'e de $e_j'$ dans $\mathscr{B}$
 \[e'_j = \sum_{i=1}^n M_{ij}e_i\]
+
+\begin{rqs}
+	La matrice de passage de $\mathscr{B}$ vers $\mathscr{B}'$ est $Mat_{\mathscr{B}',\mathscr{B}}(Id_E)$
+\end{rqs}
 
 \begin{prop} $ $
 	\begin{enumerate}
@@ -236,8 +240,9 @@ M_{ij}$ est la i\`eme coordonn\'e de $e_j'$ dans $\mathscr{B}$
 \begin{enumerate}
 	\item Lorsqu'on demande de trouver des matrices particuli\`eres, on peut essayer en multipliant par la base canonique pour r\'eduire leur
 		nombre et proc\'eder par analyse synth\`ese.
-	\item Il peut \^etre int\'eressant de transformer un probl\`eme sur les matrices en un probl\'eme sur les fonctions gr\^ace aux fonctions
+	\item Il peut \^etre int\'eressant de transformer un probl\`eme sur les matrices en un probl\`eme sur les fonctions gr\^ace aux fonctions
 		canoniquement associ\'ees.
+	\item $M = \frac{1}{2}(M +\ ^t M) + \frac{1}{2}(M -\ ^t M)$
 \end{enumerate}
 
 \end{document}

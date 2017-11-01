@@ -27,7 +27,7 @@
 
 \subsection{Produit scalaire}
 
-\begin{defi} Soit $E$ un Rev, un produit scalaire sur $E$ est une application $\varphi : E \times E \rightarrow \mathbb{R}$ telle que:
+\begin{defi} Soit $E$ un $\mathbb{R}$ev, un produit scalaire sur $E$ est une application $\varphi : E \times E \rightarrow \mathbb{R}$ telle que:
 	\begin{enumerate}
 		\item $\varphi$ est bilin\'eaire
 		\item $\varphi$ est sym\'etrique: $\varphi(x,y) = \varphi(y,x)$
@@ -44,7 +44,7 @@
 
 \subsection{Norme euclidienne}
 
-\begin{defi} Soit $E$ un Rev. Une norme sur $E$ est une application $N:E \rightarrow \mathbb{R}_+$ telle que:
+\begin{defi} Soit $E$ un $\mathbb{R}$ev. Une norme sur $E$ est une application $N:E \rightarrow \mathbb{R}_+$ telle que:
 	\begin{enumerate}
 		\item Pour $x \in E, N(x) = 0 \Leftrightarrow x = 0$
 		\item Pour $x \in E, \alpha \in \mathbb{R}, N(\alpha x) = |\alpha| N(x)$
@@ -53,14 +53,14 @@
 \end{defi}
 
 \begin{theo}  Norme euclidienne \\
-	Soit $E$ un Rev et $\langle\ \rangle$ un ps sur $E$, pour $x \in E$, posons \mbox{$\|x\| = \sqrt{\langle x,x \rangle}$}, alors $x \in E
+	Soit $E$ un $\mathbb{R}$ev et $\langle\ \rangle$ un ps sur $E$, pour $x \in E$, posons \mbox{$\|x\| = \sqrt{\langle x,x \rangle}$}, alors $x \in E
 	\mapsto \|x\|$ est une norme sur $E$ appel\'ee norme euclidienne associ\'e au produit scalaire $\langle\ \rangle$
 \end{theo}
 
 \begin{prop} Relations entre ps et $\| \ \|$
 	\begin{enumerate}
 		\item [-] In\'egalit\'e de Cauchy-Schwarz: $\forall x,y \in E,\ |\langle x,y \rangle| \leq \|x\| \|y\|$
-		\item [-] $\|x+y\| = \|x\| + \|y\| \Leftrightarrow (x \lor y = 0) \lor (\exists \lambda \in \mathbb{R}_+,\ y = \lambda x)$
+		\item [-] $\|x+y\| = \|x\| + \|y\| \Leftrightarrow (x=0 \lor y = 0) \lor (\exists \lambda \in \mathbb{R}_+,\ y = \lambda x)$
 		\item [-] $\|\sum_{i=1}^n x_i \| ^2 = \sum_{i=1}^n \|x_i\|^2 + 2\sum_{1 \leq i < j \leq n} \langle x_i,x_j \rangle$
 		\item [-] En particulier, (identit\'e du parall\'elogramme):\\
 			$\|x+y\|^2 + \|x-y\|^2 = 2(\|x\|^2 + \|y\|^2)$
@@ -73,30 +73,36 @@
 \section{Familles orthogonales, processus d'orthonormalisation}
 
 \begin{defi} Vecteurs orthogonaux \\
-	Soit $\langle\ \rangle$ un ps sur le Rev $E$, $(x,y) \in E^2$. Ainsi $x$ est orthogonal \`a $y$ si $\langle x,y \rangle = 0$
-	\begin{rqs} Si $x_i \perp x_j,\ i \neq j$ alors $\|\sum_{i=1}^n x_i \|^2 = \sum_{i=1}^n \|x_i\|^2$ \end{rqs}
+	Soit $\langle\ \rangle$ un ps sur le $\mathbb{R}$ev $E$, $(x,y) \in E^2$. Ainsi $x$ est orthogonal \`a $y$ si $\langle x,y \rangle = 0$
+	\begin{rqs} Si $x_i \perp x_j,\ \forall\ i \neq j$ alors $\|\sum_{i=1}^n x_i \|^2 = \sum_{i=1}^n \|x_i\|^2$ \end{rqs}
 \end{defi}
 
 \begin{defi} Famille orthogonale \\
-	Soit $E$ un Rev muni d'un ps $\langle\ \rangle$ et $(x_i)_{i\in I}$ une famille de vecteurs de $E$. On dit que la famille est orthogonale si
-	$x_i \perp x_j$ pour $i\neq j$. Elle est orthonorm\'ee si de plus $\|x_i\| = 1$
+	Soit $E$ un $\mathbb{R}$ev muni d'un ps $\langle\ \rangle$ et $(x_i)_{i\in I}$ une famille de vecteurs de $E$. On dit que la famille est
+	orthogonale si $x_i \perp x_j$ pour $i\neq j$. Elle est orthonorm\'ee si de plus $\|x_i\| = 1$
 \end{defi}
 
 \begin{theo} Orthonormalisation de Gram-Schmidt \\
-	Soit $E$ un Rev muni d'un ps $\langle\ \rangle$ et $(x_1, \hdots, x_n)$ une famille libre de vecteurs de $E$. Alors il existe une unique
+	Soit $E$ un $\mathbb{R}$ev muni d'un ps $\langle\ \rangle$ et $(x_1, \hdots, x_n)$ une famille libre de vecteurs de $E$. Alors il existe une unique
 	famille orthonormale $(e_1, \hdots, e_n)$ de vecteurs de $E$ telle que:
 	\begin{enumerate}
 		\item $Vect(e_1, \hdots, e_i) = Vect(x_1, \hdots, x_i)\ (1 \leq i \leq n)$
 		\item $\langle e_i,x_i \rangle > 0\ (1 \leq i \leq n)$
 	\end{enumerate}
+
+	\begin{rqs} Soit $(e_1, \hdots, e_n)$ l'orthonormalis\'ee de la famille libre $(x_1, \hdots, x_n)$. On sait que $e_0 = \frac{x_0}{\|x_0\|}.$
+		On pose $u = x_{n+1} - \sum_{k=1}^n \langle x_{n+1},e_k \rangle e_k$\\
+		Alors $e_{n+1} = \frac{u}{\|u\|}$
+
+	\end{rqs}
 \end{theo}
 
 \begin{prop} $ $
 	\begin{enumerate}
 		\item [-] Soit $(x_i)_{i\in I}$ une famille orthogonale de vecteurs non nuls de $E$, alors la famille est libre. En particulier, toute
 			famille orthonorm\'ee de vecteurs de $E$ est libre
-		\item [-] Soit $E$ un Rev de dimension finie  $\langle\ \rangle$ un ps sur $E$, alors $E$ admet une base orthonorm\'ee
-			\begin{rqs} $\langle x,y \rangle = t_X Y$ avec $X,Y$ coord de $x,y$ dans la base orthonorm\'ee \end{rqs}
+		\item [-] Soit $E$ un $\mathbb{R}$ev de dimension finie  $\langle\ \rangle$ un ps sur $E$, alors $E$ admet une base orthonorm\'ee
+		\item [-] $\langle x,y \rangle = t_X Y$ avec $X,Y$ coord de $x,y$ dans une base orthonorm\'ee
 	\end{enumerate}
 \end{prop}
 
@@ -110,7 +116,7 @@
 \section{Orthogonal d'une partie}
 \begin{defi} Ensembles orthogonaux
 	\begin{enumerate}
-		\item Soit $E$ un Rev muni d'un ps $\langle\ \rangle$ et $A$ une partie non vide de $E$. L'orthogonal de $A$ est l'ensemble $A^{\perp} =
+		\item Soit $E$ un $\mathbb{R}$ev muni d'un ps $\langle\ \rangle$ et $A$ une partie non vide de $E$. L'orthogonal de $A$ est l'ensemble $A^{\perp} =
 			\{x \in E,\ \forall a \in A\ \langle x,a \rangle = 0\}$
 		\item Soient $A,B \subset E$. On dit que $A$ et $B$ sont orthogonaux ($A \perp B$) si $\forall a \in A,\ \forall b \in B,\ a \perp b
 			\ (\Leftrightarrow A \subset B^\perp$ ou $B \subset A^\perp$)
@@ -128,10 +134,13 @@
 
 \begin{theo} Soit $F$ un sev de dimension finie de $E$, alors $E = F \oplus F^\perp$
 	\begin{rqs}
-		Soit $F$ sev de $E$. Si $E = F \oplus F^\perp$ alors $F^{\perp \perp} = F$. Ainsi, Si $F$ est un sev de dimension finie de $E$ alors
-		$F = F^{\perp \perp}$
+		$x = \underset{\in F}{(\sum \langle x,e_i \rangle e_i)} + \underset{\in F^\perp}{(x - \sum \langle x,e_i \rangle e_i)}$
 	\end{rqs}
 \end{theo}
+\begin{prop}
+	Soit $F$ sev de $E$. Si $E = F \oplus F^\perp$ alors $F^{\perp \perp} = F$. Ainsi, Si $F$ est un sev de dimension finie de $E$ alors
+	$F = F^{\perp \perp}$
+\end{prop}
 
 \subsection{Projecteurs orthogonaux, sym\'etries orthogonales, distance \`a un sev}
 
@@ -167,7 +176,7 @@ Soit $F$ un sev de $E$ tel que $E = F \oplus F^\perp$. Soit $x \in E$, $x = y + 
 \section{Espaces euclidiens}
 
 \begin{defi}
-	Un espace euclidien est un couple $(E, \langle\  \rangle)$ o\`u $E$ est un Rev de dimension finie et $\langle\  \rangle$ un ps sur $E$
+	Un espace euclidien est un couple $(E, \langle\  \rangle)$ o\`u $E$ est un $\mathbb{R}$ev de dimension finie et $\langle\  \rangle$ un ps sur $E$
 \end{defi}
 
 \begin{prop} Faits de base
@@ -231,7 +240,7 @@ Soit $F$ un sev de $E$ tel que $E = F \oplus F^\perp$. Soit $x \in E$, $x = y + 
 				\item $\forall x,y \in E,\ \langle x,y \rangle = 0 \Leftrightarrow \langle f(x), f(y) \rangle = 0$
 				\item $f$ conserve les angles g\'eom\'etriques
 			\end{enumerate}
-		\item [-] Soit $f \in O(E)$ et $F$ un sev de $E$. On suppose $F$ stable par $f$ alors $F^\perp$ est stable par $f$
+		\item [-] Soit $f \in O(E)$ et $F$ un sev de $E$. On suppose $F$ stable par $f$ ($f(F) \subset F$) alors $F^\perp$ est stable par $f$
 		\item [-] Soit $B = (e_1, \hdots, e_n)$ une BON de $E$, $f \in \mathscr{L}(E)$. On a alors:\\
 			$f \in O(E) \Leftrightarrow (f(e_1), \hdots, f(e_n))$ est une BON de $F$
 	\end{enumerate}
@@ -310,6 +319,7 @@ Soit $F$ un sev de $E$ tel que $E = F \oplus F^\perp$. Soit $x \in E$, $x = y + 
 	\end{enumerate}
 \end{prop}
 
+%Étude de la dimension 2 {{{1
 \section{\'Etude de la dimension 2}
 
 On a $O_2(\mathbb{R}) = \{R_{\theta} / \theta \in \mathbb{R}\} \cup \{S_\theta / \theta \in \mathbb{R}\}$ o\`u: \\
@@ -364,13 +374,5 @@ S_\theta =
 		\item Si $g \in O(E) \backslash SO(E)$ alors $\hat{(g(x),g(y))} = -\hat{(x,y)}$
 	\end{enumerate}
 \end{prop}
-
-
-%Remarques {{{1
-\section{Remarques}
-\begin{enumerate}
-	\item D\'ecomposition foncions paire/impaire: \[f(x) = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2}\]
-\end{enumerate}
-
 
 \end{document}

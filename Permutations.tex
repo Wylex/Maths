@@ -7,6 +7,7 @@
 \usepackage{verbatim}
 \usepackage{booktabs}
 \usepackage{mathrsfs}
+\usepackage{stmaryrd}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
@@ -27,16 +28,16 @@
 
 %Généralitées {{{1
 \section{G\'en\'eralit\'ees}
-On note $S_n$ l'ensemble des permutations de $[\![1,n]\!]$. $(S_n, \circ)$ est un groupe.
+On note $S_n$ l'ensemble des permutations de $\llbracket 1,n \rrbracket $. $(S_n, \circ)$ est un groupe.
 
 \begin{theo}
 	Tout groupe fini $G$ est isomorphe \`a un sous groupe de $S_n$.
 \end{theo}
 
 \begin{defi} Transposition\\
-	Soit $n \geq 2,\ \sigma \in S_n$ est une transposition s'il existe $a,b \in [\![1,n]\!], a \neq b$ tel que $\sigma(a) = b,\ \sigma(b) = a$ et
+	Soit $n \geq 2,\ \sigma \in S_n$ est une transposition s'il existe $a,b \in \llbracket 1,n \rrbracket , a \neq b$ tel que $\sigma(a) = b,\ \sigma(b) = a$ et
 	$\sigma(x) = x$ pour $x \neq \{a,b\}$. \\
-	On note $\tau_{ab}$ la transpos\'e qui \'echange $a$ et $b$.
+	On note $\tau_{ab}$ la transpos\'e qui \'echange $a$ et $b$ (en tant qu'images).
 \end{defi}
 
 \begin{theo}
@@ -47,7 +48,7 @@ On note $S_n$ l'ensemble des permutations de $[\![1,n]\!]$. $(S_n, \circ)$ est u
 \section{Cycles dans $S_n$}
 
 \begin{defi} Cycle\\
-	Soit $\sigma \in S_n$: on dit que $\sigma$ est un cycle s'il existe $p \in [\![2,n]\!],\ x_1, \hdots, x_p \in [\![1,n]\!]$ distincts avec
+	Soit $\sigma \in S_n$: on dit que $\sigma$ est un cycle s'il existe $p \in \llbracket 2,n \rrbracket ,\ x_1, \hdots, x_p \in \llbracket 1,n \rrbracket $ distincts avec
 	$\sigma(x_1) = x_2,\ \sigma(x_2) = x_3, \hdots, \sigma(x_p) = x_1$ et $\sigma(x) = x$ pour \mbox{$x \notin \{x_1, \hdots, x_p\}$}
 	\begin{rqs}
 		Il y a $\sum_{p=2}^n \binom{n}{p}(p-1)!$ cycles dans $S_n$
@@ -55,7 +56,7 @@ On note $S_n$ l'ensemble des permutations de $[\![1,n]\!]$. $(S_n, \circ)$ est u
 \end{defi}
 
 \begin{prop}
-	soit $p \in [\![2,n]\!], \sigma$ un p-cycle. Alors $\sigma$ est un \'el\'ement d'ordre $p$.
+	soit $p \in \llbracket 2,n \rrbracket , \sigma$ un p-cycle. Alors $\sigma$ est un \'el\'ement d'ordre $p$.
 \end{prop}
 
 \begin{prop}
@@ -75,7 +76,7 @@ On note $S_n$ l'ensemble des permutations de $[\![1,n]\!]$. $(S_n, \circ)$ est u
 %Signature d'une permutation {{{1
 \section{Signature d'une permutation}
 \begin{defi}
-	Soit $\sigma \in S_n$ et $(i,j) \in [\![1,n]\!]^2$ tels que $i < j$. On dit que $\sigma$ pr\'esente une inversion en $(i,j)$ si $\sigma(i)
+	Soit $\sigma \in S_n$ et $(i,j) \in \llbracket 1,n \rrbracket ^2$ tels que $i < j$. On dit que $\sigma$ pr\'esente une inversion en $(i,j)$ si $\sigma(i)
 	> \sigma(j)$. On note $N(\sigma)$ \mbox{le nombre d'inversions de $\sigma$.}\\
 	La signature de $\sigma$ est $\epsilon(\sigma) = (-1)^{N(\sigma)}$
 \end{defi}

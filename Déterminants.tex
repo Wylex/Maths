@@ -7,6 +7,7 @@
 \usepackage{verbatim}
 \usepackage{booktabs}
 \usepackage{mathrsfs}
+\usepackage{stmaryrd}
 
 \theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
 \theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
@@ -31,7 +32,7 @@
 	Soit $n \in \mathbb{N}^*,\ E$ et $F$ deux Kev, $f: E^n \rightarrow F$
 	\begin{enumerate}
 		\item On dit que $f$ est n-lin\'eaire si $f$ est lin\'eaire par rapport \`a chacune de ses variables:
-		$\forall (u_1, \hdots, u_n) \in E^n,\ \forall j \in [\![1,n]\!]$, l'application $\varphi_j: x \in E \mapsto f(u_1, \hdots, u_{j-1},
+		$\forall (u_1, \hdots, u_n) \in E^n,\ \forall j \in \llbracket 1,n \rrbracket $, l'application $\varphi_j: x \in E \mapsto f(u_1, \hdots, u_{j-1},
 		x, u_{j+1}, \hdots, u_n)$ est lin\'eaire
 		\item On dit que $f$ est altern\'ee si pour tout $(u_1, \hdots, u_n) \in E^n$ ayant deux \'el\'ements \'egaux, $f(u_1, \hdots, u_n) = 0$
 	\end{enumerate}
@@ -47,10 +48,10 @@
 			\begin{align*}
 				f(x_1, \hdots, x_n) &= \sum_{i_1 = 1}^p \hdots \sum_{i_n = 1}^p \alpha_{i_1 1} \hdots, \alpha_{i_n n}
 					f(e_{i_1}, \hdots, e_{i_n})\\
-									&= \sum_{\phi \in \mathscr{F}([\![1,n]\!], [\![1,p]\!])} \alpha_{\phi(1) 1} \hdots \alpha_{\phi(n) n}
+									&= \sum_{\phi \in \mathscr{F}(\llbracket 1,n \rrbracket , \llbracket 1,p \rrbracket )} \alpha_{\phi(1) 1} \hdots \alpha_{\phi(n) n}
 					f(e_{\phi(1)}, \hdots, e_{\phi(n)})
 			\end{align*}
-		\item [-] Soit $f \in \mathscr{A}^n(E,F),\ x_1, \hdots, x_n \in E$. Soit $j \in [\![1,n]\!], y \in Vect(x_i)_{i \in [\![1,n]\!]
+		\item [-] Soit $f \in \mathscr{A}^n(E,F),\ x_1, \hdots, x_n \in E$. Soit $j \in \llbracket 1,n \rrbracket , y \in Vect(x_i)_{i \in \llbracket 1,n \rrbracket
 			\backslash \{j\}}$ alors $f(x_1, \hdots, x_j + y, \hdots, x_n) = f(x_1, \hdots, x_j, \hdots, x_n)$
 		\item [-] $f \in \mathscr{A}^n(E,F),\ (x_1, \hdots, x_n) \in E^n$: $(x_1, \hdots, x_n)$ li\'ee $\Rightarrow f(x_1, \hdots, x_n) = 0$
 		\item [-] $f \in \mathscr{A}^n(E,F)$ alors $f$ est antysim\'etrique: \\
@@ -84,7 +85,7 @@
 		\item [-] On suppose que M est une matrice triangulaire, alors $\det M = \prod_i M_{ii}$
 		\item [-] $M \in GL_n(K) \Leftrightarrow \det M \neq 0$
 		\item [-] $\det (t_M) = \det M$
-		\item [-] Soit $M = Mat_B(x_1, \hdots, x_n)$ alors $\det_B (x_1, \hdots, x_n) = \det M$
+		\item [-] $\det Mat_B(x_1, \hdots, x_n) = \det_B (x_1, \hdots, x_n)$
 	\end{enumerate}
 \end{prop}
 
@@ -118,11 +119,11 @@
 %Développement suivant une rangée {{{1
 \section{D\'eveloppement suivant une rang\'ee}
 \begin{theo}
-	Soit $i \in [\![1,n]\!],\ M = (a_{ij})$ alors $\det M = \sum_{j=1}^n a_{ij}(-1)^{i+j} \det M_{ij}$
+	Soit $i \in \llbracket 1,n \rrbracket ,\ M = (a_{ij})$ alors $\det M = \sum_{j=1}^n a_{ij}(-1)^{i+j} \det M_{ij}$
 \end{theo}
 
 \begin{defi} Comatrice \\
-	Soit $M = (a_{ij}) \in M_n(K)$. On note $A_{ij}$ le cofacteur d'indice $(i,j)$ de $M$. \\
+	Soit $M = (a_{ij}) \in M_n(K)$. On note $A_{ij}$ le cofacteur d'indice $(i,j)$ de $M$ ($A_{ij} = (-1)^{i+j} \det M_{ij}$). \\
 	On appelle comatrice de $M$ et on note $com(M)$ la matrice de $M_n(K)$ d\'efinie par: $com(M)_{ij} = A_{ij}$
 \end{defi}
 
@@ -136,5 +137,15 @@ On consid\`ere un syst\`eme lin\'eaire de $n$ \'equations \`a $n$ inconnues qui 
 de Cramer lorsque $M \in GL_n(K)$. Dans ce cas, $(S)$ admet comme unique solution $X = M^{-1}B$. \\
 Si on note $X = (x_1 \hdots x_n )$ cette unique solution alors: $x_i = \frac{\Delta_i}{\Delta}$ o\`u $\Delta = \det M$ et $\Delta_i = \det M_i$
 o\`u $M_i$ se d\'eduit de $M$ en rempla\c{c}ant $C_i(M)$ par $(b_1 \hdots b_n) = B$
+
+%Remarques {{{1
+\section{Remarques}
+\begin{enumerate}
+	\item
+		$\begin{vmatrix}
+			A & C\\
+			0 & B
+		\end{vmatrix} = (\det A) (\det B)$
+\end{enumerate}
 
 \end{document}
