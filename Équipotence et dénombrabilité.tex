@@ -1,0 +1,97 @@
+%Préamble {{{1
+\documentclass[fleqn]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+
+\theoremstyle{definition} \newtheorem*{defi}{D\'efinition}
+\theoremstyle{definition} \newtheorem*{theo}{Th\'eor\`eme}
+\theoremstyle{definition} \newtheorem*{coro}{Corollaire}
+\theoremstyle{definition} \newtheorem*{nota}{Notation}
+\theoremstyle{definition} \newtheorem*{vocab}{Vocabulaire}
+\theoremstyle{remark} \newtheorem*{rqs}{Remarques}
+\theoremstyle{definition} \newtheorem*{prop}{Propri\'et\'e}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\ra{1.3}
+
+\title{\'Equipotence et d\'enombrabilit\'e}
+\date{}
+
+\begin{document}
+\maketitle
+
+%Équipotence {{{1
+\section{\'Equipotence}
+\begin{defi}
+	Deux ensembles sont \'equipotents s'ils sont en bijection. C'est une relation d'\'equivalence
+\end{defi}
+
+\begin{theo} $ $
+	\begin{enumerate}
+		\item Deux ensebles finis sont \'equipotents ssi ils ont le m\^eme cardinal
+		\item Cantor-Bernstein (HP): S'il existe une injection $\alpha: A \rightarrow B$ et $\beta: B \rightarrow A$ alors $A$ et $B$ sont
+			\'equipotents
+	\end{enumerate}
+\end{theo}
+
+%Ensembles dénombrables {{{1
+\section{Ensembles d\'enombrables}
+\begin{defi}
+	Un ensemble est d\'enombrable s'il est \'equipotent \`a $\mathbb{N}$
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item Un ensemble \'equipotent \`a un ensemble d\'enombrable est d\'enombrable
+		\item Toute partie de $\mathbb{N}$ est soit fini, soit d\'enombrable. Ainsi $\mathbb{N}$ est le "plus petit" ensemble infini
+		\item Caract\'erisation: Soit $A$ en ensemble, LASSE:
+			\begin{enumerate}
+				\item $A$ est fini ou d\'enombrable
+				\item Il existe $\varphi: A \rightarrow \mathbb{N}$ injective
+				\item $A$ est vide ou il existe $\psi: \mathbb{N} \rightarrow A$ surjective
+			\end{enumerate}
+	\end{enumerate}
+\end{prop}
+
+\subsection{Constructions d'ensembles d\'enombrables}
+\begin{enumerate}
+	\item $\mathbb{N} \times \mathbb{N}$ est d\'enombrable $\Rightarrow$ un produit cart\'esien de $p$ ensembles finis ou d\'enombrables est
+		fini ou d\'enombrable
+	\item Une r\'eunion fini ou d\'enombrable d'ensembles finis ou d\'enombrables est fini ou d\'enombrable
+\end{enumerate}
+
+%Exemples {{{1
+\section{Exemples}
+\begin{theo}
+	$\mathbb{N}, \mathbb{N}^*, \mathbb{Z}, \mathbb{Q}, \mathbb{N}^p, \mathbb{Z}^p, \mathbb{Q}^p, \mathbb{N}^a\times \mathbb{Z}^b\times
+	\mathbb{Q}^c$ o\`u $a+b+c>1$ sont d\'enombrables
+\end{theo}
+
+\begin{theo} $ $
+	\begin{enumerate}
+		\item $\mathcal{P}(\mathbb{N})$  est fini non d\'enombrable
+		\item $\mathbb{R}$ n'est pas d\'enombrable
+	\end{enumerate}
+\end{theo}
+
+%Complément {{{1
+\section{Compl\'ement}
+\begin{defi}
+	$\alpha \in \mathbb{C}$ est alg\'ebrique s'il existe $P \in \mathbb{Q}[X] \backslash \{0\}$ tel que $P(\alpha) = 0$ \\
+	$\alpha$ est trancendant s'il n'est pas alg\'ebrique
+\end{defi}
+
+\begin{prop} $ $
+	\begin{enumerate}
+		\item L'ensemble des nombres alg\'ebriques est d\'enombrable
+		\item Il existe (bcp) de r\'eels transcendants
+	\end{enumerate}
+\end{prop}
+
+\end{document}
